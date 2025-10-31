@@ -334,20 +334,49 @@ class PNGworkforceScraper:
                             if industry_match:
                                 data['industry'] = industry_match.group(1).strip()
         
-        # Extract employer/company - look for company info section
-        # Often appears as logo alt text or in company info section
-        company_logo = soup.find('img', alt=re.compile(r'logo', re.I))
-        if company_logo and company_logo.get('alt'):
-            data['employer'] = company_logo['alt'].replace(' logo', '').replace('Logo', '').strip()
-        
-        # Also check for company name in structured data or company info section
-        if 'employer' not in data:
-            company_info = soup.find('div', class_=re.compile(r'company|employer', re.I))
-            if company_info:
-                # Look for company name heading or link
-                company_name = company_info.find(['h2', 'h3', 'h4', 'a'], class_=re.compile(r'company|employer', re.I))
+        # Extract employer/company - use structured data first (most reliable)
+        # Look for itemprop="hiringOrganization" -> itemprop="name"
+        hiring_org = soup.find('div', itemprop='hiringOrganization')
+        if hiring_org:
+            # First try to get the name from structured data
+            org_name_elem = hiring_org.find('span', itemprop='name')
+            if org_name_elem:
+                name_text = org_name_elem.get_text(strip=True)
+                # Make sure it's not empty and not the site name
+                if name_text and 'pngworkforce' not in name_text.lower():
+                    data['employer'] = name_text
+            else:
+                # Fallback: look for company name in h4 or link within hiringOrganization
+                company_name = hiring_org.find(['h4', 'a'])
                 if company_name:
-                    data['employer'] = company_name.get_text(strip=True)
+                    name_text = company_name.get_text(strip=True)
+                    if name_text and 'pngworkforce' not in name_text.lower() and len(name_text) > 2:
+                        data['employer'] = name_text
+        
+        # If not found, look for "COMPANY INFO" section specifically
+        if 'employer' not in data or not data.get('employer'):
+            company_info_heading = soup.find(['h3', 'h4'], string=re.compile(r'COMPANY INFO', re.I))
+            if company_info_heading:
+                company_section = company_info_heading.find_parent(['div', 'section'])
+                if company_section:
+                    # Look for h4 with company name
+                    company_h4 = company_section.find('h4')
+                    if company_h4:
+                        name_text = company_h4.get_text(strip=True)
+                        if name_text and 'pngworkforce' not in name_text.lower():
+                            data['employer'] = name_text
+        
+        # Last resort: look for company logo in COMPANY INFO section (not site header)
+        if 'employer' not in data or not data.get('employer'):
+            # Only look for logos within hiringOrganization div (not site-wide)
+            hiring_org = soup.find('div', itemprop='hiringOrganization')
+            if hiring_org:
+                company_logo = hiring_org.find('img', alt=re.compile(r'logo', re.I))
+                if company_logo and company_logo.get('alt'):
+                    alt_text = company_logo.get('alt', '')
+                    # Skip PNGworkForce.com logos
+                    if 'pngworkforce' not in alt_text.lower():
+                        data['employer'] = alt_text.replace(' logo', '').replace('Logo', '').strip()
         
         # Extract job ID from structured element
         job_id_elem = soup.find('span', class_='jobid')
