@@ -8,8 +8,10 @@ import csv
 from pathlib import Path
 from datetime import datetime
 
-json_dir = Path("json_output")
-html_dir = Path("html_output")
+# Handle paths - if running from code/, go up one level
+base_dir = Path(__file__).parent.parent if Path(__file__).parent.name == 'code' else Path(__file__).parent
+json_dir = base_dir / "json_output"
+html_dir = base_dir / "html_output"
 
 # Load existing summary
 summary_path = json_dir / 'scrape_summary.json'

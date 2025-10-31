@@ -30,6 +30,7 @@ jobs:
       
       - name: Run scraper
         run: |
+          cd code
           python scraper.py
       
       - name: Upload results as artifact

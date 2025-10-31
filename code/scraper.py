@@ -43,9 +43,11 @@ class PNGworkforceScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
         
-        # Create output directories
-        self.html_dir = Path("html_output")
-        self.json_dir = Path("json_output")
+        # Create output directories (relative to project root, not code/ directory)
+        # If running from code/, go up one level
+        base_dir = Path(__file__).parent.parent if Path(__file__).parent.name == 'code' else Path(__file__).parent
+        self.html_dir = base_dir / "html_output"
+        self.json_dir = base_dir / "json_output"
         self.html_dir.mkdir(exist_ok=True)
         self.json_dir.mkdir(exist_ok=True)
         
@@ -233,11 +235,13 @@ class PNGworkforceScraper:
         Extract structured data from a job detail page using proper HTML selectors
         
         Returns dict with: title, date_advertised, location, employer, description, etc.
+        Note: Fields are ordered with most important first (job_id, title, date_posted, etc.)
         """
+        job_id = self.extract_job_id_from_url(url)
+        
+        # Order fields logically: ID, title, date, location, etc. (most important first)
         data = {
-            'url': url,
-            'scraped_at': datetime.now().isoformat(),
-            'job_id': self.extract_job_id_from_url(url)
+            'job_id': job_id,
         }
         
         # Extract title - use title tag first, then h1 in job content
@@ -383,6 +387,11 @@ class PNGworkforceScraper:
                 data['salary'] = match.group(1) if match.groups() else match.group(0)
                 break
         
+        # Add metadata fields
+        data['url'] = url
+        data['scraped_at'] = datetime.now().isoformat()
+        
+        # Return data (will be reordered in scrape_job_detail after adding file paths)
         return data
     
     def scrape_job_detail(self, job_url, main_page_data=None):
@@ -414,12 +423,11 @@ class PNGworkforceScraper:
                     structured_data['title'] = main_page_data['title']
             
             # Use main page date if detail page doesn't have it
-            if not structured_data.get('date_posted') and not structured_data.get('date_advertised'):
+            if not structured_data.get('date_posted'):
                 if main_page_data.get('date_posted'):
                     structured_data['date_posted'] = main_page_data['date_posted']
                 elif main_page_data.get('date_advertised'):
                     structured_data['date_posted'] = main_page_data['date_advertised']
-                    structured_data['date_advertised'] = main_page_data['date_advertised']
             
             # Use main page location if detail page doesn't have it
             if not structured_data.get('location'):
@@ -431,19 +439,38 @@ class PNGworkforceScraper:
                 if main_page_data.get('employer'):
                     structured_data['employer'] = main_page_data['employer']
         
-        structured_data['html_file'] = str(html_path)
-        structured_data['html_file_rel'] = f"html_output/job_{structured_data.get('job_id', 'unknown')}.html"
-        
-        # Save structured data
+        # Add file paths and reorder to maintain logical field order
         job_id = structured_data.get('job_id') or 'unknown'
         json_path = self.json_dir / f"job_{job_id}.json"
+        
+        # Build final ordered dict with file paths in correct position
+        final_ordered_data = {
+            'job_id': structured_data.get('job_id'),
+            'title': structured_data.get('title'),
+            'date_posted': structured_data.get('date_posted'),
+            'location': structured_data.get('location'),
+            'industry': structured_data.get('industry'),
+            'employer': structured_data.get('employer'),
+            'employment_type': structured_data.get('employment_type'),
+            'salary': structured_data.get('salary'),
+            'description': structured_data.get('description'),
+            'url': structured_data.get('url'),
+            'html_file': str(html_path),
+            'html_file_rel': f"html_output/job_{job_id}.html",
+            'json_file': str(json_path),
+            'json_file_rel': f"json_output/job_{job_id}.json",
+            'scraped_at': structured_data.get('scraped_at'),
+            'job_id_display': structured_data.get('job_id_display'),
+        }
+        
+        # Remove None values but keep job_id and title even if None
+        final_ordered_data = {k: v for k, v in final_ordered_data.items() if v is not None or k in ['job_id', 'title']}
+        
+        # Save structured data with proper ordering
         with open(json_path, 'w', encoding='utf-8') as f:
-            json.dump(structured_data, f, indent=2, ensure_ascii=False)
+            json.dump(final_ordered_data, f, indent=2, ensure_ascii=False)
         
-        structured_data['json_file'] = str(json_path)
-        structured_data['json_file_rel'] = f"json_output/job_{job_id}.json"
-        
-        return structured_data, None
+        return final_ordered_data, None
     
     def load_existing_summary(self):
         """Load existing scrape summary if it exists"""
@@ -544,17 +571,35 @@ class PNGworkforceScraper:
             }
             csv_data.append(csv_row)
         
-        # Save CSV
+        # Save CSV with logical column order (not alphabetical!)
         csv_path = self.json_dir / 'all_jobs.csv'
         if csv_data:
-            # Get all unique fieldnames (in case failed jobs have extra fields)
-            fieldnames = set()
+            # Define logical column order: most important fields first
+            primary_fields = [
+                'job_id', 'title', 'date_posted', 'location', 'industry', 
+                'employer', 'employment_type', 'salary', 'url'
+            ]
+            secondary_fields = ['html_file', 'json_file', 'description_length']
+            metadata_fields = ['scraped_at', 'status', 'error', 'failed_at']
+            
+            # Get all unique fieldnames
+            all_fieldnames = set()
             for row in csv_data:
-                fieldnames.update(row.keys())
-            fieldnames = sorted(list(fieldnames))
+                all_fieldnames.update(row.keys())
+            
+            # Build ordered fieldnames list (primary -> secondary -> metadata -> any extras)
+            ordered_fieldnames = []
+            for field in primary_fields + secondary_fields + metadata_fields:
+                if field in all_fieldnames:
+                    ordered_fieldnames.append(field)
+            
+            # Add any remaining fields that weren't in our order (shouldn't happen, but safe)
+            for field in sorted(all_fieldnames):
+                if field not in ordered_fieldnames:
+                    ordered_fieldnames.append(field)
             
             with open(csv_path, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer = csv.DictWriter(f, fieldnames=ordered_fieldnames)
                 writer.writeheader()
                 writer.writerows(csv_data)
             print(f"CSV file saved to: {csv_path} ({len(csv_data)} rows)")

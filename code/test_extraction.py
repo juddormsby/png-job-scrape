@@ -4,11 +4,13 @@
 from bs4 import BeautifulSoup
 from scraper import PNGworkforceScraper
 import json
+from pathlib import Path
 
 scraper = PNGworkforceScraper()
 
-# Test on first job
-test_html = "html_output/job_25045.html"
+# Handle paths - if running from code/, go up one level
+base_dir = Path(__file__).parent.parent if Path(__file__).parent.name == 'code' else Path(__file__).parent
+test_html = base_dir / "html_output" / "job_25045.html"
 with open(test_html, 'r') as f:
     html_content = f.read()
 
