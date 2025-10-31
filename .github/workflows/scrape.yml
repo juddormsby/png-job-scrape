@@ -1,0 +1,52 @@
+name: Daily Job Scrape
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Create output directories
+        run: |
+          mkdir -p html_output json_output
+      
+      - name: Run scraper
+        run: |
+          python scraper.py
+      
+      - name: Upload results as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-results
+          path: |
+            json_output/
+            html_output/
+          retention-days: 30
+      
+      - name: Commit and push results (if changes)
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add json_output/all_jobs.json json_output/all_jobs.csv json_output/scrape_summary.json || true
+          git diff --staged --quiet || git commit -m "Auto-update: Daily scrape results [skip ci]"
+          git push || echo "No changes to commit"
+

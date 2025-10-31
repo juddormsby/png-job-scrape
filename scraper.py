@@ -456,6 +456,47 @@ class PNGworkforceScraper:
                 pass
         return None
     
+    def is_job_already_scraped(self, job_id):
+        """
+        Check if a job has already been successfully scraped.
+        Returns True if both HTML and JSON files exist and are valid.
+        
+        Args:
+            job_id: Job ID to check
+            
+        Returns:
+            bool: True if job is already successfully scraped
+        """
+        if not job_id:
+            return False
+        
+        html_file = self.html_dir / f"job_{job_id}.html"
+        json_file = self.json_dir / f"job_{job_id}.json"
+        
+        # Both files must exist
+        if not (html_file.exists() and json_file.exists()):
+            return False
+        
+        # Check if JSON is valid and has required fields
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                job_data = json.load(f)
+                # Consider it successfully scraped if it has title and description
+                if job_data.get('title') and job_data.get('title') not in ['TITLE', '']:
+                    return True
+        except:
+            pass
+        
+        return False
+    
+    def get_failed_job_ids(self):
+        """Get set of job IDs that previously failed"""
+        existing_data = self.load_existing_summary()
+        if existing_data:
+            failed = existing_data.get('failed_jobs', [])
+            return {fj.get('job_id') for fj in failed if fj.get('job_id')}
+        return set()
+    
     def save_consolidated_files(self, all_jobs_data, failed_jobs):
         """Save consolidated JSON and CSV files"""
         # Prepare data for CSV (flatten some fields)
@@ -550,11 +591,21 @@ class PNGworkforceScraper:
         # Load existing data if updating
         existing_data = None
         existing_job_ids = set()
+        existing_jobs_map = {}
+        failed_job_ids = set()
+        
         if update_existing:
             existing_data = self.load_existing_summary()
             if existing_data:
-                existing_job_ids = {job.get('job_id') for job in existing_data.get('jobs', []) if job.get('job_id')}
+                existing_jobs_list = existing_data.get('jobs', [])
+                existing_job_ids = {job.get('job_id') for job in existing_jobs_list if job.get('job_id')}
+                existing_jobs_map = {job.get('job_id'): job for job in existing_jobs_list if job.get('job_id')}
                 print(f"Found {len(existing_job_ids)} existing jobs in database")
+            
+            # Get list of previously failed jobs to re-attempt
+            failed_job_ids = self.get_failed_job_ids()
+            if failed_job_ids:
+                print(f"Found {len(failed_job_ids)} previously failed jobs (will re-attempt)")
         
         # Fetch main page
         soup = self.fetch_page(start_url)
@@ -572,21 +623,69 @@ class PNGworkforceScraper:
             self.save_html(start_url, str(soup))
             return
         
+        # Filter jobs to scrape:
+        # 1. New jobs (not in database)
+        # 2. Previously failed jobs (re-attempt)
+        # 3. Jobs where files are missing (re-scrape)
+        jobs_to_scrape = []
+        jobs_to_skip = []
+        
+        for job in jobs:
+            job_id = self.extract_job_id_from_url(job['url'])
+            
+            if not job_id:
+                # Can't extract ID, scrape it
+                jobs_to_scrape.append((job, 'new'))
+                continue
+            
+            # Always re-attempt failed jobs
+            if job_id in failed_job_ids:
+                jobs_to_scrape.append((job, 'retry_failed'))
+                continue
+            
+            # Check if already successfully scraped
+            if self.is_job_already_scraped(job_id):
+                jobs_to_skip.append((job, job_id))
+                continue
+            
+            # New job or missing files - scrape it
+            jobs_to_scrape.append((job, 'new'))
+        
+        print(f"\nJobs to scrape: {len(jobs_to_scrape)}")
+        print(f"Jobs to skip (already scraped): {len(jobs_to_skip)}")
+        
         # Scrape each job detail page
         results = []
         failed_jobs = []
         new_count = 0
         updated_count = 0
+        retry_count = 0
+        skipped_count = 0
         
-        for i, job in enumerate(jobs, 1):
+        # First, add all skipped jobs back to results (they're already in database)
+        for job, job_id in jobs_to_skip:
+            if job_id in existing_jobs_map:
+                results.append(existing_jobs_map[job_id])
+                skipped_count += 1
+        
+        # Now scrape new/failed jobs
+        for i, (job, reason) in enumerate(jobs_to_scrape, 1):
             job_id = self.extract_job_id_from_url(job['url'])
             
-            print(f"\n[{i}/{len(jobs)}] Processing: {job.get('title', 'Unknown')[:50]}...")
+            reason_str = {
+                'new': 'NEW',
+                'retry_failed': 'RETRY (prev failed)',
+                'missing_files': 'RE-SCRAPE (missing files)'
+            }.get(reason, 'PROCESSING')
+            
+            print(f"\n[{i}/{len(jobs_to_scrape)}] [{reason_str}] {job.get('title', 'Unknown')[:50]}...")
             result, error = self.scrape_job_detail(job['url'], main_page_data=job)
             
             if result:
                 results.append(result)
-                if update_existing and job_id in existing_job_ids:
+                if reason == 'retry_failed':
+                    retry_count += 1
+                elif update_existing and job_id in existing_job_ids:
                     updated_count += 1
                 else:
                     new_count += 1
@@ -600,28 +699,38 @@ class PNGworkforceScraper:
                 })
             
             # Be respectful - delay between requests
-            if i < len(jobs):
+            if i < len(jobs_to_scrape):
                 time.sleep(self.delay)
         
-        # Merge with existing data
+        # Merge with existing data (results already includes skipped jobs)
         if update_existing and existing_data:
-            # Create a map of existing jobs by ID for deduplication
-            existing_jobs_map = {job.get('job_id'): job for job in existing_data.get('jobs', []) if job.get('job_id')}
+            # Create final jobs map from results (which includes skipped + new/updated)
+            final_jobs_map = {}
             
-            # Update existing or add new
+            # Add all results (includes skipped jobs + newly scraped)
             for job in results:
                 job_id = job.get('job_id')
                 if job_id:
-                    existing_jobs_map[job_id] = job
+                    final_jobs_map[job_id] = job
             
-            all_jobs_data = list(existing_jobs_map.values())
-            # Merge failed jobs too (avoid duplicates)
+            # Add any existing jobs that weren't in results (edge case)
+            for job_id, job in existing_jobs_map.items():
+                if job_id not in final_jobs_map:
+                    final_jobs_map[job_id] = job
+            
+            all_jobs_data = list(final_jobs_map.values())
+            
+            # Merge failed jobs (update existing failed with new failures)
             existing_failed = {fj.get('job_id'): fj for fj in existing_data.get('failed_jobs', []) if fj.get('job_id')}
             for fj in failed_jobs:
                 job_id = fj.get('job_id')
                 if job_id:
+                    # Update if this job was previously successful (now failed) or update existing failure
                     existing_failed[job_id] = fj
-            failed_jobs = list(existing_failed.values())
+            
+            # Remove from failed if now successful
+            successful_ids = {job.get('job_id') for job in results if job.get('job_id')}
+            failed_jobs = [fj for fj_id, fj in existing_failed.items() if fj_id not in successful_ids]
         else:
             all_jobs_data = results
         
@@ -633,6 +742,8 @@ class PNGworkforceScraper:
             'scrape_date': datetime.now().isoformat(),
             'total_jobs_found_on_page': len(jobs),
             'new_jobs_scraped': new_count,
+            'jobs_retried': retry_count,
+            'jobs_skipped': skipped_count,
             'jobs_updated': updated_count,
             'jobs_failed': len(failed_jobs),
             'total_jobs_in_database': len(all_jobs_data),
@@ -645,8 +756,10 @@ class PNGworkforceScraper:
         
         print(f"\n\nScraping complete!")
         print(f"New jobs scraped: {new_count}")
+        print(f"Jobs retried (prev failed): {retry_count}")
+        print(f"Jobs skipped (already scraped): {skipped_count}")
         print(f"Jobs updated: {updated_count}")
-        print(f"Failed: {len(failed_jobs)}/{len(jobs)}")
+        print(f"Failed: {len(failed_jobs)}")
         print(f"Total jobs in database: {len(all_jobs_data)}")
         print(f"HTML files saved to: {self.html_dir}")
         print(f"JSON files saved to: {self.json_dir}")

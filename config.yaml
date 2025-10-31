@@ -1,0 +1,25 @@
+# PNGworkforce Scraper Configuration
+
+# Scraper settings
+scraper:
+  base_url: "https://www.pngworkforce.com"
+  delay: 2  # seconds between requests
+  update_existing: true  # use incremental updates
+  
+# Output settings
+output:
+  html_dir: "html_output"
+  json_dir: "json_output"
+  
+# Job filtering
+filtering:
+  skip_already_scraped: true  # skip jobs that were already successfully scraped
+  retry_failed: true  # re-attempt previously failed jobs
+  max_failed_retries: 3  # max times to retry a failed job (0 = infinite)
+
+# GitHub Actions settings (for automated runs)
+github_actions:
+  enabled: false
+  schedule: "0 2 * * *"  # Run daily at 2 AM UTC (cron format)
+  commit_changes: false  # whether to commit updated files back to repo
+

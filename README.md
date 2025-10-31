@@ -134,22 +134,29 @@ Each job JSON file contains:
 
 ## Incremental Updates
 
-The scraper supports incremental updates by default:
+The scraper supports intelligent incremental updates by default:
 - On first run: Creates new `all_jobs.json` and `all_jobs.csv`
 - On subsequent runs: 
-  - Loads existing `all_jobs.json`
-  - Only scrapes new jobs (not in existing database)
-  - Updates existing jobs if they're found again
-  - Merges everything into updated consolidated files
-  - Tracks failed jobs separately
+  - **Skips already-scraped jobs**: If HTML and JSON files exist and are valid, skips scraping
+  - **Only scrapes new jobs**: Only downloads detail pages for jobs not yet scraped
+  - **Re-attempts failed jobs**: Automatically retries previously failed jobs
+  - **Updates existing jobs**: If a job is found again but data changed, updates it
+  - **Merges everything**: Combines all jobs into updated consolidated files
 
-This means you can run the scraper daily/weekly and it will maintain a growing database without re-scraping everything.
+**Performance Benefits:**
+- Day 1: Scrapes 150 jobs (5 minutes)
+- Day 2: Scrapes only 20 new jobs (45 seconds) 
+- Day 3: Scrapes only 15 new jobs (35 seconds)
+- ...and so on
 
-## Failed Jobs
+This makes it **perfect for daily automated runs** (e.g., GitHub Actions) - only processes what's new!
 
-Failed jobs (typically 404 errors for expired/removed listings) are tracked in:
-- `all_jobs.json` → `failed_jobs` array
-- `scrape_summary.json` → `failed_jobs` array (first 10)
+## Failed Jobs & Retries
+
+Failed jobs (typically 404 errors for expired/removed listings) are:
+- **Tracked separately** in `all_jobs.json` → `failed_jobs` array
+- **Automatically re-attempted** on each run (maybe the page came back)
+- **Removed from failed list** if they succeed on retry
 
 Each failed job entry includes:
 - `url`: The job URL that failed
@@ -158,14 +165,42 @@ Each failed job entry includes:
 - `error`: Error message (e.g., "404 Client Error: Not Found")
 - `failed_at`: Timestamp of failure
 
+**Why retry failed jobs?**
+- Sometimes jobs temporarily return 404 but come back
+- Network issues might cause false failures
+- Jobs might be temporarily removed then reposted
+
+## GitHub Actions (Automated Daily Runs)
+
+A GitHub Actions workflow is included at `.github/workflows/scrape.yml` for automated daily runs.
+
+**Setup:**
+1. Push your code to a GitHub repository
+2. GitHub Actions will automatically run the scraper daily at 2 AM UTC
+3. Results are committed back to the repo (if enabled)
+4. Artifacts are saved for 30 days
+
+**To enable:**
+- The workflow file is ready - just push to GitHub
+- Can also manually trigger from GitHub Actions tab
+- Edit `.github/workflows/scrape.yml` to change schedule or settings
+
+**Benefits:**
+- Fully automated - runs without manual intervention
+- Only scrapes new jobs (fast, efficient)
+- Free on GitHub Actions (2,000 minutes/month)
+- Results automatically saved to repo
+
 ## Customization
 
 You can modify the scraper behavior by editing `scraper.py`:
 
 - Change `delay` parameter in `PNGworkforceScraper()` to adjust time between requests (default: 2 seconds)
-- Set `update_existing=False` in `scrape_all()` to force full re-scrape
+- Set `update_existing=False` in `scrape_all()` to force full re-scrape (not recommended for daily runs)
 - Modify `extract_structured_data()` to extract additional fields
 - Adjust selectors in `extract_job_listings()` if the website structure changes
+
+**For daily runs**: Leave `update_existing=True` (default) to use incremental updates.
 
 ## Processing Existing Data
 
