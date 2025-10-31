@@ -27,6 +27,52 @@ from urllib.parse import urljoin, urlparse
 from datetime import datetime
 
 
+def format_date_dd_mm_yyyy(date_str):
+    """
+    Convert date string to DD/MM/YYYY format.
+    Handles various input formats:
+    - "1st October 2025" -> "01/10/2025"
+    - "30th October 2025" -> "30/10/2025"
+    - "2025-10-01" -> "01/10/2025"
+    - "October 1, 2025" -> "01/10/2025"
+    Returns original string if parsing fails.
+    """
+    if not date_str or not isinstance(date_str, str):
+        return date_str
+    
+    date_str = date_str.strip()
+    if not date_str:
+        return date_str
+    
+    # Try parsing common formats
+    date_formats = [
+        "%Y-%m-%d",           # ISO format: 2025-10-01
+        "%d %B %Y",           # 1 October 2025
+        "%dth %B %Y",         # 1st October 2025
+        "%dst %B %Y",         # 1st October 2025
+        "%dnd %B %Y",         # 2nd October 2025
+        "%drd %B %Y",         # 3rd October 2025
+        "%B %d, %Y",          # October 1, 2025
+        "%d/%m/%Y",           # Already DD/MM/YYYY
+        "%m/%d/%Y",           # MM/DD/YYYY format
+        "%Y/%m/%d",           # YYYY/MM/DD format
+    ]
+    
+    # Try each format
+    for fmt in date_formats:
+        try:
+            # Handle ordinal suffixes (1st, 2nd, 3rd, 4th, etc.)
+            date_str_clean = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', date_str)
+            parsed_date = datetime.strptime(date_str_clean, fmt.replace('%dth ', '%d ').replace('%dst ', '%d ').replace('%dnd ', '%d ').replace('%drd ', '%d '))
+            # Format as DD/MM/YYYY
+            return parsed_date.strftime("%d/%m/%Y")
+        except (ValueError, AttributeError):
+            continue
+    
+    # If all parsing fails, return original string
+    return date_str
+
+
 class PNGworkforceScraper:
     def __init__(self, base_url="https://www.pngworkforce.com", delay=1):
         """
@@ -126,15 +172,17 @@ class PNGworkforceScraper:
                                 if bold:
                                     date_text = bold.get_text(strip=True)
                                     if re.match(r'\d{1,2}\s+\w+\s+\d{4}', date_text):
-                                        job_data['date_advertised'] = date_text
-                                        job_data['date_posted'] = date_text  # Also set date_posted for consistency
+                                        formatted_date = format_date_dd_mm_yyyy(date_text)
+                                        job_data['date_advertised'] = formatted_date
+                                        job_data['date_posted'] = formatted_date  # Also set date_posted for consistency
                                 else:
                                     # Try regex extraction
                                     date_match = re.search(r'Date (?:advertised|Posted)[:\s]+(?:\*\*)?(\d{1,2}\s+\w+\s+\d{4})', parent_text, re.I)
                                     if date_match:
                                         date_text = date_match.group(1)
-                                        job_data['date_advertised'] = date_text
-                                        job_data['date_posted'] = date_text
+                                        formatted_date = format_date_dd_mm_yyyy(date_text)
+                                        job_data['date_advertised'] = formatted_date
+                                        job_data['date_posted'] = formatted_date
                         
                         # Extract location - look for patterns like "Company - Location"
                         # Or location appears near the date
@@ -282,19 +330,22 @@ class PNGworkforceScraper:
             if date_parent:
                 date_span = date_parent.find('span')
                 if date_span:
-                    data['date_posted'] = date_span.get_text(strip=True)
+                    raw_date = date_span.get_text(strip=True)
+                    data['date_posted'] = format_date_dd_mm_yyyy(raw_date)
                 else:
                     # Try regex extraction from parent text
                     date_match = re.search(r'Date Posted:\s*([^\n<]+)', date_parent.get_text(), re.I)
                     if date_match:
-                        data['date_posted'] = date_match.group(1).strip()
+                        raw_date = date_match.group(1).strip()
+                        data['date_posted'] = format_date_dd_mm_yyyy(raw_date)
         
         # Fallback to structured data (ISO format)
         if 'date_posted' not in data:
             date_meta = soup.find('meta', {'itemprop': 'datePosted'})
             if date_meta and date_meta.get('content'):
-                data['date_posted'] = date_meta.get('content')
-                data['date_posted_iso'] = date_meta.get('content')  # Keep ISO format too
+                raw_date = date_meta.get('content')
+                data['date_posted'] = format_date_dd_mm_yyyy(raw_date)
+                data['date_posted_iso'] = raw_date  # Keep ISO format too
         
         # Also check for "Date advertised" pattern (sometimes used on main page)
         if 'date_posted' not in data:
@@ -304,11 +355,13 @@ class PNGworkforceScraper:
                 if date_parent:
                     bold = date_parent.find(['strong', 'b'])
                     if bold:
-                        data['date_posted'] = bold.get_text(strip=True)
+                        raw_date = bold.get_text(strip=True)
+                        data['date_posted'] = format_date_dd_mm_yyyy(raw_date)
                     else:
                         date_match = re.search(r'Date advertised[:\s]+([^\n<]+)', date_parent.get_text(), re.I)
                         if date_match:
-                            data['date_posted'] = date_match.group(1).strip()
+                            raw_date = date_match.group(1).strip()
+                            data['date_posted'] = format_date_dd_mm_yyyy(raw_date)
         
         # Extract industry - try structured data first
         industry_elem = soup.find('span', itemprop='industry')
@@ -454,9 +507,9 @@ class PNGworkforceScraper:
             # Use main page date if detail page doesn't have it
             if not structured_data.get('date_posted'):
                 if main_page_data.get('date_posted'):
-                    structured_data['date_posted'] = main_page_data['date_posted']
+                    structured_data['date_posted'] = format_date_dd_mm_yyyy(main_page_data['date_posted'])
                 elif main_page_data.get('date_advertised'):
-                    structured_data['date_posted'] = main_page_data['date_advertised']
+                    structured_data['date_posted'] = format_date_dd_mm_yyyy(main_page_data['date_advertised'])
             
             # Use main page location if detail page doesn't have it
             if not structured_data.get('location'):
@@ -471,12 +524,15 @@ class PNGworkforceScraper:
         # Add file paths and reorder to maintain logical field order
         job_id = structured_data.get('job_id') or 'unknown'
         json_path = self.json_dir / f"job_{job_id}.json"
+        current_time = datetime.now().isoformat()
         
         # Build final ordered dict with file paths in correct position
         final_ordered_data = {
             'job_id': structured_data.get('job_id'),
             'title': structured_data.get('title'),
             'date_posted': structured_data.get('date_posted'),
+            'first_seen': current_time,  # Will be updated if job exists in scrape_all
+            'last_seen': current_time,   # Always update to current time
             'location': structured_data.get('location'),
             'industry': structured_data.get('industry'),
             'employer': structured_data.get('employer'),
@@ -564,7 +620,9 @@ class PNGworkforceScraper:
                 'job_id': job.get('job_id', ''),
                 'title': job.get('title', ''),
                 'url': job.get('url', ''),
-                'date_posted': job.get('date_posted', job.get('date_advertised', '')),  # Fallback to old field name
+                'date_posted': format_date_dd_mm_yyyy(job.get('date_posted', job.get('date_advertised', ''))),  # Fallback to old field name and format
+                'first_seen': job.get('first_seen', ''),
+                'last_seen': job.get('last_seen', ''),
                 'location': job.get('location', ''),
                 'industry': job.get('industry', ''),
                 'employer': job.get('employer', ''),
@@ -605,7 +663,7 @@ class PNGworkforceScraper:
         if csv_data:
             # Define logical column order: most important fields first
             primary_fields = [
-                'job_id', 'title', 'date_posted', 'location', 'industry', 
+                'job_id', 'title', 'date_posted', 'first_seen', 'last_seen', 'location', 'industry', 
                 'employer', 'employment_type', 'salary', 'url'
             ]
             secondary_fields = ['html_file', 'json_file', 'description_length']
@@ -729,6 +787,8 @@ class PNGworkforceScraper:
         print(f"Jobs to skip (already scraped): {len(jobs_to_skip)}")
         
         # Scrape each job detail page
+        # Use a single timestamp for this entire scrape session
+        scrape_timestamp = datetime.now().isoformat()
         results = []
         failed_jobs = []
         new_count = 0
@@ -737,9 +797,15 @@ class PNGworkforceScraper:
         skipped_count = 0
         
         # First, add all skipped jobs back to results (they're already in database)
+        # Update their last_seen since we encountered them on this scrape
         for job, job_id in jobs_to_skip:
             if job_id in existing_jobs_map:
-                results.append(existing_jobs_map[job_id])
+                existing_job = existing_jobs_map[job_id].copy()
+                existing_job['last_seen'] = scrape_timestamp  # Update last_seen since we saw it
+                # Preserve first_seen if it exists, otherwise use scrape timestamp (backfill)
+                if not existing_job.get('first_seen'):
+                    existing_job['first_seen'] = scrape_timestamp
+                results.append(existing_job)
                 skipped_count += 1
         
         # Now scrape new/failed jobs
@@ -777,6 +843,8 @@ class PNGworkforceScraper:
                 time.sleep(self.delay)
         
         # Merge with existing data (results already includes skipped jobs)
+        # scrape_timestamp was set at the start of the scrape session
+        
         if update_existing and existing_data:
             # Create final jobs map from results (which includes skipped + new/updated)
             final_jobs_map = {}
@@ -785,11 +853,28 @@ class PNGworkforceScraper:
             for job in results:
                 job_id = job.get('job_id')
                 if job_id:
+                    # Update last_seen to scrape timestamp for all jobs we encountered
+                    job['last_seen'] = scrape_timestamp
+                    
+                    # If job exists in existing data, preserve first_seen
+                    if job_id in existing_jobs_map:
+                        existing_job = existing_jobs_map[job_id]
+                        if existing_job.get('first_seen'):
+                            job['first_seen'] = existing_job['first_seen']
+                        else:
+                            # If existing job doesn't have first_seen, use scrape timestamp (backfill)
+                            job['first_seen'] = scrape_timestamp
+                    else:
+                        # New job - set first_seen to scrape timestamp if not already set
+                        if not job.get('first_seen'):
+                            job['first_seen'] = scrape_timestamp
+                    
                     final_jobs_map[job_id] = job
             
-            # Add any existing jobs that weren't in results (edge case)
+            # Add any existing jobs that weren't in results (edge case - jobs not on main page anymore)
             for job_id, job in existing_jobs_map.items():
                 if job_id not in final_jobs_map:
+                    # Preserve existing first_seen and last_seen for jobs not seen this scrape
                     final_jobs_map[job_id] = job
             
             all_jobs_data = list(final_jobs_map.values())
@@ -806,6 +891,13 @@ class PNGworkforceScraper:
             successful_ids = {job.get('job_id') for job in results if job.get('job_id')}
             failed_jobs = [fj for fj_id, fj in existing_failed.items() if fj_id not in successful_ids]
         else:
+            # No existing data - all jobs are new, ensure first_seen and last_seen are set
+            scrape_timestamp = datetime.now().isoformat()
+            for job in results:
+                if not job.get('first_seen'):
+                    job['first_seen'] = scrape_timestamp
+                if not job.get('last_seen'):
+                    job['last_seen'] = scrape_timestamp
             all_jobs_data = results
         
         # Save consolidated files

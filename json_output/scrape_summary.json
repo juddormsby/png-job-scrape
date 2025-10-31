@@ -1,82 +1,11 @@
 {
-  "scrape_date": "2025-10-31T15:39:38.852620",
+  "scrape_date": "2025-10-31T17:00:11.945563",
   "total_jobs_found_on_page": 150,
   "new_jobs_scraped": 0,
   "jobs_retried": 0,
-  "jobs_skipped": 130,
+  "jobs_skipped": 150,
   "jobs_updated": 0,
-  "jobs_failed": 20,
-  "total_jobs_in_database": 130,
-  "failed_jobs": [
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/machinist-fitter-pom/24970",
-      "job_id": "24970",
-      "title": "Machinist/Fitter - POM",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/machinist-fitter-pom/24970",
-      "failed_at": "2025-10-31T15:38:53.385380"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/electrician/24952",
-      "job_id": "24952",
-      "title": "Electrician",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/electrician/24952",
-      "failed_at": "2025-10-31T15:38:55.766437"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/porgera-operator-senior-refinery/24920",
-      "job_id": "24920",
-      "title": "Porgera | Operator, Senior - Refinery",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-operator-senior-refinery/24920",
-      "failed_at": "2025-10-31T15:38:58.230028"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/porgera-assistant-sample-preparer-assay-laboratory/24915",
-      "job_id": "24915",
-      "title": "Porgera | Assistant Sample Preparer - Assay Laboratory",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-assistant-sample-preparer-assay-laboratory/24915",
-      "failed_at": "2025-10-31T15:39:00.606768"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/porgera-supervisor-assay-laboratory/24914",
-      "job_id": "24914",
-      "title": "Porgera | Supervisor - Assay Laboratory",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-supervisor-assay-laboratory/24914",
-      "failed_at": "2025-10-31T15:39:02.988988"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/manager-client-support-unit-human-resources-deprtment/24912",
-      "job_id": "24912",
-      "title": "MANAGER – CLIENT SUPPORT UNIT, HUMAN RESOURCES DEPRTMENT",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/manager-client-support-unit-human-resources-deprtment/24912",
-      "failed_at": "2025-10-31T15:39:05.398083"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-supervision-and-compliance-division-financial-analysis-supervision-unit-2x/24911",
-      "job_id": "24911",
-      "title": "ANALYST AML/CTF – SUPERVISION AND COMPLIANCE DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT. (2x)",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-supervision-and-compliance-division-financial-analysis-supervision-unit-2x/24911",
-      "failed_at": "2025-10-31T15:39:07.773809"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-intelligence-management-division-financial-analysis-supervision-unit-2x/24910",
-      "job_id": "24910",
-      "title": "ANALYST AML/CTF – INTELLIGENCE MANAGEMENT DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT. (2x)",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-intelligence-management-division-financial-analysis-supervision-unit-2x/24910",
-      "failed_at": "2025-10-31T15:39:10.122205"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-policy-development-and-coordination-division-financial-analysis-supervision-unit/24909",
-      "job_id": "24909",
-      "title": "ANALYST AML/CTF – POLICY DEVELOPMENT AND COORDINATION DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-policy-development-and-coordination-division-financial-analysis-supervision-unit/24909",
-      "failed_at": "2025-10-31T15:39:12.531950"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/senior-analyst-aml-ctf-policy-development-and-compliance-division-financial-analysis-supervision-unit/24908",
-      "job_id": "24908",
-      "title": "SENIOR ANALYST AML/CTF – POLICY DEVELOPMENT AND COMPLIANCE DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT.",
-      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/senior-analyst-aml-ctf-policy-development-and-compliance-division-financial-analysis-supervision-unit/24908",
-      "failed_at": "2025-10-31T15:39:14.920673"
-    }
-  ]
+  "jobs_failed": 0,
+  "total_jobs_in_database": 150,
+  "failed_jobs": []
 }
