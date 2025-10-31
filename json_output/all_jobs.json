@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-31T15:23:07.975866",
+  "last_updated": "2025-10-31T15:39:38.838591",
   "total_jobs": 130,
   "total_failed": 20,
   "jobs": [
@@ -2253,140 +2253,140 @@
       "job_id": "24970",
       "title": "Machinist/Fitter - POM",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/machinist-fitter-pom/24970",
-      "failed_at": "2025-10-31T15:18:56.443098"
+      "failed_at": "2025-10-31T15:38:53.385380"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/electrician/24952",
       "job_id": "24952",
       "title": "Electrician",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/electrician/24952",
-      "failed_at": "2025-10-31T15:19:39.886736"
+      "failed_at": "2025-10-31T15:38:55.766437"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/porgera-operator-senior-refinery/24920",
       "job_id": "24920",
       "title": "Porgera | Operator, Senior - Refinery",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-operator-senior-refinery/24920",
-      "failed_at": "2025-10-31T15:20:57.325739"
+      "failed_at": "2025-10-31T15:38:58.230028"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/porgera-assistant-sample-preparer-assay-laboratory/24915",
       "job_id": "24915",
       "title": "Porgera | Assistant Sample Preparer - Assay Laboratory",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-assistant-sample-preparer-assay-laboratory/24915",
-      "failed_at": "2025-10-31T15:21:08.664480"
+      "failed_at": "2025-10-31T15:39:00.606768"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/porgera-supervisor-assay-laboratory/24914",
       "job_id": "24914",
       "title": "Porgera | Supervisor - Assay Laboratory",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/porgera-supervisor-assay-laboratory/24914",
-      "failed_at": "2025-10-31T15:21:11.084720"
+      "failed_at": "2025-10-31T15:39:02.988988"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/manager-client-support-unit-human-resources-deprtment/24912",
       "job_id": "24912",
       "title": "MANAGER – CLIENT SUPPORT UNIT, HUMAN RESOURCES DEPRTMENT",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/manager-client-support-unit-human-resources-deprtment/24912",
-      "failed_at": "2025-10-31T15:21:13.541942"
+      "failed_at": "2025-10-31T15:39:05.398083"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-supervision-and-compliance-division-financial-analysis-supervision-unit-2x/24911",
       "job_id": "24911",
       "title": "ANALYST AML/CTF – SUPERVISION AND COMPLIANCE DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT. (2x)",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-supervision-and-compliance-division-financial-analysis-supervision-unit-2x/24911",
-      "failed_at": "2025-10-31T15:21:15.936810"
+      "failed_at": "2025-10-31T15:39:07.773809"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-intelligence-management-division-financial-analysis-supervision-unit-2x/24910",
       "job_id": "24910",
       "title": "ANALYST AML/CTF – INTELLIGENCE MANAGEMENT DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT. (2x)",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-intelligence-management-division-financial-analysis-supervision-unit-2x/24910",
-      "failed_at": "2025-10-31T15:21:18.340183"
+      "failed_at": "2025-10-31T15:39:10.122205"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-policy-development-and-coordination-division-financial-analysis-supervision-unit/24909",
       "job_id": "24909",
       "title": "ANALYST AML/CTF – POLICY DEVELOPMENT AND COORDINATION DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-aml-ctf-policy-development-and-coordination-division-financial-analysis-supervision-unit/24909",
-      "failed_at": "2025-10-31T15:21:20.814489"
+      "failed_at": "2025-10-31T15:39:12.531950"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/senior-analyst-aml-ctf-policy-development-and-compliance-division-financial-analysis-supervision-unit/24908",
       "job_id": "24908",
       "title": "SENIOR ANALYST AML/CTF – POLICY DEVELOPMENT AND COMPLIANCE DIVISION, FINANCIAL ANALYSIS SUPERVISION UNIT.",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/senior-analyst-aml-ctf-policy-development-and-compliance-division-financial-analysis-supervision-unit/24908",
-      "failed_at": "2025-10-31T15:21:23.270255"
+      "failed_at": "2025-10-31T15:39:14.920673"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/analyst-international-transaction-and-monitoring-unit-economics-department/24907",
       "job_id": "24907",
       "title": "ANALYST – INTERNATIONAL TRANSACTION AND MONITORING UNIT, ECONOMICS DEPARTMENT",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/analyst-international-transaction-and-monitoring-unit-economics-department/24907",
-      "failed_at": "2025-10-31T15:21:25.729143"
+      "failed_at": "2025-10-31T15:39:17.373673"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/it-security-analyst-it-security-unit-information-communication-technology-department/24906",
       "job_id": "24906",
       "title": "IT SECURITY ANALYST – IT SECURITY UNIT, INFORMATION COMMUNICATION TECHNOLOGY DEPARTMENT",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/it-security-analyst-it-security-unit-information-communication-technology-department/24906",
-      "failed_at": "2025-10-31T15:21:28.145509"
+      "failed_at": "2025-10-31T15:39:19.739950"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/manager-information-technology-operations-unit-information-and-communications-technology-department/24905",
       "job_id": "24905",
       "title": "MANAGER – INFORMATION TECHNOLOGY OPERATIONS UNIT, INFORMATION AND COMMUNICATIONS TECHNOLOGY DEPARTMENT.",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/manager-information-technology-operations-unit-information-and-communications-technology-department/24905",
-      "failed_at": "2025-10-31T15:21:30.644497"
+      "failed_at": "2025-10-31T15:39:22.120321"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/monitoring-and-evaluation-officer/24901",
       "job_id": "24901",
       "title": "Monitoring and Evaluation Officer",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/monitoring-and-evaluation-officer/24901",
-      "failed_at": "2025-10-31T15:21:33.033055"
+      "failed_at": "2025-10-31T15:39:24.543813"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/float-driver-prime-mover-lowboy-float-trailer/24856",
       "job_id": "24856",
       "title": "Float Driver - Prime Mover & Lowboy Float Trailer",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/float-driver-prime-mover-lowboy-float-trailer/24856",
-      "failed_at": "2025-10-31T15:22:06.585061"
+      "failed_at": "2025-10-31T15:39:26.914810"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/operations-maintenance-manager-strategic-facilities-asset-oversight/24855",
       "job_id": "24855",
       "title": "Operations Maintenance Manager – Strategic Facilities & Asset Oversight",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/operations-maintenance-manager-strategic-facilities-asset-oversight/24855",
-      "failed_at": "2025-10-31T15:22:08.972346"
+      "failed_at": "2025-10-31T15:39:29.285320"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/executive-officer-executive-support-commercial-leasing/24854",
       "job_id": "24854",
       "title": "Executive Officer – Executive Support & Commercial Leasing",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/executive-officer-executive-support-commercial-leasing/24854",
-      "failed_at": "2025-10-31T15:22:11.502222"
+      "failed_at": "2025-10-31T15:39:31.648650"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/protection-coordinator-digital-safety/24837",
       "job_id": "24837",
       "title": "Protection Coordinator (Digital Safety)",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/protection-coordinator-digital-safety/24837",
-      "failed_at": "2025-10-31T15:22:19.576480"
+      "failed_at": "2025-10-31T15:39:34.065727"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/senior-exploration-geologists-exploration-geologists/24821",
       "job_id": "24821",
       "title": "Senior Exploration Geologists & Exploration Geologists",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/senior-exploration-geologists-exploration-geologists/24821",
-      "failed_at": "2025-10-31T15:22:34.704129"
+      "failed_at": "2025-10-31T15:39:36.456216"
     },
     {
       "url": "https://www.pngworkforce.com/jobs/view/exploration-field-technician/24820",
       "job_id": "24820",
       "title": "Exploration Field Technician",
       "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/exploration-field-technician/24820",
-      "failed_at": "2025-10-31T15:22:37.088158"
+      "failed_at": "2025-10-31T15:39:38.822036"
     }
   ]
 }
