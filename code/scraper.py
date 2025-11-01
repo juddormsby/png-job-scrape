@@ -23,7 +23,7 @@ import time
 import re
 import csv
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, unquote, parse_qs
 from datetime import datetime
 
 
@@ -256,6 +256,275 @@ class PNGworkforceScraper:
                 unique_jobs.append(job)
         
         return unique_jobs
+    
+    def extract_job_url_from_redirect(self, redirect_url):
+        """
+        Extract the actual job URL from a redirect URL.
+        
+        Handles URLs like: https://www.pngworkforce.com/s/redirect?url=https%3A%2F%2Fwww.pngworkforce.com%2Fjobs%2Fview%2F...
+        Returns the decoded job URL, or None if extraction fails.
+        """
+        try:
+            # Parse the redirect URL
+            parsed = urlparse(redirect_url)
+            query_params = parse_qs(parsed.query)
+            
+            # Get the 'url' parameter
+            if 'url' in query_params:
+                encoded_url = query_params['url'][0]
+                # URL decode
+                decoded_url = unquote(encoded_url)
+                return decoded_url
+            
+            # Also try direct extraction from query string
+            if '?' in redirect_url:
+                # Extract everything after url=
+                match = re.search(r'url=([^&]+)', redirect_url)
+                if match:
+                    encoded_url = match.group(1)
+                    decoded_url = unquote(encoded_url)
+                    return decoded_url
+            
+            return None
+        except Exception:
+            return None
+    
+    def extract_homepage_jobs(self, soup):
+        """
+        Extract job listings from the homepage format.
+        
+        Handles jobs in <div class="job-result-featured"> with redirect links.
+        Returns list of dicts with: title, url, date_advertised, location, employer
+        """
+        jobs = []
+        
+        # Find all job result divs
+        job_divs = soup.find_all('div', class_='job-result-featured')
+        
+        for job_div in job_divs:
+            job_data = {}
+            
+            # Extract title - usually in h4 with class t2
+            title_elem = job_div.find('h4', class_='t2')
+            if title_elem:
+                title_link = title_elem.find('a')
+                if title_link:
+                    job_data['title'] = title_link.get_text(strip=True)
+                    
+                    # Extract URL - could be redirect or direct
+                    href = title_link.get('href', '')
+                    if href:
+                        if '/s/redirect' in href:
+                            # Extract actual URL from redirect
+                            actual_url = self.extract_job_url_from_redirect(href)
+                            if actual_url:
+                                job_data['url'] = actual_url
+                            else:
+                                # Fallback: use redirect URL as-is
+                                job_data['url'] = urljoin(self.base_url, href)
+                        else:
+                            # Direct link
+                            job_data['url'] = urljoin(self.base_url, href)
+            
+            # Extract date advertised - look for "Date advertised: **DD MMM YYYY**"
+            date_elem = job_div.find(string=re.compile(r'Date advertised', re.I))
+            if date_elem:
+                date_parent = date_elem.find_parent()
+                if date_parent:
+                    # Look for strong/bold tag with date
+                    bold = date_parent.find(['strong', 'b'])
+                    if bold:
+                        date_text = bold.get_text(strip=True)
+                        # Remove "*NEW*" if present
+                        date_text = re.sub(r'\*NEW\*', '', date_text).strip()
+                        if re.match(r'\d{1,2}\s+\w+\s+\d{4}', date_text):
+                            job_data['date_advertised'] = format_date_dd_mm_yyyy(date_text)
+                            job_data['date_posted'] = job_data['date_advertised']
+                    else:
+                        # Try regex extraction
+                        date_match = re.search(r'Date advertised:\s*\*\*?([^*]+)\*\*?', date_parent.get_text(), re.I)
+                        if date_match:
+                            date_text = date_match.group(1).strip()
+                            # Remove "*NEW*" if present
+                            date_text = re.sub(r'\*NEW\*', '', date_text).strip()
+                            job_data['date_advertised'] = format_date_dd_mm_yyyy(date_text)
+                            job_data['date_posted'] = job_data['date_advertised']
+            
+            # Extract employer - look for strong tags, but skip date ones
+            # Usually appears in paragraph after date line
+            all_strong = job_div.find_all('strong')
+            for strong_elem in all_strong:
+                employer_text = strong_elem.get_text(strip=True)
+                # Skip if it's "*NEW*", empty, or looks like a date
+                if employer_text and '*' not in employer_text and not re.match(r'\d{1,2}\s+\w+\s+\d{4}', employer_text) and len(employer_text) > 2:
+                    # Check if parent is not the date parent
+                    parent = strong_elem.find_parent()
+                    if parent and 'Date advertised' not in parent.get_text():
+                        job_data['employer'] = employer_text
+                        break
+            
+            # Extract location - look for links with location names
+            location_pattern = r'(?:National Capital District|Morobe|Autonomous Region of Bougainville|East Sepik|East New Britain|Eastern Highlands|Enga|Gulf|Hela|Jiwaka|Madang|Manus|Milne Bay|New Ireland|Oro|Northern|Sandaun|West Sepik|Simbu|Chimbu|Southern Highlands|West New Britain|Western|Fly|Western Highlands|Solomon Islands|South Pacific|Vanuatu|Papua New Guinea|Port Moresby|Lae)'
+            location_link = job_div.find('a', href=re.compile(r'meta_R=', re.I))
+            if location_link:
+                location_text = location_link.get_text(strip=True)
+                if re.match(location_pattern, location_text, re.I):
+                    job_data['location'] = location_text
+            else:
+                # Fallback: search in text
+                location_match = re.search(location_pattern, job_div.get_text(), re.I)
+                if location_match:
+                    job_data['location'] = location_match.group()
+            
+            # Extract industry - look for links with industry
+            industry_link = job_div.find('a', href=re.compile(r'meta_C=', re.I))
+            if industry_link and 'meta_R=' not in industry_link.get('href', ''):
+                industry_text = industry_link.get_text(strip=True)
+                if industry_text:
+                    job_data['industry'] = industry_text
+            
+            # Only add if we have at least a URL
+            if 'url' in job_data:
+                jobs.append(job_data)
+        
+        return jobs
+    
+    def get_homepage_pagination_links(self, soup):
+        """
+        Extract pagination links from homepage.
+        
+        Returns list of URLs for all pages (including current page).
+        """
+        pagination_urls = []
+        
+        # Find pagination div
+        pager_div = soup.find('div', class_=re.compile(r'pager|pagination', re.I))
+        if not pager_div:
+            return pagination_urls
+        
+        # Get base URL (current page URL or homepage)
+        base_url = self.base_url
+        
+        # Find all page links
+        page_links = pager_div.find_all('a', href=True)
+        seen_urls = set()
+        
+        for link in page_links:
+            href = link.get('href', '')
+            if not href or href.startswith('javascript:'):
+                continue
+            
+            # Build full URL
+            if href.startswith('/'):
+                full_url = urljoin(self.base_url, href)
+            elif href.startswith('?'):
+                # Relative query string
+                full_url = f"{self.base_url}{href}"
+            elif '://' in href:
+                full_url = href
+            else:
+                full_url = urljoin(self.base_url, href)
+            
+            if full_url not in seen_urls:
+                pagination_urls.append(full_url)
+                seen_urls.add(full_url)
+        
+        return pagination_urls
+    
+    def fetch_homepage_ajax_page(self, start_rank=1):
+        """
+        Fetch a page of jobs from the homepage AJAX endpoint.
+        
+        Args:
+            start_rank: Starting rank for pagination (1, 11, 21, 31, etc.)
+        
+        Returns:
+            BeautifulSoup object or None if fetch fails
+        """
+        ajax_url = f"{self.base_url}/ajax/get-search-page-home"
+        params = {
+            'collection': 'pngwf_live',
+            'query': '!nojobs',
+            'form': 'jobs',
+            'num_ranks': '10',
+            'sort': 'dmeta8',
+            'start_rank': str(start_rank)
+        }
+        
+        try:
+            # Use AJAX headers (important - site requires X-Requested-With header)
+            headers = {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Accept': '*/*',
+                'Referer': f'{self.base_url}/',
+                'User-Agent': self.session.headers.get('User-Agent', 'Mozilla/5.0')
+            }
+            
+            response = self.session.get(ajax_url, params=params, headers=headers, timeout=30)
+            response.raise_for_status()
+            return BeautifulSoup(response.content, 'html.parser')
+        except requests.RequestException as e:
+            print(f"Error fetching AJAX page (start_rank={start_rank}): {e}")
+            return None
+    
+    def scrape_homepage_jobs(self):
+        """
+        Scrape all jobs from homepage using the AJAX endpoint.
+        
+        Returns list of all job dicts found across all pages.
+        """
+        all_jobs = []
+        seen_urls = set()
+        start_rank = 1
+        max_pages = 500  # Safety limit (10 jobs per page = max 5000 jobs)
+        page_count = 0
+        
+        print(f"Starting homepage scraping via AJAX endpoint")
+        
+        while start_rank <= max_pages * 10:
+            print(f"  Fetching page {page_count + 1} (start_rank={start_rank})")
+            soup = self.fetch_homepage_ajax_page(start_rank)
+            
+            if not soup:
+                print(f"  Failed to fetch page, stopping")
+                break
+            
+            page_count += 1
+            
+            # Extract jobs from this page
+            page_jobs = self.extract_homepage_jobs(soup)
+            
+            if not page_jobs:
+                print(f"  No jobs found on page {page_count}, stopping")
+                break
+            
+            # Add jobs (deduplicate by URL)
+            jobs_added = 0
+            for job in page_jobs:
+                job_url = job.get('url')
+                if job_url:
+                    # Normalize URL for deduplication
+                    normalized_url = job_url.rstrip('/')
+                    if normalized_url not in seen_urls:
+                        all_jobs.append(job)
+                        seen_urls.add(normalized_url)
+                        jobs_added += 1
+            
+            print(f"  Found {len(page_jobs)} jobs on page, {jobs_added} new")
+            
+            # If we got fewer than expected jobs, we might be at the end
+            if len(page_jobs) < 10:
+                print(f"  Got fewer than 10 jobs, likely at end of results")
+                break
+            
+            # Move to next page (10 jobs per page)
+            start_rank += 10
+            
+            # Be respectful - delay between requests
+            time.sleep(self.delay)
+        
+        print(f"Homepage scraping complete: found {len(all_jobs)} unique jobs across {page_count} pages")
+        return all_jobs
     
     def extract_job_id_from_url(self, url):
         """Extract job ID from URL (e.g., /jobs/view/title/25045 -> 25045)"""
@@ -739,14 +1008,45 @@ class PNGworkforceScraper:
             if failed_job_ids:
                 print(f"Found {len(failed_job_ids)} previously failed jobs (will re-attempt)")
         
-        # Fetch main page
+        # Scrape from homepage (with pagination) to discover all jobs
+        print("\n=== Scraping homepage (all pages) ===")
+        homepage_jobs = self.scrape_homepage_jobs()
+        
+        # Also scrape from latest jobs page (backward compatibility, may have some jobs not on homepage)
+        print(f"\n=== Scraping latest jobs page ===")
         soup = self.fetch_page(start_url)
         if not soup:
-            print("Failed to fetch main page")
-            return
+            print("Failed to fetch latest jobs page")
+            latest_jobs = []
+        else:
+            latest_jobs = self.extract_job_listings(soup)
         
-        # Extract job listings
-        jobs = self.extract_job_listings(soup)
+        # Merge both sources and deduplicate by URL
+        print(f"\n=== Merging job sources ===")
+        print(f"Homepage jobs: {len(homepage_jobs)}")
+        print(f"Latest jobs page: {len(latest_jobs)}")
+        
+        # Create a map by URL for deduplication
+        jobs_by_url = {}
+        
+        # Add homepage jobs first
+        for job in homepage_jobs:
+            url = job.get('url')
+            if url:
+                # Normalize URL (remove trailing slashes, etc.)
+                normalized_url = url.rstrip('/')
+                jobs_by_url[normalized_url] = job
+        
+        # Add latest jobs (may override if same URL, but that's fine)
+        for job in latest_jobs:
+            url = job.get('url')
+            if url:
+                normalized_url = url.rstrip('/')
+                jobs_by_url[normalized_url] = job
+        
+        # Convert back to list
+        jobs = list(jobs_by_url.values())
+        print(f"Total unique jobs after merge: {len(jobs)}")
         print(f"Found {len(jobs)} job listings on page")
         
         if not jobs:
