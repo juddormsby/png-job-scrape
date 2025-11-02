@@ -1,9 +1,9 @@
 {
-  "scrape_date": "2025-11-01T12:42:39.914150",
+  "scrape_date": "2025-11-02T02:41:13.260129",
   "total_jobs_found_on_page": 178,
-  "new_jobs_scraped": 13,
+  "new_jobs_scraped": 0,
   "jobs_retried": 0,
-  "jobs_skipped": 165,
+  "jobs_skipped": 178,
   "jobs_updated": 0,
   "jobs_failed": 0,
   "total_jobs_in_database": 165,
