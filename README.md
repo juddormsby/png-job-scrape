@@ -68,7 +68,7 @@ Each job JSON file contains:
 
 **Job Details:**
 - `employment_type`: Full-Time, Part-Time, Contract, etc. (when available)
-- `salary`: Salary information (when available)
+- `salary`: Salary information (typically missing)
 - `url`: Job detail page URL
 - `description`: Full job description text (up to 10,000 chars)
 
