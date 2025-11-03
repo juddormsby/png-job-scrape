@@ -674,6 +674,51 @@ class PNGworkforceScraper:
                     name_text = company_name.get_text(strip=True)
                     if name_text and 'pngworkforce' not in name_text.lower() and len(name_text) > 2:
                         data['employer'] = name_text
+            
+            # Extract employer profile URL (link to company profile page)
+            profile_link = hiring_org.find('a', href=re.compile(r'/jobs/view-company/'))
+            if profile_link:
+                profile_href = profile_link.get('href', '')
+                if profile_href:
+                    # Make it absolute URL if relative
+                    if profile_href.startswith('/'):
+                        data['employer_profile_url'] = f"{self.base_url}{profile_href}"
+                    else:
+                        data['employer_profile_url'] = profile_href
+            
+            # Extract employer phone number
+            phone_elem = hiring_org.find('span', {'id': 'comp_phone'}) or hiring_org.find('span', itemprop='telephone')
+            if phone_elem:
+                phone_text = phone_elem.get_text(strip=True)
+                if phone_text:
+                    data['employer_phone'] = phone_text
+            
+            # Extract employer address
+            addr_elem = hiring_org.find('span', {'id': 'comp_addr'}) or hiring_org.find('span', itemprop='streetAddress')
+            if addr_elem:
+                addr_text = addr_elem.get_text(strip=True)
+                if addr_text:
+                    data['employer_address'] = addr_text
+            
+            # Extract employer external website
+            # Look for link with target="_blank" in the company info section
+            external_link = hiring_org.find('a', {'target': '_blank'})
+            if external_link:
+                external_href = external_link.get('href', '')
+                # Check if it's an external URL (not a pngworkforce.com link)
+                if external_href and 'pngworkforce.com' not in external_href.lower():
+                    data['employer_external_website'] = external_href
+            else:
+                # Alternative: look for link in "Website:" label
+                website_label = hiring_org.find('label', string=re.compile(r'Website:', re.I))
+                if website_label:
+                    website_parent = website_label.find_parent('p')
+                    if website_parent:
+                        website_link = website_parent.find('a')
+                        if website_link:
+                            website_href = website_link.get('href', '')
+                            if website_href and 'pngworkforce.com' not in website_href.lower():
+                                data['employer_external_website'] = website_href
         
         # If not found, look for "COMPANY INFO" section specifically
         if 'employer' not in data or not data.get('employer'):
@@ -687,6 +732,38 @@ class PNGworkforceScraper:
                         name_text = company_h4.get_text(strip=True)
                         if name_text and 'pngworkforce' not in name_text.lower():
                             data['employer'] = name_text
+                    
+                    # Also try to extract additional fields from this section if not already found
+                    if 'employer_profile_url' not in data:
+                        profile_link = company_section.find('a', href=re.compile(r'/jobs/view-company/'))
+                        if profile_link:
+                            profile_href = profile_link.get('href', '')
+                            if profile_href:
+                                if profile_href.startswith('/'):
+                                    data['employer_profile_url'] = f"{self.base_url}{profile_href}"
+                                else:
+                                    data['employer_profile_url'] = profile_href
+                    
+                    if 'employer_phone' not in data:
+                        phone_elem = company_section.find('span', {'id': 'comp_phone'}) or company_section.find('span', itemprop='telephone')
+                        if phone_elem:
+                            phone_text = phone_elem.get_text(strip=True)
+                            if phone_text:
+                                data['employer_phone'] = phone_text
+                    
+                    if 'employer_address' not in data:
+                        addr_elem = company_section.find('span', {'id': 'comp_addr'}) or company_section.find('span', itemprop='streetAddress')
+                        if addr_elem:
+                            addr_text = addr_elem.get_text(strip=True)
+                            if addr_text:
+                                data['employer_address'] = addr_text
+                    
+                    if 'employer_external_website' not in data:
+                        external_link = company_section.find('a', {'target': '_blank'})
+                        if external_link:
+                            external_href = external_link.get('href', '')
+                            if external_href and 'pngworkforce.com' not in external_href.lower():
+                                data['employer_external_website'] = external_href
         
         # Last resort: look for company logo in COMPANY INFO section (not site header)
         if 'employer' not in data or not data.get('employer'):
@@ -805,6 +882,10 @@ class PNGworkforceScraper:
             'location': structured_data.get('location'),
             'industry': structured_data.get('industry'),
             'employer': structured_data.get('employer'),
+            'employer_profile_url': structured_data.get('employer_profile_url', ''),
+            'employer_external_website': structured_data.get('employer_external_website', ''),
+            'employer_phone': structured_data.get('employer_phone', ''),
+            'employer_address': structured_data.get('employer_address', ''),
             'employment_type': structured_data.get('employment_type'),
             'salary': structured_data.get('salary'),
             'description': structured_data.get('description'),
@@ -913,6 +994,10 @@ class PNGworkforceScraper:
                 'location': job.get('location', ''),
                 'industry': job.get('industry', ''),
                 'employer': job.get('employer', ''),
+                'employer_profile_url': job.get('employer_profile_url', ''),
+                'employer_external_website': job.get('employer_external_website', ''),
+                'employer_phone': job.get('employer_phone', ''),
+                'employer_address': job.get('employer_address', ''),
                 'employment_type': job.get('employment_type', ''),
                 'salary': job.get('salary', ''),
                 'scraped_at': job.get('scraped_at', ''),
@@ -933,6 +1018,10 @@ class PNGworkforceScraper:
                 'location': failed_job.get('location', ''),
                 'industry': failed_job.get('industry', ''),
                 'employer': failed_job.get('employer', ''),
+                'employer_profile_url': '',
+                'employer_external_website': '',
+                'employer_phone': '',
+                'employer_address': '',
                 'employment_type': '',
                 'salary': '',
                 'scraped_at': '',
@@ -954,7 +1043,8 @@ class PNGworkforceScraper:
             # Define logical column order: most important fields first
             primary_fields = [
                 'job_id', 'title', 'date_posted', 'first_seen', 'last_seen', 'location', 'industry', 
-                'employer', 'employment_type', 'salary', 'url'
+                'employer', 'employer_profile_url', 'employer_external_website', 'employer_phone', 'employer_address',
+                'employment_type', 'salary', 'url'
             ]
             secondary_fields = ['html_file', 'json_file', 'description_length']
             metadata_fields = ['scraped_at', 'status', 'error', 'failure_type', 'retry_count', 'failed_at', 'last_attempted']
