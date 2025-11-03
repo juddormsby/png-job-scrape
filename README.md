@@ -12,8 +12,6 @@ A Python scraper for extracting job listings from PNGworkforce.com.
 
 If you want to understand the rest ... read on!
 
-## Features
-
 - **Main Page Scraping**: Extracts all job listings (urls), checking both the latest jobs page (https://www.pngworkforce.com/jobs/view-latest-jobs) and iterating through each set of 10 page listing on the main page (https://www.pngworkforce.com/).
 - **Detail Page Scraping**: From the list of jobs scraped in the "Main Page Scraping" the scraper visits the individual job ads and downloads complete HTMLs for each job detail page
 - **Structured Data Extraction**: Uses proper HTML selectors to extract:
@@ -107,7 +105,7 @@ Each job JSON file contains:
 - Summary of the latest scrape session
 - Shows: new jobs scraped, jobs updated, failed jobs, etc.
 
-## Incremental Updates
+## Daily updates
 
 The scraper is designed to be run daily (using git actions).
 - On first EVER run: Creates new `all_jobs.json` and `all_jobs.csv`
@@ -117,14 +115,3 @@ The scraper is designed to be run daily (using git actions).
   - **Re-attempts failed jobs**: Automatically retries previously failed jobs
   - **Updates existing jobs**: If a job is found again but data changed, updates it
   - **Merges everything**: Combines all jobs into updated consolidated files
-
-## Customization
-
-You can modify the scraper behavior by editing `scraper.py`:
-
-- Change `delay` parameter in `PNGworkforceScraper()` to adjust time between requests (default: 2 seconds)
-- Set `update_existing=False` in `scrape_all()` to force full re-scrape (not recommended for daily runs)
-- Modify `extract_structured_data()` to extract additional fields
-- Adjust selectors in `extract_job_listings()` if the website structure changes
-
-**For daily runs**: Leave `update_existing=True` (default) to use incremental updates.
