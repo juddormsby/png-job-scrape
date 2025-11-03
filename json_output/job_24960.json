@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24960.json",
   "json_file_rel": "json_output/job_24960.json",
   "scraped_at": "2025-10-31T16:23:49.822931",
-  "job_id_display": "24960"
+  "job_id_display": "24960",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+  "employer_external_website": "http://www.pngair.com.pg",
+  "employer_phone": "+675 3023100",
+  "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
 }

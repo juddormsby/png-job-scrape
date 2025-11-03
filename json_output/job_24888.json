@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24888.json",
   "json_file_rel": "json_output/job_24888.json",
   "scraped_at": "2025-10-31T16:25:26.762060",
-  "job_id_display": "24888"
+  "job_id_display": "24888",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2803/catalpa-international",
+  "employer_external_website": "http://-",
+  "employer_phone": "-",
+  "employer_address": "-"
 }

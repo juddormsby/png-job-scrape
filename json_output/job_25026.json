@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25026.json",
   "json_file_rel": "json_output/job_25026.json",
   "scraped_at": "2025-10-31T16:21:20.622247",
-  "job_id_display": "25026"
+  "job_id_display": "25026",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3402/pacific-adventist-university",
+  "employer_external_website": "http://www.pau.ac.pg",
+  "employer_phone": "+675 328200",
+  "employer_address": "Koiari Park Campus\n14 mile, Sogeri Road, National Capital District"
 }

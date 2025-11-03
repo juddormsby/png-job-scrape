@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24934.json",
   "json_file_rel": "json_output/job_24934.json",
   "scraped_at": "2025-10-31T16:24:51.002771",
-  "job_id_display": "24934"
+  "job_id_display": "24934",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+  "employer_external_website": "http://www.ndb.com.pg",
+  "employer_phone": "70908200",
+  "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
 }

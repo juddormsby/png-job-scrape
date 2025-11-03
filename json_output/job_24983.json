@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24983.json",
   "json_file_rel": "json_output/job_24983.json",
   "scraped_at": "2025-10-31T16:22:59.067411",
-  "job_id_display": "24983"
+  "job_id_display": "24983",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+  "employer_external_website": "http://www.expressfreight.com",
+  "employer_phone": "472 3822",
+  "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
 }

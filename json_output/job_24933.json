@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24933.json",
   "json_file_rel": "json_output/job_24933.json",
   "scraped_at": "2025-10-31T16:24:53.337940",
-  "job_id_display": "24933"
+  "job_id_display": "24933",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2069/koroboro-international-school",
+  "employer_external_website": "",
+  "employer_phone": "-",
+  "employer_address": "-"
 }

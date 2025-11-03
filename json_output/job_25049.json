@@ -15,5 +15,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25049.json",
   "json_file_rel": "json_output/job_25049.json",
   "scraped_at": "2025-11-03T10:59:26.133855",
-  "job_id_display": "25049"
+  "job_id_display": "25049",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1894/comrade-trustee-services-limited",
+  "employer_external_website": "http://www.ctsl.com.pg/",
+  "employer_phone": "(675) 303 9000",
+  "employer_address": "P O Box 497 Port Moresby N.C.D \t  \t \nComrade Haus, Comrade Place, Off Frangipani, Street, Hohola"
 }

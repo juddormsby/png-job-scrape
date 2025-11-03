@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24973.json",
   "json_file_rel": "json_output/job_24973.json",
   "scraped_at": "2025-10-31T16:23:25.351624",
-  "job_id_display": "24973"
+  "job_id_display": "24973",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+  "employer_external_website": "http://www.glorygrouppng.com",
+  "employer_phone": "(+675) 323 8818",
+  "employer_address": "P.O. Box 3177, Boroko, National Capital District"
 }

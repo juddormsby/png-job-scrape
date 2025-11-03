@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25040.json",
   "json_file_rel": "json_output/job_25040.json",
   "scraped_at": "2025-10-31T16:20:44.572950",
-  "job_id_display": "25040"
+  "job_id_display": "25040",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5792/jopet-mining-civil-png-limited",
+  "employer_external_website": "",
+  "employer_phone": "+61 418720718",
+  "employer_address": "Port Moresby"
 }

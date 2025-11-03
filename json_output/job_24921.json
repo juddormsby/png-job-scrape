@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24921.json",
   "json_file_rel": "json_output/job_24921.json",
   "scraped_at": "2025-10-31T16:25:10.514121",
-  "job_id_display": "24921"
+  "job_id_display": "24921",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2555/woodlark-mining-limited",
+  "employer_external_website": "https://geopacific.com.au/",
+  "employer_phone": "+675 74111540",
+  "employer_address": "C/-O'Briens Lawyers, PO Box 389,Level 5,DefensHaus, Hunter Street and Champion Parade.\nPORT MORESBY, Papua New Guinea."
 }

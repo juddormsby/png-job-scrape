@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25019.json",
   "json_file_rel": "json_output/job_25019.json",
   "scraped_at": "2025-10-31T16:21:33.469385",
-  "job_id_display": "25019"
+  "job_id_display": "25019",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/639/care-international-in-png",
+  "employer_external_website": "http://www.care-international.org/",
+  "employer_phone": "532 2766",
+  "employer_address": "P.O Box 1157, Goroka, 441 Eastern Highlands Province."
 }

@@ -16,5 +16,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25062.json",
   "json_file_rel": "json_output/job_25062.json",
   "scraped_at": "2025-11-03T10:58:45.187160",
-  "job_id_display": "25062"
+  "job_id_display": "25062",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2738/santos",
+  "employer_external_website": "https://www.santos.com/",
+  "employer_phone": "+675 322 5599",
+  "employer_address": "PO Box 842\nPort Moresby\nNCD 121\nPapua New Guinea"
 }

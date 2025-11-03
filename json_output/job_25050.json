@@ -16,5 +16,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25050.json",
   "json_file_rel": "json_output/job_25050.json",
   "scraped_at": "2025-11-03T10:59:23.047133",
-  "job_id_display": "25050"
+  "job_id_display": "25050",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/534/simberi-gold-company-ltd",
+  "employer_external_website": "http://www.stbarbara.com.au",
+  "employer_phone": "+675 276 2010 Ext 9652",
+  "employer_address": "PO Box 624 Kavieng NIP PNG"
 }

@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24967.json",
   "json_file_rel": "json_output/job_24967.json",
   "scraped_at": "2025-10-31T16:23:35.578082",
-  "job_id_display": "24967"
+  "job_id_display": "24967",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3136/balimo-college",
+  "employer_external_website": "https://www.balimocollege.org/",
+  "employer_phone": "+675 72031791",
+  "employer_address": "Balimo College\nNewtown\nBalimo, Delta Fly District\nWestern Province"
 }

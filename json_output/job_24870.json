@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24870.json",
   "json_file_rel": "json_output/job_24870.json",
   "scraped_at": "2025-10-31T16:25:37.712357",
-  "job_id_display": "24870"
+  "job_id_display": "24870",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/957/quest-exploration-drilling-png-ltd",
+  "employer_external_website": "http://www.qedrill.com.pg",
+  "employer_phone": "+675 73734013",
+  "employer_address": "HBS Compound, \n11 Mile-Okuk Highway,\nLae, Morobe Province, PNG."
 }

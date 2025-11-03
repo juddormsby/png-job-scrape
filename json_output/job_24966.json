@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24966.json",
   "json_file_rel": "json_output/job_24966.json",
   "scraped_at": "2025-10-31T16:23:37.909180",
-  "job_id_display": "24966"
+  "job_id_display": "24966",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+  "employer_external_website": "http://www.peopleconnexion.com/png",
+  "employer_phone": "+675 320 2185",
+  "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
 }

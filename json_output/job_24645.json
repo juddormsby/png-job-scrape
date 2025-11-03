@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24645.json",
   "json_file_rel": "json_output/job_24645.json",
   "scraped_at": "2025-10-31T16:27:00.256970",
-  "job_id_display": "24645"
+  "job_id_display": "24645",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2824/global-success-limited",
+  "employer_external_website": "",
+  "employer_phone": "675",
+  "employer_address": "Kokopo, East New Britain Province, Papua New Guinea"
 }

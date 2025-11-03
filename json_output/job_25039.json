@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25039.json",
   "json_file_rel": "json_output/job_25039.json",
   "scraped_at": "2025-10-31T16:20:46.912350",
-  "job_id_display": "25039"
+  "job_id_display": "25039",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1267/international-organisation-for-migration",
+  "employer_external_website": "http://www.iom.int",
+  "employer_phone": "+675 321 3655",
+  "employer_address": ""
 }

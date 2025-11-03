@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24980.json",
   "json_file_rel": "json_output/job_24980.json",
   "scraped_at": "2025-10-31T16:23:05.540703",
-  "job_id_display": "24980"
+  "job_id_display": "24980",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/904/world-vision-png",
+  "employer_external_website": "http://www.wvi.org/papua-new-guinea",
+  "employer_phone": "+675 311 2530",
+  "employer_address": "World Vision Papua New Guinea\nPO Box 4254, Boroko, 111, NCD"
 }

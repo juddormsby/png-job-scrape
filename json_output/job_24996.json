@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24996.json",
   "json_file_rel": "json_output/job_24996.json",
   "scraped_at": "2025-10-31T16:22:27.860368",
-  "job_id_display": "24996"
+  "job_id_display": "24996",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2588/harmony-australasia",
+  "employer_external_website": "",
+  "employer_phone": "(675) 4785168",
+  "employer_address": "Harmony Australasia Ltd\nP.O. Box 4015, LAE 411, Morobe Province"
 }

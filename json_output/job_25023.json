@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25023.json",
   "json_file_rel": "json_output/job_25023.json",
   "scraped_at": "2025-10-31T16:21:26.457306",
-  "job_id_display": "25023"
+  "job_id_display": "25023",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5712/mines-advisory-group-mag-png",
+  "employer_external_website": "https://www.maginternational.org/",
+  "employer_phone": "74249105",
+  "employer_address": "PO Box 1173, Port Moresby, 1121, Papua New Guinea"
 }

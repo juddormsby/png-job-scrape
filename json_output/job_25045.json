@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25045.json",
   "json_file_rel": "json_output/job_25045.json",
   "scraped_at": "2025-10-31T16:20:31.999037",
-  "job_id_display": "25045"
+  "job_id_display": "25045",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1008/wateraid-png",
+  "employer_external_website": "http://www.wateraid.org/au/where-we-work/page/papua-new-guinea",
+  "employer_phone": "325 2115",
+  "employer_address": "Suite 7, Ground Floor, CHM Corporate Park One, Gordons."
 }

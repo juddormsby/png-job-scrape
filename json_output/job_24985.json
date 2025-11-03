@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24985.json",
   "json_file_rel": "json_output/job_24985.json",
   "scraped_at": "2025-10-31T16:22:56.724777",
-  "job_id_display": "24985"
+  "job_id_display": "24985",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2980/bismark-maritime-limited",
+  "employer_external_website": "http://www.bismark.com.pg",
+  "employer_phone": "..+67573249439",
+  "employer_address": "..P.O. Box 750, Section 34, Allotment 50, Montoro Street\nLae 411, Morobe Province, Papua New Guinea"
 }

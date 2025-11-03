@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24948.json",
   "json_file_rel": "json_output/job_24948.json",
   "scraped_at": "2025-10-31T16:24:19.595064",
-  "job_id_display": "24948"
+  "job_id_display": "24948",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2534/islands-petroleum-ltd",
+  "employer_external_website": "http:// www.islandspertroleum.com",
+  "employer_phone": "(+675) 982 3233",
+  "employer_address": "Islands Petroleum Limited\nP.O Box 226\nRabaul, East New Britain Province"
 }

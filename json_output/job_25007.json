@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25007.json",
   "json_file_rel": "json_output/job_25007.json",
   "scraped_at": "2025-10-31T16:22:02.340919",
-  "job_id_display": "25007"
+  "job_id_display": "25007",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/94/global-constructions-limited",
+  "employer_external_website": "http://www.globalconstructionltd.com/",
+  "employer_phone": "+675 321 0930",
+  "employer_address": "PO Box 1453\nBoroko, NCD\nPapua New Guinea"
 }

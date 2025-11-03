@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24989.json",
   "json_file_rel": "json_output/job_24989.json",
   "scraped_at": "2025-10-31T16:22:45.723170",
-  "job_id_display": "24989"
+  "job_id_display": "24989",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+  "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+  "employer_phone": "+675 473 4999",
+  "employer_address": "Independence Drive, East Taraka"
 }

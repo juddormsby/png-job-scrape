@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-11-03T11:13:24.144917",
+  "last_updated": "2025-11-03T11:32:54.282734",
   "total_jobs": 189,
   "total_failed": 0,
   "jobs": [
@@ -20,7 +20,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25063.json",
       "json_file_rel": "json_output/job_25063.json",
       "scraped_at": "2025-11-03T10:58:42.133647",
-      "job_id_display": "25063"
+      "job_id_display": "25063",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/466/trukai-industries-limited",
+      "employer_external_website": "http://www.trukai.com.pg",
+      "employer_phone": "+675 472 2466/+675 7373 8300",
+      "employer_address": "P. O. Box 2129\nLAE, Morobe Province\nPapua New Guinea"
     },
     {
       "job_id": "25062",
@@ -40,7 +44,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25062.json",
       "json_file_rel": "json_output/job_25062.json",
       "scraped_at": "2025-11-03T10:58:45.187160",
-      "job_id_display": "25062"
+      "job_id_display": "25062",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2738/santos",
+      "employer_external_website": "https://www.santos.com/",
+      "employer_phone": "+675 322 5599",
+      "employer_address": "PO Box 842\nPort Moresby\nNCD 121\nPapua New Guinea"
     },
     {
       "job_id": "25061",
@@ -59,7 +67,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25061.json",
       "json_file_rel": "json_output/job_25061.json",
       "scraped_at": "2025-11-03T10:58:48.320880",
-      "job_id_display": "25061"
+      "job_id_display": "25061",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2534/islands-petroleum-ltd",
+      "employer_external_website": "http:// www.islandspertroleum.com",
+      "employer_phone": "(+675) 982 3233",
+      "employer_address": "Islands Petroleum Limited\nP.O Box 226\nRabaul, East New Britain Province"
     },
     {
       "job_id": "25060",
@@ -78,7 +90,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25060.json",
       "json_file_rel": "json_output/job_25060.json",
       "scraped_at": "2025-11-03T10:58:51.387888",
-      "job_id_display": "25060"
+      "job_id_display": "25060",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25059",
@@ -97,7 +113,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25059.json",
       "json_file_rel": "json_output/job_25059.json",
       "scraped_at": "2025-11-03T10:59:58.053498",
-      "job_id_display": "25059"
+      "job_id_display": "25059",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25058",
@@ -116,7 +136,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25058.json",
       "json_file_rel": "json_output/job_25058.json",
       "scraped_at": "2025-11-03T10:58:57.651209",
-      "job_id_display": "25058"
+      "job_id_display": "25058",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25057",
@@ -135,7 +159,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25057.json",
       "json_file_rel": "json_output/job_25057.json",
       "scraped_at": "2025-11-03T10:59:00.990392",
-      "job_id_display": "25057"
+      "job_id_display": "25057",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25056",
@@ -154,7 +182,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25056.json",
       "json_file_rel": "json_output/job_25056.json",
       "scraped_at": "2025-11-03T10:59:04.158098",
-      "job_id_display": "25056"
+      "job_id_display": "25056",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25055",
@@ -173,7 +205,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25055.json",
       "json_file_rel": "json_output/job_25055.json",
       "scraped_at": "2025-11-03T10:59:07.308987",
-      "job_id_display": "25055"
+      "job_id_display": "25055",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25054",
@@ -192,7 +228,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25054.json",
       "json_file_rel": "json_output/job_25054.json",
       "scraped_at": "2025-11-03T10:59:10.365712",
-      "job_id_display": "25054"
+      "job_id_display": "25054",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25053",
@@ -211,7 +251,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25053.json",
       "json_file_rel": "json_output/job_25053.json",
       "scraped_at": "2025-11-03T10:59:13.534704",
-      "job_id_display": "25053"
+      "job_id_display": "25053",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25052",
@@ -230,7 +274,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25052.json",
       "json_file_rel": "json_output/job_25052.json",
       "scraped_at": "2025-11-03T10:59:16.661279",
-      "job_id_display": "25052"
+      "job_id_display": "25052",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5790/applus-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "",
+      "employer_address": ""
     },
     {
       "job_id": "25051",
@@ -249,7 +297,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25051.json",
       "json_file_rel": "json_output/job_25051.json",
       "scraped_at": "2025-11-03T10:59:19.951141",
-      "job_id_display": "25051"
+      "job_id_display": "25051",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/546/steamships-trading-company",
+      "employer_external_website": "http://www.steamships.com.pg",
+      "employer_phone": "(+675) 322 0215",
+      "employer_address": "Champion Parade & Hunter Street | P.O. Box 1 | Port Moresby | National Capital District | Papua New Guinea"
     },
     {
       "job_id": "25050",
@@ -269,7 +321,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25050.json",
       "json_file_rel": "json_output/job_25050.json",
       "scraped_at": "2025-11-03T10:59:23.047133",
-      "job_id_display": "25050"
+      "job_id_display": "25050",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/534/simberi-gold-company-ltd",
+      "employer_external_website": "http://www.stbarbara.com.au",
+      "employer_phone": "+675 276 2010 Ext 9652",
+      "employer_address": "PO Box 624 Kavieng NIP PNG"
     },
     {
       "job_id": "25049",
@@ -288,7 +344,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25049.json",
       "json_file_rel": "json_output/job_25049.json",
       "scraped_at": "2025-11-03T10:59:26.133855",
-      "job_id_display": "25049"
+      "job_id_display": "25049",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1894/comrade-trustee-services-limited",
+      "employer_external_website": "http://www.ctsl.com.pg/",
+      "employer_phone": "(675) 303 9000",
+      "employer_address": "P O Box 497 Port Moresby N.C.D \t  \t \nComrade Haus, Comrade Place, Off Frangipani, Street, Hohola"
     },
     {
       "job_id": "25047",
@@ -307,7 +367,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25047.json",
       "json_file_rel": "json_output/job_25047.json",
       "scraped_at": "2025-11-01T12:29:09.325041",
-      "job_id_display": "25047"
+      "job_id_display": "25047",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+      "employer_external_website": "http://www.wrcpng.com",
+      "employer_phone": "3024513",
+      "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
     },
     {
       "job_id": "25046",
@@ -326,7 +390,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25046.json",
       "json_file_rel": "json_output/job_25046.json",
       "scraped_at": "2025-11-01T12:29:12.624956",
-      "job_id_display": "25046"
+      "job_id_display": "25046",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+      "employer_external_website": "http://www.wrcpng.com",
+      "employer_phone": "3024513",
+      "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
     },
     {
       "job_id": "25045",
@@ -346,7 +414,11 @@
       "scraped_at": "2025-10-31T16:20:31.999037",
       "job_id_display": "25045",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1008/wateraid-png",
+      "employer_external_website": "http://www.wateraid.org/au/where-we-work/page/papua-new-guinea",
+      "employer_phone": "325 2115",
+      "employer_address": "Suite 7, Ground Floor, CHM Corporate Park One, Gordons."
     },
     {
       "job_id": "25044",
@@ -365,7 +437,11 @@
       "scraped_at": "2025-10-31T16:20:34.333348",
       "job_id_display": "25044",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "25043",
@@ -384,7 +460,11 @@
       "scraped_at": "2025-10-31T16:20:37.524383",
       "job_id_display": "25043",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "25042",
@@ -403,7 +483,11 @@
       "scraped_at": "2025-10-31T16:20:39.894567",
       "job_id_display": "25042",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3108/newmont",
+      "employer_external_website": "https://www.newmont.com/",
+      "employer_phone": "..",
+      "employer_address": "P. O Box 789, Port Moresby 121, Papua New Guinea"
     },
     {
       "job_id": "25041",
@@ -422,7 +506,11 @@
       "scraped_at": "2025-10-31T16:20:42.227057",
       "job_id_display": "25041",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "25040",
@@ -441,7 +529,11 @@
       "scraped_at": "2025-10-31T16:20:44.572950",
       "job_id_display": "25040",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5792/jopet-mining-civil-png-limited",
+      "employer_external_website": "",
+      "employer_phone": "+61 418720718",
+      "employer_address": "Port Moresby"
     },
     {
       "job_id": "25039",
@@ -461,7 +553,11 @@
       "scraped_at": "2025-10-31T16:20:46.912350",
       "job_id_display": "25039",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1267/international-organisation-for-migration",
+      "employer_external_website": "http://www.iom.int",
+      "employer_phone": "+675 321 3655",
+      "employer_address": ""
     },
     {
       "job_id": "25037",
@@ -480,7 +576,11 @@
       "scraped_at": "2025-10-31T16:20:53.275703",
       "job_id_display": "25037",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2588/harmony-australasia",
+      "employer_external_website": "",
+      "employer_phone": "(675) 4785168",
+      "employer_address": "Harmony Australasia Ltd\nP.O. Box 4015, LAE 411, Morobe Province"
     },
     {
       "job_id": "25035",
@@ -499,7 +599,11 @@
       "scraped_at": "2025-10-31T16:20:55.637426",
       "job_id_display": "25035",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3402/pacific-adventist-university",
+      "employer_external_website": "http://www.pau.ac.pg",
+      "employer_phone": "+675 328200",
+      "employer_address": "Koiari Park Campus\n14 mile, Sogeri Road, National Capital District"
     },
     {
       "job_id": "25033",
@@ -518,7 +622,11 @@
       "scraped_at": "2025-10-31T16:20:58.816411",
       "job_id_display": "25033",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3108/newmont",
+      "employer_external_website": "https://www.newmont.com/",
+      "employer_phone": "..",
+      "employer_address": "P. O Box 789, Port Moresby 121, Papua New Guinea"
     },
     {
       "job_id": "25032",
@@ -537,7 +645,11 @@
       "scraped_at": "2025-10-31T16:21:01.140123",
       "job_id_display": "25032",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "25031",
@@ -556,7 +668,11 @@
       "scraped_at": "2025-10-31T16:21:04.539089",
       "job_id_display": "25031",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/545/zenag-chicken",
+      "employer_external_website": "",
+      "employer_phone": "472 3900",
+      "employer_address": "Private Mail Bag No.1, Zenag via Lae, Morobe Province"
     },
     {
       "job_id": "25030",
@@ -575,7 +691,11 @@
       "scraped_at": "2025-10-31T16:21:07.880631",
       "job_id_display": "25030",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3206/hastings-deering-png-ltd",
+      "employer_external_website": "https://www.hastingsdeering.com.pg/",
+      "employer_phone": "3008300",
+      "employer_address": "Spring Garden Rd, Hohola, Port Moresby\nPO Box 6308, Boroko, NCD, PNG"
     },
     {
       "job_id": "25029",
@@ -594,7 +714,11 @@
       "scraped_at": "2025-10-31T16:21:11.028201",
       "job_id_display": "25029",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2419/hbs-png",
+      "employer_external_website": "http://www.hbsmachinery.com",
+      "employer_phone": "+675 475 1128",
+      "employer_address": "11 Mile, Okuk Highlands Highway\nLAE\t, 411, Morobe Province\t, \t\nPapua New Guinea"
     },
     {
       "job_id": "25028",
@@ -613,7 +737,11 @@
       "scraped_at": "2025-10-31T16:21:14.235547",
       "job_id_display": "25028",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2737/private-job-ads",
+      "employer_external_website": "",
+      "employer_phone": "---",
+      "employer_address": "P.O.Box 649\nGordons"
     },
     {
       "job_id": "25027",
@@ -632,7 +760,11 @@
       "scraped_at": "2025-10-31T16:21:17.458851",
       "job_id_display": "25027",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3402/pacific-adventist-university",
+      "employer_external_website": "http://www.pau.ac.pg",
+      "employer_phone": "+675 328200",
+      "employer_address": "Koiari Park Campus\n14 mile, Sogeri Road, National Capital District"
     },
     {
       "job_id": "25026",
@@ -651,7 +783,11 @@
       "scraped_at": "2025-10-31T16:21:20.622247",
       "job_id_display": "25026",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3402/pacific-adventist-university",
+      "employer_external_website": "http://www.pau.ac.pg",
+      "employer_phone": "+675 328200",
+      "employer_address": "Koiari Park Campus\n14 mile, Sogeri Road, National Capital District"
     },
     {
       "job_id": "25025",
@@ -670,7 +806,11 @@
       "scraped_at": "2025-10-31T16:21:22.981174",
       "job_id_display": "25025",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3402/pacific-adventist-university",
+      "employer_external_website": "http://www.pau.ac.pg",
+      "employer_phone": "+675 328200",
+      "employer_address": "Koiari Park Campus\n14 mile, Sogeri Road, National Capital District"
     },
     {
       "job_id": "25023",
@@ -690,7 +830,11 @@
       "scraped_at": "2025-10-31T16:21:26.457306",
       "job_id_display": "25023",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5712/mines-advisory-group-mag-png",
+      "employer_external_website": "https://www.maginternational.org/",
+      "employer_phone": "74249105",
+      "employer_address": "PO Box 1173, Port Moresby, 1121, Papua New Guinea"
     },
     {
       "job_id": "25021",
@@ -709,7 +853,11 @@
       "scraped_at": "2025-10-31T16:21:28.800003",
       "job_id_display": "25021",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+      "employer_external_website": "http://www.wrcpng.com",
+      "employer_phone": "3024513",
+      "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
     },
     {
       "job_id": "25020",
@@ -728,7 +876,11 @@
       "scraped_at": "2025-10-31T16:21:31.139674",
       "job_id_display": "25020",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4181/kutmor",
+      "employer_external_website": "",
+      "employer_phone": "--",
+      "employer_address": "P.O. Box 573\nWaterfront, Konedobu 125\nNational Capital District"
     },
     {
       "job_id": "25019",
@@ -747,7 +899,11 @@
       "scraped_at": "2025-10-31T16:21:33.469385",
       "job_id_display": "25019",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/639/care-international-in-png",
+      "employer_external_website": "http://www.care-international.org/",
+      "employer_phone": "532 2766",
+      "employer_address": "P.O Box 1157, Goroka, 441 Eastern Highlands Province."
     },
     {
       "job_id": "25018",
@@ -766,7 +922,11 @@
       "scraped_at": "2025-10-31T16:21:36.808508",
       "job_id_display": "25018",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/904/world-vision-png",
+      "employer_external_website": "http://www.wvi.org/papua-new-guinea",
+      "employer_phone": "+675 311 2530",
+      "employer_address": "World Vision Papua New Guinea\nPO Box 4254, Boroko, 111, NCD"
     },
     {
       "job_id": "25017",
@@ -785,7 +945,11 @@
       "scraped_at": "2025-10-31T16:21:39.256410",
       "job_id_display": "25017",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2738/santos",
+      "employer_external_website": "https://www.santos.com/",
+      "employer_phone": "+675 322 5599",
+      "employer_address": "PO Box 842\nPort Moresby\nNCD 121\nPapua New Guinea"
     },
     {
       "job_id": "25016",
@@ -804,7 +968,11 @@
       "scraped_at": "2025-10-31T16:21:41.584287",
       "job_id_display": "25016",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2936/png-motors",
+      "employer_external_website": "http://pngmotors.com.pg",
+      "employer_phone": "32 55 7 88 or 7106 8068",
+      "employer_address": "Cameron Road, Waigani, NCD, 121"
     },
     {
       "job_id": "25014",
@@ -824,7 +992,11 @@
       "scraped_at": "2025-10-31T16:21:43.937410",
       "job_id_display": "25014",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5712/mines-advisory-group-mag-png",
+      "employer_external_website": "https://www.maginternational.org/",
+      "employer_phone": "74249105",
+      "employer_address": "PO Box 1173, Port Moresby, 1121, Papua New Guinea"
     },
     {
       "job_id": "25013",
@@ -843,7 +1015,11 @@
       "scraped_at": "2025-10-31T16:21:47.160064",
       "job_id_display": "25013",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "25012",
@@ -862,7 +1038,11 @@
       "scraped_at": "2025-10-31T16:21:49.508300",
       "job_id_display": "25012",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/765/southern-cross-properties",
+      "employer_external_website": "http://-",
+      "employer_phone": "M 72789240  M: 75820086",
+      "employer_address": "Southern Cross Properties Ltd\n\nSection 62, Lot 16, Ruta Place, Gordons."
     },
     {
       "job_id": "25011",
@@ -881,7 +1061,11 @@
       "scraped_at": "2025-10-31T16:21:53.339972",
       "job_id_display": "25011",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2936/png-motors",
+      "employer_external_website": "http://pngmotors.com.pg",
+      "employer_phone": "32 55 7 88 or 7106 8068",
+      "employer_address": "Cameron Road, Waigani, NCD, 121"
     },
     {
       "job_id": "25010",
@@ -900,7 +1084,11 @@
       "scraped_at": "2025-10-31T16:21:55.679372",
       "job_id_display": "25010",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2936/png-motors",
+      "employer_external_website": "http://pngmotors.com.pg",
+      "employer_phone": "32 55 7 88 or 7106 8068",
+      "employer_address": "Cameron Road, Waigani, NCD, 121"
     },
     {
       "job_id": "25008",
@@ -919,7 +1107,11 @@
       "scraped_at": "2025-10-31T16:21:58.914195",
       "job_id_display": "25008",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/94/global-constructions-limited",
+      "employer_external_website": "http://www.globalconstructionltd.com/",
+      "employer_phone": "+675 321 0930",
+      "employer_address": "PO Box 1453\nBoroko, NCD\nPapua New Guinea"
     },
     {
       "job_id": "25007",
@@ -938,7 +1130,11 @@
       "scraped_at": "2025-10-31T16:22:02.340919",
       "job_id_display": "25007",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/94/global-constructions-limited",
+      "employer_external_website": "http://www.globalconstructionltd.com/",
+      "employer_phone": "+675 321 0930",
+      "employer_address": "PO Box 1453\nBoroko, NCD\nPapua New Guinea"
     },
     {
       "job_id": "25005",
@@ -958,7 +1154,11 @@
       "scraped_at": "2025-10-31T16:22:08.010584",
       "job_id_display": "25005",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3108/newmont",
+      "employer_external_website": "https://www.newmont.com/",
+      "employer_phone": "..",
+      "employer_address": "P. O Box 789, Port Moresby 121, Papua New Guinea"
     },
     {
       "job_id": "25004",
@@ -977,7 +1177,11 @@
       "scraped_at": "2025-10-31T16:22:10.342934",
       "job_id_display": "25004",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/767/spectra-industrial-ltd",
+      "employer_external_website": "http://www.spectra.com.pg",
+      "employer_phone": "+675 323 7181",
+      "employer_address": "Sec 61 Lot 8 Gabaka Street Gordons. Port Moresby\nPO Box 7528, Boroko, NCD"
     },
     {
       "job_id": "25003",
@@ -996,7 +1200,11 @@
       "scraped_at": "2025-10-31T16:22:13.554778",
       "job_id_display": "25003",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2778/tabubil-engineering-limited",
+      "employer_external_website": "http://..",
+      "employer_phone": "675 7411 0767",
+      "employer_address": "P.O. Box 431, Tabubil, Western Province"
     },
     {
       "job_id": "25002",
@@ -1015,7 +1223,11 @@
       "scraped_at": "2025-10-31T16:22:15.894292",
       "job_id_display": "25002",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/545/zenag-chicken",
+      "employer_external_website": "",
+      "employer_phone": "472 3900",
+      "employer_address": "Private Mail Bag No.1, Zenag via Lae, Morobe Province"
     },
     {
       "job_id": "25001",
@@ -1035,7 +1247,11 @@
       "scraped_at": "2025-10-31T16:22:18.222481",
       "job_id_display": "25001",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "25000",
@@ -1054,7 +1270,11 @@
       "scraped_at": "2025-10-31T16:22:21.363303",
       "job_id_display": "25000",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24999",
@@ -1073,7 +1293,11 @@
       "scraped_at": "2025-10-31T16:22:24.488076",
       "job_id_display": "24999",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+      "employer_external_website": "http://www.wrcpng.com",
+      "employer_phone": "3024513",
+      "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
     },
     {
       "job_id": "24996",
@@ -1092,7 +1316,11 @@
       "scraped_at": "2025-10-31T16:22:27.860368",
       "job_id_display": "24996",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2588/harmony-australasia",
+      "employer_external_website": "",
+      "employer_phone": "(675) 4785168",
+      "employer_address": "Harmony Australasia Ltd\nP.O. Box 4015, LAE 411, Morobe Province"
     },
     {
       "job_id": "24995",
@@ -1111,7 +1339,11 @@
       "scraped_at": "2025-10-31T16:22:31.367021",
       "job_id_display": "24995",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1648/save-the-children",
+      "employer_external_website": "",
+      "employer_phone": "+(675) 323 7061",
+      "employer_address": "CHM Corporate Park One, Level 1, Suite 6 â€“ 7 |Sect 496, Lot 26 | Gordons"
     },
     {
       "job_id": "24994",
@@ -1130,7 +1362,11 @@
       "scraped_at": "2025-10-31T16:22:33.725663",
       "job_id_display": "24994",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1648/save-the-children",
+      "employer_external_website": "",
+      "employer_phone": "+(675) 323 7061",
+      "employer_address": "CHM Corporate Park One, Level 1, Suite 6 â€“ 7 |Sect 496, Lot 26 | Gordons"
     },
     {
       "job_id": "24993",
@@ -1149,7 +1385,11 @@
       "scraped_at": "2025-10-31T16:22:36.935188",
       "job_id_display": "24993",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1648/save-the-children",
+      "employer_external_website": "",
+      "employer_phone": "+(675) 323 7061",
+      "employer_address": "CHM Corporate Park One, Level 1, Suite 6 â€“ 7 |Sect 496, Lot 26 | Gordons"
     },
     {
       "job_id": "24991",
@@ -1168,7 +1408,11 @@
       "scraped_at": "2025-10-31T16:22:40.195575",
       "job_id_display": "24991",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24990",
@@ -1187,7 +1431,11 @@
       "scraped_at": "2025-10-31T16:22:43.376072",
       "job_id_display": "24990",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24989",
@@ -1206,7 +1454,11 @@
       "scraped_at": "2025-10-31T16:22:45.723170",
       "job_id_display": "24989",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24988",
@@ -1225,7 +1477,11 @@
       "scraped_at": "2025-10-31T16:22:48.057562",
       "job_id_display": "24988",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3108/newmont",
+      "employer_external_website": "https://www.newmont.com/",
+      "employer_phone": "..",
+      "employer_address": "P. O Box 789, Port Moresby 121, Papua New Guinea"
     },
     {
       "job_id": "24987",
@@ -1244,7 +1500,11 @@
       "scraped_at": "2025-10-31T16:22:50.404616",
       "job_id_display": "24987",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24986",
@@ -1263,7 +1523,11 @@
       "scraped_at": "2025-10-31T16:22:53.543608",
       "job_id_display": "24986",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "24985",
@@ -1282,7 +1546,11 @@
       "scraped_at": "2025-10-31T16:22:56.724777",
       "job_id_display": "24985",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2980/bismark-maritime-limited",
+      "employer_external_website": "http://www.bismark.com.pg",
+      "employer_phone": "..+67573249439",
+      "employer_address": "..P.O. Box 750, Section 34, Allotment 50, Montoro Street\nLae 411, Morobe Province, Papua New Guinea"
     },
     {
       "job_id": "24983",
@@ -1301,7 +1569,11 @@
       "scraped_at": "2025-10-31T16:22:59.067411",
       "job_id_display": "24983",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24981",
@@ -1321,7 +1593,11 @@
       "scraped_at": "2025-10-31T16:23:02.333242",
       "job_id_display": "24981",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24979",
@@ -1340,7 +1616,11 @@
       "scraped_at": "2025-10-31T16:23:08.665028",
       "job_id_display": "24979",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24978",
@@ -1359,7 +1639,11 @@
       "scraped_at": "2025-10-31T16:23:11.795792",
       "job_id_display": "24978",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24977",
@@ -1378,7 +1662,11 @@
       "scraped_at": "2025-10-31T16:23:15.104900",
       "job_id_display": "24977",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24976",
@@ -1397,7 +1685,11 @@
       "scraped_at": "2025-10-31T16:23:18.217726",
       "job_id_display": "24976",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24975",
@@ -1416,7 +1708,11 @@
       "scraped_at": "2025-10-31T16:23:20.606444",
       "job_id_display": "24975",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24974",
@@ -1435,7 +1731,11 @@
       "scraped_at": "2025-10-31T16:23:22.943250",
       "job_id_display": "24974",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24973",
@@ -1454,7 +1754,11 @@
       "scraped_at": "2025-10-31T16:23:25.351624",
       "job_id_display": "24973",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24972",
@@ -1473,7 +1777,11 @@
       "scraped_at": "2025-10-31T16:23:28.483157",
       "job_id_display": "24972",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24971",
@@ -1493,7 +1801,11 @@
       "scraped_at": "2025-10-31T16:23:30.883445",
       "job_id_display": "24971",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2511/te-png-limited",
+      "employer_external_website": "https://www.tepng.com/",
+      "employer_phone": "(675) 325 6322.",
+      "employer_address": "Cameron Road, Waigani Port Moresby."
     },
     {
       "job_id": "24969",
@@ -1512,7 +1824,11 @@
       "scraped_at": "2025-10-31T16:23:33.217472",
       "job_id_display": "24969",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24967",
@@ -1532,7 +1848,11 @@
       "scraped_at": "2025-10-31T16:23:35.578082",
       "job_id_display": "24967",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3136/balimo-college",
+      "employer_external_website": "https://www.balimocollege.org/",
+      "employer_phone": "+675 72031791",
+      "employer_address": "Balimo College\nNewtown\nBalimo, Delta Fly District\nWestern Province"
     },
     {
       "job_id": "24966",
@@ -1551,7 +1871,11 @@
       "scraped_at": "2025-10-31T16:23:37.909180",
       "job_id_display": "24966",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24964",
@@ -1570,7 +1894,11 @@
       "scraped_at": "2025-10-31T16:23:40.299429",
       "job_id_display": "24964",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/546/steamships-trading-company",
+      "employer_external_website": "http://www.steamships.com.pg",
+      "employer_phone": "(+675) 322 0215",
+      "employer_address": "Champion Parade & Hunter Street | P.O. Box 1 | Port Moresby | National Capital District | Papua New Guinea"
     },
     {
       "job_id": "24962",
@@ -1589,7 +1917,11 @@
       "scraped_at": "2025-10-31T16:23:43.415143",
       "job_id_display": "24962",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+      "employer_external_website": "http://www.wrcpng.com",
+      "employer_phone": "3024513",
+      "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
     },
     {
       "job_id": "24961",
@@ -1609,7 +1941,11 @@
       "scraped_at": "2025-10-31T16:23:46.625874",
       "job_id_display": "24961",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4013/the-royal-papua-yacht-club",
+      "employer_external_website": "http://www.rpyc.com.pg",
+      "employer_phone": "+675-3211700",
+      "employer_address": "P.O Box 140, Port Moresby, NCD, Papua New Guinea"
     },
     {
       "job_id": "24960",
@@ -1628,7 +1964,11 @@
       "scraped_at": "2025-10-31T16:23:49.822931",
       "job_id_display": "24960",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "24959",
@@ -1647,7 +1987,11 @@
       "scraped_at": "2025-10-31T16:23:52.156385",
       "job_id_display": "24959",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "24958",
@@ -1667,7 +2011,11 @@
       "scraped_at": "2025-10-31T16:23:55.225796",
       "job_id_display": "24958",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24957",
@@ -1686,7 +2034,11 @@
       "scraped_at": "2025-10-31T16:23:58.355430",
       "job_id_display": "24957",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2980/bismark-maritime-limited",
+      "employer_external_website": "http://www.bismark.com.pg",
+      "employer_phone": "..+67573249439",
+      "employer_address": "..P.O. Box 750, Section 34, Allotment 50, Montoro Street\nLae 411, Morobe Province, Papua New Guinea"
     },
     {
       "job_id": "24956",
@@ -1706,7 +2058,11 @@
       "scraped_at": "2025-10-31T16:24:01.500928",
       "job_id_display": "24956",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/904/world-vision-png",
+      "employer_external_website": "http://www.wvi.org/papua-new-guinea",
+      "employer_phone": "+675 311 2530",
+      "employer_address": "World Vision Papua New Guinea\nPO Box 4254, Boroko, 111, NCD"
     },
     {
       "job_id": "24955",
@@ -1725,7 +2081,11 @@
       "scraped_at": "2025-10-31T16:24:04.657367",
       "job_id_display": "24955",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24954",
@@ -1744,7 +2104,11 @@
       "scraped_at": "2025-10-31T16:24:07.006730",
       "job_id_display": "24954",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1832/goodman-fielder",
+      "employer_external_website": "http://goodmanfielder.com/ ",
+      "employer_phone": "+675 308 2200",
+      "employer_address": "Cnr Lawes Rd & Champion Prd, Konedobu"
     },
     {
       "job_id": "24953",
@@ -1764,7 +2128,11 @@
       "scraped_at": "2025-10-31T16:24:10.190212",
       "job_id_display": "24953",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24951",
@@ -1783,7 +2151,11 @@
       "scraped_at": "2025-10-31T16:24:12.542635",
       "job_id_display": "24951",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1648/save-the-children",
+      "employer_external_website": "",
+      "employer_phone": "+(675) 323 7061",
+      "employer_address": "CHM Corporate Park One, Level 1, Suite 6 â€“ 7 |Sect 496, Lot 26 | Gordons"
     },
     {
       "job_id": "24950",
@@ -1802,7 +2174,11 @@
       "scraped_at": "2025-10-31T16:24:14.885153",
       "job_id_display": "24950",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2534/islands-petroleum-ltd",
+      "employer_external_website": "http:// www.islandspertroleum.com",
+      "employer_phone": "(+675) 982 3233",
+      "employer_address": "Islands Petroleum Limited\nP.O Box 226\nRabaul, East New Britain Province"
     },
     {
       "job_id": "24949",
@@ -1821,7 +2197,11 @@
       "scraped_at": "2025-10-31T16:24:17.264550",
       "job_id_display": "24949",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2534/islands-petroleum-ltd",
+      "employer_external_website": "http:// www.islandspertroleum.com",
+      "employer_phone": "(+675) 982 3233",
+      "employer_address": "Islands Petroleum Limited\nP.O Box 226\nRabaul, East New Britain Province"
     },
     {
       "job_id": "24948",
@@ -1840,7 +2220,11 @@
       "scraped_at": "2025-10-31T16:24:19.595064",
       "job_id_display": "24948",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2534/islands-petroleum-ltd",
+      "employer_external_website": "http:// www.islandspertroleum.com",
+      "employer_phone": "(+675) 982 3233",
+      "employer_address": "Islands Petroleum Limited\nP.O Box 226\nRabaul, East New Britain Province"
     },
     {
       "job_id": "24946",
@@ -1859,7 +2243,11 @@
       "scraped_at": "2025-10-31T16:24:24.276350",
       "job_id_display": "24946",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "24945",
@@ -1878,7 +2266,11 @@
       "scraped_at": "2025-10-31T16:24:27.507367",
       "job_id_display": "24945",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "24944",
@@ -1897,7 +2289,11 @@
       "scraped_at": "2025-10-31T16:24:30.683529",
       "job_id_display": "24944",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "24942",
@@ -1916,7 +2312,11 @@
       "scraped_at": "2025-10-31T16:24:33.765658",
       "job_id_display": "24942",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24941",
@@ -1935,7 +2335,11 @@
       "scraped_at": "2025-10-31T16:24:36.203605",
       "job_id_display": "24941",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2922/modern-pharmaceutical-limited",
+      "employer_external_website": "",
+      "employer_phone": "+6757890 0776",
+      "employer_address": ""
     },
     {
       "job_id": "24939",
@@ -1954,7 +2358,11 @@
       "scraped_at": "2025-10-31T16:24:39.282990",
       "job_id_display": "24939",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24938",
@@ -1973,7 +2381,11 @@
       "scraped_at": "2025-10-31T16:24:42.461591",
       "job_id_display": "24938",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24937",
@@ -1992,7 +2404,11 @@
       "scraped_at": "2025-10-31T16:24:45.581312",
       "job_id_display": "24937",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24935",
@@ -2011,7 +2427,11 @@
       "scraped_at": "2025-10-31T16:24:48.663057",
       "job_id_display": "24935",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "24934",
@@ -2030,7 +2450,11 @@
       "scraped_at": "2025-10-31T16:24:51.002771",
       "job_id_display": "24934",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3027/national-development-bank",
+      "employer_external_website": "http://www.ndb.com.pg",
+      "employer_phone": "70908200",
+      "employer_address": "Somare Circuit\nPO Box 686\nWaigani\nNational Captital District"
     },
     {
       "job_id": "24933",
@@ -2050,7 +2474,11 @@
       "scraped_at": "2025-10-31T16:24:53.337940",
       "job_id_display": "24933",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2069/koroboro-international-school",
+      "employer_external_website": "",
+      "employer_phone": "-",
+      "employer_address": "-"
     },
     {
       "job_id": "24929",
@@ -2070,7 +2498,11 @@
       "scraped_at": "2025-10-31T16:24:55.771790",
       "job_id_display": "24929",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24926",
@@ -2090,7 +2522,11 @@
       "scraped_at": "2025-10-31T16:24:58.113584",
       "job_id_display": "24926",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24924",
@@ -2109,7 +2545,11 @@
       "scraped_at": "2025-10-31T16:25:03.654235",
       "job_id_display": "24924",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24921",
@@ -2128,7 +2568,11 @@
       "scraped_at": "2025-10-31T16:25:10.514121",
       "job_id_display": "24921",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2555/woodlark-mining-limited",
+      "employer_external_website": "https://geopacific.com.au/",
+      "employer_phone": "+675 74111540",
+      "employer_address": "C/-O'Briens Lawyers, PO Box 389,Level 5,DefensHaus, Hunter Street and Champion Parade.\nPORT MORESBY, Papua New Guinea."
     },
     {
       "job_id": "24919",
@@ -2148,7 +2592,11 @@
       "scraped_at": "2025-10-31T16:25:12.872336",
       "job_id_display": "24919",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24918",
@@ -2168,7 +2616,11 @@
       "scraped_at": "2025-10-31T16:25:16.591621",
       "job_id_display": "24918",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24917",
@@ -2188,7 +2640,11 @@
       "scraped_at": "2025-10-31T16:25:19.769774",
       "job_id_display": "24917",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2976/brandforce-png-ltd",
+      "employer_external_website": "http://.",
+      "employer_phone": "..",
+      "employer_address": "PO BOX 6489,Boroko NCD."
     },
     {
       "job_id": "24899",
@@ -2207,7 +2663,11 @@
       "scraped_at": "2025-10-31T16:25:22.101353",
       "job_id_display": "24899",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2346/able-home-office",
+      "employer_external_website": "",
+      "employer_phone": "675 3252599",
+      "employer_address": "PO BOX 643 PORT MORESBY\nSec 58 Lot 2\nGabaka Street, Gordons - Waigani\nPort Moresby, NCD, PNG"
     },
     {
       "job_id": "24898",
@@ -2226,7 +2686,11 @@
       "scraped_at": "2025-10-31T16:25:24.430423",
       "job_id_display": "24898",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24888",
@@ -2246,7 +2710,11 @@
       "scraped_at": "2025-10-31T16:25:26.762060",
       "job_id_display": "24888",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2803/catalpa-international",
+      "employer_external_website": "http://-",
+      "employer_phone": "-",
+      "employer_address": "-"
     },
     {
       "job_id": "24882",
@@ -2266,7 +2734,11 @@
       "scraped_at": "2025-10-31T16:25:29.900594",
       "job_id_display": "24882",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24881",
@@ -2286,7 +2758,11 @@
       "scraped_at": "2025-10-31T16:25:32.239682",
       "job_id_display": "24881",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24877",
@@ -2305,7 +2781,11 @@
       "scraped_at": "2025-10-31T16:25:34.612600",
       "job_id_display": "24877",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3123/hebou-construction-png-ltd",
+      "employer_external_website": "http://www.hebou.com.pg",
+      "employer_phone": "+675 325 3077 or 325 5134",
+      "employer_address": "Hebou Constructions (PNG) Ltd\nPO Box 6207\nBoroko, NCD\nPapua New Guinea\nOr come and see us at our offices at Saraga St, 6 Mile, Port Moresby"
     },
     {
       "job_id": "24870",
@@ -2324,7 +2804,11 @@
       "scraped_at": "2025-10-31T16:25:37.712357",
       "job_id_display": "24870",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/957/quest-exploration-drilling-png-ltd",
+      "employer_external_website": "http://www.qedrill.com.pg",
+      "employer_phone": "+675 73734013",
+      "employer_address": "HBS Compound, \n11 Mile-Okuk Highway,\nLae, Morobe Province, PNG."
     },
     {
       "job_id": "24867",
@@ -2344,7 +2828,11 @@
       "scraped_at": "2025-10-31T16:25:40.946088",
       "job_id_display": "24867",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24866",
@@ -2364,7 +2852,11 @@
       "scraped_at": "2025-10-31T16:25:43.378792",
       "job_id_display": "24866",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24859",
@@ -2383,7 +2875,11 @@
       "scraped_at": "2025-10-31T16:25:45.740074",
       "job_id_display": "24859",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2802/pacific-privilege-coral-sea-hotels",
+      "employer_external_website": "http://-",
+      "employer_phone": "--",
+      "employer_address": "--"
     },
     {
       "job_id": "24858",
@@ -2403,7 +2899,11 @@
       "scraped_at": "2025-10-31T16:25:48.895174",
       "job_id_display": "24858",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24853",
@@ -2423,7 +2923,11 @@
       "scraped_at": "2025-10-31T16:25:51.247077",
       "job_id_display": "24853",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/551/medecins-sans-frontieres",
+      "employer_external_website": "",
+      "employer_phone": "--",
+      "employer_address": "Port Moresby, NCD - Papua New Guinea"
     },
     {
       "job_id": "24840",
@@ -2442,7 +2946,11 @@
       "scraped_at": "2025-10-31T16:25:54.320910",
       "job_id_display": "24840",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24835",
@@ -2461,7 +2969,11 @@
       "scraped_at": "2025-10-31T16:25:57.592228",
       "job_id_display": "24835",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "24834",
@@ -2481,7 +2993,11 @@
       "scraped_at": "2025-10-31T16:25:59.918820",
       "job_id_display": "24834",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2575/2-fast-motors-ltd",
+      "employer_external_website": "",
+      "employer_phone": "3253873",
+      "employer_address": "P.O. Box 4951, Boroko, NCD"
     },
     {
       "job_id": "24826",
@@ -2501,7 +3017,11 @@
       "scraped_at": "2025-10-31T16:26:03.205457",
       "job_id_display": "24826",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24825",
@@ -2520,7 +3040,11 @@
       "scraped_at": "2025-10-31T16:26:05.541925",
       "job_id_display": "24825",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2738/santos",
+      "employer_external_website": "https://www.santos.com/",
+      "employer_phone": "+675 322 5599",
+      "employer_address": "PO Box 842\nPort Moresby\nNCD 121\nPapua New Guinea"
     },
     {
       "job_id": "24799",
@@ -2539,7 +3063,11 @@
       "scraped_at": "2025-10-31T16:26:08.710536",
       "job_id_display": "24799",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24798",
@@ -2558,7 +3086,11 @@
       "scraped_at": "2025-10-31T16:26:11.857713",
       "job_id_display": "24798",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24797",
@@ -2578,7 +3110,11 @@
       "scraped_at": "2025-10-31T16:26:15.024130",
       "job_id_display": "24797",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24796",
@@ -2597,7 +3133,11 @@
       "scraped_at": "2025-10-31T16:26:18.122685",
       "job_id_display": "24796",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24795",
@@ -2616,7 +3156,11 @@
       "scraped_at": "2025-10-31T16:26:21.286827",
       "job_id_display": "24795",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24794",
@@ -2636,7 +3180,11 @@
       "scraped_at": "2025-10-31T16:26:23.628219",
       "job_id_display": "24794",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24793",
@@ -2655,7 +3203,11 @@
       "scraped_at": "2025-10-31T16:26:25.954472",
       "job_id_display": "24793",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24764",
@@ -2675,7 +3227,11 @@
       "scraped_at": "2025-10-31T16:26:28.282212",
       "job_id_display": "24764",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24738",
@@ -2695,7 +3251,11 @@
       "scraped_at": "2025-10-31T16:26:33.740435",
       "job_id_display": "24738",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24737",
@@ -2715,7 +3275,11 @@
       "scraped_at": "2025-10-31T16:26:36.825017",
       "job_id_display": "24737",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24732",
@@ -2735,7 +3299,11 @@
       "scraped_at": "2025-10-31T16:26:39.191472",
       "job_id_display": "24732",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24731",
@@ -2755,7 +3323,11 @@
       "scraped_at": "2025-10-31T16:26:42.275558",
       "job_id_display": "24731",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24703",
@@ -2774,7 +3346,11 @@
       "scraped_at": "2025-10-31T16:26:44.603874",
       "job_id_display": "24703",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24702",
@@ -2793,7 +3369,11 @@
       "scraped_at": "2025-10-31T16:26:46.941544",
       "job_id_display": "24702",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24700",
@@ -2813,7 +3393,11 @@
       "scraped_at": "2025-10-31T16:26:50.150221",
       "job_id_display": "24700",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24660",
@@ -2832,7 +3416,11 @@
       "scraped_at": "2025-10-31T16:26:52.487801",
       "job_id_display": "24660",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "24656",
@@ -2851,7 +3439,11 @@
       "scraped_at": "2025-10-31T16:26:54.815184",
       "job_id_display": "24656",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24646",
@@ -2871,7 +3463,11 @@
       "scraped_at": "2025-10-31T16:26:57.928999",
       "job_id_display": "24646",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24645",
@@ -2890,7 +3486,11 @@
       "scraped_at": "2025-10-31T16:27:00.256970",
       "job_id_display": "24645",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2824/global-success-limited",
+      "employer_external_website": "",
+      "employer_phone": "675",
+      "employer_address": "Kokopo, East New Britain Province, Papua New Guinea"
     },
     {
       "job_id": "24639",
@@ -2909,7 +3509,11 @@
       "scraped_at": "2025-10-31T16:27:03.423530",
       "job_id_display": "24639",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24602",
@@ -2929,7 +3533,11 @@
       "scraped_at": "2025-10-31T16:27:06.637328",
       "job_id_display": "24602",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24582",
@@ -2949,7 +3557,11 @@
       "scraped_at": "2025-10-31T16:27:09.779257",
       "job_id_display": "24582",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24578",
@@ -2968,7 +3580,11 @@
       "scraped_at": "2025-10-31T16:27:12.909297",
       "job_id_display": "24578",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24577",
@@ -2987,7 +3603,11 @@
       "scraped_at": "2025-10-31T16:27:16.068623",
       "job_id_display": "24577",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24537",
@@ -3006,7 +3626,11 @@
       "scraped_at": "2025-10-31T16:27:18.417796",
       "job_id_display": "24537",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24536",
@@ -3025,7 +3649,11 @@
       "scraped_at": "2025-10-31T16:27:20.751536",
       "job_id_display": "24536",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24535",
@@ -3044,7 +3672,11 @@
       "scraped_at": "2025-10-31T16:27:23.097241",
       "job_id_display": "24535",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24534",
@@ -3063,7 +3695,11 @@
       "scraped_at": "2025-10-31T16:27:25.492453",
       "job_id_display": "24534",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "24496",
@@ -3083,7 +3719,11 @@
       "scraped_at": "2025-10-31T16:27:28.652919",
       "job_id_display": "24496",
       "last_seen": "2025-11-03T11:13:24.127590",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24481",
@@ -3103,7 +3743,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24481.json",
       "json_file_rel": "json_output/job_24481.json",
       "scraped_at": "2025-11-01T12:42:00.154164",
-      "job_id_display": "24481"
+      "job_id_display": "24481",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24478",
@@ -3123,7 +3767,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24478.json",
       "json_file_rel": "json_output/job_24478.json",
       "scraped_at": "2025-11-01T12:42:03.499556",
-      "job_id_display": "24478"
+      "job_id_display": "24478",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24477",
@@ -3143,7 +3791,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24477.json",
       "json_file_rel": "json_output/job_24477.json",
       "scraped_at": "2025-11-01T12:42:06.775766",
-      "job_id_display": "24477"
+      "job_id_display": "24477",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24476",
@@ -3163,7 +3815,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24476.json",
       "json_file_rel": "json_output/job_24476.json",
       "scraped_at": "2025-11-01T12:42:10.050250",
-      "job_id_display": "24476"
+      "job_id_display": "24476",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24475",
@@ -3183,7 +3839,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24475.json",
       "json_file_rel": "json_output/job_24475.json",
       "scraped_at": "2025-11-01T12:42:13.482268",
-      "job_id_display": "24475"
+      "job_id_display": "24475",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24474",
@@ -3203,7 +3863,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24474.json",
       "json_file_rel": "json_output/job_24474.json",
       "scraped_at": "2025-11-01T12:42:16.803872",
-      "job_id_display": "24474"
+      "job_id_display": "24474",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24255",
@@ -3222,7 +3886,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24255.json",
       "json_file_rel": "json_output/job_24255.json",
       "scraped_at": "2025-11-01T12:42:23.446143",
-      "job_id_display": "24255"
+      "job_id_display": "24255",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "24189",
@@ -3241,7 +3909,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24189.json",
       "json_file_rel": "json_output/job_24189.json",
       "scraped_at": "2025-11-03T10:59:29.267924",
-      "job_id_display": "24189"
+      "job_id_display": "24189",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24188",
@@ -3260,7 +3932,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24188.json",
       "json_file_rel": "json_output/job_24188.json",
       "scraped_at": "2025-11-03T10:59:32.549155",
-      "job_id_display": "24188"
+      "job_id_display": "24188",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24187",
@@ -3279,7 +3955,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24187.json",
       "json_file_rel": "json_output/job_24187.json",
       "scraped_at": "2025-11-03T10:59:35.925160",
-      "job_id_display": "24187"
+      "job_id_display": "24187",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24186",
@@ -3298,7 +3978,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24186.json",
       "json_file_rel": "json_output/job_24186.json",
       "scraped_at": "2025-11-03T10:59:39.091905",
-      "job_id_display": "24186"
+      "job_id_display": "24186",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24185",
@@ -3317,7 +4001,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24185.json",
       "json_file_rel": "json_output/job_24185.json",
       "scraped_at": "2025-11-03T10:59:42.272709",
-      "job_id_display": "24185"
+      "job_id_display": "24185",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24184",
@@ -3336,7 +4024,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24184.json",
       "json_file_rel": "json_output/job_24184.json",
       "scraped_at": "2025-11-03T10:59:45.423458",
-      "job_id_display": "24184"
+      "job_id_display": "24184",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24169",
@@ -3356,7 +4048,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24169.json",
       "json_file_rel": "json_output/job_24169.json",
       "scraped_at": "2025-11-01T12:42:26.769897",
-      "job_id_display": "24169"
+      "job_id_display": "24169",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24156",
@@ -3376,7 +4072,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24156.json",
       "json_file_rel": "json_output/job_24156.json",
       "scraped_at": "2025-11-01T12:42:30.048288",
-      "job_id_display": "24156"
+      "job_id_display": "24156",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24139",
@@ -3396,7 +4096,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24139.json",
       "json_file_rel": "json_output/job_24139.json",
       "scraped_at": "2025-11-01T12:42:33.347400",
-      "job_id_display": "24139"
+      "job_id_display": "24139",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "24138",
@@ -3416,7 +4120,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24138.json",
       "json_file_rel": "json_output/job_24138.json",
       "scraped_at": "2025-11-01T12:42:36.652401",
-      "job_id_display": "24138"
+      "job_id_display": "24138",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
       "job_id": "23366",
@@ -3435,7 +4143,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_23366.json",
       "json_file_rel": "json_output/job_23366.json",
       "scraped_at": "2025-11-01T12:42:39.891158",
-      "job_id_display": "23366"
+      "job_id_display": "23366",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023100",
+      "employer_address": "P.O. Box 170, Boroko, \nPNG Jacksons Parade, 7 Mile\nPort Moresby, Papua New Guinea"
     },
     {
       "job_id": "21709",
@@ -3454,7 +4166,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_21709.json",
       "json_file_rel": "json_output/job_21709.json",
       "scraped_at": "2025-11-03T10:59:48.526423",
-      "job_id_display": "21709"
+      "job_id_display": "21709",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "14919",
@@ -3473,7 +4189,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_14919.json",
       "json_file_rel": "json_output/job_14919.json",
       "scraped_at": "2025-11-03T10:59:51.791659",
-      "job_id_display": "14919"
+      "job_id_display": "14919",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "13420",
@@ -3492,7 +4212,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_13420.json",
       "json_file_rel": "json_output/job_13420.json",
       "scraped_at": "2025-11-03T10:59:54.967425",
-      "job_id_display": "13420"
+      "job_id_display": "13420",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/179/express-freight-management",
+      "employer_external_website": "http://www.expressfreight.com",
+      "employer_phone": "472 3822",
+      "employer_address": "Malaita Street, PO Box 3398 Lae, Morobe Province Papua New Guinea"
     },
     {
       "job_id": "24925",
@@ -3512,7 +4236,11 @@
       "scraped_at": "2025-10-31T16:25:00.436849",
       "job_id_display": "24925",
       "last_seen": "2025-11-03T02:41:48.802103",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/657/peopleconnexion",
+      "employer_external_website": "http://www.peopleconnexion.com/png",
+      "employer_phone": "+675 320 2185",
+      "employer_address": "United Church Building,\nGround Floor,\nDouglas Street, Downtown,\nPort Moresby,\nNational Capital District,\nPapua New Guinea"
     },
     {
       "job_id": "25038",
@@ -3531,7 +4259,11 @@
       "scraped_at": "2025-10-31T16:20:50.115216",
       "job_id_display": "25038",
       "last_seen": "2025-11-03T02:41:48.802103",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5693/tebbutt-research-png",
+      "employer_external_website": "http://tebbuttresearch.com",
+      "employer_phone": "+6155324666",
+      "employer_address": ""
     },
     {
       "job_id": "25006",
@@ -3550,7 +4282,11 @@
       "scraped_at": "2025-10-31T16:22:04.682427",
       "job_id_display": "25006",
       "last_seen": "2025-11-02T02:41:13.246306",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/466/trukai-industries-limited",
+      "employer_external_website": "http://www.trukai.com.pg",
+      "employer_phone": "+675 472 2466/+675 7373 8300",
+      "employer_address": "P. O. Box 2129\nLAE, Morobe Province\nPapua New Guinea"
     },
     {
       "job_id": "24980",
@@ -3569,7 +4305,11 @@
       "scraped_at": "2025-10-31T16:23:05.540703",
       "job_id_display": "24980",
       "last_seen": "2025-11-02T02:41:13.246306",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/904/world-vision-png",
+      "employer_external_website": "http://www.wvi.org/papua-new-guinea",
+      "employer_phone": "+675 311 2530",
+      "employer_address": "World Vision Papua New Guinea\nPO Box 4254, Boroko, 111, NCD"
     },
     {
       "job_id": "24947",
@@ -3588,7 +4328,11 @@
       "scraped_at": "2025-10-31T16:24:21.932455",
       "job_id_display": "24947",
       "last_seen": "2025-11-02T02:41:13.246306",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2588/harmony-australasia",
+      "employer_external_website": "",
+      "employer_phone": "(675) 4785168",
+      "employer_address": "Harmony Australasia Ltd\nP.O. Box 4015, LAE 411, Morobe Province"
     },
     {
       "job_id": "24922",
@@ -3607,7 +4351,11 @@
       "scraped_at": "2025-10-31T16:25:07.397400",
       "job_id_display": "24922",
       "last_seen": "2025-11-02T02:41:13.246306",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1432/png-university-of-technology-pnguot",
+      "employer_external_website": "https://www.pnguot.ac.pg/non-academic-departments/human-resources/recruitment/",
+      "employer_phone": "+675 473 4999",
+      "employer_address": "Independence Drive, East Taraka"
     },
     {
       "job_id": "24747",
@@ -3626,7 +4374,11 @@
       "scraped_at": "2025-10-31T16:26:30.604187",
       "job_id_display": "24747",
       "last_seen": "2025-11-02T02:41:13.246306",
-      "first_seen": "2025-10-31T16:59:08.037949"
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2346/able-home-office",
+      "employer_external_website": "",
+      "employer_phone": "675 3252599",
+      "employer_address": "PO BOX 643 PORT MORESBY\nSec 58 Lot 2\nGabaka Street, Gordons - Waigani\nPort Moresby, NCD, PNG"
     },
     {
       "job_id": "24359",
@@ -3646,7 +4398,11 @@
       "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24359.json",
       "json_file_rel": "json_output/job_24359.json",
       "scraped_at": "2025-11-01T12:42:20.088410",
-      "job_id_display": "24359"
+      "job_id_display": "24359",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     }
   ],
   "failed_jobs": []

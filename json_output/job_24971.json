@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24971.json",
   "json_file_rel": "json_output/job_24971.json",
   "scraped_at": "2025-10-31T16:23:30.883445",
-  "job_id_display": "24971"
+  "job_id_display": "24971",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2511/te-png-limited",
+  "employer_external_website": "https://www.tepng.com/",
+  "employer_phone": "(675) 325 6322.",
+  "employer_address": "Cameron Road, Waigani Port Moresby."
 }

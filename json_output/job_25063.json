@@ -15,5 +15,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25063.json",
   "json_file_rel": "json_output/job_25063.json",
   "scraped_at": "2025-11-03T10:58:42.133647",
-  "job_id_display": "25063"
+  "job_id_display": "25063",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/466/trukai-industries-limited",
+  "employer_external_website": "http://www.trukai.com.pg",
+  "employer_phone": "+675 472 2466/+675 7373 8300",
+  "employer_address": "P. O. Box 2129\nLAE, Morobe Province\nPapua New Guinea"
 }

@@ -14,5 +14,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24731.json",
   "json_file_rel": "json_output/job_24731.json",
   "scraped_at": "2025-10-31T16:26:42.275558",
-  "job_id_display": "24731"
+  "job_id_display": "24731",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+  "employer_external_website": "https://k92mining.com/careers",
+  "employer_phone": "--",
+  "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
 }

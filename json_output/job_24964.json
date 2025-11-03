@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24964.json",
   "json_file_rel": "json_output/job_24964.json",
   "scraped_at": "2025-10-31T16:23:40.299429",
-  "job_id_display": "24964"
+  "job_id_display": "24964",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/546/steamships-trading-company",
+  "employer_external_website": "http://www.steamships.com.pg",
+  "employer_phone": "(+675) 322 0215",
+  "employer_address": "Champion Parade & Hunter Street | P.O. Box 1 | Port Moresby | National Capital District | Papua New Guinea"
 }

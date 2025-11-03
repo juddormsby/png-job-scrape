@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24999.json",
   "json_file_rel": "json_output/job_24999.json",
   "scraped_at": "2025-10-31T16:22:24.488076",
-  "job_id_display": "24999"
+  "job_id_display": "24999",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/4242/wr-carpenter-png-limited",
+  "employer_external_website": "http://www.wrcpng.com",
+  "employer_phone": "3024513",
+  "employer_address": "Boroko Motors Building, Corner of Waigani Drive & Cameron Road, Gordons\nPO Box 105, Port Moresby\nPapua New Guinea"
 }

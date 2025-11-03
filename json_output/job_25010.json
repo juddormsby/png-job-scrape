@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25010.json",
   "json_file_rel": "json_output/job_25010.json",
   "scraped_at": "2025-10-31T16:21:55.679372",
-  "job_id_display": "25010"
+  "job_id_display": "25010",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2936/png-motors",
+  "employer_external_website": "http://pngmotors.com.pg",
+  "employer_phone": "32 55 7 88 or 7106 8068",
+  "employer_address": "Cameron Road, Waigani, NCD, 121"
 }

@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24899.json",
   "json_file_rel": "json_output/job_24899.json",
   "scraped_at": "2025-10-31T16:25:22.101353",
-  "job_id_display": "24899"
+  "job_id_display": "24899",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2346/able-home-office",
+  "employer_external_website": "",
+  "employer_phone": "675 3252599",
+  "employer_address": "PO BOX 643 PORT MORESBY\nSec 58 Lot 2\nGabaka Street, Gordons - Waigani\nPort Moresby, NCD, PNG"
 }

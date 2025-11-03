@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25042.json",
   "json_file_rel": "json_output/job_25042.json",
   "scraped_at": "2025-10-31T16:20:39.894567",
-  "job_id_display": "25042"
+  "job_id_display": "25042",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3108/newmont",
+  "employer_external_website": "https://www.newmont.com/",
+  "employer_phone": "..",
+  "employer_address": "P. O Box 789, Port Moresby 121, Papua New Guinea"
 }

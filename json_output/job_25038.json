@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_25038.json",
   "json_file_rel": "json_output/job_25038.json",
   "scraped_at": "2025-10-31T16:20:50.115216",
-  "job_id_display": "25038"
+  "job_id_display": "25038",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/5693/tebbutt-research-png",
+  "employer_external_website": "http://tebbuttresearch.com",
+  "employer_phone": "+6155324666",
+  "employer_address": ""
 }

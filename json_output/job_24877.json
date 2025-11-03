@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24877.json",
   "json_file_rel": "json_output/job_24877.json",
   "scraped_at": "2025-10-31T16:25:34.612600",
-  "job_id_display": "24877"
+  "job_id_display": "24877",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3123/hebou-construction-png-ltd",
+  "employer_external_website": "http://www.hebou.com.pg",
+  "employer_phone": "+675 325 3077 or 325 5134",
+  "employer_address": "Hebou Constructions (PNG) Ltd\nPO Box 6207\nBoroko, NCD\nPapua New Guinea\nOr come and see us at our offices at Saraga St, 6 Mile, Port Moresby"
 }

@@ -13,5 +13,9 @@
   "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24954.json",
   "json_file_rel": "json_output/job_24954.json",
   "scraped_at": "2025-10-31T16:24:07.006730",
-  "job_id_display": "24954"
+  "job_id_display": "24954",
+  "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1832/goodman-fielder",
+  "employer_external_website": "http://goodmanfielder.com/ ",
+  "employer_phone": "+675 308 2200",
+  "employer_address": "Cnr Lawes Rd & Champion Prd, Konedobu"
 }
