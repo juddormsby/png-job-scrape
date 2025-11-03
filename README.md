@@ -96,25 +96,6 @@ The scraper is designed to be run daily (using git actions).
   - **Updates existing jobs**: If a job is found again but data changed, updates it
   - **Merges everything**: Combines all jobs into updated consolidated files
 
-## Failed Jobs & Retries
-
-Failed jobs (typically 404 errors for expired/removed listings) are:
-- **Tracked separately** in `all_jobs.json` → `failed_jobs` array
-- **Automatically re-attempted** on each run (maybe the page came back)
-- **Removed from failed list** if they succeed on retry
-
-Each failed job entry includes:
-- `url`: The job URL that failed
-- `job_id`: Job ID if extractable
-- `title`: Job title if known
-- `error`: Error message (e.g., "404 Client Error: Not Found")
-- `failed_at`: Timestamp of failure
-
-**Why retry failed jobs?**
-- Sometimes jobs temporarily return 404 but come back
-- Network issues might cause false failures
-- Jobs might be temporarily removed then reposted
-
 ## Customization
 
 You can modify the scraper behavior by editing `scraper.py`:
