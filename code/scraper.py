@@ -878,6 +878,24 @@ class PNGworkforceScraper:
             return {fj.get('job_id') for fj in failed if fj.get('job_id')}
         return set()
     
+    def get_failed_jobs_info(self):
+        """
+        Get comprehensive failed jobs info: by job_id and by URL.
+        Returns (by_id_dict, by_url_dict) for tracking jobs without extractable IDs.
+        """
+        existing_data = self.load_existing_summary()
+        if existing_data:
+            failed = existing_data.get('failed_jobs', [])
+            by_id = {fj.get('job_id'): fj for fj in failed if fj.get('job_id')}
+            by_url = {}
+            for fj in failed:
+                url = fj.get('url')
+                if url:
+                    normalized_url = url.rstrip('/')
+                    by_url[normalized_url] = fj
+            return by_id, by_url
+        return {}, {}
+    
     def save_consolidated_files(self, all_jobs_data, failed_jobs):
         """Save consolidated JSON and CSV files"""
         # Prepare data for CSV (flatten some fields)
@@ -905,16 +923,16 @@ class PNGworkforceScraper:
             }
             csv_data.append(csv_row)
         
-        # Add failed jobs
+        # Add failed jobs (include all available info for manual review)
         for failed_job in failed_jobs:
             csv_row = {
                 'job_id': failed_job.get('job_id', ''),
                 'title': failed_job.get('title', ''),
                 'url': failed_job.get('url', ''),
-                'date_posted': '',
-                'location': '',
-                'industry': '',
-                'employer': '',
+                'date_posted': failed_job.get('date_posted', ''),
+                'location': failed_job.get('location', ''),
+                'industry': failed_job.get('industry', ''),
+                'employer': failed_job.get('employer', ''),
                 'employment_type': '',
                 'salary': '',
                 'scraped_at': '',
@@ -923,7 +941,10 @@ class PNGworkforceScraper:
                 'description_length': 0,
                 'status': 'failed',
                 'error': failed_job.get('error', ''),
-                'failed_at': failed_job.get('failed_at', '')
+                'failure_type': failed_job.get('failure_type', 'unknown'),
+                'retry_count': failed_job.get('retry_count', 0),
+                'failed_at': failed_job.get('failed_at', ''),
+                'last_attempted': failed_job.get('last_attempted', '')
             }
             csv_data.append(csv_row)
         
@@ -936,7 +957,7 @@ class PNGworkforceScraper:
                 'employer', 'employment_type', 'salary', 'url'
             ]
             secondary_fields = ['html_file', 'json_file', 'description_length']
-            metadata_fields = ['scraped_at', 'status', 'error', 'failed_at']
+            metadata_fields = ['scraped_at', 'status', 'error', 'failure_type', 'retry_count', 'failed_at', 'last_attempted']
             
             # Get all unique fieldnames
             all_fieldnames = set()
@@ -994,6 +1015,8 @@ class PNGworkforceScraper:
         existing_job_ids = set()
         existing_jobs_map = {}
         failed_job_ids = set()
+        existing_failed_by_id = {}
+        existing_failed_by_url = {}
         
         if update_existing:
             existing_data = self.load_existing_summary()
@@ -1003,10 +1026,17 @@ class PNGworkforceScraper:
                 existing_jobs_map = {job.get('job_id'): job for job in existing_jobs_list if job.get('job_id')}
                 print(f"Found {len(existing_job_ids)} existing jobs in database")
             
-            # Get list of previously failed jobs to re-attempt
-            failed_job_ids = self.get_failed_job_ids()
+            # Get comprehensive failed jobs info (by ID and by URL)
+            existing_failed_by_id, existing_failed_by_url = self.get_failed_jobs_info()
+            failed_job_ids = set(existing_failed_by_id.keys())
+            
+            # Log failed jobs stats
+            failed_with_id = len([fj for fj in existing_data.get('failed_jobs', []) if fj.get('job_id')])
+            failed_without_id = len([fj for fj in existing_data.get('failed_jobs', []) if not fj.get('job_id')])
             if failed_job_ids:
-                print(f"Found {len(failed_job_ids)} previously failed jobs (will re-attempt)")
+                print(f"Found {failed_with_id} previously failed jobs with ID (will re-attempt)")
+            if failed_without_id > 0:
+                print(f"Found {failed_without_id} previously failed jobs without extractable ID (will re-attempt)")
         
         # Scrape from homepage (with pagination) to discover all jobs
         print("\n=== Scraping homepage (all pages) ===")
@@ -1028,6 +1058,7 @@ class PNGworkforceScraper:
         
         # Create a map by URL for deduplication
         jobs_by_url = {}
+        jobs_without_id_preliminary = []
         
         # Add homepage jobs first
         for job in homepage_jobs:
@@ -1035,6 +1066,17 @@ class PNGworkforceScraper:
             if url:
                 # Normalize URL (remove trailing slashes, etc.)
                 normalized_url = url.rstrip('/')
+                job_id = self.extract_job_id_from_url(url)
+                if not job_id:
+                    # Track jobs without extractable ID for logging
+                    jobs_without_id_preliminary.append({
+                        'url': normalized_url,
+                        'title': job.get('title', 'Unknown'),
+                        'employer': job.get('employer', ''),
+                        'location': job.get('location', ''),
+                        'date_posted': job.get('date_posted', ''),
+                        'source': 'homepage'
+                    })
                 jobs_by_url[normalized_url] = job
         
         # Add latest jobs (may override if same URL, but that's fine)
@@ -1042,11 +1084,32 @@ class PNGworkforceScraper:
             url = job.get('url')
             if url:
                 normalized_url = url.rstrip('/')
+                job_id = self.extract_job_id_from_url(url)
+                if not job_id:
+                    # Track jobs without extractable ID for logging (if not already tracked)
+                    if normalized_url not in jobs_by_url:
+                        jobs_without_id_preliminary.append({
+                            'url': normalized_url,
+                            'title': job.get('title', 'Unknown'),
+                            'employer': job.get('employer', ''),
+                            'location': job.get('location', ''),
+                            'date_posted': job.get('date_posted', ''),
+                            'source': 'latest_jobs'
+                        })
                 jobs_by_url[normalized_url] = job
         
         # Convert back to list
         jobs = list(jobs_by_url.values())
         print(f"Total unique jobs after merge: {len(jobs)}")
+        
+        # Log jobs without extractable IDs
+        if jobs_without_id_preliminary:
+            print(f"\n⚠️  Found {len(jobs_without_id_preliminary)} jobs without extractable job_id (will attempt to scrape and extract):")
+            for job_info in jobs_without_id_preliminary[:5]:  # Show first 5
+                print(f"  - {job_info['title'][:50]}: {job_info['url'][:80]}")
+            if len(jobs_without_id_preliminary) > 5:
+                print(f"  ... and {len(jobs_without_id_preliminary) - 5} more")
+        
         print(f"Found {len(jobs)} job listings on page")
         
         if not jobs:
@@ -1057,21 +1120,64 @@ class PNGworkforceScraper:
         
         # Filter jobs to scrape:
         # 1. New jobs (not in database)
-        # 2. Previously failed jobs (re-attempt)
+        # 2. Previously failed jobs (re-attempt, with retry limit)
         # 3. Jobs where files are missing (re-scrape)
+        # 4. Jobs without extractable job_id (track separately, retry limit)
+        max_retries = 3  # Maximum retry attempts before giving up
         jobs_to_scrape = []
         jobs_to_skip = []
+        jobs_without_id_skipped = []
         
         for job in jobs:
-            job_id = self.extract_job_id_from_url(job['url'])
+            job_url = job.get('url', '')
+            normalized_url = job_url.rstrip('/') if job_url else ''
+            job_id = self.extract_job_id_from_url(job_url)
             
             if not job_id:
-                # Can't extract ID, scrape it
-                jobs_to_scrape.append((job, 'new'))
+                # Can't extract ID from URL - check if we've seen this URL before
+                existing_failed = existing_failed_by_url.get(normalized_url) if normalized_url else None
+                
+                if existing_failed:
+                    retry_count = existing_failed.get('retry_count', 0)
+                    if retry_count >= max_retries:
+                        # Exceeded retry limit - skip but track it
+                        jobs_without_id_skipped.append({
+                            'url': normalized_url,
+                            'title': job.get('title', 'Unknown'),
+                            'employer': job.get('employer', ''),
+                            'location': job.get('location', ''),
+                            'date_posted': job.get('date_posted', ''),
+                            'retry_count': retry_count,
+                            'reason': 'max_retries_exceeded'
+                        })
+                        continue
+                    else:
+                        # Retry it (increment count will happen during scrape)
+                        jobs_to_scrape.append((job, 'retry_no_job_id'))
+                else:
+                    # First time seeing this URL without job_id - try to scrape
+                    jobs_to_scrape.append((job, 'no_job_id'))
                 continue
             
-            # Always re-attempt failed jobs
+            # Job has extractable ID - use existing logic
+            # Always re-attempt failed jobs (with retry limit)
             if job_id in failed_job_ids:
+                existing_failed = existing_failed_by_id.get(job_id)
+                if existing_failed:
+                    retry_count = existing_failed.get('retry_count', 0)
+                    if retry_count >= max_retries:
+                        # Skip but still track in failed_jobs
+                        jobs_without_id_skipped.append({
+                            'url': normalized_url,
+                            'job_id': job_id,
+                            'title': job.get('title', 'Unknown'),
+                            'employer': job.get('employer', ''),
+                            'location': job.get('location', ''),
+                            'date_posted': job.get('date_posted', ''),
+                            'retry_count': retry_count,
+                            'reason': 'max_retries_exceeded'
+                        })
+                        continue
                 jobs_to_scrape.append((job, 'retry_failed'))
                 continue
             
@@ -1085,6 +1191,10 @@ class PNGworkforceScraper:
         
         print(f"\nJobs to scrape: {len(jobs_to_scrape)}")
         print(f"Jobs to skip (already scraped): {len(jobs_to_skip)}")
+        if jobs_without_id_skipped:
+            print(f"Jobs skipped (max retries exceeded): {len(jobs_without_id_skipped)}")
+            print(f"  (These jobs cannot extract job_id or exceeded {max_retries} retry attempts)")
+            print(f"  Sample: {jobs_without_id_skipped[0].get('title', 'Unknown')[:50]}")
         
         # Scrape each job detail page
         # Use a single timestamp for this entire scrape session
@@ -1115,6 +1225,8 @@ class PNGworkforceScraper:
             reason_str = {
                 'new': 'NEW',
                 'retry_failed': 'RETRY (prev failed)',
+                'retry_no_job_id': 'RETRY (no ID, prev failed)',
+                'no_job_id': 'NO_ID (trying to extract from page)',
                 'missing_files': 'RE-SCRAPE (missing files)'
             }.get(reason, 'PROCESSING')
             
@@ -1122,21 +1234,62 @@ class PNGworkforceScraper:
             result, error = self.scrape_job_detail(job['url'], main_page_data=job)
             
             if result:
-                results.append(result)
-                if reason == 'retry_failed':
-                    retry_count += 1
-                elif update_existing and job_id in existing_job_ids:
-                    updated_count += 1
+                # Check if we successfully extracted job_id from detail page
+                extracted_job_id = result.get('job_id')
+                if not extracted_job_id:
+                    # Still no job_id after scraping detail page - track as failed
+                    normalized_url = job['url'].rstrip('/')
+                    existing_failed = existing_failed_by_url.get(normalized_url) if normalized_url else None
+                    retry_count = (existing_failed.get('retry_count', 0) + 1) if existing_failed else 1
+                    
+                    failed_jobs.append({
+                        'url': normalized_url,
+                        'job_id': None,
+                        'title': result.get('title') or job.get('title', 'Unknown'),
+                        'employer': result.get('employer') or job.get('employer', ''),
+                        'location': result.get('location') or job.get('location', ''),
+                        'date_posted': result.get('date_posted') or job.get('date_posted', ''),
+                        'industry': result.get('industry') or job.get('industry', ''),
+                        'error': 'no_job_id_extractable',
+                        'retry_count': retry_count,
+                        'failure_type': 'no_job_id',
+                        'failed_at': datetime.now().isoformat(),
+                        'last_attempted': datetime.now().isoformat()
+                    })
+                    print(f"  ⚠️  Warning: Could not extract job_id from detail page (attempt {retry_count})")
                 else:
-                    new_count += 1
+                    # Success! Job has ID now
+                    results.append(result)
+                    if reason == 'retry_failed':
+                        retry_count += 1
+                    elif reason in ['retry_no_job_id', 'no_job_id']:
+                        retry_count += 1
+                        print(f"  ✅ Successfully extracted job_id: {extracted_job_id}")
+                    elif update_existing and extracted_job_id in existing_job_ids:
+                        updated_count += 1
+                    else:
+                        new_count += 1
             else:
-                failed_jobs.append({
-                    'url': job['url'],
+                # Scraping failed - track with retry count
+                normalized_url = job['url'].rstrip('/')
+                existing_failed = existing_failed_by_id.get(job_id) if job_id else existing_failed_by_url.get(normalized_url) if normalized_url else None
+                retry_count = (existing_failed.get('retry_count', 0) + 1) if existing_failed else 1
+                
+                failed_job_entry = {
+                    'url': normalized_url,
                     'job_id': job_id,
                     'title': job.get('title', 'Unknown'),
+                    'employer': job.get('employer', ''),
+                    'location': job.get('location', ''),
+                    'date_posted': job.get('date_posted', ''),
+                    'industry': job.get('industry', ''),
                     'error': error,
-                    'failed_at': datetime.now().isoformat()
-                })
+                    'retry_count': retry_count,
+                    'failure_type': 'fetch_error' if not job_id else 'unknown',
+                    'failed_at': datetime.now().isoformat(),
+                    'last_attempted': datetime.now().isoformat()
+                }
+                failed_jobs.append(failed_job_entry)
             
             # Be respectful - delay between requests
             if i < len(jobs_to_scrape):
@@ -1150,6 +1303,8 @@ class PNGworkforceScraper:
             final_jobs_map = {}
             
             # Add all results (includes skipped jobs + newly scraped)
+            jobs_without_id_count = 0
+            jobs_without_id_details = []
             for job in results:
                 job_id = job.get('job_id')
                 if job_id:
@@ -1170,6 +1325,22 @@ class PNGworkforceScraper:
                             job['first_seen'] = scrape_timestamp
                     
                     final_jobs_map[job_id] = job
+                else:
+                    # Job without extractable ID - log but don't add to final map
+                    jobs_without_id_count += 1
+                    jobs_without_id_details.append({
+                        'title': job.get('title', 'Unknown'),
+                        'url': job.get('url', 'No URL'),
+                        'has_stored_id': bool(job.get('job_id'))
+                    })
+                    print(f"  ⚠️  Warning: Job without extractable ID excluded from final database: {job.get('title', 'Unknown')[:50]} (URL: {job.get('url', 'No URL')[:70]})")
+            
+            if jobs_without_id_count > 0:
+                print(f"\n  ⚠️  Excluded {jobs_without_id_count} jobs without extractable job_id from final database (see failed_jobs for details):")
+                for detail in jobs_without_id_details[:10]:
+                    print(f"     - {detail['title'][:50]}: {detail['url'][:70]}")
+                if len(jobs_without_id_details) > 10:
+                    print(f"     ... and {len(jobs_without_id_details) - 10} more")
             
             # Add any existing jobs that weren't in results (edge case - jobs not on main page anymore)
             for job_id, job in existing_jobs_map.items():
@@ -1179,17 +1350,59 @@ class PNGworkforceScraper:
             
             all_jobs_data = list(final_jobs_map.values())
             
+            # Debug: Check for counting discrepancies
+            print(f"\n=== Merge Debug Info ===")
+            print(f"Results list length: {len(results)}")
+            print(f"Final jobs map length: {len(final_jobs_map)}")
+            print(f"Existing jobs in map: {len(existing_jobs_map)}")
+            print(f"Jobs preserved (not in results): {len([j for j in final_jobs_map.values() if j.get('job_id') not in {r.get('job_id') for r in results if r.get('job_id')}])}")
+            
             # Merge failed jobs (update existing failed with new failures)
-            existing_failed = {fj.get('job_id'): fj for fj in existing_data.get('failed_jobs', []) if fj.get('job_id')}
+            # Track by both job_id and URL for jobs without extractable IDs
+            existing_failed_by_id_final = {fj.get('job_id'): fj for fj in existing_data.get('failed_jobs', []) if fj.get('job_id')}
+            existing_failed_by_url_final = {}
+            for fj in existing_data.get('failed_jobs', []):
+                url = fj.get('url')
+                if url:
+                    normalized_url = url.rstrip('/')
+                    existing_failed_by_url_final[normalized_url] = fj
+            
+            # Add new failures, updating retry counts
             for fj in failed_jobs:
                 job_id = fj.get('job_id')
+                url = fj.get('url', '').rstrip('/') if fj.get('url') else ''
+                
                 if job_id:
-                    # Update if this job was previously successful (now failed) or update existing failure
-                    existing_failed[job_id] = fj
+                    # Track by job_id
+                    existing_failed_by_id_final[job_id] = fj
+                
+                if url:
+                    # Also track by URL (for jobs without job_id)
+                    existing_failed_by_url_final[url] = fj
             
             # Remove from failed if now successful
             successful_ids = {job.get('job_id') for job in results if job.get('job_id')}
-            failed_jobs = [fj for fj_id, fj in existing_failed.items() if fj_id not in successful_ids]
+            successful_urls = {job.get('url', '').rstrip('/') for job in results if job.get('url')}
+            
+            # Build final failed_jobs list, excluding successful ones
+            final_failed_jobs = []
+            seen_urls = set()
+            
+            # Add failed jobs with job_id (if not successful)
+            for job_id, fj in existing_failed_by_id_final.items():
+                if job_id not in successful_ids:
+                    url = fj.get('url', '').rstrip('/')
+                    if url and url not in seen_urls:
+                        final_failed_jobs.append(fj)
+                        seen_urls.add(url)
+            
+            # Add failed jobs without job_id (if not successful)
+            for url, fj in existing_failed_by_url_final.items():
+                if url not in seen_urls and url not in successful_urls:
+                    final_failed_jobs.append(fj)
+                    seen_urls.add(url)
+            
+            failed_jobs = final_failed_jobs
         else:
             # No existing data - all jobs are new, ensure first_seen and last_seen are set
             scrape_timestamp = datetime.now().isoformat()
@@ -1204,6 +1417,9 @@ class PNGworkforceScraper:
         json_path, csv_path = self.save_consolidated_files(all_jobs_data, failed_jobs)
         
         # Save summary with this scrape's details
+        failed_with_id_count = len([fj for fj in failed_jobs if fj.get('job_id')])
+        failed_without_id_count = len([fj for fj in failed_jobs if not fj.get('job_id')])
+        
         summary = {
             'scrape_date': datetime.now().isoformat(),
             'total_jobs_found_on_page': len(jobs),
@@ -1212,8 +1428,10 @@ class PNGworkforceScraper:
             'jobs_skipped': skipped_count,
             'jobs_updated': updated_count,
             'jobs_failed': len(failed_jobs),
+            'failed_with_job_id': failed_with_id_count,
+            'failed_without_job_id': failed_without_id_count,
             'total_jobs_in_database': len(all_jobs_data),
-            'failed_jobs': failed_jobs[:10]  # Save first 10 failed for reference
+            'failed_jobs': failed_jobs[:50]  # Save first 50 failed for reference (increased for manual review)
         }
         
         summary_path = self.json_dir / 'scrape_summary.json'
@@ -1233,9 +1451,29 @@ class PNGworkforceScraper:
         print(f"Summary saved to: {summary_path}")
         
         if failed_jobs:
-            print(f"\nFailed jobs (showing first 5):")
-            for fj in failed_jobs[:5]:
-                print(f"  - {fj.get('title', 'Unknown')}: {fj.get('error', 'Unknown error')}")
+            # Categorize failed jobs
+            failed_with_id = [fj for fj in failed_jobs if fj.get('job_id')]
+            failed_without_id = [fj for fj in failed_jobs if not fj.get('job_id')]
+            
+            print(f"\n=== Failed Jobs Summary ===")
+            print(f"Total failed: {len(failed_jobs)}")
+            print(f"  - With job_id: {len(failed_with_id)}")
+            print(f"  - Without extractable job_id: {len(failed_without_id)}")
+            
+            if failed_without_id:
+                print(f"\nJobs without extractable job_id (for manual review):")
+                for fj in failed_without_id[:10]:
+                    retry_info = f" (retry {fj.get('retry_count', 0)}/{max_retries})" if fj.get('retry_count', 0) > 0 else ""
+                    print(f"  - {fj.get('title', 'Unknown')[:50]}: {fj.get('url', 'No URL')[:70]}{retry_info}")
+                if len(failed_without_id) > 10:
+                    print(f"  ... and {len(failed_without_id) - 10} more (see all_jobs.json/all_jobs.csv)")
+            
+            if failed_with_id:
+                print(f"\nFailed jobs with job_id (showing first 5):")
+                for fj in failed_with_id[:5]:
+                    retry_info = f" (retry {fj.get('retry_count', 0)}/{max_retries})" if fj.get('retry_count', 0) > 0 else ""
+                    failure_type = fj.get('failure_type', 'unknown')
+                    print(f"  - {fj.get('title', 'Unknown')[:50]} (ID: {fj.get('job_id')}): {fj.get('error', 'Unknown error')} [{failure_type}]{retry_info}")
         
         return all_jobs_data
 
