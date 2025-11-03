@@ -14,9 +14,9 @@ If you want to understand the rest ... read on!
 
 ## Features
 
-- **Main Page Scraping**: Extracts all job listings checking both the latest jobs page (https://www.pngworkforce.com/jobs/view-latest-jobs) and iterating through each set of 10 page listing on the main page (https://www.pngworkforce.com/)
-- **Detail Page Scraping**: From the jobs scraped in the "Main Page Scraping" the scraper then visits the indidual job ads and downloads complete HTMLs for each job detail page
-- **Improved Structured Data Extraction**: Uses proper HTML selectors to extract:
+- **Main Page Scraping**: Extracts all job listings (urls), checking both the latest jobs page (https://www.pngworkforce.com/jobs/view-latest-jobs) and iterating through each set of 10 page listing on the main page (https://www.pngworkforce.com/).
+- **Detail Page Scraping**: From the list of jobs scraped in the "Main Page Scraping" the scraper visits the individual job ads and downloads complete HTMLs for each job detail page
+- **Structured Data Extraction**: Uses proper HTML selectors to extract:
   - Job title (from `<title>` tag)
   - Location (from structured data `itemprop="addressRegion"`)
   - Date posted (from "Date Posted:" label)
@@ -128,13 +128,3 @@ You can modify the scraper behavior by editing `scraper.py`:
 - Adjust selectors in `extract_job_listings()` if the website structure changes
 
 **For daily runs**: Leave `update_existing=True` (default) to use incremental updates.
-
-## Processing Existing Data
-
-If you have existing scraped data and want to generate consolidated files:
-
-```bash
-python process_existing.py
-```
-
-This will create `all_jobs.json` and `all_jobs.csv` from existing individual JSON files.
