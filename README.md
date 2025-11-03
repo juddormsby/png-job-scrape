@@ -1,6 +1,17 @@
 # PNGworkforce.com Job Scraper
 
 A Python scraper for extracting job listings from PNGworkforce.com.
+
+**If you just want to view the main .csv output from scarping see:
+
+```
+├── json_output/          # Structured data JSON files
+│   ├── all_jobs.json     # ⭐ Consolidated JSON with all jobs
+│   ├── all_jobs.csv      # ⭐ Consolidated CSV with all jobs
+```
+
+If you want to understand the rest ... read on!
+
 ## Features
 
 - **Main Page Scraping**: Extracts all job listings checking both the latest jobs page (https://www.pngworkforce.com/jobs/view-latest-jobs) and iterating through each set of 10 page listing on the main page (https://www.pngworkforce.com/)
@@ -19,20 +30,6 @@ A Python scraper for extracting job listings from PNGworkforce.com.
 - **Incremental Updates**: Updates existing database instead of recreating each time
 - **Failed Job Tracking**: Tracks and documents jobs that fail to scrape (404s, etc.)
 - **Respectful Scraping**: Includes delays between requests to avoid overloading the server
-
-### Troubleshooting
-
-The scraper will:
-1. Check for existing `all_jobs.json` and load it if found (incremental mode)
-2. Fetch the latest jobs page from PNGworkforce.com
-3. Extract all job listings and their detail page URLs
-4. Download each job detail page and save as HTML in `html_output/`
-5. Extract structured data using improved HTML selectors
-6. Save individual JSON files in `json_output/`
-7. Update/create consolidated files:
-   - `all_jobs.json` - All jobs in one JSON file
-   - `all_jobs.csv` - All jobs in CSV format for easy analysis
-   - `scrape_summary.json` - Summary of the latest scrape
 
 ## Output Structure
 
