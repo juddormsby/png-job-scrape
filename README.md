@@ -51,22 +51,41 @@ pngworkforce-scrape/
 ## Output Format
 
 ### Individual Job JSON (`job_XXXXX.json`)
-Each job JSON file contains:
+Each job JSON file contains (in logical order matching CSV):
+
+**Core Fields:**
 - `job_id`: Unique job ID from URL
-- `url`: Job detail page URL
+- `date_posted`: Date the job was posted (formatted as DD/MM/YYYY)
 - `title`: Job title (extracted from `<title>` tag)
-- `date_posted`: Date the job was posted (from "Date Posted:" label)
-- `location`: Job location (from structured data)
 - `industry`: Industry category
 - `employer`: Employer/company name
-- `description`: Full job description text (up to 10,000 chars)
+
+**Employer Details:**
+- `employer_profile_url`: Link to employer's profile page on PNGworkforce.com
+- `employer_external_website`: Employer's external website URL
+- `employer_phone`: Employer's phone number
+- `employer_address`: Employer's address
+
+**Job Details:**
 - `employment_type`: Full-Time, Part-Time, Contract, etc. (when available)
 - `salary`: Salary information (when available)
+- `url`: Job detail page URL
+- `description`: Full job description text (up to 10,000 chars)
+
+**File References:**
 - `html_file`: Absolute path to saved HTML file
 - `html_file_rel`: Relative path to HTML file (for easy access)
 - `json_file`: Absolute path to JSON file
 - `json_file_rel`: Relative path to JSON file
-- `scraped_at`: Timestamp of when the job was scraped
+
+**Tracking Fields:**
+- `first_seen`: Timestamp of when the job was first discovered by the scraper
+- `last_seen`: Timestamp of when the job was most recently seen by the scraper
+- `scraped_at`: Timestamp of when the job was last scraped/updated
+
+**Additional Fields:**
+- `location`: Job location (from structured data)
+- `job_id_display`: Display version of job ID (when available)
 
 ### Consolidated Files
 
@@ -78,7 +97,10 @@ Each job JSON file contains:
 
 **`all_jobs.csv`**:
 - Flattened CSV format for easy analysis in Excel/Python/R
-- Includes: job_id, title, url, date_posted, location, industry, employer, etc.
+- Column order: `job_id`, `date_posted`, `title`, `industry`, `employer`, `employer_profile_url`, `employer_external_website`, `employer_phone`, `employer_address`, `employment_type`, `salary`, `url`, `html_file`, `json_file`, `description_length`, `first_seen`, `last_seen`, `scraped_at`, `status`, and any other fields
+- Includes all fields from JSON files plus:
+  - `description_length`: Character count of description (calculated field, not in JSON)
+  - `status`: "success" for successfully scraped jobs, "failed" for failed jobs
 - Perfect for filtering, sorting, and basic analysis
 
 **`scrape_summary.json`**:
