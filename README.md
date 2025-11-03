@@ -15,7 +15,7 @@ If you want to understand the rest ... read on!
 ## Features
 
 - **Main Page Scraping**: Extracts all job listings checking both the latest jobs page (https://www.pngworkforce.com/jobs/view-latest-jobs) and iterating through each set of 10 page listing on the main page (https://www.pngworkforce.com/)
-- **Detail Page Scraping**: From the jobs scraped in the "Main Page Scraping" the scraper then visits the indidual job ads and downloads complete HTML for each job detail page
+- **Detail Page Scraping**: From the jobs scraped in the "Main Page Scraping" the scraper then visits the indidual job ads and downloads complete HTMLs for each job detail page
 - **Improved Structured Data Extraction**: Uses proper HTML selectors to extract:
   - Job title (from `<title>` tag)
   - Location (from structured data `itemprop="addressRegion"`)
