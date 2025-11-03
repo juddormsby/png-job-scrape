@@ -51,7 +51,7 @@ pngworkforce-scrape/
 ## Output Format
 
 ### Individual Job JSON (`job_XXXXX.json`)
-Each job JSON file contains (in logical order matching CSV):
+Each job JSON file contains:
 
 **Core Fields:**
 - `job_id`: Unique job ID from URL
