@@ -1040,27 +1040,29 @@ class PNGworkforceScraper:
         # Save CSV with logical column order (not alphabetical!)
         csv_path = self.json_dir / 'all_jobs.csv'
         if csv_data:
-            # Define logical column order: most important fields first
-            primary_fields = [
-                'job_id', 'title', 'date_posted', 'first_seen', 'last_seen', 'location', 'industry', 
-                'employer', 'employer_profile_url', 'employer_external_website', 'employer_phone', 'employer_address',
-                'employment_type', 'salary', 'url'
+            # Define exact column order as specified
+            ordered_fields = [
+                'job_id', 'date_posted', 'title', 'industry', 'employer', 'employer_profile_url', 
+                'employer_external_website', 'employer_phone', 'employer_address', 'employment_type', 
+                'salary', 'url', 'html_file', 'json_file', 'description_length', 'first_seen', 
+                'last_seen', 'scraped_at', 'status'
             ]
-            secondary_fields = ['html_file', 'json_file', 'description_length']
-            metadata_fields = ['scraped_at', 'status', 'error', 'failure_type', 'retry_count', 'failed_at', 'last_attempted']
+            # Add any other fields that might exist at the end
+            other_fields = ['location', 'error', 'failure_type', 'retry_count', 'failed_at', 'last_attempted']
             
             # Get all unique fieldnames
             all_fieldnames = set()
             for row in csv_data:
                 all_fieldnames.update(row.keys())
             
-            # Build ordered fieldnames list (primary -> secondary -> metadata -> any extras)
+            # Build ordered fieldnames list: exact order specified, then other fields, then any extras
             ordered_fieldnames = []
-            for field in primary_fields + secondary_fields + metadata_fields:
+            # Add fields in exact specified order (only if they exist in data)
+            for field in ordered_fields + other_fields:
                 if field in all_fieldnames:
                     ordered_fieldnames.append(field)
             
-            # Add any remaining fields that weren't in our order (shouldn't happen, but safe)
+            # Add any remaining fields that weren't in our order at the end
             for field in sorted(all_fieldnames):
                 if field not in ordered_fieldnames:
                     ordered_fieldnames.append(field)
