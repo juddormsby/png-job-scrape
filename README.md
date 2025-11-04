@@ -2,7 +2,7 @@
 
 A Python scraper for extracting job listings from PNGworkforce.com.
 
-**If you just want to view the main .csv output from scarping see**:
+**If you just want to view the main .csv output from scraping see**:
 
 ```
 ├── json_output/          # Structured data JSON files
