@@ -1,13 +1,13 @@
 {
-  "scrape_date": "2025-11-27T02:47:34.582646",
-  "total_jobs_found_on_page": 205,
-  "new_jobs_scraped": 6,
+  "scrape_date": "2025-11-28T02:46:27.186616",
+  "total_jobs_found_on_page": 196,
+  "new_jobs_scraped": 7,
   "jobs_retried": 0,
   "jobs_skipped": 64,
-  "jobs_updated": 135,
+  "jobs_updated": 125,
   "jobs_failed": 0,
   "failed_with_job_id": 0,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 383,
+  "total_jobs_in_database": 390,
   "failed_jobs": []
 }
