@@ -1,13 +1,28 @@
 {
-  "scrape_date": "2025-12-01T03:00:46.618906",
-  "total_jobs_found_on_page": 163,
-  "new_jobs_scraped": 4,
-  "jobs_retried": 0,
+  "scrape_date": "2025-12-02T02:47:47.838944",
+  "total_jobs_found_on_page": 175,
+  "new_jobs_scraped": 13,
+  "jobs_retried": 1,
   "jobs_skipped": 55,
-  "jobs_updated": 104,
-  "jobs_failed": 0,
-  "failed_with_job_id": 0,
+  "jobs_updated": 106,
+  "jobs_failed": 1,
+  "failed_with_job_id": 1,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 404,
-  "failed_jobs": []
+  "total_jobs_in_database": 416,
+  "failed_jobs": [
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
+      "job_id": "25175",
+      "title": "Assistant Chief Security Officer (ACSO) – Readvertise",
+      "employer": "Assistant Chief Security Officer (ACSO) – Readvertise\n\n\t                    Date advertised: 12 Nov 2025 \nPNG University of Technology (PNGUoT)",
+      "location": "Morobe",
+      "date_posted": "12 Nov 2025",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2025-12-02T02:47:41.537658",
+      "last_attempted": "2025-12-02T02:47:41.537667"
+    }
+  ]
 }
