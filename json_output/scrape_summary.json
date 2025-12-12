@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2025-12-11T02:51:50.944395",
-  "total_jobs_found_on_page": 181,
-  "new_jobs_scraped": 5,
-  "jobs_retried": 0,
+  "scrape_date": "2025-12-12T02:50:51.126506",
+  "total_jobs_found_on_page": 171,
+  "new_jobs_scraped": 3,
+  "jobs_retried": 1,
   "jobs_skipped": 43,
-  "jobs_updated": 133,
-  "jobs_failed": 2,
-  "failed_with_job_id": 2,
+  "jobs_updated": 124,
+  "jobs_failed": 3,
+  "failed_with_job_id": 3,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 474,
+  "total_jobs_in_database": 477,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -37,6 +37,20 @@
       "failure_type": "unknown",
       "failed_at": "2025-12-06T02:45:35.712062",
       "last_attempted": "2025-12-06T02:45:35.712071"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/operations-manager-freight-forwarding/25170",
+      "job_id": "25170",
+      "title": "Operations Manager, Freight Forwarding",
+      "employer": "Operations Manager, Freight Forwarding\n\n\t                    Date advertised: 12 Nov 2025 \nPeopleConnexion",
+      "location": "Morobe",
+      "date_posted": "12 Nov 2025",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/operations-manager-freight-forwarding/25170",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2025-12-12T02:50:47.787724",
+      "last_attempted": "2025-12-12T02:50:47.787733"
     }
   ]
 }
