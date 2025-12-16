@@ -144,8 +144,6 @@ And for ISCO 1 digit:
 8 - Plant and machine operators and assemblers
 9 - Elementary occupations
 
-
-
 """
 
     # Create client for this thread (OpenAI client is not thread-safe)
