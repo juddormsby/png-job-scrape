@@ -1,11 +1,13 @@
 *** check how consistent over rune
 
-forvalues i = 0/2 {
+	
+forvalues i = 0/3 {
 	import delimited "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/LLM_processed_jobs`i'.csv", clear
 	
 	capture confirm string variable job_id
 	if !_rc {
-		destring job_id, replace
+		destring job_id, replace force
+		drop if job_id == .
 	}
 
 	rename * *`i'
@@ -22,7 +24,7 @@ forvalues i = 0/2 {
 
 clear
 use "`temp0'"
-forvalues i = 1/2 {
+forvalues i = 1/3 {
 	merge 1:1 job_id using "`temp`i''"
 	assert _merge == 3 
 	rename _merge merge`i'
