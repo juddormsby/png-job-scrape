@@ -11,7 +11,7 @@ from pydantic import BaseModel
 # ============================================================================
 DEMO_MODE = False  # Set to False to process all jobs
 DEMO_NUM_JOBS = 100  # Number of jobs to process in demo mode
-PARALLEL_WORKERS = 10  # Number of parallel workers for processing jobs
+PARALLEL_WORKERS = 500  # Number of parallel workers for processing jobs
 # ============================================================================
 
 
@@ -107,7 +107,46 @@ Please provide:
 4. A two-sentence summary evaluating how well this job posting can be classified
 
 If a classification cannot be determined at a specific digit level, use null for that field but still provide a confidence score (which should be low if uncertain).
-Use standard ISIC Rev.4 and ISCO-08 code formats."""
+Use standard ISIC Rev.4 and ISCO-08 code formats.
+Note that you should provide them in the digit description format: 
+E.g. for ISIC 1 Digit.
+A - Agriculture, forestry and fishing
+B - Mining and quarrying
+C - Manufacturing
+D - Electricity, gas, steam and air conditioning supply
+E - Water supply; sewerage, waste management and remediation activities
+F - Construction
+G - Wholesale and retail trade; repair of motor vehicles and motorcycles
+H - Transportation and storage
+I - Accommodation and food service activities
+J - Information and communication
+K - Financial and insurance activities
+L - Real estate activities
+M - Professional, scientific and technical activities
+N - Administrative and support service activities
+O - Public administration and defence; compulsory social security
+P - Education
+Q - Human health and social work activities
+R - Arts, entertainment and recreation
+S - Other service activities
+T - Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use
+U - Activities of extraterritorial organisations and bodies
+
+And for ISCO 1 digit:
+0 - Armed forces occupations
+1 - Managers
+2 - Professionals
+3 - Technicians and associate professionals
+4 - Clerical support workers
+5 - Service and sales workers
+6 - Skilled agricultural, forestry and fishery workers
+7 - Craft and related trades workers
+8 - Plant and machine operators and assemblers
+9 - Elementary occupations
+
+
+
+"""
 
     # Create client for this thread (OpenAI client is not thread-safe)
     client = OpenAI(api_key=api_key)
