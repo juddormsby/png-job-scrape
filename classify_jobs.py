@@ -104,7 +104,6 @@ Please provide:
 1. ISIC Rev.4 classification at 1-digit (Section), 2-digit (Division), 3-digit (Group), and 4-digit (Class) levels
 2. ISCO-08 classification at 1-digit (Major Group), 2-digit (Sub-major Group), 3-digit (Minor Group), and 4-digit (Unit Group) levels
 3. Confidence scores (0.0 to 1.0) for each classification level
-4. A two-sentence summary evaluating how well this job posting can be classified
 
 If a classification cannot be determined at a specific digit level, use null for that field but still provide a confidence score (which should be low if uncertain).
 Use standard ISIC Rev.4 and ISCO-08 code formats.
@@ -191,7 +190,6 @@ And for ISCO 1 digit:
                 "isco_3digit_confidence": classification.occupation_classification.isco_3digit_confidence,
                 "isco_4digit_confidence": classification.occupation_classification.isco_4digit_confidence,
             },
-            "classification_summary": classification.classification_summary
         }
         
         return result
