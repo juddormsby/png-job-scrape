@@ -9,3 +9,5 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Project files
+png-jobscraper.txt
