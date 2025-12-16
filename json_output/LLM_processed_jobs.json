@@ -1,0 +1,482 @@
+[
+  {
+    "job_id": "24979",
+    "industry_classification": {
+      "isic_1digit": "C",
+      "isic_2digit": "33",
+      "isic_3digit": "331",
+      "isic_4digit": "3310",
+      "isic_1digit_confidence": 0.85,
+      "isic_2digit_confidence": 0.8,
+      "isic_3digit_confidence": 0.75,
+      "isic_4digit_confidence": 0.7
+    },
+    "occupation_classification": {
+      "isco_1digit": "7",
+      "isco_2digit": "72",
+      "isco_3digit": "723",
+      "isco_4digit": "7232",
+      "isco_1digit_confidence": 1.0,
+      "isco_2digit_confidence": 0.95,
+      "isco_3digit_confidence": 0.9,
+      "isco_4digit_confidence": 0.85
+    },
+    "classification_summary": "The job is best classified economically as repair and maintenance of machinery and equipment (ISIC Division 33) because the core duties focus on servicing heavy machinery. Occupationally it maps clearly to ISCO-08 trades: a heavy equipment/mechanical repair role within the machinery mechanics and repairers group (major group 7), with high confidence at the major and sub-major levels and slightly lower confidence at the most detailed class levels."
+  },
+  {
+    "job_id": "24978",
+    "industry_classification": {
+      "isic_1digit": "L",
+      "isic_2digit": "68",
+      "isic_3digit": "683",
+      "isic_4digit": "6832",
+      "isic_1digit_confidence": 0.9,
+      "isic_2digit_confidence": 0.85,
+      "isic_3digit_confidence": 0.8,
+      "isic_4digit_confidence": 0.75
+    },
+    "occupation_classification": {
+      "isco_1digit": "4",
+      "isco_2digit": "42",
+      "isco_3digit": "422",
+      "isco_4digit": "4221",
+      "isco_1digit_confidence": 0.9,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.85,
+      "isco_4digit_confidence": 0.8
+    },
+    "classification_summary": "The employer/role is best classified under ISIC Rev.4 as Real estate activities (Section L, Division 68), specifically management of real estate on a fee or contract basis (6832), reflecting property/estate management and facilities responsibilities. The occupation fits ISCO-08 Receptionists (4221) as the primary duties are front-desk reception, visitor registration and administrative support, with some security-related tasks augmenting but not dominating the role."
+  },
+  {
+    "job_id": "24977",
+    "industry_classification": {
+      "isic_1digit": "N - Administrative and support service activities",
+      "isic_2digit": "81 - Services to buildings and landscape activities",
+      "isic_3digit": "813 - Landscape service activities",
+      "isic_4digit": "8130 - Landscape service activities",
+      "isic_1digit_confidence": 0.95,
+      "isic_2digit_confidence": 0.98,
+      "isic_3digit_confidence": 0.98,
+      "isic_4digit_confidence": 0.95
+    },
+    "occupation_classification": {
+      "isco_1digit": "6 - Skilled agricultural, forestry and fishery workers",
+      "isco_2digit": "61 - Market-oriented skilled agricultural workers",
+      "isco_3digit": "611 - Market gardeners and crop growers",
+      "isco_4digit": null,
+      "isco_1digit_confidence": 0.9,
+      "isco_2digit_confidence": 0.75,
+      "isco_3digit_confidence": 0.6,
+      "isco_4digit_confidence": 0.2
+    },
+    "classification_summary": "This posting is clearly for landscaping/grounds-maintenance services, which fits well within ISIC Rev.4 Division 81 (Services to buildings and landscape activities), specifically class 8130. Occupationally, the role aligns with gardeners/landscapers and is best placed within ISCO major group 6 (skilled agricultural/ horticultural workers); finer-grained ISCO unit-group assignment is less certain from the ad and is therefore left unspecified."
+  },
+  {
+    "job_id": "24976",
+    "industry_classification": {
+      "isic_1digit": "L",
+      "isic_2digit": "68",
+      "isic_3digit": "68.3",
+      "isic_4digit": "68.32",
+      "isic_1digit_confidence": 0.65,
+      "isic_2digit_confidence": 0.6,
+      "isic_3digit_confidence": 0.5,
+      "isic_4digit_confidence": 0.45
+    },
+    "occupation_classification": {
+      "isco_1digit": "1",
+      "isco_2digit": "13",
+      "isco_3digit": "133",
+      "isco_4digit": "1330",
+      "isco_1digit_confidence": 0.98,
+      "isco_2digit_confidence": 0.95,
+      "isco_3digit_confidence": 0.93,
+      "isco_4digit_confidence": 0.9
+    },
+    "classification_summary": "The occupation is clearly an ICT Manager and maps well to ISCO-08 Information and communications technology service managers (1330) with high confidence based on the job title and duties. The employer name (Glory Estate Limited) suggests the firm operates in real estate, so the ISIC assignment to Real estate activities (Section L, Division 68, Group 68.3, Class 68.32) is plausible but less certain because the posting's informal industry field lists IT and the company’s core activity is not explicit."
+  },
+  {
+    "job_id": "24975",
+    "industry_classification": {
+      "isic_1digit": "C",
+      "isic_2digit": "33",
+      "isic_3digit": "331",
+      "isic_4digit": "3312",
+      "isic_1digit_confidence": 0.7,
+      "isic_2digit_confidence": 0.9,
+      "isic_3digit_confidence": 0.8,
+      "isic_4digit_confidence": 0.6
+    },
+    "occupation_classification": {
+      "isco_1digit": "7",
+      "isco_2digit": "72",
+      "isco_3digit": "723",
+      "isco_4digit": "7232",
+      "isco_1digit_confidence": 0.9,
+      "isco_2digit_confidence": 0.85,
+      "isco_3digit_confidence": 0.8,
+      "isco_4digit_confidence": 0.6
+    },
+    "classification_summary": "This role is best classified to ISIC Division 33 (Repair and installation of machinery and equipment) because the primary duties are preventive maintenance, troubleshooting and repair of diesel/gas generator sets. Occupationally, the job fits within craft/maintenance trade categories (ISCO major group 7), specifically machinery mechanics/repairers (machine and generator technician); the highest-level classifications are confident but the most detailed 4-digit class/unit mappings carry some uncertainty because generator work spans electrical and mechanical specialties and the employer's informal industry (construction) could also support an alternative classification at detailed levels."
+  },
+  {
+    "job_id": "24974",
+    "industry_classification": {
+      "isic_1digit": "F",
+      "isic_2digit": "43",
+      "isic_3digit": "433",
+      "isic_4digit": "4330",
+      "isic_1digit_confidence": 0.98,
+      "isic_2digit_confidence": 0.95,
+      "isic_3digit_confidence": 0.9,
+      "isic_4digit_confidence": 0.85
+    },
+    "occupation_classification": {
+      "isco_1digit": "7",
+      "isco_2digit": "71",
+      "isco_3digit": null,
+      "isco_4digit": null,
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.3,
+      "isco_4digit_confidence": 0.2
+    },
+    "classification_summary": "This posting is clearly for a construction trades role (exterior carpentry/joinery) so the economic activity maps to ISIC Section F (Construction), specifically specialised construction activities (43) and building completion and finishing (433 / 4330). The occupational assignment to ISCO major group 7 and sub-major 71 (building and related trades workers) is highly confident; more specific ISCO 3- and 4-digit codes are left unspecified due to the posting's limited detail and absence of an explicit unit-group label."
+  },
+  {
+    "job_id": "24973",
+    "industry_classification": {
+      "isic_1digit": "F",
+      "isic_2digit": "43",
+      "isic_3digit": "431",
+      "isic_4digit": "4312",
+      "isic_1digit_confidence": 0.9,
+      "isic_2digit_confidence": 0.85,
+      "isic_3digit_confidence": 0.8,
+      "isic_4digit_confidence": 0.75
+    },
+    "occupation_classification": {
+      "isco_1digit": "8",
+      "isco_2digit": "83",
+      "isco_3digit": "832",
+      "isco_4digit": "8322",
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.85,
+      "isco_4digit_confidence": 0.8
+    },
+    "classification_summary": "This posting is for an excavator operator working on construction sites (site preparation/earthmoving), so the activity best fits ISIC Section F — Specialized construction activities (site preparation, class 4312). The occupation is a mobile plant/operator role and aligns with ISCO major group 8 (plant and machine operators) — specifically drivers/mobile-plant operators (mobile earth-moving equipment); confidence is high for the broad categories and slightly lower for the most granular 4-digit classes due to overlap between civil engineering and specialized construction activities and minor variation in ISCO unit-group labeling."
+  },
+  {
+    "job_id": "24972",
+    "industry_classification": {
+      "isic_1digit": "F",
+      "isic_2digit": "42",
+      "isic_3digit": "429",
+      "isic_4digit": "4290",
+      "isic_1digit_confidence": 0.99,
+      "isic_2digit_confidence": 0.95,
+      "isic_3digit_confidence": 0.85,
+      "isic_4digit_confidence": 0.75
+    },
+    "occupation_classification": {
+      "isco_1digit": "2",
+      "isco_2digit": "21",
+      "isco_3digit": "214",
+      "isco_4digit": "2141",
+      "isco_1digit_confidence": 0.99,
+      "isco_2digit_confidence": 0.98,
+      "isco_3digit_confidence": 0.96,
+      "isco_4digit_confidence": 0.95
+    },
+    "classification_summary": "This posting is clearly for a civil engineering professional working on construction/infrastructure projects, matching ISIC Section F and Division 42 (civil engineering) and ISCO-08 unit group 2141 (Civil engineers). The ISIC 3- and 4-digit assignments are slightly less certain because the role spans multiple types of civil works (roads, bridges, utilities, surveying) that could map to several 3/4-digit classes."
+  },
+  {
+    "job_id": "24929",
+    "industry_classification": {
+      "isic_1digit": "B",
+      "isic_2digit": "07",
+      "isic_3digit": "072",
+      "isic_4digit": "0729",
+      "isic_1digit_confidence": 0.98,
+      "isic_2digit_confidence": 0.98,
+      "isic_3digit_confidence": 0.95,
+      "isic_4digit_confidence": 0.92
+    },
+    "occupation_classification": {
+      "isco_1digit": "1",
+      "isco_2digit": "12",
+      "isco_3digit": "121",
+      "isco_4digit": "1219",
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.92,
+      "isco_3digit_confidence": 0.88,
+      "isco_4digit_confidence": 0.8
+    },
+    "classification_summary": "The employer is a mining company (gold mine), so the economic activity clearly maps to ISIC section B — Mining and quarrying, Division 07 (Mining of metal ores), Group 072 (Mining of non‑ferrous metal ores), Class 0729 (Mining of other non‑ferrous metal ores). The role is a senior contracts/ commercial team lead within the company and best fits ISCO-08 under Managers (1), Administrative and commercial managers (12), Business services and administration managers (121), with the specific unit group as 1219 (business services/administration managers not elsewhere classified); this mapping is confident though the precise 4‑digit ISCO unit could vary depending on national interpretation of contract‑management functions."
+  },
+  {
+    "job_id": "24826",
+    "industry_classification": {
+      "isic_1digit": "B",
+      "isic_2digit": "07",
+      "isic_3digit": "072",
+      "isic_4digit": null,
+      "isic_1digit_confidence": 0.99,
+      "isic_2digit_confidence": 0.98,
+      "isic_3digit_confidence": 0.9,
+      "isic_4digit_confidence": 0.5
+    },
+    "occupation_classification": {
+      "isco_1digit": "2",
+      "isco_2digit": "21",
+      "isco_3digit": "214",
+      "isco_4digit": "2143",
+      "isco_1digit_confidence": 0.99,
+      "isco_2digit_confidence": 0.98,
+      "isco_3digit_confidence": 0.96,
+      "isco_4digit_confidence": 0.92
+    },
+    "classification_summary": "The employer and duties place this role squarely within the mining industry (metal ores) — specifically the Kainantu gold mine — so ISIC Section B and Division 07 (mining of metal ores) are appropriate. The advertised role is an Electrical Engineer responsible for power generation and distribution on-site, which maps to ISCO-08 as an engineering professional (214) and specifically electrical engineer (2143) with high confidence."
+  },
+  {
+    "job_id": "24738",
+    "industry_classification": {
+      "isic_1digit": "B",
+      "isic_2digit": "07",
+      "isic_3digit": "072",
+      "isic_4digit": "0729",
+      "isic_1digit_confidence": 0.95,
+      "isic_2digit_confidence": 0.95,
+      "isic_3digit_confidence": 0.9,
+      "isic_4digit_confidence": 0.6
+    },
+    "occupation_classification": {
+      "isco_1digit": "2",
+      "isco_2digit": "21",
+      "isco_3digit": "214",
+      "isco_4digit": "2145",
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.9,
+      "isco_4digit_confidence": 0.9
+    },
+    "classification_summary": "This posting is clearly for a mining activity (underground gold mining) and therefore maps to ISIC section B, division 07 (Mining of metal ores). The occupation is unambiguously a senior mining engineer responsible for mine planning and operations, best represented by ISCO-08 engineering professionals (unit group 2145: mining engineers, metallurgists and related professionals)."
+  },
+  {
+    "job_id": "24798",
+    "industry_classification": {
+      "isic_1digit": "G",
+      "isic_2digit": "45",
+      "isic_3digit": "452",
+      "isic_4digit": "4520",
+      "isic_1digit_confidence": 0.95,
+      "isic_2digit_confidence": 0.95,
+      "isic_3digit_confidence": 0.9,
+      "isic_4digit_confidence": 0.9
+    },
+    "occupation_classification": {
+      "isco_1digit": "7",
+      "isco_2digit": "72",
+      "isco_3digit": "723",
+      "isco_4digit": "7231",
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.88,
+      "isco_4digit_confidence": 0.9
+    },
+    "classification_summary": "The job is clearly a motor vehicle maintenance and repair role (auto electrician) and best fits ISIC class 4520: Maintenance and repair of motor vehicles. The occupation corresponds to ISCO-08 unit group 7231 (motor vehicle mechanics and repairers); slight ambiguity arises from the employer being in construction and work on heavy equipment and hybrid systems, but the core tasks are vehicle electrical diagnosis and repair."
+  },
+  {
+    "job_id": "24797",
+    "industry_classification": {
+      "isic_1digit": "I",
+      "isic_2digit": "56",
+      "isic_3digit": "561",
+      "isic_4digit": "5610",
+      "isic_1digit_confidence": 0.99,
+      "isic_2digit_confidence": 0.98,
+      "isic_3digit_confidence": 0.95,
+      "isic_4digit_confidence": 0.9
+    },
+    "occupation_classification": {
+      "isco_1digit": "5",
+      "isco_2digit": "51",
+      "isco_3digit": "513",
+      "isco_4digit": "5131",
+      "isco_1digit_confidence": 0.9,
+      "isco_2digit_confidence": 0.75,
+      "isco_3digit_confidence": 0.6,
+      "isco_4digit_confidence": 0.45
+    },
+    "classification_summary": "This posting is clearly for a front-of-house supervisor in a restaurant/fast-food establishment and maps well to ISIC section I, Division 56 (Food and beverage service activities), most specifically class 5610 (Restaurants and mobile food service activities). Occupationally it falls within service and sales workers (ISCO major group 5), most closely related to waiters/food and beverage service roles (ISCO 513/5131), though the supervisory nature (reporting to a Restaurant Manager) makes the precise 4-digit ISCO assignment less certain."
+  },
+  {
+    "job_id": "24737",
+    "industry_classification": {
+      "isic_1digit": "B",
+      "isic_2digit": "07",
+      "isic_3digit": "072",
+      "isic_4digit": "0729",
+      "isic_1digit_confidence": 0.98,
+      "isic_2digit_confidence": 0.97,
+      "isic_3digit_confidence": 0.96,
+      "isic_4digit_confidence": 0.95
+    },
+    "occupation_classification": {
+      "isco_1digit": "2",
+      "isco_2digit": "21",
+      "isco_3digit": "214",
+      "isco_4digit": "2145",
+      "isco_1digit_confidence": 0.99,
+      "isco_2digit_confidence": 0.95,
+      "isco_3digit_confidence": 0.9,
+      "isco_4digit_confidence": 0.75
+    },
+    "classification_summary": "The vacancy is a clear match to ISIC Rev.4 Section B, Division 07 (Mining of metal ores), with class 0729 (Mining of other non‑ferrous metal ores — e.g., gold). The occupation is best classified under ISCO‑08 as a professional engineering role (Major Group 2, Sub‑major 21, Minor Group 214), most closely corresponding to the mining engineer unit group (2145) though exact 4‑digit placement may vary by national implementations."
+  },
+  {
+    "job_id": "24793",
+    "industry_classification": {
+      "isic_1digit": "F",
+      "isic_2digit": "41",
+      "isic_3digit": "411",
+      "isic_4digit": "4110",
+      "isic_1digit_confidence": 0.95,
+      "isic_2digit_confidence": 0.92,
+      "isic_3digit_confidence": 0.88,
+      "isic_4digit_confidence": 0.8
+    },
+    "occupation_classification": {
+      "isco_1digit": "4",
+      "isco_2digit": "43",
+      "isco_3digit": "431",
+      "isco_4digit": null,
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.8,
+      "isco_3digit_confidence": 0.65,
+      "isco_4digit_confidence": 0.25
+    },
+    "classification_summary": "Industry: The role is best classified in ISIC Section F (Construction), Division 41 (Construction of buildings), Group 411 (Construction of residential and non-residential buildings) — the posting is explicitly construction/design focused so this mapping is high confidence. Occupation: The Document Controller is a clerical/records role involved in document management for construction projects and therefore fits within ISCO major group 4 (Clerical support workers), sub-major 43 (Numerical and material recording clerks) and minor group 431 (records/file-keeping functions); the exact 4-digit ISCO unit group is less certain from the posting and is left unspecified."
+  },
+  {
+    "job_id": "24703",
+    "industry_classification": {
+      "isic_1digit": "I",
+      "isic_2digit": "56",
+      "isic_3digit": "561",
+      "isic_4digit": "5610",
+      "isic_1digit_confidence": 0.99,
+      "isic_2digit_confidence": 0.98,
+      "isic_3digit_confidence": 0.95,
+      "isic_4digit_confidence": 0.95
+    },
+    "occupation_classification": {
+      "isco_1digit": "5",
+      "isco_2digit": "51",
+      "isco_3digit": "513",
+      "isco_4digit": "5131",
+      "isco_1digit_confidence": 0.99,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.95,
+      "isco_4digit_confidence": 0.95
+    },
+    "classification_summary": "The vacancy is for a front-of-house waiter/waitress in a restaurant/fast-food setting, matching ISIC class 5610 (Restaurants and mobile food service activities) and ISCO unit group 5131 (Waiters). Classification is highly certain at the section/division and major-group levels; minor ambiguity could exist only when distinguishing highly specific food/beverage subcategories (e.g., purely beverage service or event catering), but the duties described clearly identify standard restaurant waiting staff."
+  },
+  {
+    "job_id": "24702",
+    "industry_classification": {
+      "isic_1digit": "I - Accommodation and food service activities",
+      "isic_2digit": "56 - Food and beverage service activities",
+      "isic_3digit": "56.1 - Restaurants and mobile food service activities",
+      "isic_4digit": "56.10 - Restaurants and mobile food service activities",
+      "isic_1digit_confidence": 0.98,
+      "isic_2digit_confidence": 0.96,
+      "isic_3digit_confidence": 0.93,
+      "isic_4digit_confidence": 0.9
+    },
+    "occupation_classification": {
+      "isco_1digit": "5 - Service and sales workers",
+      "isco_2digit": "52 - Sales workers",
+      "isco_3digit": "522 - Shop sales assistants and demonstrators",
+      "isco_4digit": null,
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.9,
+      "isco_3digit_confidence": 0.85,
+      "isco_4digit_confidence": 0.2
+    },
+    "classification_summary": "This is a front-of-house food service role operating a point-of-sale, handling cash/EFTPOS and light food/restaurant duties, so it maps clearly to ISIC class 56.10 (restaurants and mobile food service activities). Occupationally it fits within ISCO major group 5 and sub-major 52 as a shop/sales assistant/cashier (522 shop sales assistants and demonstrators); the exact 4-digit ISCO unit group is not determinable with high certainty from the posting alone."
+  },
+  {
+    "job_id": "24794",
+    "industry_classification": {
+      "isic_1digit": "N",
+      "isic_2digit": "82",
+      "isic_3digit": "82.1",
+      "isic_4digit": "82.11",
+      "isic_1digit_confidence": 0.9,
+      "isic_2digit_confidence": 0.85,
+      "isic_3digit_confidence": 0.7,
+      "isic_4digit_confidence": 0.5
+    },
+    "occupation_classification": {
+      "isco_1digit": "2",
+      "isco_2digit": "24",
+      "isco_3digit": "242",
+      "isco_4digit": "2421",
+      "isco_1digit_confidence": 0.9,
+      "isco_2digit_confidence": 0.8,
+      "isco_3digit_confidence": 0.65,
+      "isco_4digit_confidence": 0.55
+    },
+    "classification_summary": "The posting describes an in-house HR/employee services role focused on recruitment, onboarding, records, payroll support and general office administration — mapping well to ISIC section N, Division 82 (office administrative and business support activities). Occupationally it aligns with ISCO Business and administration professionals, specifically personnel/HR professional unit group (2421), although the precise 4-digit ISCO placement is moderate in confidence because the role mixes professional HR tasks with clerical/administrative duties."
+  },
+  {
+    "job_id": "24795",
+    "industry_classification": {
+      "isic_1digit": "N",
+      "isic_2digit": "82",
+      "isic_3digit": "821",
+      "isic_4digit": "8211",
+      "isic_1digit_confidence": 0.9,
+      "isic_2digit_confidence": 0.9,
+      "isic_3digit_confidence": 0.7,
+      "isic_4digit_confidence": 0.5
+    },
+    "occupation_classification": {
+      "isco_1digit": "1",
+      "isco_2digit": "12",
+      "isco_3digit": "121",
+      "isco_4digit": "1212",
+      "isco_1digit_confidence": 0.95,
+      "isco_2digit_confidence": 0.85,
+      "isco_3digit_confidence": 0.8,
+      "isco_4digit_confidence": 0.7
+    },
+    "classification_summary": "This posting describes an in-house HR/employee services supervisory role and is best classified under ISIC Rev.4 division 82 (Office administrative and support activities) and ISCO-08 as a managers occupation (Human Resource Manager). The 1- and 2-digit level classifications are high confidence, while the 3- and 4-digit ISIC and ISCO assignments are moderately confident because the posting is for an internal HR supervisor (not an external HR services firm) and the employer's principal economic activity could alter the ISIC4 class. "
+  },
+  {
+    "job_id": "24796",
+    "industry_classification": {
+      "isic_1digit": "H",
+      "isic_2digit": "52",
+      "isic_3digit": "522",
+      "isic_4digit": "5221",
+      "isic_1digit_confidence": 0.9,
+      "isic_2digit_confidence": 0.8,
+      "isic_3digit_confidence": 0.6,
+      "isic_4digit_confidence": 0.5
+    },
+    "occupation_classification": {
+      "isco_1digit": "4",
+      "isco_2digit": "43",
+      "isco_3digit": "432",
+      "isco_4digit": "4321",
+      "isco_1digit_confidence": 0.8,
+      "isco_2digit_confidence": 0.8,
+      "isco_3digit_confidence": 0.8,
+      "isco_4digit_confidence": 0.7
+    },
+    "classification_summary": "The role is best classified within Transportation and Storage (ISIC Section H), specifically under support activities for transportation (ISIC division 52), because the primary duties center on managing a fleet and related transport support functions. Occupationally, the position aligns with clerical/material-recording functions (ISCO major group 4) — a fleet/administration coordinator combines recordkeeping, scheduling and supervisory office duties with hands-on vehicle/driver responsibilities, so the occupational assignment is moderately confident but not a perfect match to a single unit group."
+  }
+]

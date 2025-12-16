@@ -1,14 +1,17 @@
 import json
 import os
 from typing import Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from threading import Lock
 from openai import OpenAI
 from pydantic import BaseModel
 
 # ============================================================================
-# DEMO MODE CONFIGURATION
+# CONFIGURATION
 # ============================================================================
 DEMO_MODE = True  # Set to False to process all jobs
 DEMO_NUM_JOBS = 10  # Number of jobs to process in demo mode
+PARALLEL_WORKERS = 50  # Number of parallel workers for processing jobs
 # ============================================================================
 
 
@@ -56,10 +59,14 @@ def load_jobs(file_path: str) -> list:
         return data.get('jobs', [])
 
 
+# Lock for thread-safe file writing
+file_lock = Lock()
+
 def save_results(results: list, file_path: str):
-    """Save classification results to JSON file"""
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2, ensure_ascii=False)
+    """Save classification results to JSON file (thread-safe)"""
+    with file_lock:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
 
 
 def load_existing_results(file_path: str) -> dict:
@@ -70,7 +77,7 @@ def load_existing_results(file_path: str) -> dict:
     return {}
 
 
-def classify_job(client: OpenAI, job: dict) -> dict:
+def classify_job(api_key: str, job: dict) -> dict:
     """Classify a single job posting using OpenAI"""
     
     # Extract relevant fields
@@ -82,12 +89,12 @@ def classify_job(client: OpenAI, job: dict) -> dict:
     industry = job.get('industry', '')
     
     # Create prompt
-    prompt = f"""Analyze the following job posting and classify it according to ISIC Rev.4 (Economic Activity) and ISCO-08 (Occupation) standards.
+    prompt = f"""Analyze the following job posting (scraped from online) and classify it according to ISIC Rev.4 (Economic Activity) and ISCO-08 (Occupation) standards.
 
 Job Title: {title}
 Employer: {employer}
 Location: {location}
-Industry: {industry}
+Industry (note this is as described informally in online posting - not official information): {industry}
 Employer Website: {employer_external_url}
 
 Job Description:
@@ -102,6 +109,9 @@ Please provide:
 If a classification cannot be determined at a specific digit level, use null for that field but still provide a confidence score (which should be low if uncertain).
 Use standard ISIC Rev.4 and ISCO-08 code formats."""
 
+    # Create client for this thread (OpenAI client is not thread-safe)
+    client = OpenAI(api_key=api_key)
+    
     try:
         response = client.responses.parse(
             model="gpt-5-mini",
@@ -157,6 +167,39 @@ Use standard ISIC Rev.4 and ISCO-08 code formats."""
         }
 
 
+def process_job_batch(api_key: str, jobs_batch: list, existing_results: dict, output_file: str, batch_num: int, total_batches: int) -> list:
+    """Process a batch of jobs in parallel"""
+    results = []
+    
+    def process_single_job(job):
+        """Process a single job and return result"""
+        job_id = job.get('job_id', 'unknown')
+        title = job.get('title', 'N/A')
+        
+        # Skip if already processed
+        if job_id in existing_results:
+            return None
+        
+        print(f"[Batch {batch_num}/{total_batches}] Processing job {job_id}: {title}")
+        
+        # Classify job
+        result = classify_job(api_key, job)
+        
+        print(f"  ✓ Completed job {job_id}")
+        return result
+    
+    # Process batch in parallel
+    with ThreadPoolExecutor(max_workers=PARALLEL_WORKERS) as executor:
+        future_to_job = {executor.submit(process_single_job, job): job for job in jobs_batch}
+        
+        for future in as_completed(future_to_job):
+            result = future.result()
+            if result is not None:
+                results.append(result)
+    
+    return results
+
+
 def main():
     # File paths
     api_key_file = "png-jobscraper.txt"
@@ -166,7 +209,6 @@ def main():
     # Load API key
     print("Loading API key...")
     api_key = load_api_key(api_key_file)
-    client = OpenAI(api_key=api_key)
     
     # Load jobs
     print("Loading jobs...")
@@ -184,38 +226,58 @@ def main():
         print(f"{'='*60}\n")
         jobs = jobs[:DEMO_NUM_JOBS]
     
-    # Process each job
+    # Filter out already processed jobs
+    jobs_to_process = [job for job in jobs if job.get('job_id') not in existing_results]
+    print(f"Jobs to process: {len(jobs_to_process)} (skipping {len(jobs) - len(jobs_to_process)} already processed)")
+    
+    if not jobs_to_process:
+        print("No new jobs to process!")
+        return
+    
+    # Initialize results with existing ones
     results = list(existing_results.values())
     processed_count = len(results)
-    new_jobs_processed = 0
     
-    for i, job in enumerate(jobs, 1):
-        job_id = job.get('job_id', 'unknown')
+    # Process jobs in batches
+    batch_size = PARALLEL_WORKERS
+    total_batches = (len(jobs_to_process) + batch_size - 1) // batch_size
+    
+    print(f"\n{'='*60}")
+    print(f"Processing {len(jobs_to_process)} jobs in {total_batches} batch(es)")
+    print(f"Using {PARALLEL_WORKERS} parallel workers per batch")
+    print(f"{'='*60}\n")
+    
+    for batch_num in range(total_batches):
+        start_idx = batch_num * batch_size
+        end_idx = min(start_idx + batch_size, len(jobs_to_process))
+        batch = jobs_to_process[start_idx:end_idx]
         
-        # Skip if already processed
-        if job_id in existing_results:
-            print(f"[{i}/{len(jobs)}] Skipping job {job_id} (already processed)")
-            continue
+        print(f"\n--- Processing Batch {batch_num + 1}/{total_batches} ({len(batch)} jobs) ---")
         
-        print(f"[{i}/{len(jobs)}] Processing job {job_id}: {job.get('title', 'N/A')}")
+        # Process batch
+        batch_results = process_job_batch(
+            api_key, batch, existing_results, output_file, 
+            batch_num + 1, total_batches
+        )
         
-        # Classify job
-        result = classify_job(client, job)
+        # Add batch results
+        results.extend(batch_results)
+        processed_count += len(batch_results)
         
-        # Add to results
-        results.append(result)
+        # Update existing results to avoid duplicates in next batch
+        for result in batch_results:
+            existing_results[result['job_id']] = result
         
-        # Save after each job
+        # Save after each batch
         save_results(results, output_file)
-        processed_count += 1
-        new_jobs_processed += 1
-        
-        print(f"  ✓ Saved result for job {job_id} ({processed_count} total)")
+        print(f"  ✓ Batch {batch_num + 1} complete. Saved {len(batch_results)} new results ({processed_count} total)")
     
-    print(f"\nCompleted! Processed {processed_count} jobs total ({new_jobs_processed} new).")
+    print(f"\n{'='*60}")
+    print(f"Completed! Processed {processed_count} jobs total ({len(jobs_to_process)} new).")
     if DEMO_MODE:
         print(f"Demo mode: Limited to first {DEMO_NUM_JOBS} jobs from the list.")
     print(f"Results saved to {output_file}")
+    print(f"{'='*60}")
 
 
 if __name__ == "__main__":
