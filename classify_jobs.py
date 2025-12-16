@@ -9,9 +9,9 @@ from pydantic import BaseModel
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
-DEMO_MODE = True  # Set to False to process all jobs
+DEMO_MODE = False  # Set to False to process all jobs
 DEMO_NUM_JOBS = 100  # Number of jobs to process in demo mode
-PARALLEL_WORKERS = 50  # Number of parallel workers for processing jobs
+PARALLEL_WORKERS = 10  # Number of parallel workers for processing jobs
 # ============================================================================
 
 
