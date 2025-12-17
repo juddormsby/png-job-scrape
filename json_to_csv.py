@@ -23,7 +23,6 @@ for job in data:
     row['classification_summary'] = job.get('classification_summary', '')
     if 'error' in job:
         row['error'] = job.get('error', '')
-    
     rows.append(row)
 
 # Write CSV
