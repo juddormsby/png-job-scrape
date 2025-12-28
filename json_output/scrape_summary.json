@@ -1,12 +1,12 @@
 {
-  "scrape_date": "2025-12-27T02:49:31.016427",
+  "scrape_date": "2025-12-28T03:01:44.707772",
   "total_jobs_found_on_page": 171,
-  "new_jobs_scraped": 1,
-  "jobs_retried": 0,
+  "new_jobs_scraped": 0,
+  "jobs_retried": 1,
   "jobs_skipped": 33,
-  "jobs_updated": 137,
-  "jobs_failed": 3,
-  "failed_with_job_id": 3,
+  "jobs_updated": 136,
+  "jobs_failed": 5,
+  "failed_with_job_id": 5,
   "failed_without_job_id": 0,
   "total_jobs_in_database": 569,
   "failed_jobs": [
@@ -51,6 +51,34 @@
       "failure_type": "unknown",
       "failed_at": "2025-12-12T02:50:47.787724",
       "last_attempted": "2025-12-12T02:50:47.787733"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/manager-financial-controller/25297",
+      "job_id": "25297",
+      "title": "Manager - Financial Controller",
+      "employer": "PeopleConnexion",
+      "location": "National Capital District",
+      "date_posted": "28 Nov 2025",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/manager-financial-controller/25297",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2025-12-28T03:01:39.090615",
+      "last_attempted": "2025-12-28T03:01:39.090624"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/general-manager-diversified-business/25296",
+      "job_id": "25296",
+      "title": "General Manager - Diversified Business",
+      "employer": "",
+      "location": "Morobe",
+      "date_posted": "28 Nov 2025",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/general-manager-diversified-business/25296",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2025-12-28T03:01:41.551782",
+      "last_attempted": "2025-12-28T03:01:41.551791"
     }
   ]
 }
