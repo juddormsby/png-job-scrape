@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-01-02T02:52:59.909176",
-  "total_jobs": 591,
+  "last_updated": "2026-01-03T02:47:05.665165",
+  "total_jobs": 595,
   "total_failed": 6,
   "jobs": [
     {
@@ -19,7 +19,7 @@
       "json_file_rel": "json_output/job_24979.json",
       "scraped_at": "2025-10-31T16:23:08.665028",
       "job_id_display": "24979",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -42,7 +42,7 @@
       "json_file_rel": "json_output/job_24977.json",
       "scraped_at": "2025-10-31T16:23:15.104900",
       "job_id_display": "24977",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -65,7 +65,7 @@
       "json_file_rel": "json_output/job_24976.json",
       "scraped_at": "2025-10-31T16:23:18.217726",
       "job_id_display": "24976",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -88,7 +88,7 @@
       "json_file_rel": "json_output/job_24975.json",
       "scraped_at": "2025-10-31T16:23:20.606444",
       "job_id_display": "24975",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -111,7 +111,7 @@
       "json_file_rel": "json_output/job_24974.json",
       "scraped_at": "2025-10-31T16:23:22.943250",
       "job_id_display": "24974",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -134,7 +134,7 @@
       "json_file_rel": "json_output/job_24973.json",
       "scraped_at": "2025-10-31T16:23:25.351624",
       "job_id_display": "24973",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -157,7 +157,7 @@
       "json_file_rel": "json_output/job_24972.json",
       "scraped_at": "2025-10-31T16:23:28.483157",
       "job_id_display": "24972",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -181,7 +181,7 @@
       "json_file_rel": "json_output/job_24929.json",
       "scraped_at": "2025-10-31T16:24:55.771790",
       "job_id_display": "24929",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -205,7 +205,7 @@
       "json_file_rel": "json_output/job_24826.json",
       "scraped_at": "2025-10-31T16:26:03.205457",
       "job_id_display": "24826",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -228,7 +228,7 @@
       "json_file_rel": "json_output/job_24798.json",
       "scraped_at": "2025-10-31T16:26:11.857713",
       "job_id_display": "24798",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -252,7 +252,7 @@
       "json_file_rel": "json_output/job_24797.json",
       "scraped_at": "2025-10-31T16:26:15.024130",
       "job_id_display": "24797",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -275,30 +275,7 @@
       "json_file_rel": "json_output/job_24796.json",
       "scraped_at": "2025-10-31T16:26:18.122685",
       "job_id_display": "24796",
-      "last_seen": "2026-01-02T02:47:52.833428",
-      "first_seen": "2025-10-31T16:59:08.037949",
-      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
-      "employer_external_website": "http://www.glorygrouppng.com",
-      "employer_phone": "(+675) 323 8818",
-      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
-    },
-    {
-      "job_id": "24793",
-      "title": "Document Controller",
-      "date_posted": "7th October 2025",
-      "location": "National Capital District",
-      "industry": "Construction, Building and Architecture",
-      "employer": "Glory Estate Limited",
-      "salary": ",",
-      "description": "Summary\nThe Document Controller plays a crucial role in managing and overseeing all project-related documentation within the design and construction processes. This role ensures that all documents, including drawings, reports, and correspondence, are accurately maintained, distributed, and archived in accordance with the company's policies and procedures.\nDuties and Responsibilities\nManage and maintain all project documentation in an organized, accurate, and timely manner.\nControl the issuance of documents and maintain a comprehensive filing system for traceability.\nEnsure the latest revisions are administered and distributed promptly.\nCoordinate with different project teams (design, construction, engineering, etc.) to collect and maintain relevant documents.\nPrepare document control procedures and ensure they are followed by all project members.\nMonitor and report on the document control metrics, including document processing times, outstanding documents, etc.\nCheck the quality of documents, including compliance with company formatting and completeness of information.\nSupport in the retrieval of documents during audits or when needed by project teams.\nKeep up to date with relevant document control software and technologies.\nJob Requirements\nA diploma or degree in a related field or equivalent experience.\nMinimum of 2-3 years of experience as a Document Controller, preferably in the design and construction industry.\nExcellent organizational and time-management skills.\nStrong attention to detail and problem-solving capabilities.\nGood written and verbal communication skills.\nKnowledge of the design and construction process, industry standards, and regulations.\nAbility to work in a fast-paced environment and manage multiple tasks simultaneously.\nTo Apply\nTo apply for this job simply click on the blue \"Apply\" button below.  If you prefer to use email instead, please send your CV and other relevant documentation to\n[email protected]\n.  Please include the Job ID \"\n#24793\n\" in the email's subject to ensure your application is processed.\nApply\nAny sharing or copying and pasting of this content in other platforms must acknowledge PNGworkforce.com by mentioning the content is from PNGworkforce.com or by placing a link to PNGworkforce.com.\nSign in to apply\nUsername:\nPassword:\nSign In\nor\nclick here to apply without signing in\nApply for Document Controller\n*\n= Mandatory field\nContact Details\nPlease do not put anything into this field.  It is purely a checking mechanism:\nFirst Name\n*\n:\nLast Name\n*\n:\nPhone\n*\n:\nEmail\n*\n:\nJob Title:\n(your current or most recent job title)\nCover Letter\nUpload a cover letter from my computer\n(you may upload a file up to 5MB in size in .pdf, .doc, .docx or .rtf formats)\nWrite a cover letter now\nResume\nUpload a resume from my computer\n+ add another file\n(you may upload up to 10 files that are 5MB in size or less. Accepted file types are .pdf, .doc, .docx or .rtf formats)\nSubmit\nor\ncancel\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
-      "url": "https://www.pngworkforce.com/jobs/view/document-controller/24793",
-      "html_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/html_output/job_24793.html",
-      "html_file_rel": "html_output/job_24793.html",
-      "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24793.json",
-      "json_file_rel": "json_output/job_24793.json",
-      "scraped_at": "2025-10-31T16:26:25.954472",
-      "job_id_display": "24793",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
       "employer_external_website": "http://www.glorygrouppng.com",
@@ -322,7 +299,7 @@
       "json_file_rel": "json_output/job_24738.json",
       "scraped_at": "2025-10-31T16:26:33.740435",
       "job_id_display": "24738",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -346,7 +323,7 @@
       "json_file_rel": "json_output/job_24737.json",
       "scraped_at": "2025-10-31T16:26:36.825017",
       "job_id_display": "24737",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -370,7 +347,7 @@
       "json_file_rel": "json_output/job_24646.json",
       "scraped_at": "2025-10-31T16:26:57.928999",
       "job_id_display": "24646",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "first_seen": "2025-10-31T16:59:08.037949",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -382,7 +359,7 @@
       "title": "Coordinator",
       "date_posted": "31/10/2025",
       "first_seen": "2025-11-01T12:42:00.154216",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -402,11 +379,104 @@
       "employer_address": "PO Box 1290,\nLae, Morobe Province 411,\nPapua New Guinea"
     },
     {
+      "job_id": "25503",
+      "title": "General Accountant I",
+      "date_posted": "02/01/2026",
+      "first_seen": "2026-01-03T02:42:00.936689",
+      "last_seen": "2026-01-03T02:42:00.649382",
+      "location": "National Capital District",
+      "industry": "Accounting / Finance, Construction, Building and Architecture",
+      "employer": "Glory Estate Limited",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District",
+      "salary": ",",
+      "description": "Summary\nThe General Accountant I is a foundational role within our account and finance department, offering support in managing accounting activities with precision and professionalism. This position is ideal for individuals who are early in their accounting careers or those seeking to develop essential accounting skills in a supportive and dynamic environment.\nDuties and Responsibilities\nTransaction Assistance:\nAssist with daily accounting operations, including processing transactions in accounts receivable and payable.\nRecord Maintenance:\nHelp maintain records for general ledger, fixed assets, and inventory to ensure they are accurate and up-to-date.\nSupport Financial Reporting:\nAid in preparing financial statements and reports under the guidance of senior accountants.\nReconciliation Support:\nAssist with monthly bank reconciliation processes.\nPayment Processing Support:\nHelp manage and process payment vouchers and maintain accounts under supervision.\nRegulatory Compliance:\nAssist with the preparation and filing of tax documents, learning to ensure compliance with regulations.\nCollaborative Learning:\nParticipate in internal audits and support senior accountants in gathering and reporting financial data.\nJob Requirements\nEducational Background:\nBachelor’s degree in Accounting or Finance.\nProfessional Experience:\nUp to two years of accounting experience preferred, but not required.\nTechnical Proficiency:\nFamiliarity with basic accounting software and MS Office.\nAnalytical Skills:\nGood problem-solving skills and attention to detail.\nCommunication Skills:\nStrong verbal and written communication skills.\nTeam Collaboration:\nAbility to work well in a team and learn from others.\nProfessional Certification:\nCPA certification preferred or equivalent knowledge and experience.\nTo Apply\nTo apply for this job simply click on the blue \"Apply\" button below.  If you prefer to use email instead, please send your CV and other relevant documentation to\n[email protected]\n.  Please include the Job ID \"\n#25503\n\" in the email's subject to ensure your application is processed.\nApply\nAny sharing or copying and pasting of this content in other platforms must acknowledge PNGworkforce.com by mentioning the content is from PNGworkforce.com or by placing a link to PNGworkforce.com.\nSign in to apply\nUsername:\nPassword:\nSign In\nor\nclick here to apply without signing in\nApply for General Accountant I\n*\n= Mandatory field\nContact Details\nPlease do not put anything into this field.  It is purely a checking mechanism:\nFirst Name\n*\n:\nLast Name\n*\n:\nPhone\n*\n:\nEmail\n*\n:\nJob Title:\n(your current or most recent job title)\nCover Letter\nUpload a cover letter from my computer\n(you may upload a file up to 5MB in size in .pdf, .doc, .docx or .rtf formats)\nWrite a cover letter now\nResume\nUpload a resume from my computer\n+ add another file\n(you may upload up to 10 files that are 5MB in size or less. Accepted file types are .pdf, .doc, .docx or .rtf formats)\nSubmit\nor\ncancel\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
+      "url": "https://www.pngworkforce.com/jobs/view/general-accountant-i/25503",
+      "html_file": "/home/runner/work/png-job-scrape/png-job-scrape/html_output/job_25503.html",
+      "html_file_rel": "html_output/job_25503.html",
+      "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25503.json",
+      "json_file_rel": "json_output/job_25503.json",
+      "scraped_at": "2026-01-03T02:42:00.936668",
+      "job_id_display": "25503"
+    },
+    {
+      "job_id": "25502",
+      "title": "Diamond Driller",
+      "date_posted": "02/01/2026",
+      "first_seen": "2026-01-03T02:42:04.154118",
+      "last_seen": "2026-01-03T02:42:00.649382",
+      "location": "Eastern Highlands, Eastern Highlands",
+      "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
+      "employer": "K92 Mining Inc.",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
+      "employer_external_website": "https://k92mining.com/careers",
+      "employer_phone": "--",
+      "employer_address": "PO Box 1290,\r\nLae, Morobe Province 411,\r\nPapua New Guinea",
+      "employment_type": "Permanent",
+      "salary": ",",
+      "description": "Job Type:\nPermanent\nAbout us\nK92 Mining Limited are the owners the high-grade Kainantu Gold Mine in Eastern Highlands Province. Since commencing operations in 2016, we have delivered consistent production growth. More importantly, we have contributed significantly to the economy of Papua New Guinea, more than 90% of our employees and contractors are from PNG and our local education and skills development initiatives which include scholarships, traineeships and adult literacy programs continue to bring significant benefit the communities in which we operate.\nWe are now transforming the operation with a new 1.2 mtpa process plant as well as extensive construction and expansion across site that will see us triple the output from our mine by 2027. In addition to our ongoing production success, we have an extensive exploration programme across our highly prospective tenement, making K92 a great place to build a long-term career.\nAbout the role\nThis position reports to the Supervisor, Diamond Drilling and will be responsible for operating LM90 Diamond Drill rigs and recovering an accurate sample/core as per K92 mining specification, in a safe, cost-effective and timely manner.\nKey Accountabilities\nKey accountabilities of this position include.\nManagement of the diamond drill tooling, inventory and all related machinery and equipment.\nDiagnose down hole problems and remedy issues that may arise.\nEnsure survey data is being recorded and reported correctly and in a timely manner.\nEnsure diamond drill core recovery is maximised and displayed correctly.\nEnsure record keeping is completed correctly and in a timely manner for drill reports, consumables and any other requirements as identified.\nEnsure effective processes for communicating relevant information, including company, site, department, and team performance, to all team members are in place.\nDirect and train employees on appropriate and effective drill practices and techniques.\nAbout You\nTo be considered for this role, it is essential that you have\nMinimum 3 years experiences drilling with LM90 for Underground\nPossess certified Miner training certificate in area of hand-held mining.\nKnowledge in mining safety regulations.\nAbility to perform duties with minimum supervision.\nPerform down hole surveys.\nGrouting and sealing of bore holes.\nAbility to read and write both in Pidgin and English.\nAble to communicate effectively at all levels\nAble to speak both English and Pidgin.\nMaintain work relationship with colleagues\nAbility to meet agreed schedules and deadlines.\nAbility to maintain good working relationships with other team members and K92 Mining Ltd employees.\nLife at K92\nK92 is an Equal Opportunity Employer, our commitment is to respect the rights of every individual to work to their highest potential, free from discrimination.  Our values of Collaboration, Accountability, Respect for others, Excellence and Safety are at the core of everything we do, and they are the foundation upon which our success has been built.\nOur camp is well managed and provides residents with good, healthy meals made from locally sourced fresh produce as well as internet, cable tv and a gymnasium.\nAt K92, we want all employees to share in our success, so as well as a competitive salary, employees also participate in our long- and short-term incentive plans, we also provide employees with access to savings incentive programs, medical assistance and the option to salary sacrifice for certain expenses.\nIn addition to all of this, employees can also access our Wellbeing and employee assistance programs whilst working a friendly roster.\nTHIS POSITION IS OPEN ONLY TO CANDIDATES WHO HAVE THE RIGHT TO LIVE & WORK IN PNG WITHOUT SPONSORSHIP\nApply\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
+      "url": "https://www.pngworkforce.com/jobs/view/diamond-driller-underground/25502",
+      "html_file": "/home/runner/work/png-job-scrape/png-job-scrape/html_output/job_25502.html",
+      "html_file_rel": "html_output/job_25502.html",
+      "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25502.json",
+      "json_file_rel": "json_output/job_25502.json",
+      "scraped_at": "2026-01-03T02:42:04.154097",
+      "job_id_display": "25502"
+    },
+    {
+      "job_id": "25501",
+      "title": "IT Support Officer",
+      "date_posted": "02/01/2026",
+      "first_seen": "2026-01-03T02:42:06.450275",
+      "last_seen": "2026-01-03T02:42:00.649382",
+      "location": "National Capital District, Papua New Guinea",
+      "industry": "Airline / Airport / Travel, IT, Operations Support, Telecommunications",
+      "employer": "PNG Air Limited",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023263",
+      "employer_address": "P.O. Box 170, Boroko, \r\nPNG Jacksons Parade, 7 Mile\r\nPort Moresby, Papua New Guinea",
+      "salary": ",",
+      "description": "We at PNG Air pride ourselves as the leading domestic airline operating over 26 ports across the length and breadth of Papua New Guinea as the Airline of Choice. Operating the largest fleet of ATR 72-600 series. We are committed to providing affordable world class experience with value fares and unbeatable cargo rates, ensuring reliable and safe on time service to our valued customers and stakeholders\nIT Support Officer\nThe IT Division is seeking to recruit a qualified\nIT Support Officer\nbased in Port Moresby. The IT Support Officer must ensure that an organisation’s IT systems run smoothly, securely, and efficiently. So, employees can perform their work without interruptions. They serve as the first point of contact for technical issues and play a key role in maintaining the overall IT service levels.\nKey responsibilities include the following:\nPerform IT Operational Support duties / assigned responsibilities.\nPrioritise allocated tickets based upon priority and due dates\nTroubleshoot hardware, software, network, and other IT issues raised in tickets\nSet up new users in Active Directory\nCreate email accounts\nSet up and configure IT end-user systems hardware/software\nProvide recommendations for hardware upgrades and replacements\nRun cabling\nRecord support activities against tickets and maintain SLAs.\nPerform IT Project duties as allocated by GM IT\nDocument processes, monitoring and housekeeping requirements\nEnsure users follow correct support processes\nProvide IT orientation to new users\nKeep IT offices clean and neat\nEnsure documentation of diagrams and charts required\nComplete hand over logs when last shift of the day detailing any issues or key priorities for the first staff member on duty.\nCommunication of staff movements.\nPerform other related duties as required\nQualifications, Skills and Competencies:\nDegree/Diploma or equivalent\nRelevant professional qualification at graduate level\nAt least 2 years work experience.\nCompTIA or equivalent\nTo apply, please send your application to:\n[email protected]\nLate applications & applications submitted in hard copy will not be accepted. Please submit application in one PDF file.\nApplications close:\n5pm\nFri\nday 16 January 2026\nOnly shortlisted candidates will be contacted\n“We are an equal opportunity employer”\nApply\nAny sharing or copying and pasting of this content in other platforms must acknowledge PNGworkforce.com by mentioning the content is from PNGworkforce.com or by placing a link to PNGworkforce.com.\nSign in to apply\nUsername:\nPassword:\nSign In\nor\nclick here to apply without signing in\nApply for IT Support Officer\n*\n= Mandatory field\nContact Details\nPlease do not put anything into this field.  It is purely a checking mechanism:\nFirst Name\n*\n:\nLast Name\n*\n:\nPhone\n*\n:\nEmail\n*\n:\nJob Title:\n(your current or most recent job title)\nCover Letter\nUpload a cover letter from my computer\n(you may upload a file up to 5MB in size in .pdf, .doc, .docx or .rtf formats)\nWrite a cover letter now\nResume\nUpload a resume from my computer\n+ add another file\n(you may upload up to 10 files that are 5MB in size or less. Accepted file types are .pdf, .doc, .docx or .rtf formats)\nSubmit\nor\ncancel\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
+      "url": "https://www.pngworkforce.com/jobs/view/it-support-officer/25501",
+      "html_file": "/home/runner/work/png-job-scrape/png-job-scrape/html_output/job_25501.html",
+      "html_file_rel": "html_output/job_25501.html",
+      "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25501.json",
+      "json_file_rel": "json_output/job_25501.json",
+      "scraped_at": "2026-01-03T02:42:06.450254",
+      "job_id_display": "25501"
+    },
+    {
+      "job_id": "25500",
+      "title": "IT Technical Officer   ",
+      "date_posted": "02/01/2026",
+      "first_seen": "2026-01-03T02:42:08.738511",
+      "last_seen": "2026-01-03T02:42:00.649382",
+      "location": "National Capital District, Papua New Guinea",
+      "industry": "Airline / Airport / Travel, IT, Operations Support, Services, Telecommunications",
+      "employer": "PNG Air Limited",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/2787/png-air-limited",
+      "employer_external_website": "http://www.pngair.com.pg",
+      "employer_phone": "+675 3023263",
+      "employer_address": "P.O. Box 170, Boroko, \r\nPNG Jacksons Parade, 7 Mile\r\nPort Moresby, Papua New Guinea",
+      "salary": ",",
+      "description": "We at PNG Air pride ourselves as the leading domestic airline operating over 26 ports across the length and breadth of Papua New Guinea as the Airline of Choice. Operating the largest fleet of ATR 72-600 series. We are committed to providing affordable world class experience with value fares and unbeatable cargo rates, ensuring reliable and safe on time service to our valued customers and stakeholders\nIT Technical Officer\nThe IT Division is seeking to recruit a qualified\nIT Technical Officer\nbased in Port Moresby. This position will provide 2nd and 3rd level support to the IT Help Desk team, ensuring the smooth operation of IT services and infrastructure. This role involves troubleshooting complex technical issues, mentoring junior staff, and contributing to the continuous improvement of IT processes.\nKey responsibilities include the following:\nProvide 2nd and 3rd level technical support for IT Help Desk team.\nDiagnose and resolve complex hardware, software, and network issues.\nManage and maintain IT infrastructure, including servers, networks, and applications.\nCollaborate with other IT teams to implement and support new technologies.\nDevelop and maintain technical documentation and knowledge base articles.\nMentor and train junior IT support staff.\nEnsure compliance with IT policies and procedures.\nParticipate in IT projects and initiatives as required.\nPerform regular system audits and generate reports on system performance and security.\na) Administer IT Infrastructure, Security, and Operations\nAdminister Company IT Infrastructure, Security, and Operations.\nAnalyse requirements, design efficient network and systems.\nMonitor network and systems to detect unauthorized access attempts and security breaches.\nConduct regular vulnerability assessments and audit implemetation.\nDevelop and update IT policies and procedures.\nProvide IT awareness training to staff members.\nCollaborate with IT teams to ensure the security of network infrastructure.\nDeploy rapid response solutions to Security Concerns\nInforming the company about the security incidents as soon as possible\nb)Perform IT Operational Support duties\nPrioritise allocated tickets based upon priority and due dates\nTroubleshoot hardware, software, network and other IT issues raised in tickets\nSetup new users in active directory\nCreate email accounts\nSetup and configure IT end-user systems hardware/software\nProvide recommendations for hardware upgrades and replacements\nRun cabling\nRecord support activities against tickets and maintain SLAs.\nPerform IT Project duties as allocated by GM IT\nDocument processes, monitoring and housekeeping requirements\nEnsure users follow correct support processes\nProvide IT orientation to new users\nKeep IT offices clean and neat\nEnsure documentation of diagrams and charts required\nComplete hand over logs when last shift of the day detailing any issues or key priorities for the first staff member on duty.\nCommunication of staff movements.\nPerform other related duties as required\nQualifications, Skills and Competencies:\nDegree or equivalent\nRelevant professional qualifications (Networking, Security and Server Systems)\nAt least 5 years work experience.\nCompTIA or equivalent\nTo apply, please send your application to:\n[email protected]\nLate applications & applications submitted in hard copy will not be accepted. Please submit application in one PDF file.\nApplications close:\n5pm\nFri\nday 16th January\n202\n6\nOnly shortlisted candidates will be contacted\n“We are an equal opportunity employer”\nApply\nAny sharing or copying and pasting of this content in other platforms must acknowledge PNGworkforce.com by mentioning the content is from PNGworkforce.com or by placing a link to PNGworkforce.com.\nSign in to apply\nUsername:\nPassword:\nSign In\nor\nclick here to apply without signing in\nApply for IT Technical Officer\n*\n= Mandatory field\nContact Details\nPlease do not put anything into this field.  It is purely a checking mechanism:\nFirst Name\n*\n:\nLast Name\n*\n:\nPhone\n*\n:\nEmail\n*\n:\nJob Title:\n(your current or most recent job title)\nCover Letter\nUpload a cover letter from my computer\n(you may upload a file up to 5MB in size in .pdf, .doc, .docx or .rtf formats)\nWrite a cover letter now\nResume\nUpload a resume from my computer\n+ add another file\n(you may upload up to 10 files that are 5MB in size or less. Accepted file types are .pdf, .doc, .docx or .rtf formats)\nSubmit\nor\ncancel\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
+      "url": "https://www.pngworkforce.com/jobs/view/it-technical-officer/25500",
+      "html_file": "/home/runner/work/png-job-scrape/png-job-scrape/html_output/job_25500.html",
+      "html_file_rel": "html_output/job_25500.html",
+      "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25500.json",
+      "json_file_rel": "json_output/job_25500.json",
+      "scraped_at": "2026-01-03T02:42:08.738489",
+      "job_id_display": "25500"
+    },
+    {
       "job_id": "25499",
       "title": "National Operations Manager",
       "date_posted": "02/01/2026",
       "first_seen": "2026-01-02T02:47:53.160209",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Logistics, Transport and Supply",
       "employer": "DHL Express (PNG) Limited",
@@ -421,7 +491,7 @@
       "html_file_rel": "html_output/job_25499.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25499.json",
       "json_file_rel": "json_output/job_25499.json",
-      "scraped_at": "2026-01-02T02:47:53.160191",
+      "scraped_at": "2026-01-03T02:42:11.825948",
       "job_id_display": "25499"
     },
     {
@@ -429,7 +499,7 @@
       "title": "Pharmacist",
       "date_posted": "02/01/2026",
       "first_seen": "2026-01-02T02:47:55.469102",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Health",
       "employer": "Telemu No.16 Limited",
@@ -444,7 +514,7 @@
       "html_file_rel": "html_output/job_25498.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25498.json",
       "json_file_rel": "json_output/job_25498.json",
-      "scraped_at": "2026-01-02T02:47:55.469082",
+      "scraped_at": "2026-01-03T02:42:14.872050",
       "job_id_display": "25498"
     },
     {
@@ -452,7 +522,7 @@
       "title": "Pharmacist",
       "date_posted": "02/01/2026",
       "first_seen": "2026-01-02T02:47:57.780269",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Health",
       "employer": "Telemu No.16 Limited",
@@ -467,7 +537,7 @@
       "html_file_rel": "html_output/job_25497.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25497.json",
       "json_file_rel": "json_output/job_25497.json",
-      "scraped_at": "2026-01-02T02:47:57.780252",
+      "scraped_at": "2026-01-03T02:42:17.899298",
       "job_id_display": "25497"
     },
     {
@@ -475,7 +545,7 @@
       "title": "Officer",
       "date_posted": "01/01/2026",
       "first_seen": "2026-01-02T02:48:01.002106",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -491,7 +561,7 @@
       "html_file_rel": "html_output/job_25496.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25496.json",
       "json_file_rel": "json_output/job_25496.json",
-      "scraped_at": "2026-01-02T02:48:01.002086",
+      "scraped_at": "2026-01-03T02:42:20.183899",
       "job_id_display": "25496"
     },
     {
@@ -499,7 +569,7 @@
       "title": "Officer",
       "date_posted": "01/01/2026",
       "first_seen": "2026-01-02T02:48:04.081705",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -515,17 +585,17 @@
       "html_file_rel": "html_output/job_25495.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25495.json",
       "json_file_rel": "json_output/job_25495.json",
-      "scraped_at": "2026-01-02T02:48:04.081688",
+      "scraped_at": "2026-01-03T02:42:23.265020",
       "job_id_display": "25495"
     },
     {
       "job_id": "25494",
       "title": "Officer",
-      "date_posted": "01/01/2026",
+      "date_posted": "02/01/2026",
       "first_seen": "2026-01-02T02:48:07.221804",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
-      "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
+      "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -539,7 +609,7 @@
       "html_file_rel": "html_output/job_25494.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25494.json",
       "json_file_rel": "json_output/job_25494.json",
-      "scraped_at": "2026-01-02T02:48:07.221787",
+      "scraped_at": "2026-01-03T02:42:25.548270",
       "job_id_display": "25494"
     },
     {
@@ -547,7 +617,7 @@
       "title": "Associate Director of Operations",
       "date_posted": "31/12/2025",
       "first_seen": "2025-12-31T02:45:58.005255",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Management, Non Government Organisations (NGOs)",
       "employer": "fhi360",
@@ -563,17 +633,17 @@
       "html_file_rel": "html_output/job_25493.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25493.json",
       "json_file_rel": "json_output/job_25493.json",
-      "scraped_at": "2026-01-02T02:48:10.429028",
+      "scraped_at": "2026-01-03T02:42:28.621001",
       "job_id_display": "25493"
     },
     {
       "job_id": "25491",
       "title": "Junior Mine Geologist",
-      "date_posted": "01/01/2026",
+      "date_posted": "02/01/2026",
       "first_seen": "2025-12-31T02:46:01.130965",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
-      "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
+      "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -587,7 +657,7 @@
       "html_file_rel": "html_output/job_25491.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25491.json",
       "json_file_rel": "json_output/job_25491.json",
-      "scraped_at": "2026-01-02T02:48:13.556763",
+      "scraped_at": "2026-01-03T02:42:31.643414",
       "job_id_display": "25491"
     },
     {
@@ -595,7 +665,7 @@
       "title": "Conference & Events Sales Coordinator",
       "date_posted": "30/12/2025",
       "first_seen": "2025-12-31T02:46:04.225962",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Hospitality, Travel and Tourism, Sales",
       "employer": "Holiday Inn Port Moresby",
@@ -610,7 +680,7 @@
       "html_file_rel": "html_output/job_25490.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25490.json",
       "json_file_rel": "json_output/job_25490.json",
-      "scraped_at": "2026-01-02T02:48:16.754185",
+      "scraped_at": "2026-01-03T02:42:34.731059",
       "job_id_display": "25490"
     },
     {
@@ -618,7 +688,7 @@
       "title": "Independent Sales Consultant",
       "date_posted": "30/12/2025",
       "first_seen": "2025-12-31T02:46:07.259989",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Consultancy, Sales",
       "employer": "Pacific Privilege | Coral Sea Hotels",
@@ -633,7 +703,7 @@
       "html_file_rel": "html_output/job_25489.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25489.json",
       "json_file_rel": "json_output/job_25489.json",
-      "scraped_at": "2026-01-02T02:48:19.865905",
+      "scraped_at": "2026-01-03T02:42:37.802048",
       "job_id_display": "25489"
     },
     {
@@ -641,7 +711,7 @@
       "title": "Outstation Sales Coordinator ",
       "date_posted": "30/12/2025",
       "first_seen": "2025-12-31T02:46:10.379527",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "FMCG",
       "employer": "PACTRADE (PNG) LIMITED",
@@ -656,7 +726,7 @@
       "html_file_rel": "html_output/job_25488.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25488.json",
       "json_file_rel": "json_output/job_25488.json",
-      "scraped_at": "2026-01-02T02:48:23.039515",
+      "scraped_at": "2026-01-03T02:42:40.892037",
       "job_id_display": "25488"
     },
     {
@@ -664,7 +734,7 @@
       "title": "Aircraft Refuellers",
       "date_posted": "30/12/2025",
       "first_seen": "2025-12-30T02:46:40.659515",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District, Morobe",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -679,7 +749,7 @@
       "html_file_rel": "html_output/job_25487.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25487.json",
       "json_file_rel": "json_output/job_25487.json",
-      "scraped_at": "2026-01-02T02:48:25.350063",
+      "scraped_at": "2026-01-03T02:42:43.989236",
       "job_id_display": "25487"
     },
     {
@@ -687,7 +757,7 @@
       "title": "Warehouse Manager",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:42.907170",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Warehousing",
       "employer": "WR Carpenter (PNG) Limited",
@@ -702,7 +772,7 @@
       "html_file_rel": "html_output/job_25486.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25486.json",
       "json_file_rel": "json_output/job_25486.json",
-      "scraped_at": "2026-01-02T02:48:27.664071",
+      "scraped_at": "2026-01-03T02:42:47.131206",
       "job_id_display": "25486"
     },
     {
@@ -710,7 +780,7 @@
       "title": "HID4359",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:45.150318",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Mining, Oil and Gas",
       "employer": "Harmony Australasia",
@@ -725,7 +795,7 @@
       "html_file_rel": "html_output/job_25485.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25485.json",
       "json_file_rel": "json_output/job_25485.json",
-      "scraped_at": "2026-01-02T02:48:29.971506",
+      "scraped_at": "2026-01-03T02:42:50.129642",
       "job_id_display": "25485"
     },
     {
@@ -733,7 +803,7 @@
       "title": "Marketing & Sales Supervisor",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:48.157023",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Autonomous Region of Bougainville, Jiwaka, New Ireland, Simbu (Chimbu), Southern Highlands, West New Britain",
       "industry": "Marketing, Sales",
       "employer": "WR Carpenter (PNG) Limited",
@@ -748,7 +818,7 @@
       "html_file_rel": "html_output/job_25484.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25484.json",
       "json_file_rel": "json_output/job_25484.json",
-      "scraped_at": "2026-01-02T02:48:33.093948",
+      "scraped_at": "2026-01-03T02:42:53.214512",
       "job_id_display": "25484"
     },
     {
@@ -756,7 +826,7 @@
       "title": "HID6398 Senior Electrician",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:51.201341",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Papua New Guinea",
       "industry": "Electrical",
       "employer": "Harmony Australasia",
@@ -771,7 +841,7 @@
       "html_file_rel": "html_output/job_25483.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25483.json",
       "json_file_rel": "json_output/job_25483.json",
-      "scraped_at": "2026-01-02T02:48:36.173494",
+      "scraped_at": "2026-01-03T02:42:56.233813",
       "job_id_display": "25483"
     },
     {
@@ -779,7 +849,7 @@
       "title": "Sales Representative",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:53.451173",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District, East New Britain, Eastern Highlands, Madang, Milne Bay, New Ireland, Oro (Northern), Simbu (Chimbu), Western Highlands",
       "industry": "Marketing, Sales",
       "employer": "WR Carpenter (PNG) Limited",
@@ -794,7 +864,7 @@
       "html_file_rel": "html_output/job_25482.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25482.json",
       "json_file_rel": "json_output/job_25482.json",
-      "scraped_at": "2026-01-02T02:48:39.236955",
+      "scraped_at": "2026-01-03T02:42:59.328451",
       "job_id_display": "25482"
     },
     {
@@ -802,7 +872,7 @@
       "title": "Sales Merchandiser",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:55.694408",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District, Morobe, East Sepik, Eastern Highlands, Madang, Manus , Milne Bay, Oro (Northern), Sandaun (West Sepik), Simbu (Chimbu), Western Highlands",
       "industry": "Marketing, Merchandising, Sales",
       "employer": "WR Carpenter (PNG) Limited",
@@ -817,7 +887,7 @@
       "html_file_rel": "html_output/job_25481.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25481.json",
       "json_file_rel": "json_output/job_25481.json",
-      "scraped_at": "2026-01-02T02:48:41.548385",
+      "scraped_at": "2026-01-03T02:43:01.617305",
       "job_id_display": "25481"
     },
     {
@@ -825,7 +895,7 @@
       "title": "Carpenters, Electrician & Refrigeration/Air Conditioning Mechanic",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-30T02:46:57.942168",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Airline / Airport / Travel, Carpenter, Carpentry, Electrical, Refrigeration, Air Conditioning, Technician",
       "employer": "PNG Air Limited",
@@ -840,7 +910,7 @@
       "html_file_rel": "html_output/job_25478.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25478.json",
       "json_file_rel": "json_output/job_25478.json",
-      "scraped_at": "2026-01-02T02:48:44.609932",
+      "scraped_at": "2026-01-03T02:43:04.825581",
       "job_id_display": "25478"
     },
     {
@@ -848,7 +918,7 @@
       "title": "FARM MANAGER",
       "date_posted": "29/12/2025",
       "first_seen": "2025-12-29T02:53:49.877085",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Agriculture",
       "employer": "Private Job Ads",
@@ -864,17 +934,17 @@
       "html_file_rel": "html_output/job_25476.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25476.json",
       "json_file_rel": "json_output/job_25476.json",
-      "scraped_at": "2026-01-02T02:48:46.919134",
+      "scraped_at": "2026-01-03T02:43:07.907054",
       "job_id_display": "25476"
     },
     {
       "job_id": "25475",
       "title": "Technician",
-      "date_posted": "01/01/2026",
+      "date_posted": "02/01/2026",
       "first_seen": "2025-12-27T02:42:30.273410",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
-      "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
+      "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
       "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/3340/k92-mining-inc",
       "employer_external_website": "https://k92mining.com/careers",
@@ -888,7 +958,7 @@
       "html_file_rel": "html_output/job_25475.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25475.json",
       "json_file_rel": "json_output/job_25475.json",
-      "scraped_at": "2026-01-02T02:48:49.223283",
+      "scraped_at": "2026-01-03T02:43:10.192579",
       "job_id_display": "25475"
     },
     {
@@ -896,7 +966,7 @@
       "title": "Sous Chef — Asian",
       "date_posted": "25/12/2025",
       "first_seen": "2025-12-26T02:44:45.726047",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Chef/Cook",
       "employer": "Glory Estate Limited",
@@ -911,7 +981,7 @@
       "html_file_rel": "html_output/job_25474.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25474.json",
       "json_file_rel": "json_output/job_25474.json",
-      "scraped_at": "2026-01-02T02:48:52.369056",
+      "scraped_at": "2026-01-03T02:43:13.284882",
       "job_id_display": "25474"
     },
     {
@@ -919,7 +989,7 @@
       "title": "Employee Services Supervisor",
       "date_posted": "25/12/2025",
       "first_seen": "2025-12-26T02:44:48.767194",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -934,7 +1004,7 @@
       "html_file_rel": "html_output/job_25473.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25473.json",
       "json_file_rel": "json_output/job_25473.json",
-      "scraped_at": "2026-01-02T02:48:55.434171",
+      "scraped_at": "2026-01-03T02:43:16.293887",
       "job_id_display": "25473"
     },
     {
@@ -942,7 +1012,7 @@
       "title": "Leasing Officer",
       "date_posted": "25/12/2025",
       "first_seen": "2025-12-26T02:44:51.775900",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -957,7 +1027,7 @@
       "html_file_rel": "html_output/job_25472.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25472.json",
       "json_file_rel": "json_output/job_25472.json",
-      "scraped_at": "2026-01-02T02:48:57.743369",
+      "scraped_at": "2026-01-03T02:43:18.582649",
       "job_id_display": "25472"
     },
     {
@@ -965,7 +1035,7 @@
       "title": "Housekeeping Assistant Supervisor",
       "date_posted": "25/12/2025",
       "first_seen": "2025-12-26T02:44:54.792570",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Property and Real Estate",
       "employer": "Glory Estate Limited",
@@ -980,7 +1050,7 @@
       "html_file_rel": "html_output/job_25471.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25471.json",
       "json_file_rel": "json_output/job_25471.json",
-      "scraped_at": "2026-01-02T02:49:00.054317",
+      "scraped_at": "2026-01-03T02:43:21.687044",
       "job_id_display": "25471"
     },
     {
@@ -988,7 +1058,7 @@
       "title": "Class 6 Driver",
       "date_posted": "25/12/2025",
       "first_seen": "2025-12-26T02:44:57.816454",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture, Driver",
       "employer": "Glory Estate Limited",
@@ -1003,7 +1073,7 @@
       "html_file_rel": "html_output/job_25470.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25470.json",
       "json_file_rel": "json_output/job_25470.json",
-      "scraped_at": "2026-01-02T02:49:03.256635",
+      "scraped_at": "2026-01-03T02:43:24.948428",
       "job_id_display": "25470"
     },
     {
@@ -1011,7 +1081,7 @@
       "title": "Cargo Officer (Tabubil)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-25T02:52:52.802895",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1026,7 +1096,7 @@
       "html_file_rel": "html_output/job_25466.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25466.json",
       "json_file_rel": "json_output/job_25466.json",
-      "scraped_at": "2026-01-02T02:52:42.920519",
+      "scraped_at": "2026-01-03T02:46:47.381628",
       "job_id_display": "25466"
     },
     {
@@ -1034,7 +1104,7 @@
       "title": "Ramp Officer (Tabubil)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-25T02:52:55.798912",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1049,7 +1119,7 @@
       "html_file_rel": "html_output/job_25465.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25465.json",
       "json_file_rel": "json_output/job_25465.json",
-      "scraped_at": "2026-01-02T02:52:46.012951",
+      "scraped_at": "2026-01-03T02:46:50.411060",
       "job_id_display": "25465"
     },
     {
@@ -1057,7 +1127,7 @@
       "title": "Ramp Officer (Kiunga)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-25T02:52:59.261185",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1072,7 +1142,7 @@
       "html_file_rel": "html_output/job_25464.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25464.json",
       "json_file_rel": "json_output/job_25464.json",
-      "scraped_at": "2026-01-02T02:52:49.122388",
+      "scraped_at": "2026-01-03T02:46:53.483939",
       "job_id_display": "25464"
     },
     {
@@ -1080,7 +1150,7 @@
       "title": "Cargo Officer (Kiunga)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-25T02:53:02.576471",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1095,7 +1165,7 @@
       "html_file_rel": "html_output/job_25463.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25463.json",
       "json_file_rel": "json_output/job_25463.json",
-      "scraped_at": "2026-01-02T02:52:52.186236",
+      "scraped_at": "2026-01-03T02:46:56.567315",
       "job_id_display": "25463"
     },
     {
@@ -1103,7 +1173,7 @@
       "title": "Cargo Officer (Daru)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-24T02:43:46.780231",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1118,7 +1188,7 @@
       "html_file_rel": "html_output/job_25462.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25462.json",
       "json_file_rel": "json_output/job_25462.json",
-      "scraped_at": "2026-01-02T02:52:54.498477",
+      "scraped_at": "2026-01-03T02:46:59.572246",
       "job_id_display": "25462"
     },
     {
@@ -1126,7 +1196,7 @@
       "title": "Customer Service Officer (Daru)",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-24T02:43:49.837146",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -1141,7 +1211,7 @@
       "html_file_rel": "html_output/job_25461.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25461.json",
       "json_file_rel": "json_output/job_25461.json",
-      "scraped_at": "2026-01-02T02:52:56.809363",
+      "scraped_at": "2026-01-03T02:47:02.632703",
       "job_id_display": "25461"
     },
     {
@@ -1149,7 +1219,7 @@
       "title": "Sales & Marketing assistant (ICT)",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-23T02:46:11.874876",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Marketing, Sales",
       "employer": "Telemu No.16 Limited",
@@ -1164,7 +1234,7 @@
       "html_file_rel": "html_output/job_25452.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25452.json",
       "json_file_rel": "json_output/job_25452.json",
-      "scraped_at": "2026-01-02T02:52:59.870283",
+      "scraped_at": "2026-01-03T02:47:05.631376",
       "job_id_display": "25452"
     },
     {
@@ -1172,7 +1242,7 @@
       "title": "Graphic Artist",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-23T02:46:14.186714",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Graphic Artist/ Designing",
       "employer": "SP Brewery Ltd",
@@ -1187,7 +1257,7 @@
       "html_file_rel": "html_output/job_25451.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25451.json",
       "json_file_rel": "json_output/job_25451.json",
-      "scraped_at": "2026-01-02T02:49:28.252085",
+      "scraped_at": "2026-01-03T02:43:48.678781",
       "job_id_display": "25451"
     },
     {
@@ -1195,7 +1265,7 @@
       "title": "Route to Consumer (RTC) & Revenue Margin Growth (RMG) Manager",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-23T02:46:16.490337",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Accounting / Finance, Management, Retail / Distribution / Supply",
       "employer": "SP Brewery Ltd",
@@ -1210,7 +1280,7 @@
       "html_file_rel": "html_output/job_25450.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25450.json",
       "json_file_rel": "json_output/job_25450.json",
-      "scraped_at": "2026-01-02T02:49:31.350909",
+      "scraped_at": "2026-01-03T02:43:51.725014",
       "job_id_display": "25450"
     },
     {
@@ -1218,7 +1288,7 @@
       "title": "Management Accountant",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-23T02:46:18.795039",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Accounting / Finance",
       "employer": "Morobe Provincial Agricultural Society",
@@ -1233,7 +1303,7 @@
       "html_file_rel": "html_output/job_25449.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25449.json",
       "json_file_rel": "json_output/job_25449.json",
-      "scraped_at": "2026-01-02T02:49:34.416609",
+      "scraped_at": "2026-01-03T02:43:54.780299",
       "job_id_display": "25449"
     },
     {
@@ -1241,7 +1311,7 @@
       "title": "Secondary School Teacher",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-22T02:49:42.721652",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Western (Fly)",
       "industry": "Education and Training",
       "employer": "SDP-KTF",
@@ -1256,7 +1326,7 @@
       "html_file_rel": "html_output/job_25443.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25443.json",
       "json_file_rel": "json_output/job_25443.json",
-      "scraped_at": "2026-01-02T02:49:37.546551",
+      "scraped_at": "2026-01-03T02:43:57.811945",
       "job_id_display": "25443"
     },
     {
@@ -1264,7 +1334,7 @@
       "title": "Advisor Auto Electrical",
       "date_posted": "22/12/2025",
       "first_seen": "2025-12-22T02:49:45.852491",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District, Morobe, Autonomous Region of Bougainville, Central, East Sepik, East New Britain, Eastern Highlands, Madang, Milne Bay, New Ireland, West New Britain, Western Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "Newmont",
@@ -1279,7 +1349,7 @@
       "html_file_rel": "html_output/job_25442.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25442.json",
       "json_file_rel": "json_output/job_25442.json",
-      "scraped_at": "2026-01-02T02:49:39.857258",
+      "scraped_at": "2026-01-03T02:44:00.899496",
       "job_id_display": "25442"
     },
     {
@@ -1287,7 +1357,7 @@
       "title": "FIRE PROTECTION PROFESSIONALS",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:40:49.419073",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Occupational Health and Safety",
       "employer": "High Arctic",
@@ -1302,7 +1372,7 @@
       "html_file_rel": "html_output/job_25438.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25438.json",
       "json_file_rel": "json_output/job_25438.json",
-      "scraped_at": "2026-01-02T02:49:43.011696",
+      "scraped_at": "2026-01-03T02:44:03.997193",
       "job_id_display": "25438"
     },
     {
@@ -1310,7 +1380,7 @@
       "title": "Marketing Analyst",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:40:52.509293",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training, Marketing",
       "employer": "IBSUniversity",
@@ -1325,7 +1395,7 @@
       "html_file_rel": "html_output/job_25437.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25437.json",
       "json_file_rel": "json_output/job_25437.json",
-      "scraped_at": "2026-01-02T02:49:46.081709",
+      "scraped_at": "2026-01-03T02:44:06.287222",
       "job_id_display": "25437"
     },
     {
@@ -1333,7 +1403,7 @@
       "title": "Marketing Officer",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:40:55.820360",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training, Marketing",
       "employer": "IBSUniversity",
@@ -1348,7 +1418,7 @@
       "html_file_rel": "html_output/job_25436.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25436.json",
       "json_file_rel": "json_output/job_25436.json",
-      "scraped_at": "2026-01-02T02:49:49.176996",
+      "scraped_at": "2026-01-03T02:44:09.386021",
       "job_id_display": "25436"
     },
     {
@@ -1356,7 +1426,7 @@
       "title": "MAINTENANCE PLANNING ENGINEER – PORT MORESBY",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:40:58.925873",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Engineering, Trade / Workshop",
       "employer": "PNG Industry Manpower Solutions",
@@ -1371,7 +1441,7 @@
       "html_file_rel": "html_output/job_25435.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25435.json",
       "json_file_rel": "json_output/job_25435.json",
-      "scraped_at": "2026-01-02T02:49:52.232291",
+      "scraped_at": "2026-01-03T02:44:12.434653",
       "job_id_display": "25435"
     },
     {
@@ -1379,7 +1449,7 @@
       "title": "Specialist Trainer – Immediate Start",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:41:01.239509",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training, Trade / Workshop",
       "employer": "PNG Industry Manpower Solutions",
@@ -1394,7 +1464,7 @@
       "html_file_rel": "html_output/job_25434.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25434.json",
       "json_file_rel": "json_output/job_25434.json",
-      "scraped_at": "2026-01-02T02:49:55.362130",
+      "scraped_at": "2026-01-03T02:44:15.483141",
       "job_id_display": "25434"
     },
     {
@@ -1402,7 +1472,7 @@
       "title": "Education Technical Specialist",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-20T02:41:04.542650",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training",
       "employer": "World Vision PNG",
@@ -1417,7 +1487,7 @@
       "html_file_rel": "html_output/job_25432.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25432.json",
       "json_file_rel": "json_output/job_25432.json",
-      "scraped_at": "2026-01-02T02:49:58.476916",
+      "scraped_at": "2026-01-03T02:44:18.623710",
       "job_id_display": "25432"
     },
     {
@@ -1425,7 +1495,7 @@
       "title": "Key Accounts Sales Manager",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-19T02:44:11.235814",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Papua New Guinea",
       "industry": "FMCG, Sales",
       "employer": "Trukai Industries Limited",
@@ -1440,7 +1510,7 @@
       "html_file_rel": "html_output/job_25429.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25429.json",
       "json_file_rel": "json_output/job_25429.json",
-      "scraped_at": "2026-01-02T02:50:01.642356",
+      "scraped_at": "2026-01-03T02:44:21.664944",
       "job_id_display": "25429"
     },
     {
@@ -1448,7 +1518,7 @@
       "title": "Service Estimator-HVAC",
       "date_posted": "19/12/2025",
       "first_seen": "2025-12-19T02:44:14.305248",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Refrigeration, Air Conditioning",
       "employer": "Kenmore Limited t/a Daikin PNG",
@@ -1463,7 +1533,7 @@
       "html_file_rel": "html_output/job_25428.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25428.json",
       "json_file_rel": "json_output/job_25428.json",
-      "scraped_at": "2026-01-02T02:50:05.203840",
+      "scraped_at": "2026-01-03T02:44:24.731214",
       "job_id_display": "25428"
     },
     {
@@ -1471,7 +1541,7 @@
       "title": "Finance & HR Coordinator",
       "date_posted": "18/12/2025",
       "first_seen": "2025-12-19T02:44:22.629528",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Accounting / Finance",
       "employer": "Clinton Health Access Initiative",
@@ -1486,7 +1556,7 @@
       "html_file_rel": "html_output/job_25425.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25425.json",
       "json_file_rel": "json_output/job_25425.json",
-      "scraped_at": "2026-01-02T02:50:08.964554",
+      "scraped_at": "2026-01-03T02:44:27.812221",
       "job_id_display": "25425"
     },
     {
@@ -1494,7 +1564,7 @@
       "title": "Licensed Electrician",
       "date_posted": "18/12/2025",
       "first_seen": "2025-12-18T02:42:27.676725",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "GRAND COLUMBIA Limited",
@@ -1509,7 +1579,7 @@
       "html_file_rel": "html_output/job_25419.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25419.json",
       "json_file_rel": "json_output/job_25419.json",
-      "scraped_at": "2026-01-02T02:50:14.058942",
+      "scraped_at": "2026-01-03T02:44:30.864672",
       "job_id_display": "25419"
     },
     {
@@ -1517,7 +1587,7 @@
       "title": "Program Manager",
       "date_posted": "16/12/2025",
       "first_seen": "2025-12-18T02:42:33.311362",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Papua New Guinea",
       "industry": "Mining, Oil and Gas",
       "employer": "Santos",
@@ -1532,7 +1602,7 @@
       "html_file_rel": "html_output/job_25416.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25416.json",
       "json_file_rel": "json_output/job_25416.json",
-      "scraped_at": "2026-01-02T02:50:18.713973",
+      "scraped_at": "2026-01-03T02:44:33.883498",
       "job_id_display": "25416"
     },
     {
@@ -1540,7 +1610,7 @@
       "title": "Technical Officer – Geology, Mining and Mineral Processing",
       "date_posted": "16/12/2025",
       "first_seen": "2025-12-18T02:42:51.170988",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Education and Training, Engineering, Geologist, Mining, Oil and Gas",
       "employer": "PNG University of Technology (PNGUoT)",
@@ -1555,7 +1625,7 @@
       "html_file_rel": "html_output/job_25410.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25410.json",
       "json_file_rel": "json_output/job_25410.json",
-      "scraped_at": "2026-01-02T02:50:22.121771",
+      "scraped_at": "2026-01-03T02:44:37.007565",
       "job_id_display": "25410"
     },
     {
@@ -1563,7 +1633,7 @@
       "title": "Senior Technical Officer – Mining",
       "date_posted": "16/12/2025",
       "first_seen": "2025-12-18T02:42:54.221937",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Education and Training, Engineering, Geologist, Mining, Oil and Gas",
       "employer": "PNG University of Technology (PNGUoT)",
@@ -1578,7 +1648,7 @@
       "html_file_rel": "html_output/job_25409.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25409.json",
       "json_file_rel": "json_output/job_25409.json",
-      "scraped_at": "2026-01-02T02:50:25.312473",
+      "scraped_at": "2026-01-03T02:44:40.045649",
       "job_id_display": "25409"
     },
     {
@@ -1586,7 +1656,7 @@
       "title": "Principal Technical Officer – Mineral Processing",
       "date_posted": "16/12/2025",
       "first_seen": "2025-12-18T02:42:57.404469",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Education and Training, Engineering, Geologist",
       "employer": "PNG University of Technology (PNGUoT)",
@@ -1601,7 +1671,7 @@
       "html_file_rel": "html_output/job_25408.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25408.json",
       "json_file_rel": "json_output/job_25408.json",
-      "scraped_at": "2026-01-02T02:50:28.457318",
+      "scraped_at": "2026-01-03T02:44:43.126965",
       "job_id_display": "25408"
     },
     {
@@ -1609,7 +1679,7 @@
       "title": "Protected Area Network Development Project Manager",
       "date_posted": "17/12/2025",
       "first_seen": "2025-12-17T02:43:06.333496",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Non Government Organisations (NGOs)",
       "employer": "Tree Kangaroo Conservation Program",
@@ -1624,7 +1694,7 @@
       "html_file_rel": "html_output/job_25402.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25402.json",
       "json_file_rel": "json_output/job_25402.json",
-      "scraped_at": "2026-01-02T02:50:31.726552",
+      "scraped_at": "2026-01-03T02:44:46.191440",
       "job_id_display": "25402"
     },
     {
@@ -1632,7 +1702,7 @@
       "title": "Reach Stacker Operator",
       "date_posted": "16/12/2025",
       "first_seen": "2025-12-17T02:43:21.090877",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Driver, Heavy Equipment, Logistics, Transport and Supply, Operations Support",
       "employer": "Express Freight Management",
@@ -1647,7 +1717,7 @@
       "html_file_rel": "html_output/job_25397.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25397.json",
       "json_file_rel": "json_output/job_25397.json",
-      "scraped_at": "2026-01-02T02:50:34.937815",
+      "scraped_at": "2026-01-03T02:44:49.235887",
       "job_id_display": "25397"
     },
     {
@@ -1655,7 +1725,7 @@
       "title": "Recruitment Manager",
       "date_posted": "15/12/2025",
       "first_seen": "2025-12-16T02:44:25.281680",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training",
       "employer": "IBSUniversity",
@@ -1670,7 +1740,7 @@
       "html_file_rel": "html_output/job_25395.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25395.json",
       "json_file_rel": "json_output/job_25395.json",
-      "scraped_at": "2026-01-02T02:50:38.142144",
+      "scraped_at": "2026-01-03T02:44:52.327624",
       "job_id_display": "25395"
     },
     {
@@ -1678,7 +1748,7 @@
       "title": "Warehouse Officer",
       "date_posted": "15/12/2025",
       "first_seen": "2025-12-16T02:44:30.903764",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Warehousing",
       "employer": "MATERIAL TESTING INDUSTRIAL SUPPLIES",
@@ -1693,7 +1763,7 @@
       "html_file_rel": "html_output/job_25393.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25393.json",
       "json_file_rel": "json_output/job_25393.json",
-      "scraped_at": "2026-01-02T02:50:41.278514",
+      "scraped_at": "2026-01-03T02:44:55.388220",
       "job_id_display": "25393"
     },
     {
@@ -1701,7 +1771,7 @@
       "title": "Education Media Production Assistant",
       "date_posted": "12/12/2025",
       "first_seen": "2025-12-13T02:41:24.224847",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands",
       "industry": "Non Government Organisations (NGOs)",
       "employer": "Summer Institute of Linguistics PNG (SIL)",
@@ -1716,7 +1786,7 @@
       "html_file_rel": "html_output/job_25381.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25381.json",
       "json_file_rel": "json_output/job_25381.json",
-      "scraped_at": "2026-01-02T02:50:44.446034",
+      "scraped_at": "2026-01-03T02:44:58.465090",
       "job_id_display": "25381"
     },
     {
@@ -1724,7 +1794,7 @@
       "title": "Head of Marketing",
       "date_posted": "11/12/2025",
       "first_seen": "2025-12-12T02:44:12.063412",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Marketing",
       "employer": "PeopleConnexion",
@@ -1739,7 +1809,7 @@
       "html_file_rel": "html_output/job_25378.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25378.json",
       "json_file_rel": "json_output/job_25378.json",
-      "scraped_at": "2026-01-02T02:50:47.585436",
+      "scraped_at": "2026-01-03T02:45:01.607178",
       "job_id_display": "25378"
     },
     {
@@ -1747,7 +1817,7 @@
       "title": "Assistant IT Lecturer",
       "date_posted": "11/12/2025",
       "first_seen": "2025-12-11T02:44:38.108158",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Education and Training, IT",
       "employer": "IBSUniversity",
@@ -1763,7 +1833,7 @@
       "html_file_rel": "html_output/job_25377.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25377.json",
       "json_file_rel": "json_output/job_25377.json",
-      "scraped_at": "2026-01-02T02:50:50.692494",
+      "scraped_at": "2026-01-03T02:45:04.838954",
       "job_id_display": "25377"
     },
     {
@@ -1771,7 +1841,7 @@
       "title": "Assistant/Lecturer",
       "date_posted": "11/12/2025",
       "first_seen": "2025-12-11T02:44:41.331727",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Accounting / Finance, Education and Training",
       "employer": "IBSUniversity",
@@ -1787,7 +1857,7 @@
       "html_file_rel": "html_output/job_25376.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25376.json",
       "json_file_rel": "json_output/job_25376.json",
-      "scraped_at": "2026-01-02T02:50:53.000418",
+      "scraped_at": "2026-01-03T02:45:08.004268",
       "job_id_display": "25376"
     },
     {
@@ -1795,7 +1865,7 @@
       "title": "Head of AML/CTF",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-10T02:43:24.450094",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Banking and Financial Services",
       "employer": "PeopleConnexion",
@@ -1810,7 +1880,7 @@
       "html_file_rel": "html_output/job_25371.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25371.json",
       "json_file_rel": "json_output/job_25371.json",
-      "scraped_at": "2026-01-02T02:50:56.380142",
+      "scraped_at": "2026-01-03T02:45:10.288311",
       "job_id_display": "25371"
     },
     {
@@ -1818,7 +1888,7 @@
       "title": "Project & Leasing Manager",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-10T02:43:34.632669",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "PeopleConnexion",
@@ -1833,7 +1903,7 @@
       "html_file_rel": "html_output/job_25367.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25367.json",
       "json_file_rel": "json_output/job_25367.json",
-      "scraped_at": "2026-01-02T02:50:59.502853",
+      "scraped_at": "2026-01-03T02:45:13.374875",
       "job_id_display": "25367"
     },
     {
@@ -1841,7 +1911,7 @@
       "title": "JNR sales rep",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-10T02:43:39.349647",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Marketing",
       "employer": "Pacific Services Group",
@@ -1857,7 +1927,7 @@
       "html_file_rel": "html_output/job_25365.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25365.json",
       "json_file_rel": "json_output/job_25365.json",
-      "scraped_at": "2026-01-02T02:51:02.839388",
+      "scraped_at": "2026-01-03T02:45:16.449544",
       "job_id_display": "25365"
     },
     {
@@ -1865,7 +1935,7 @@
       "title": "Senior Lecturer/Lecturer in Geology",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-10T02:43:42.452791",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Education and Training, Engineering, Geologist",
       "employer": "PNG University of Technology (PNGUoT)",
@@ -1880,7 +1950,7 @@
       "html_file_rel": "html_output/job_25364.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25364.json",
       "json_file_rel": "json_output/job_25364.json",
-      "scraped_at": "2026-01-02T02:51:06.044646",
+      "scraped_at": "2026-01-03T02:45:19.493388",
       "job_id_display": "25364"
     },
     {
@@ -1888,7 +1958,7 @@
       "title": "Engineers ",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-10T02:43:47.970262",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Hebou Construction PNG Ltd",
@@ -1903,7 +1973,7 @@
       "html_file_rel": "html_output/job_25362.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25362.json",
       "json_file_rel": "json_output/job_25362.json",
-      "scraped_at": "2026-01-02T02:51:09.288062",
+      "scraped_at": "2026-01-03T02:45:22.529375",
       "job_id_display": "25362"
     },
     {
@@ -1911,7 +1981,7 @@
       "title": "Senior Accountant ",
       "date_posted": "09/12/2025",
       "first_seen": "2025-12-09T02:41:59.635490",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Hebou Construction PNG Ltd",
@@ -1926,7 +1996,7 @@
       "html_file_rel": "html_output/job_25361.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25361.json",
       "json_file_rel": "json_output/job_25361.json",
-      "scraped_at": "2026-01-02T02:51:12.439171",
+      "scraped_at": "2026-01-03T02:45:25.628289",
       "job_id_display": "25361"
     },
     {
@@ -1934,7 +2004,7 @@
       "title": "Superintendent",
       "date_posted": "24/12/2025",
       "first_seen": "2025-12-09T02:42:07.695977",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -1950,7 +2020,7 @@
       "html_file_rel": "html_output/job_25358.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25358.json",
       "json_file_rel": "json_output/job_25358.json",
-      "scraped_at": "2026-01-02T02:51:15.591534",
+      "scraped_at": "2026-01-03T02:45:28.658126",
       "job_id_display": "25358"
     },
     {
@@ -1958,7 +2028,7 @@
       "title": "Head of AML/CTF",
       "date_posted": "08/12/2025",
       "first_seen": "2025-12-08T02:43:02.750853",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Banking and Financial Services",
       "employer": "PeopleConnexion",
@@ -1973,7 +2043,7 @@
       "html_file_rel": "html_output/job_25352.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25352.json",
       "json_file_rel": "json_output/job_25352.json",
-      "scraped_at": "2026-01-02T02:51:17.921398",
+      "scraped_at": "2026-01-03T02:45:31.751152",
       "job_id_display": "25352"
     },
     {
@@ -1981,7 +2051,7 @@
       "title": "Senior Exploration Geologist",
       "date_posted": "06/12/2025",
       "first_seen": "2025-12-07T02:47:18.827149",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Milne Bay",
       "industry": "Mining, Oil and Gas",
       "employer": "Woodlark Mining Limited",
@@ -1997,7 +2067,7 @@
       "html_file_rel": "html_output/job_25350.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25350.json",
       "json_file_rel": "json_output/job_25350.json",
-      "scraped_at": "2026-01-02T02:51:21.185104",
+      "scraped_at": "2026-01-03T02:45:34.043977",
       "job_id_display": "25350"
     },
     {
@@ -2005,7 +2075,7 @@
       "title": "Chief Operating Officer",
       "date_posted": "05/12/2025",
       "first_seen": "2025-12-05T02:42:19.987170",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Management",
       "employer": "PeopleConnexion",
@@ -2020,7 +2090,7 @@
       "html_file_rel": "html_output/job_25345.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25345.json",
       "json_file_rel": "json_output/job_25345.json",
-      "scraped_at": "2026-01-02T02:51:24.528904",
+      "scraped_at": "2026-01-03T02:45:37.118031",
       "job_id_display": "25345"
     },
     {
@@ -2028,7 +2098,7 @@
       "title": "Maintenance Manager",
       "date_posted": "04/12/2025",
       "first_seen": "2025-12-05T02:42:29.788015",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Hospitality, Travel and Tourism",
       "employer": "PeopleConnexion",
@@ -2043,7 +2113,7 @@
       "html_file_rel": "html_output/job_25339.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25339.json",
       "json_file_rel": "json_output/job_25339.json",
-      "scraped_at": "2026-01-02T02:51:27.777033",
+      "scraped_at": "2026-01-03T02:45:40.169246",
       "job_id_display": "25339"
     },
     {
@@ -2051,7 +2121,7 @@
       "title": "Tiler",
       "date_posted": "30/11/2025",
       "first_seen": "2025-11-30T02:47:07.202108",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -2066,7 +2136,7 @@
       "html_file_rel": "html_output/job_25305.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25305.json",
       "json_file_rel": "json_output/job_25305.json",
-      "scraped_at": "2026-01-02T02:51:30.964045",
+      "scraped_at": "2026-01-03T02:45:42.456789",
       "job_id_display": "25305"
     },
     {
@@ -2074,7 +2144,7 @@
       "title": "Senior Carpenter",
       "date_posted": "30/11/2025",
       "first_seen": "2025-11-30T02:47:10.378954",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Carpenter, Carpentry, Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -2089,7 +2159,7 @@
       "html_file_rel": "html_output/job_25304.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25304.json",
       "json_file_rel": "json_output/job_25304.json",
-      "scraped_at": "2026-01-02T02:51:34.169412",
+      "scraped_at": "2026-01-03T02:45:45.523484",
       "job_id_display": "25304"
     },
     {
@@ -2097,7 +2167,7 @@
       "title": "Plumber",
       "date_posted": "30/11/2025",
       "first_seen": "2025-11-30T02:47:13.560713",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture, Plumber",
       "employer": "Glory Estate Limited",
@@ -2112,7 +2182,7 @@
       "html_file_rel": "html_output/job_25303.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25303.json",
       "json_file_rel": "json_output/job_25303.json",
-      "scraped_at": "2026-01-02T02:51:37.356917",
+      "scraped_at": "2026-01-03T02:45:48.618969",
       "job_id_display": "25303"
     },
     {
@@ -2120,7 +2190,7 @@
       "title": "Junior Mechanic",
       "date_posted": "30/11/2025",
       "first_seen": "2025-11-30T02:47:16.664064",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -2135,7 +2205,7 @@
       "html_file_rel": "html_output/job_25302.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25302.json",
       "json_file_rel": "json_output/job_25302.json",
-      "scraped_at": "2026-01-02T02:51:40.525841",
+      "scraped_at": "2026-01-03T02:45:50.908318",
       "job_id_display": "25302"
     },
     {
@@ -2143,7 +2213,7 @@
       "title": "Building Electrician",
       "date_posted": "30/11/2025",
       "first_seen": "2025-11-30T02:47:19.739831",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture, Electrical",
       "employer": "Glory Estate Limited",
@@ -2158,7 +2228,7 @@
       "html_file_rel": "html_output/job_25301.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25301.json",
       "json_file_rel": "json_output/job_25301.json",
-      "scraped_at": "2026-01-02T02:51:43.734278",
+      "scraped_at": "2026-01-03T02:45:53.196268",
       "job_id_display": "25301"
     },
     {
@@ -2166,7 +2236,7 @@
       "title": "Senior Geologist",
       "date_posted": "10/12/2025",
       "first_seen": "2025-11-27T02:40:39.925294",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2182,15 +2252,15 @@
       "html_file_rel": "html_output/job_25287.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25287.json",
       "json_file_rel": "json_output/job_25287.json",
-      "scraped_at": "2026-01-02T02:51:46.931955",
+      "scraped_at": "2026-01-03T02:45:55.478305",
       "job_id_display": "25287"
     },
     {
       "job_id": "25269",
       "title": "Senior Engineer",
-      "date_posted": "01/01/2026",
+      "date_posted": "02/01/2026",
       "first_seen": "2025-11-25T03:20:35.951650",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2206,7 +2276,7 @@
       "html_file_rel": "html_output/job_25269.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25269.json",
       "json_file_rel": "json_output/job_25269.json",
-      "scraped_at": "2026-01-02T02:51:50.014589",
+      "scraped_at": "2026-01-03T02:45:58.524423",
       "job_id_display": "25269"
     },
     {
@@ -2214,7 +2284,7 @@
       "title": "Officer",
       "date_posted": "09/12/2025",
       "first_seen": "2025-11-19T03:17:47.646752",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2230,7 +2300,7 @@
       "html_file_rel": "html_output/job_25238.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25238.json",
       "json_file_rel": "json_output/job_25238.json",
-      "scraped_at": "2026-01-02T02:51:52.320559",
+      "scraped_at": "2026-01-03T02:46:00.809097",
       "job_id_display": "25238"
     },
     {
@@ -2238,7 +2308,7 @@
       "title": "Electrician",
       "date_posted": "18/11/2025",
       "first_seen": "2025-11-19T03:17:50.759894",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Electrical",
       "employer": "Pacific Services Group",
@@ -2253,7 +2323,7 @@
       "html_file_rel": "html_output/job_25237.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25237.json",
       "json_file_rel": "json_output/job_25237.json",
-      "scraped_at": "2026-01-02T02:51:55.549431",
+      "scraped_at": "2026-01-03T02:46:03.102126",
       "job_id_display": "25237"
     },
     {
@@ -2261,7 +2331,7 @@
       "title": "Sales Data Analyst",
       "date_posted": "29/12/2025",
       "first_seen": "2025-11-18T02:40:19.078800",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Marketing, Sales",
       "employer": "WR Carpenter (PNG) Limited",
@@ -2276,7 +2346,7 @@
       "html_file_rel": "html_output/job_25230.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25230.json",
       "json_file_rel": "json_output/job_25230.json",
-      "scraped_at": "2026-01-02T02:51:58.661537",
+      "scraped_at": "2026-01-03T02:46:06.145702",
       "job_id_display": "25230"
     },
     {
@@ -2284,7 +2354,7 @@
       "title": "Restaurant Manager",
       "date_posted": "17/11/2025",
       "first_seen": "2025-11-18T02:40:43.903988",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Restaurant / Fast-food",
       "employer": "Glory Estate Limited",
@@ -2299,7 +2369,7 @@
       "html_file_rel": "html_output/job_25220.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25220.json",
       "json_file_rel": "json_output/job_25220.json",
-      "scraped_at": "2026-01-02T02:52:01.879862",
+      "scraped_at": "2026-01-03T02:46:09.174058",
       "job_id_display": "25220"
     },
     {
@@ -2307,7 +2377,7 @@
       "title": "Senior Architectual Draftsman",
       "date_posted": "12/11/2025",
       "first_seen": "2025-11-13T02:41:17.660963",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -2322,7 +2392,7 @@
       "html_file_rel": "html_output/job_25182.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25182.json",
       "json_file_rel": "json_output/job_25182.json",
-      "scraped_at": "2026-01-02T02:52:05.033557",
+      "scraped_at": "2026-01-03T02:46:12.306727",
       "job_id_display": "25182"
     },
     {
@@ -2330,7 +2400,7 @@
       "title": "Assistant Welder and Fabricator",
       "date_posted": "12/11/2025",
       "first_seen": "2025-11-13T02:41:20.825329",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture",
       "employer": "Glory Estate Limited",
@@ -2345,7 +2415,7 @@
       "html_file_rel": "html_output/job_25181.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25181.json",
       "json_file_rel": "json_output/job_25181.json",
-      "scraped_at": "2026-01-02T02:52:08.154903",
+      "scraped_at": "2026-01-03T02:46:15.382209",
       "job_id_display": "25181"
     },
     {
@@ -2353,7 +2423,7 @@
       "title": "Project Administrator",
       "date_posted": "12/11/2025",
       "first_seen": "2025-11-13T02:41:23.925491",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Construction, Building and Architecture, Project Management",
       "employer": "Glory Estate Limited",
@@ -2368,7 +2438,7 @@
       "html_file_rel": "html_output/job_25180.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25180.json",
       "json_file_rel": "json_output/job_25180.json",
-      "scraped_at": "2026-01-02T02:52:11.329211",
+      "scraped_at": "2026-01-03T02:46:18.394890",
       "job_id_display": "25180"
     },
     {
@@ -2376,7 +2446,7 @@
       "title": "Diamond Driller",
       "date_posted": "26/12/2025",
       "first_seen": "2025-11-12T02:40:23.022920",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2392,7 +2462,7 @@
       "html_file_rel": "html_output/job_25165.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25165.json",
       "json_file_rel": "json_output/job_25165.json",
-      "scraped_at": "2026-01-02T02:52:14.681403",
+      "scraped_at": "2026-01-03T02:46:21.488760",
       "job_id_display": "25165"
     },
     {
@@ -2400,7 +2470,7 @@
       "title": "Diamond Driller",
       "date_posted": "26/12/2025",
       "first_seen": "2025-11-12T02:40:25.326298",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands",
       "industry": "Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2416,7 +2486,7 @@
       "html_file_rel": "html_output/job_25164.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25164.json",
       "json_file_rel": "json_output/job_25164.json",
-      "scraped_at": "2026-01-02T02:52:17.784914",
+      "scraped_at": "2026-01-03T02:46:24.580345",
       "job_id_display": "25164"
     },
     {
@@ -2424,7 +2494,7 @@
       "title": "Principal Community Affairs",
       "date_posted": "18/12/2025",
       "first_seen": "2025-11-12T02:40:27.612263",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Eastern Highlands, Eastern Highlands",
       "industry": "Mining, Oil and Gas, Mining, Oil and Gas",
       "employer": "K92 Mining Inc.",
@@ -2440,7 +2510,7 @@
       "html_file_rel": "html_output/job_25163.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25163.json",
       "json_file_rel": "json_output/job_25163.json",
-      "scraped_at": "2026-01-02T02:52:20.955032",
+      "scraped_at": "2026-01-03T02:46:26.864165",
       "job_id_display": "25163"
     },
     {
@@ -2448,7 +2518,7 @@
       "title": "Payroll Clerk",
       "date_posted": "10/11/2025",
       "first_seen": "2025-11-11T02:40:52.108067",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Accounting / Finance",
       "employer": "Glory Estate Limited",
@@ -2463,7 +2533,7 @@
       "html_file_rel": "html_output/job_25126.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25126.json",
       "json_file_rel": "json_output/job_25126.json",
-      "scraped_at": "2026-01-02T02:52:24.137242",
+      "scraped_at": "2026-01-03T02:46:29.950438",
       "job_id_display": "25126"
     },
     {
@@ -2471,7 +2541,7 @@
       "title": "Rigid/Semi Driver",
       "date_posted": "11/12/2025",
       "first_seen": "2025-11-04T02:39:44.132224",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Driver, Heavy Equipment, Logistics, Transport and Supply",
       "employer": "Express Freight Management",
@@ -2486,7 +2556,7 @@
       "html_file_rel": "html_output/job_25073.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25073.json",
       "json_file_rel": "json_output/job_25073.json",
-      "scraped_at": "2026-01-02T02:52:27.234749",
+      "scraped_at": "2026-01-03T02:46:32.955202",
       "job_id_display": "25073"
     },
     {
@@ -2494,7 +2564,7 @@
       "title": "Senior Driver/Trainer",
       "date_posted": "11/12/2025",
       "first_seen": "2025-11-04T02:39:47.239634",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "Morobe",
       "industry": "Administration / Office Support, Driver, Education and Training, Logistics, Transport and Supply",
       "employer": "Express Freight Management",
@@ -2509,7 +2579,7 @@
       "html_file_rel": "html_output/job_25072.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25072.json",
       "json_file_rel": "json_output/job_25072.json",
-      "scraped_at": "2026-01-02T02:52:30.421218",
+      "scraped_at": "2026-01-03T02:46:36.009949",
       "job_id_display": "25072"
     },
     {
@@ -2517,7 +2587,7 @@
       "title": "Secondary FODE Teacher",
       "date_posted": "15/12/2025",
       "first_seen": "2025-11-04T02:39:49.553159",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "New Ireland, Oro (Northern), Western (Fly)",
       "industry": "Education and Training",
       "employer": "KTF",
@@ -2532,7 +2602,7 @@
       "html_file_rel": "html_output/job_25071.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25071.json",
       "json_file_rel": "json_output/job_25071.json",
-      "scraped_at": "2026-01-02T02:52:33.535279",
+      "scraped_at": "2026-01-03T02:46:39.019337",
       "job_id_display": "25071"
     },
     {
@@ -2540,7 +2610,7 @@
       "title": "Senior Driver/Trainer",
       "date_posted": "11/12/2025",
       "first_seen": "2025-11-04T02:39:51.868993",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District, Morobe",
       "industry": "Driver, Education and Training, Heavy Equipment, Logistics, Transport and Supply",
       "employer": "Express Freight Management",
@@ -2555,7 +2625,7 @@
       "html_file_rel": "html_output/job_25070.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_25070.json",
       "json_file_rel": "json_output/job_25070.json",
-      "scraped_at": "2026-01-02T02:52:36.669312",
+      "scraped_at": "2026-01-03T02:46:42.085766",
       "job_id_display": "25070"
     },
     {
@@ -2563,7 +2633,7 @@
       "title": "Crew Rostering Officer",
       "date_posted": "31/12/2025",
       "first_seen": "2026-01-01T03:01:07.503374",
-      "last_seen": "2026-01-02T02:47:52.833428",
+      "last_seen": "2026-01-03T02:42:00.649382",
       "location": "National Capital District",
       "industry": "Airline / Airport / Travel",
       "employer": "PNG Air Limited",
@@ -2578,8 +2648,31 @@
       "html_file_rel": "html_output/job_22996.html",
       "json_file": "/home/runner/work/png-job-scrape/png-job-scrape/json_output/job_22996.json",
       "json_file_rel": "json_output/job_22996.json",
-      "scraped_at": "2026-01-02T02:52:39.774325",
+      "scraped_at": "2026-01-03T02:46:44.373371",
       "job_id_display": "22996"
+    },
+    {
+      "job_id": "24793",
+      "title": "Document Controller",
+      "date_posted": "7th October 2025",
+      "location": "National Capital District",
+      "industry": "Construction, Building and Architecture",
+      "employer": "Glory Estate Limited",
+      "salary": ",",
+      "description": "Summary\nThe Document Controller plays a crucial role in managing and overseeing all project-related documentation within the design and construction processes. This role ensures that all documents, including drawings, reports, and correspondence, are accurately maintained, distributed, and archived in accordance with the company's policies and procedures.\nDuties and Responsibilities\nManage and maintain all project documentation in an organized, accurate, and timely manner.\nControl the issuance of documents and maintain a comprehensive filing system for traceability.\nEnsure the latest revisions are administered and distributed promptly.\nCoordinate with different project teams (design, construction, engineering, etc.) to collect and maintain relevant documents.\nPrepare document control procedures and ensure they are followed by all project members.\nMonitor and report on the document control metrics, including document processing times, outstanding documents, etc.\nCheck the quality of documents, including compliance with company formatting and completeness of information.\nSupport in the retrieval of documents during audits or when needed by project teams.\nKeep up to date with relevant document control software and technologies.\nJob Requirements\nA diploma or degree in a related field or equivalent experience.\nMinimum of 2-3 years of experience as a Document Controller, preferably in the design and construction industry.\nExcellent organizational and time-management skills.\nStrong attention to detail and problem-solving capabilities.\nGood written and verbal communication skills.\nKnowledge of the design and construction process, industry standards, and regulations.\nAbility to work in a fast-paced environment and manage multiple tasks simultaneously.\nTo Apply\nTo apply for this job simply click on the blue \"Apply\" button below.  If you prefer to use email instead, please send your CV and other relevant documentation to\n[email protected]\n.  Please include the Job ID \"\n#24793\n\" in the email's subject to ensure your application is processed.\nApply\nAny sharing or copying and pasting of this content in other platforms must acknowledge PNGworkforce.com by mentioning the content is from PNGworkforce.com or by placing a link to PNGworkforce.com.\nSign in to apply\nUsername:\nPassword:\nSign In\nor\nclick here to apply without signing in\nApply for Document Controller\n*\n= Mandatory field\nContact Details\nPlease do not put anything into this field.  It is purely a checking mechanism:\nFirst Name\n*\n:\nLast Name\n*\n:\nPhone\n*\n:\nEmail\n*\n:\nJob Title:\n(your current or most recent job title)\nCover Letter\nUpload a cover letter from my computer\n(you may upload a file up to 5MB in size in .pdf, .doc, .docx or .rtf formats)\nWrite a cover letter now\nResume\nUpload a resume from my computer\n+ add another file\n(you may upload up to 10 files that are 5MB in size or less. Accepted file types are .pdf, .doc, .docx or .rtf formats)\nSubmit\nor\ncancel\nEmail job to a friend\nYour name:\nYour email:\nYour friend's name:\nYour friend's email:",
+      "url": "https://www.pngworkforce.com/jobs/view/document-controller/24793",
+      "html_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/html_output/job_24793.html",
+      "html_file_rel": "html_output/job_24793.html",
+      "json_file": "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/json_output/job_24793.json",
+      "json_file_rel": "json_output/job_24793.json",
+      "scraped_at": "2025-10-31T16:26:25.954472",
+      "job_id_display": "24793",
+      "last_seen": "2026-01-02T02:47:52.833428",
+      "first_seen": "2025-10-31T16:59:08.037949",
+      "employer_profile_url": "https://www.pngworkforce.com/jobs/view-company/1639/glory-estate-limited",
+      "employer_external_website": "http://www.glorygrouppng.com",
+      "employer_phone": "(+675) 323 8818",
+      "employer_address": "P.O. Box 3177, Boroko, National Capital District"
     },
     {
       "job_id": "25477",
