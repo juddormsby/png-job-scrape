@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-02-20T03:29:18.142299",
-  "total_jobs_found_on_page": 370,
-  "new_jobs_scraped": 8,
-  "jobs_retried": 0,
+  "scrape_date": "2026-02-21T03:20:13.436361",
+  "total_jobs_found_on_page": 336,
+  "new_jobs_scraped": 42,
+  "jobs_retried": 1,
   "jobs_skipped": 0,
-  "jobs_updated": 362,
-  "jobs_failed": 8,
-  "failed_with_job_id": 8,
+  "jobs_updated": 293,
+  "jobs_failed": 9,
+  "failed_with_job_id": 9,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 1249,
+  "total_jobs_in_database": 1288,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -121,6 +121,20 @@
       "failure_type": "unknown",
       "failed_at": "2026-02-04T03:19:23.183271",
       "last_attempted": "2026-02-04T03:19:23.183280"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/senior-gis-officer/25958",
+      "job_id": "25958",
+      "title": "Senior GIS Officer",
+      "employer": "",
+      "location": "",
+      "date_posted": "05 Feb 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/senior-gis-officer/25958",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-02-21T03:13:18.859769",
+      "last_attempted": "2026-02-21T03:13:18.859779"
     }
   ]
 }
