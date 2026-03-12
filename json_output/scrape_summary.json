@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-03-11T03:19:30.505865",
-  "total_jobs_found_on_page": 302,
-  "new_jobs_scraped": 10,
-  "jobs_retried": 0,
+  "scrape_date": "2026-03-12T03:21:47.694240",
+  "total_jobs_found_on_page": 278,
+  "new_jobs_scraped": 11,
+  "jobs_retried": 1,
   "jobs_skipped": 1,
-  "jobs_updated": 291,
-  "jobs_failed": 9,
-  "failed_with_job_id": 9,
+  "jobs_updated": 263,
+  "jobs_failed": 12,
+  "failed_with_job_id": 12,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 1475,
+  "total_jobs_in_database": 1484,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -135,6 +135,48 @@
       "failure_type": "unknown",
       "failed_at": "2026-02-21T03:13:18.859769",
       "last_attempted": "2026-02-21T03:13:18.859779"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/tool-storeman/26313",
+      "job_id": "26313",
+      "title": "Tool Storeman",
+      "employer": "K92 Mining Inc.",
+      "location": "Eastern Highlands",
+      "date_posted": "04 Mar 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/tool-storeman/26313",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-03-12T03:21:24.214081",
+      "last_attempted": "2026-03-12T03:21:24.214091"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/heavy-equipment-operator/26277",
+      "job_id": "26277",
+      "title": "Heavy Equipment Operator",
+      "employer": "K92 Mining Inc.",
+      "location": "Eastern Highlands",
+      "date_posted": "06 Mar 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/heavy-equipment-operator/26277",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-03-12T03:21:38.977061",
+      "last_attempted": "2026-03-12T03:21:38.977070"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/diamond-driller-surface/26227",
+      "job_id": "26227",
+      "title": "Diamond Driller - Surface",
+      "employer": "K92 Mining Inc.",
+      "location": "Eastern Highlands",
+      "date_posted": "21 Feb 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/diamond-driller-surface/26227",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-03-12T03:21:47.498991",
+      "last_attempted": "2026-03-12T03:21:47.498998"
     }
   ]
 }
