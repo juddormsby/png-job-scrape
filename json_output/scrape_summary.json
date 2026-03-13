@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-03-12T03:21:47.694240",
-  "total_jobs_found_on_page": 278,
-  "new_jobs_scraped": 11,
-  "jobs_retried": 1,
+  "scrape_date": "2026-03-13T03:20:21.834756",
+  "total_jobs_found_on_page": 288,
+  "new_jobs_scraped": 34,
+  "jobs_retried": 0,
   "jobs_skipped": 1,
-  "jobs_updated": 263,
+  "jobs_updated": 253,
   "jobs_failed": 12,
   "failed_with_job_id": 12,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 1484,
+  "total_jobs_in_database": 1513,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
