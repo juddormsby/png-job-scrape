@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-03-20T03:19:32.091299",
-  "total_jobs_found_on_page": 245,
-  "new_jobs_scraped": 10,
-  "jobs_retried": 0,
+  "scrape_date": "2026-03-21T03:13:33.689742",
+  "total_jobs_found_on_page": 232,
+  "new_jobs_scraped": 7,
+  "jobs_retried": 1,
   "jobs_skipped": 1,
-  "jobs_updated": 234,
-  "jobs_failed": 17,
-  "failed_with_job_id": 17,
+  "jobs_updated": 223,
+  "jobs_failed": 18,
+  "failed_with_job_id": 18,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 1572,
+  "total_jobs_in_database": 1579,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -247,6 +247,20 @@
       "failure_type": "unknown",
       "failed_at": "2026-03-19T03:26:21.089096",
       "last_attempted": "2026-03-19T03:26:21.089106"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/customary-lands-officer/26242",
+      "job_id": "26242",
+      "title": "Customary Lands Officer",
+      "employer": "Customary Lands Officer\n\n\t                    Date advertised: 24 Feb 2026 \nPeopleConnexion",
+      "location": "National Capital District",
+      "date_posted": "24 Feb 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/customary-lands-officer/26242",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-03-21T03:13:33.491303",
+      "last_attempted": "2026-03-21T03:13:33.491309"
     }
   ]
 }
