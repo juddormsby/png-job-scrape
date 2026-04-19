@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-04-18T03:27:10.682539",
-  "total_jobs_found_on_page": 237,
-  "new_jobs_scraped": 4,
-  "jobs_retried": 0,
+  "scrape_date": "2026-04-19T03:28:22.686973",
+  "total_jobs_found_on_page": 238,
+  "new_jobs_scraped": 5,
+  "jobs_retried": 1,
   "jobs_skipped": 0,
-  "jobs_updated": 233,
-  "jobs_failed": 19,
-  "failed_with_job_id": 19,
+  "jobs_updated": 232,
+  "jobs_failed": 20,
+  "failed_with_job_id": 20,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 1849,
+  "total_jobs_in_database": 1854,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -275,6 +275,20 @@
       "failure_type": "unknown",
       "failed_at": "2026-04-12T03:23:53.673051",
       "last_attempted": "2026-04-12T03:23:53.673061"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/project-manager-catering/26615",
+      "job_id": "26615",
+      "title": "Project Manager - Catering",
+      "employer": "",
+      "location": "Gulf",
+      "date_posted": "30 Mar 2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/project-manager-catering/26615",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-04-19T03:28:16.095455",
+      "last_attempted": "2026-04-19T03:28:16.095460"
     }
   ]
 }
