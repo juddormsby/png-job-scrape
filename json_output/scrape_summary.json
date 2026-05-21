@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-05-20T03:32:02.008667",
-  "total_jobs_found_on_page": 231,
-  "new_jobs_scraped": 8,
-  "jobs_retried": 0,
-  "jobs_skipped": 0,
-  "jobs_updated": 223,
-  "jobs_failed": 39,
-  "failed_with_job_id": 39,
+  "scrape_date": "2026-05-21T03:33:43.428204",
+  "total_jobs_found_on_page": 238,
+  "new_jobs_scraped": 16,
+  "jobs_retried": 1,
+  "jobs_skipped": 1,
+  "jobs_updated": 220,
+  "jobs_failed": 40,
+  "failed_with_job_id": 40,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 2182,
+  "total_jobs_in_database": 2198,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -555,6 +555,20 @@
       "failure_type": "unknown",
       "failed_at": "2026-05-13T03:28:31.172649",
       "last_attempted": "2026-05-13T03:28:31.172659"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/centralised-buyer/27020",
+      "job_id": "27020",
+      "title": "Centralised Buyer",
+      "employer": "Centralised Buyer\n\n\t                    Date advertised: 07 May 2026 \nPeopleConnexion",
+      "location": "National Capital District",
+      "date_posted": "07/05/2026",
+      "industry": "",
+      "error": "404 Client Error: Not Found for url: https://www.pngworkforce.com/jobs/view/centralised-buyer/27020",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-05-21T03:27:55.599841",
+      "last_attempted": "2026-05-21T03:27:55.599851"
     }
   ]
 }
