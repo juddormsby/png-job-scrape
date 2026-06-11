@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-06-10T03:31:47.036566",
+  "scrape_date": "2026-06-11T03:31:33.217852",
   "total_jobs_found_on_page": 209,
-  "new_jobs_scraped": 15,
-  "jobs_retried": 0,
+  "new_jobs_scraped": 5,
+  "jobs_retried": 1,
   "jobs_skipped": 1,
-  "jobs_updated": 193,
-  "jobs_failed": 40,
-  "failed_with_job_id": 40,
+  "jobs_updated": 202,
+  "jobs_failed": 41,
+  "failed_with_job_id": 41,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 2381,
+  "total_jobs_in_database": 2386,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -569,6 +569,20 @@
       "failure_type": "unknown",
       "failed_at": "2026-05-21T03:27:55.599841",
       "last_attempted": "2026-05-21T03:27:55.599851"
+    },
+    {
+      "url": "https://www.pngworkforce.com/jobs/view/project-manager-operational-services/26990",
+      "job_id": "26990",
+      "title": "Project Manager - Operational Services",
+      "employer": "",
+      "location": "",
+      "date_posted": "28/05/2026",
+      "industry": "",
+      "error": "HTTPSConnectionPool(host='www.pngworkforce.com', port=443): Read timed out. (read timeout=30)",
+      "retry_count": 1,
+      "failure_type": "unknown",
+      "failed_at": "2026-06-11T03:29:00.314918",
+      "last_attempted": "2026-06-11T03:29:00.314931"
     }
   ]
 }
