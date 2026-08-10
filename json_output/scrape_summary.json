@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-08-09T03:07:34.163970",
-  "total_jobs_found_on_page": 256,
-  "new_jobs_scraped": 0,
+  "scrape_date": "2026-08-10T03:06:43.090564",
+  "total_jobs_found_on_page": 252,
+  "new_jobs_scraped": 10,
   "jobs_retried": 1,
   "jobs_skipped": 0,
-  "jobs_updated": 255,
-  "jobs_failed": 43,
-  "failed_with_job_id": 43,
+  "jobs_updated": 241,
+  "jobs_failed": 42,
+  "failed_with_job_id": 42,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 3058,
+  "total_jobs_in_database": 3067,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -597,20 +597,6 @@
       "failure_type": "unknown",
       "failed_at": "2026-08-03T03:19:23.128729",
       "last_attempted": "2026-08-03T03:19:23.128738"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/stock-controller/27966",
-      "job_id": "27966",
-      "title": "Stock Controller",
-      "employer": "Stock Controller\n\n\t                    Date advertised: 30 Jul 2026 \nZenag Chicken",
-      "location": "Morobe",
-      "date_posted": "30 Jul 2026",
-      "industry": "",
-      "error": "HTTPSConnectionPool(host='www.pngworkforce.com', port=443): Read timed out. (read timeout=30)",
-      "retry_count": 1,
-      "failure_type": "unknown",
-      "failed_at": "2026-08-09T02:56:54.253120",
-      "last_attempted": "2026-08-09T02:56:54.253132"
     }
   ]
 }
