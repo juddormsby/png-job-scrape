@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "run_id": "artifact-11657475497",
+  "source_commit": "e3fc5a8f532026d40be81655d87b6471bb4fa8bb",
+  "started_at": "2026-10-10T02:44:06Z",
+  "finished_at": "2026-10-15T09:19:38.331622+00:00",
+  "status": "completed",
+  "manifest": "manifests/2026/10/artifact-11657475497.jsonl",
+  "observations": 379,
+  "stored_versions": 20,
+  "reused_versions": 359,
+  "network_errors": 0,
+  "details": {
+    "artifact_id": 11657475497
+  }
+}

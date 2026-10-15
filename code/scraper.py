@@ -25,6 +25,7 @@ import csv
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, unquote, parse_qs
 from datetime import datetime
+from source_archive import SourceArchive
 
 
 def format_date_dd_mm_yyyy(date_str):
@@ -74,7 +75,8 @@ def format_date_dd_mm_yyyy(date_str):
 
 
 class PNGworkforceScraper:
-    def __init__(self, base_url="https://www.pngworkforce.com", delay=1):
+    def __init__(self, base_url="https://www.pngworkforce.com", delay=1,
+                 output_root=None, archive_root=None, refresh_existing=True):
         """
         Initialize the scraper
         
@@ -91,20 +93,30 @@ class PNGworkforceScraper:
         
         # Create output directories (relative to project root, not code/ directory)
         # If running from code/, go up one level
-        base_dir = Path(__file__).parent.parent if Path(__file__).parent.name == 'code' else Path(__file__).parent
+        base_dir = (Path(output_root) if output_root is not None else
+                    Path(__file__).parent.parent if Path(__file__).parent.name == 'code'
+                    else Path(__file__).parent)
+        base_dir.mkdir(parents=True, exist_ok=True)
+        self.base_dir = base_dir
         self.html_dir = base_dir / "html_output"
         self.json_dir = base_dir / "json_output"
         self.html_dir.mkdir(exist_ok=True)
         self.json_dir.mkdir(exist_ok=True)
+        self.refresh_existing = refresh_existing
+        self.archive = SourceArchive(Path(archive_root) if archive_root is not None
+                                     else base_dir / "archive")
         
     def fetch_page(self, url):
         """Fetch a page and return BeautifulSoup object"""
         try:
             print(f"Fetching: {url}")
             response = self.session.get(url, timeout=30)
+            self.archive.capture_response(response, url, scope="listing")
             response.raise_for_status()
             return BeautifulSoup(response.content, 'html.parser')
         except requests.RequestException as e:
+            if getattr(e, 'response', None) is None:
+                self.archive.network_error(url, e, scope="listing")
             print(f"Error fetching {url}: {e}")
             return None
         
@@ -113,9 +125,12 @@ class PNGworkforceScraper:
         try:
             print(f"Fetching: {url}")
             response = self.session.get(url, timeout=30)
+            self._last_job_capture = self.archive.capture_response(response, url, scope="job")
             response.raise_for_status()
             return BeautifulSoup(response.content, 'html.parser'), None
         except requests.RequestException as e:
+            if getattr(e, 'response', None) is None:
+                self.archive.network_error(url, e, scope="job")
             error_msg = str(e)
             print(f"Error fetching {url}: {error_msg}")
             return None, error_msg
@@ -461,9 +476,14 @@ class PNGworkforceScraper:
             }
             
             response = self.session.get(ajax_url, params=params, headers=headers, timeout=30)
+            self.archive.capture_response(response, response.url, scope="listing")
             response.raise_for_status()
             return BeautifulSoup(response.content, 'html.parser')
         except requests.RequestException as e:
+            if getattr(e, 'response', None) is None:
+                from requests import Request
+                attempted_url = Request('GET', ajax_url, params=params).prepare().url
+                self.archive.network_error(attempted_url, e, scope="listing")
             print(f"Error fetching AJAX page (start_rank={start_rank}): {e}")
             return None
     
@@ -841,7 +861,11 @@ class PNGworkforceScraper:
         html_path = self.save_html(job_url, html_content)
         
         # Extract structured data from detail page
-        structured_data = self.extract_structured_data(soup, job_url)
+        try:
+            structured_data = self.extract_structured_data(soup, job_url)
+        except Exception as error:
+            self.archive.extraction_event(job_url, "extractor_failed", str(error))
+            raise
         
         # Merge with main page data (main page data as fallback if detail page extraction failed)
         if main_page_data:
@@ -900,10 +924,22 @@ class PNGworkforceScraper:
         
         # Remove None values but keep job_id and title even if None
         final_ordered_data = {k: v for k, v in final_ordered_data.items() if v is not None or k in ['job_id', 'title']}
+        capture = self._last_job_capture
+        source_path = self.archive.root / capture['source_path']
+        try:
+            source_reference = str(source_path.relative_to(self.base_dir))
+        except ValueError:
+            source_reference = str(source_path)
+        final_ordered_data.update({
+            'source_archive_file': source_reference,
+            'source_archive_sha256': capture['source_sha256'],
+            'source_archive_run_id': capture['run_id'],
+        })
         
         # Save structured data with proper ordering
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(final_ordered_data, f, indent=2, ensure_ascii=False)
+        self.archive.extraction_event(job_url, "extractor_completed")
         
         return final_ordered_data, None
     
@@ -930,6 +966,9 @@ class PNGworkforceScraper:
             bool: True if job is already successfully scraped
         """
         if not job_id:
+            return False
+        # Re-check live pages: having an archived source is not a refresh policy.
+        if self.refresh_existing:
             return False
         
         html_file = self.html_dir / f"job_{job_id}.html"
@@ -1006,6 +1045,8 @@ class PNGworkforceScraper:
                 'description_length': len(job.get('description', '')),
                 'status': 'success'
             }
+            for field in ('source_archive_file', 'source_archive_sha256', 'source_archive_run_id'):
+                csv_row[field] = job.get(field, '')
             csv_data.append(csv_row)
         
         # Add failed jobs (include all available info for manual review)
@@ -1572,5 +1613,12 @@ class PNGworkforceScraper:
 
 if __name__ == "__main__":
     scraper = PNGworkforceScraper(delay=2)  # 2 second delay between requests
-    scraper.scrape_all()
+    try:
+        results = scraper.scrape_all()
+    except BaseException:
+        scraper.archive.finish("failed")
+        raise
+    else:
+        counts = scraper.archive.finish("completed", {"returned_jobs": len(results or [])})
+        print(f"Source archive: {counts}")
 

@@ -1,0 +1,45 @@
+{
+  "tested_at": "2026-10-15T13:13:28.714927+00:00",
+  "isolated_output_root": "/var/folders/1b/wc07l9zd7dv1bt6g1c04m5lw0000gn/T/png-archive-live-a2ub8cwz",
+  "production_outputs_modified": false,
+  "jobs": [
+    {
+      "job_id": "28855",
+      "url": "https://www.pngworkforce.com/jobs/view/hvac-r-service-supervisor/28855",
+      "http_status": 200,
+      "source_sha256": "52190d770c7e59094e2b9d3fbc1fa7c028627e5532bc1a2667ea6b94a1747020",
+      "original_bytes": 38422,
+      "description_characters": 10000,
+      "offline_description_matches": true
+    },
+    {
+      "job_id": "28836",
+      "url": "https://www.pngworkforce.com/jobs/view/operator-power-station-control-room/28836",
+      "http_status": 200,
+      "source_sha256": "55dbc8bf51e18aebcb7d3161d30816839b872c3efa2352255e2d8c8e5910ddd3",
+      "original_bytes": 22702,
+      "description_characters": 3915,
+      "offline_description_matches": true
+    },
+    {
+      "job_id": "28825",
+      "url": "https://www.pngworkforce.com/jobs/view/education-program-manager/28825",
+      "http_status": 200,
+      "source_sha256": "c5ffad941d23e4635b224a4c05b71da55c964bf3662f25d02a47e2b2b6e38533",
+      "original_bytes": 19445,
+      "description_characters": 725,
+      "offline_description_matches": true
+    }
+  ],
+  "repeat_source_reused": true,
+  "archive_verification": {
+    "manifests": 1,
+    "observations": 4,
+    "verified_sources": 3,
+    "uncompressed_bytes": 80569
+  },
+  "recovery_export": {
+    "run_id": "local-0b7d752920f44a1fa769ea42b4bf5624",
+    "exported_files": 5
+  }
+}

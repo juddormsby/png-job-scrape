@@ -1,6 +1,6 @@
 # Scraper improvement and source preservation plan
 
-Prepared 15 October 2026. This is an implementation plan; the changes described below have not been applied to the production scraper, workflow or data.
+Prepared 15 October 2026. **Implementation update:** sequence steps 1–2 (preserve retained artifacts and add durable source capture) are implemented; see the [archive operation and recovery guide](HTML_ARCHIVE.md) for measured coverage and validation. The remaining extraction repairs, historical backfills and analysis refresh are still proposed work. The design discussion below records the original plan.
 
 ## Overall assessment
 
@@ -22,7 +22,7 @@ Preservation procedure:
 4. Retain the consolidated JSON snapshots and original text as well as HTML. A parser error must not destroy the only source used to diagnose it.
 5. Mirror the preserved archive to Dropbox and include the archival inventory in Git. Confirm at least a few files can actually be restored and re-parsed.
 
-Daily observation histories suggest that the retained post-restart artifacts may cover **490 distinct recently observed IDs**. Together with the 189 older local HTMLs, the potential union is **678 IDs**. This is an inferred recovery opportunity, not verified archive contents: successful artifact uploads and paths were checked, but the ZIPs have not been downloaded and inventoried. Preserve all available versions rather than just today's live adverts; some roles visible on 20 September have since disappeared.
+The original estimate suggested a union of **678 IDs** including older local HTMLs and retained post-restart artifacts. **Verified implementation result:** all 26 retained ZIPs were preserved and checked, yielding exactly **678 distinct IDs**, 1,198 source versions and 9,980 artifact HTML observations. The original ZIPs also preserve the consolidated JSON snapshots. Some roles visible on 20 September have since disappeared; retaining all available versions preserved evidence that today's live listings alone would miss.
 
 ## Phase 1 — durable HTML capture going forward
 
@@ -158,4 +158,4 @@ For September aggregates use the observed dataset plus the documented +75 centra
 4. **Publish a separately reviewed historical backfill**, with measurable changes and provenance. Recalculate data quality and ensure IDs/old analytical outputs are preserved.
 5. **Refresh classification and analysis separately**, with a targeted sensitivity check first.
 
-The current work delivers the estimate, evidence and this plan. It does not enable new storage services, modify GitHub settings, download the artifact archive, change production collection, rewrite historical data or incur classification charges.
+The initial planning work delivered the estimate and evidence. Subsequently authorized steps 1–2 preserve the retained artifact archive and enable versioned source capture in production collection. They do not backfill historical fields, rerun classification or introduce a new storage service. Reliable publishing, serialization of overlapping runs and refreshing cached live pages are included where needed for source preservation; other Phase 2 repairs remain separate.

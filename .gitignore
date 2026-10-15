@@ -11,3 +11,7 @@ Thumbs.db
 
 # Project files
 png-jobscraper.txt
+
+# Exact downloaded workflow ZIPs live in Dropbox, outside Git history.
+preserved_artifacts/
+archive_run/

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "resource": "job_25008",
+  "category": "legacy_html",
+  "fingerprint_version": "advert-dom-v1",
+  "fingerprint_sha256": "bf04a39aa8e1df510b99bc0dc8c9616ade851b64e8935b9944066ffe00d571e1",
+  "source_path": "html/2026/09/job_25008/1f000e6ac73dc0b474b572983e1ee659d28759da35ef2adaa5be4b2e60975a2d.html.gz",
+  "source_sha256": "1f000e6ac73dc0b474b572983e1ee659d28759da35ef2adaa5be4b2e60975a2d"
+}
