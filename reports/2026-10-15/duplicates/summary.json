@@ -1,0 +1,393 @@
+{
+  "source_sha256": "7b0b330f6d999c29de5ddf3d6ce57e46e138944b5c871bb9d2f5c4f6314d5285",
+  "records": 3712,
+  "unique_ids": 3712,
+  "duplicate_definition": "Exact entire stored description string; no whitespace normalization or truncation for the hash.",
+  "description_report": [
+    {
+      "copies": 1,
+      "observations": 3279,
+      "surplus": 0,
+      "groups": 3279
+    },
+    {
+      "copies": 2,
+      "observations": 236,
+      "surplus": 118,
+      "groups": 118
+    },
+    {
+      "copies": 3,
+      "observations": 93,
+      "surplus": 62,
+      "groups": 31
+    },
+    {
+      "copies": 4,
+      "observations": 36,
+      "surplus": 27,
+      "groups": 9
+    },
+    {
+      "copies": 5,
+      "observations": 25,
+      "surplus": 20,
+      "groups": 5
+    },
+    {
+      "copies": 6,
+      "observations": 24,
+      "surplus": 20,
+      "groups": 4
+    },
+    {
+      "copies": 9,
+      "observations": 9,
+      "surplus": 8,
+      "groups": 1
+    },
+    {
+      "copies": 10,
+      "observations": 10,
+      "surplus": 9,
+      "groups": 1
+    }
+  ],
+  "job_id_report": [
+    {
+      "copies": 1,
+      "observations": 3712,
+      "surplus": 0,
+      "groups": 3712
+    }
+  ],
+  "employer_description_report": [
+    {
+      "copies": 1,
+      "observations": 3285,
+      "surplus": 0,
+      "groups": 3285
+    },
+    {
+      "copies": 2,
+      "observations": 230,
+      "surplus": 115,
+      "groups": 115
+    },
+    {
+      "copies": 3,
+      "observations": 93,
+      "surplus": 62,
+      "groups": 31
+    },
+    {
+      "copies": 4,
+      "observations": 36,
+      "surplus": 27,
+      "groups": 9
+    },
+    {
+      "copies": 5,
+      "observations": 25,
+      "surplus": 20,
+      "groups": 5
+    },
+    {
+      "copies": 6,
+      "observations": 24,
+      "surplus": 20,
+      "groups": 4
+    },
+    {
+      "copies": 9,
+      "observations": 9,
+      "surplus": 8,
+      "groups": 1
+    },
+    {
+      "copies": 10,
+      "observations": 10,
+      "surplus": 9,
+      "groups": 1
+    }
+  ],
+  "employer_title_description_report": [
+    {
+      "copies": 1,
+      "observations": 3306,
+      "surplus": 0,
+      "groups": 3306
+    },
+    {
+      "copies": 2,
+      "observations": 232,
+      "surplus": 116,
+      "groups": 116
+    },
+    {
+      "copies": 3,
+      "observations": 99,
+      "surplus": 66,
+      "groups": 33
+    },
+    {
+      "copies": 4,
+      "observations": 28,
+      "surplus": 21,
+      "groups": 7
+    },
+    {
+      "copies": 5,
+      "observations": 20,
+      "surplus": 16,
+      "groups": 4
+    },
+    {
+      "copies": 6,
+      "observations": 18,
+      "surplus": 15,
+      "groups": 3
+    },
+    {
+      "copies": 9,
+      "observations": 9,
+      "surplus": 8,
+      "groups": 1
+    }
+  ],
+  "employer_title_posted_description_report": [
+    {
+      "copies": 1,
+      "observations": 3610,
+      "surplus": 0,
+      "groups": 3610
+    },
+    {
+      "copies": 2,
+      "observations": 94,
+      "surplus": 47,
+      "groups": 47
+    },
+    {
+      "copies": 3,
+      "observations": 3,
+      "surplus": 2,
+      "groups": 1
+    },
+    {
+      "copies": 5,
+      "observations": 5,
+      "surplus": 4,
+      "groups": 1
+    }
+  ],
+  "normalized_posted_report": [
+    {
+      "copies": 1,
+      "observations": 3610,
+      "surplus": 0,
+      "groups": 3610
+    },
+    {
+      "copies": 2,
+      "observations": 94,
+      "surplus": 47,
+      "groups": 47
+    },
+    {
+      "copies": 3,
+      "observations": 3,
+      "surplus": 2,
+      "groups": 1
+    },
+    {
+      "copies": 5,
+      "observations": 5,
+      "surplus": 4,
+      "groups": 1
+    }
+  ],
+  "repeated_groups": 169,
+  "repeated_records": 433,
+  "surplus": 264,
+  "distinct_description_strings": 3448,
+  "same_first_day_groups": 53,
+  "different_first_days_groups": 116,
+  "groups_with_any_same_first_day_companions": 80,
+  "groups_spanning_at_least_30_days": 104,
+  "median_first_seen_span_days": 45,
+  "max_first_seen_span_days": 301,
+  "single_employer_groups": 166,
+  "cross_employer_groups": [
+    25,
+    26,
+    167
+  ],
+  "minimum_repeated_description_chars": 1301,
+  "minimum_repeated_chars_before_share_controls": 1215,
+  "capped_groups": [
+    13
+  ],
+  "employers": [
+    {
+      "employer": "K92 Mining Inc.",
+      "repeated_records": 266,
+      "all_records": 428,
+      "share_of_all_repeated_records": 0.6143187066974596
+    },
+    {
+      "employer": "PeopleConnexion",
+      "repeated_records": 58,
+      "all_records": 292,
+      "share_of_all_repeated_records": 0.13394919168591224
+    },
+    {
+      "employer": "Express Freight Management",
+      "repeated_records": 32,
+      "all_records": 117,
+      "share_of_all_repeated_records": 0.07390300230946882
+    },
+    {
+      "employer": "Newmont",
+      "repeated_records": 16,
+      "all_records": 176,
+      "share_of_all_repeated_records": 0.03695150115473441
+    },
+    {
+      "employer": "CHM & Sons Limited",
+      "repeated_records": 11,
+      "all_records": 20,
+      "share_of_all_repeated_records": 0.025404157043879907
+    },
+    {
+      "employer": "Able Computing (PNG) Ltd",
+      "repeated_records": 7,
+      "all_records": 50,
+      "share_of_all_repeated_records": 0.016166281755196306
+    },
+    {
+      "employer": "KTF",
+      "repeated_records": 6,
+      "all_records": 15,
+      "share_of_all_repeated_records": 0.013856812933025405
+    },
+    {
+      "employer": "Telemu No.16 Limited",
+      "repeated_records": 4,
+      "all_records": 19,
+      "share_of_all_repeated_records": 0.009237875288683603
+    },
+    {
+      "employer": "Balimo College",
+      "repeated_records": 4,
+      "all_records": 13,
+      "share_of_all_repeated_records": 0.009237875288683603
+    },
+    {
+      "employer": "PNG Air Limited",
+      "repeated_records": 4,
+      "all_records": 74,
+      "share_of_all_repeated_records": 0.009237875288683603
+    },
+    {
+      "employer": "Credit Corporation (PNG) Limited",
+      "repeated_records": 2,
+      "all_records": 29,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "HBS PNG",
+      "repeated_records": 2,
+      "all_records": 32,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Modern Pharmaceutical Limited",
+      "repeated_records": 2,
+      "all_records": 6,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Kainantu Resources Limited",
+      "repeated_records": 2,
+      "all_records": 10,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Master Systems Technologies Ltd",
+      "repeated_records": 2,
+      "all_records": 14,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Moni Plus",
+      "repeated_records": 2,
+      "all_records": 34,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "PNG Motors",
+      "repeated_records": 2,
+      "all_records": 47,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Department of Treasury",
+      "repeated_records": 2,
+      "all_records": 14,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "Burnet Institute",
+      "repeated_records": 2,
+      "all_records": 13,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "WR Carpenter (PNG) Limited",
+      "repeated_records": 2,
+      "all_records": 105,
+      "share_of_all_repeated_records": 0.004618937644341801
+    },
+    {
+      "employer": "IBS University",
+      "repeated_records": 1,
+      "all_records": 21,
+      "share_of_all_repeated_records": 0.0023094688221709007
+    },
+    {
+      "employer": "IBSUniversity",
+      "repeated_records": 1,
+      "all_records": 17,
+      "share_of_all_repeated_records": 0.0023094688221709007
+    },
+    {
+      "employer": "SDP-KTF",
+      "repeated_records": 1,
+      "all_records": 1,
+      "share_of_all_repeated_records": 0.0023094688221709007
+    },
+    {
+      "employer": "Wildlife Conservation Papua New Guinea (WCS PNG)",
+      "repeated_records": 1,
+      "all_records": 11,
+      "share_of_all_repeated_records": 0.0023094688221709007
+    },
+    {
+      "employer": "Tree Kangaroo Conservation Program",
+      "repeated_records": 1,
+      "all_records": 5,
+      "share_of_all_repeated_records": 0.0023094688221709007
+    }
+  ],
+  "interpretation": "First-seen spans are observation spans, not proven vacancy durations. Same first day may include startup stock. Date_posted is mutable. No rows are dropped.",
+  "stata_validation": {
+    "version": "13.1",
+    "actually_executed": true,
+    "all_assertions_passed": true,
+    "description_report_matches_python": true,
+    "source_unchanged": true,
+    "log": "duplicates_stata.log",
+    "do_file": "duplicates_review.do"
+  }
+}

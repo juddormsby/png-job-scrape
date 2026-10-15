@@ -1,0 +1,44 @@
+[
+  {
+    "job_id": "28894",
+    "requested_url": "https://www.pngworkforce.com/jobs/view/boiler-operator/28894",
+    "final_url": "https://www.pngworkforce.com/jobs/view/boiler-operator/28894",
+    "checked_at": "2026-10-15T15:24:56.140032+00:00",
+    "http_status": 200,
+    "body_sha256": "829f59e288a07d5a84b05144fa3f4f5087011d896cf93af5114ee6ebfb4d9d57",
+    "structured_title": "Boiler Operator",
+    "structured_employer": "WR Carpenter (PNG) Limited",
+    "recognized_job_page": true,
+    "description_characters": 3966,
+    "description_sha256": "4b0c66f082fd9286181128decac4059a5d47a2b77cbd07771400911945a4c373",
+    "description_matches_stored_verbatim": true
+  },
+  {
+    "job_id": "28895",
+    "requested_url": "https://www.pngworkforce.com/jobs/view/boiler-operator/28895",
+    "final_url": "https://www.pngworkforce.com/jobs/view/boiler-operator/28895",
+    "checked_at": "2026-10-15T15:25:00.510312+00:00",
+    "http_status": 200,
+    "body_sha256": "15da8deea9c5cd7336e1bcd952baea5147601faa4697413a0440f450eb28dbfa",
+    "structured_title": "Boiler Operator",
+    "structured_employer": "WR Carpenter (PNG) Limited",
+    "recognized_job_page": true,
+    "description_characters": 3966,
+    "description_sha256": "4b0c66f082fd9286181128decac4059a5d47a2b77cbd07771400911945a4c373",
+    "description_matches_stored_verbatim": true
+  },
+  {
+    "job_id": "28893",
+    "requested_url": "https://www.pngworkforce.com/jobs/view/maintenance-planner/28893",
+    "final_url": "https://www.pngworkforce.com/jobs/view/maintenance-planner/28893",
+    "checked_at": "2026-10-15T15:25:04.924641+00:00",
+    "http_status": 200,
+    "body_sha256": "e27b11b45221c26b4a7d93e7721ddc74e079c7184845982f0f46952d84b8cbec",
+    "structured_title": "Maintenance Planner",
+    "structured_employer": "K92 Mining Inc.",
+    "recognized_job_page": true,
+    "description_characters": 5056,
+    "description_sha256": "a501d37fe51e12e7efe5088bde644891ffc48a46af417cb04348b3a3b3e959f1",
+    "description_matches_stored_verbatim": true
+  }
+]

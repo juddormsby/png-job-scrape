@@ -1,0 +1,181 @@
+------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/juddormsby/Dropbox/ADB/pngworkforce-scrape/reports/2026-10-15/duplicates/duplicates_stata.log
+  log type:  text
+ opened on:  15 Oct 2026, 16:28:16
+
+. display "Installed Stata version: " c(stata_version)
+Installed Stata version: 13.1
+
+. if c(stata_version) < 14 {
+.     use "`out'/duplicate_keys_stata13.dta", clear
+(Exact hashes of original Unicode text; ASCII display labels)
+.     display "Stata 13 compatibility file: ASCII display labels; hashes use full original Unicode descriptions."
+Stata 13 compatibility file: ASCII display labels; hashes use full original Unicode descriptions.
+. }
+
+. else {
+.     use "`out'/duplicate_review.dta", clear
+. }
+
+. assert _N == 3712
+
+. isid job_id
+
+. * description_key is SHA-256 of the ENTIRE original description, not a prefix.
+. * Python independently checks every key against the original source string.
+. duplicates report job_id
+
+Duplicates in terms of job_id
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3712             0
+--------------------------------------
+
+. duplicates report description_key
+
+Duplicates in terms of description_key
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3279             0
+        2 |          236           118
+        3 |           93            62
+        4 |           36            27
+        5 |           25            20
+        6 |           24            20
+        9 |            9             8
+       10 |           10             9
+--------------------------------------
+
+. duplicates report employer_key description_key
+
+Duplicates in terms of employer_key description_key
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3285             0
+        2 |          230           115
+        3 |           93            62
+        4 |           36            27
+        5 |           25            20
+        6 |           24            20
+        9 |            9             8
+       10 |           10             9
+--------------------------------------
+
+. duplicates report employer_key title_key description_key
+
+Duplicates in terms of employer_key title_key description_key
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3306             0
+        2 |          232           116
+        3 |           99            66
+        4 |           28            21
+        5 |           20            16
+        6 |           18            15
+        9 |            9             8
+--------------------------------------
+
+. duplicates report employer_key title_key date_posted description_key
+
+Duplicates in terms of employer_key title_key date_posted description_key
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3610             0
+        2 |           94            47
+        3 |            3             2
+        5 |            5             4
+--------------------------------------
+
+. duplicates report employer_key title_key posted_day description_key
+
+Duplicates in terms of employer_key title_key posted_day description_key
+
+--------------------------------------
+   copies | observations       surplus
+----------+---------------------------
+        1 |         3610             0
+        2 |           94            47
+        3 |            3             2
+        5 |            5             4
+--------------------------------------
+
+. duplicates tag description_key, generate(dup_description)
+
+Duplicates in terms of description_key
+
+. assert dup_description == copy_count - 1
+
+. count if dup_description > 0
+  433
+
+. assert r(N) == 433
+
+. bysort description_key (first_day job_id): generate byte first_text = _n == 1
+
+. count if first_text
+ 3448
+
+. assert r(N) == 3448
+
+. count if !first_text
+  264
+
+. assert r(N) == 264
+
+. * Every member of a repeated group is tagged: not just the surplus copies.
+. tabulate copy_count
+
+ copy_count |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          1 |      3,279       88.34       88.34
+          2 |        236        6.36       94.69
+          3 |         93        2.51       97.20
+          4 |         36        0.97       98.17
+          5 |         25        0.67       98.84
+          6 |         24        0.65       99.49
+          9 |          9        0.24       99.73
+         10 |         10        0.27      100.00
+------------+-----------------------------------
+      Total |      3,712      100.00
+
+. sort repeat_group first_day job_id
+
+. list repeat_group job_id employer title first_day posted_day if inlist(job_id,28894,28895,28893,28060,26460,26461), no
+> obs sepby(repeat_group) abbreviate(24)
+
+  +----------------------------------------------------------------------------------------------------+
+  | repeat_group   job_id                     employer                 title    first_day   posted_day |
+  |----------------------------------------------------------------------------------------------------|
+  |           87    26460              K92 Mining Inc.   Maintenance Planner   2026-03-15   2026-03-31 |
+  |           87    26461              K92 Mining Inc.   Maintenance Planner   2026-03-15   2026-03-30 |
+  |           87    28060              K92 Mining Inc.   Maintenance Planner   2026-08-07   2026-08-12 |
+  |           87    28893              K92 Mining Inc.   Maintenance Planner   2026-10-15   2026-10-15 |
+  |----------------------------------------------------------------------------------------------------|
+  |          169    28894   WR Carpenter (PNG) Limited       Boiler Operator   2026-10-15   2026-10-15 |
+  |          169    28895   WR Carpenter (PNG) Limited       Boiler Operator   2026-10-15   2026-10-15 |
+  +----------------------------------------------------------------------------------------------------+
+
+. save "`out'/duplicates_tagged.dta", replace
+(note: file reports/2026-10-15/duplicates/duplicates_tagged.dta not found)
+file reports/2026-10-15/duplicates/duplicates_tagged.dta saved
+
+. display "REVIEW_COMPLETED_SUCCESSFULLY: no source records dropped or modified"
+REVIEW_COMPLETED_SUCCESSFULLY: no source records dropped or modified
+
+. log close
+      name:  <unnamed>
+       log:  /Users/juddormsby/Dropbox/ADB/pngworkforce-scrape/reports/2026-10-15/duplicates/duplicates_stata.log
+  log type:  text
+ closed on:  15 Oct 2026, 16:28:16
+------------------------------------------------------------------------------------------------------------------------

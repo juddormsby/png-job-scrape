@@ -1,0 +1,85 @@
+{
+  "source": "json_output/all_jobs.json",
+  "source_sha256": "7b0b330f6d999c29de5ddf3d6ce57e46e138944b5c871bb9d2f5c4f6314d5285",
+  "last_updated": "2026-10-15T13:28:30.644436",
+  "record_count": 3712,
+  "unique_job_ids": 3712,
+  "duplicate_id_rows": 0,
+  "failed_entries_excluded": 48,
+  "seen_on_latest_scrape_date": 212,
+  "latest_source_archive_run_id": "github-38741244563-1",
+  "seen_in_latest_run": 211,
+  "latest_day_count_note": "The date-based count can include an advert seen only in an earlier run that day. The latest-run count uses its source-reference run ID.",
+  "collection_first_seen_min": "2025-10-31T16:59:08.037949",
+  "collection_first_seen_max": "2026-10-15T13:28:02.033567",
+  "monthly_first_recorded": {
+    "2025-10": 150,
+    "2025-11": 251,
+    "2025-12": 183,
+    "2026-01": 355,
+    "2026-02": 409,
+    "2026-03": 330,
+    "2026-04": 319,
+    "2026-05": 296,
+    "2026-06": 274,
+    "2026-07": 384,
+    "2026-08": 338,
+    "2026-09": 265,
+    "2026-10": 158
+  },
+  "monthly_latest_stored_advertised_date": {
+    "2025-04": 1,
+    "2025-09": 12,
+    "2025-10": 155,
+    "2025-11": 213,
+    "2025-12": 174,
+    "2026-01": 324,
+    "2026-02": 412,
+    "2026-03": 345,
+    "2026-04": 321,
+    "2026-05": 280,
+    "2026-06": 288,
+    "2026-07": 380,
+    "2026-08": 342,
+    "2026-09": 286,
+    "2026-10": 179
+  },
+  "descriptions": {
+    "nonempty": 3712,
+    "nonempty_percent": 100.0,
+    "median_characters": 3673.0,
+    "minimum_characters": 725,
+    "at_10000_character_cap": 72,
+    "with_share_form_phrase": 3643,
+    "median_characters_before_share_controls": 3585.5,
+    "at_least_1000_characters_before_share_controls": 3690,
+    "note": "Share-control removal is a descriptive length check, not a new cleaned dataset. Completeness is not inferred from length alone."
+  },
+  "exact_description_repeats": {
+    "groups": 169,
+    "records": 433,
+    "records_beyond_one_per_group": 264
+  },
+  "exact_employer_description_repeats": {
+    "groups": 166,
+    "records": 427,
+    "records_beyond_one_per_group": 261
+  },
+  "exact_employer_title_description_repeats": {
+    "groups": 164,
+    "records": 406,
+    "records_beyond_one_per_group": 242
+  },
+  "exact_employer_title_posted_date_description_repeats": {
+    "groups": 49,
+    "records": 102,
+    "records_beyond_one_per_group": 53
+  },
+  "interpretation": {
+    "unit": "Distinct advert IDs, not independently verified individual positions or unique recruitment episodes.",
+    "monthly_definition": "First successful observation in this dataset. Initial capture is a stock of already-live adverts. Rediscovery of the same ID does not add another first observation.",
+    "posted_dates": "Latest saved advertised date, normalized in memory only; this date can change on editing or re-advertising. It is not a reconstructed original publication series.",
+    "gap": "No scrape ran 1–19 September 2026. Surviving adverts were recovered after restart; adverts removed before restart can be missing. No missing-advert estimate is added to these counts.",
+    "repeated_text": "Different IDs sharing exactly identical stored text. Reposts, multiple positions, rounds and templates can all cause repeats. No records have been deleted or merged."
+  }
+}

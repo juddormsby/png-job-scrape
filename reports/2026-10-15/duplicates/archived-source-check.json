@@ -1,0 +1,152 @@
+[
+  {
+    "job_id": "28894",
+    "available_source_versions": 2,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/10/job_28894/cf8b3e49cc37c48de27631213b4ce9f9a2226645ad5a334aea40967c5141cdc3.html.gz",
+        "structured_title": "Boiler Operator",
+        "structured_employer": "WR Carpenter (PNG) Limited",
+        "full_description_characters": 3966,
+        "full_description_sha256": "4b0c66f082fd9286181128decac4059a5d47a2b77cbd07771400911945a4c373"
+      },
+      {
+        "source_file": "archive/html/2026/10/job_28894/ceb41805bb2cd08e43578c3691131da495c44e7a5fea0925ce0d9df9da372503.html.gz",
+        "structured_title": "Boiler Operator",
+        "structured_employer": "WR Carpenter (PNG) Limited",
+        "full_description_characters": 3966,
+        "full_description_sha256": "4b0c66f082fd9286181128decac4059a5d47a2b77cbd07771400911945a4c373"
+      }
+    ]
+  },
+  {
+    "job_id": "28895",
+    "available_source_versions": 1,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/10/job_28895/61cba3fb73294baf89eefd9a4d513ecd8f75d7ab3c61cae2e975a2d729085c38.html.gz",
+        "structured_title": "Boiler Operator",
+        "structured_employer": "WR Carpenter (PNG) Limited",
+        "full_description_characters": 3966,
+        "full_description_sha256": "4b0c66f082fd9286181128decac4059a5d47a2b77cbd07771400911945a4c373"
+      }
+    ]
+  },
+  {
+    "job_id": "28893",
+    "available_source_versions": 2,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/10/job_28893/99d7b1a0ac8b4c694032040b37ca5a41dfab044a97969fc28b0f401d3315c3a4.html.gz",
+        "structured_title": "Maintenance Planner",
+        "structured_employer": "K92 Mining Inc.",
+        "full_description_characters": 5056,
+        "full_description_sha256": "a501d37fe51e12e7efe5088bde644891ffc48a46af417cb04348b3a3b3e959f1"
+      },
+      {
+        "source_file": "archive/html/2026/10/job_28893/821fdf730d4b51192574083ad78939b44d9d1fa63c27c5353198987cb3d8d4b1.html.gz",
+        "structured_title": "Maintenance Planner",
+        "structured_employer": "K92 Mining Inc.",
+        "full_description_characters": 5056,
+        "full_description_sha256": "a501d37fe51e12e7efe5088bde644891ffc48a46af417cb04348b3a3b3e959f1"
+      }
+    ]
+  },
+  {
+    "job_id": "28060",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "26460",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "26461",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "24646",
+    "available_source_versions": 1,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/09/job_24646/54acd8f2a1b64b3db60d34eac26816d745cede4093ef188c2fe653945a709a71.html.gz",
+        "structured_title": "Technician - Fitter (HEF)",
+        "structured_employer": "K92 Mining Inc.",
+        "full_description_characters": 4167,
+        "full_description_sha256": "d320fdf71dad475f6ad9d53892c26d9e182fd6447c8cbc89b601c8125e2c0e3c"
+      }
+    ]
+  },
+  {
+    "job_id": "28311",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "28730",
+    "available_source_versions": 1,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/10/job_28730/2c947cc32a3b0274303d0580a338f8b06fbbc6715ed4475d8d6b921bdab2604b.html.gz",
+        "structured_title": "MARINE LIVELIHOODS OFFICER",
+        "structured_employer": "Wildlife Conservation Papua New Guinea (WCS PNG)",
+        "full_description_characters": 6157,
+        "full_description_sha256": "bd20062fd6880524db9265cea14d2734b3f50ad5599c2b4d3f79ac1e55ea3e87"
+      }
+    ]
+  },
+  {
+    "job_id": "28715",
+    "available_source_versions": 1,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/09/job_28715/e608e30405428ba1f167ae0e891632594e4790f9d36de0d6ec2152528cb13657.html.gz",
+        "structured_title": "MARINE LIVELIHOODS OFFICER",
+        "structured_employer": "Tree Kangaroo Conservation Program",
+        "full_description_characters": 6157,
+        "full_description_sha256": "bd20062fd6880524db9265cea14d2734b3f50ad5599c2b4d3f79ac1e55ea3e87"
+      }
+    ]
+  },
+  {
+    "job_id": "25747",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "25376",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "25443",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "25420",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "25328",
+    "available_source_versions": 0,
+    "versions_matching_stored_text": []
+  },
+  {
+    "job_id": "24967",
+    "available_source_versions": 1,
+    "versions_matching_stored_text": [
+      {
+        "source_file": "archive/html/2026/09/job_24967/f7421406a9fa8c139b8b529ec92289eac6c4f236902301a29fd6134235c8af4d.html.gz",
+        "structured_title": "Principal - Balimo College School of Nursing",
+        "structured_employer": "Balimo College",
+        "full_description_characters": 13916,
+        "full_description_sha256": "8e91568e320ebcc87a669a42048eb5e98ead0f6fc865c870420efbb5ae9e06d4"
+      }
+    ]
+  }
+]
