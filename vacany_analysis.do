@@ -4,6 +4,13 @@
 * set paths (note normally i have one folder RAW  - but in this case comparing dataset that 
 * were originally different parts of projects  - so two places :D.
 
+clear all
+set more off
+
+** just grab the full file and see how many vacancies exist.
+
+
+
 * Vacnacy data - broad location
 global VACANCY_DATA "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/"
 * SDES data - broad location
@@ -128,6 +135,7 @@ twoway ///
   plotregion(margin(l+1 r+3 t+2 b+2)) ///
   title("Industry") ///
   graphregion(color(white) margin(l+1 r+1 t+1 b+1)) name(ind , replace)
+ 
  
  *export chart
  graph export "${OUT}/vacancy_v_sdes_industry.png", name(ind) replace width(2400)
