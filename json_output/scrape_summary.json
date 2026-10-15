@@ -1,14 +1,14 @@
 {
-  "scrape_date": "2026-10-14T02:36:55.413127",
-  "total_jobs_found_on_page": 208,
-  "new_jobs_scraped": 13,
-  "jobs_retried": 1,
+  "scrape_date": "2026-10-15T02:36:40.358803",
+  "total_jobs_found_on_page": 215,
+  "new_jobs_scraped": 14,
+  "jobs_retried": 2,
   "jobs_skipped": 0,
-  "jobs_updated": 193,
-  "jobs_failed": 50,
-  "failed_with_job_id": 50,
+  "jobs_updated": 199,
+  "jobs_failed": 48,
+  "failed_with_job_id": 48,
   "failed_without_job_id": 0,
-  "total_jobs_in_database": 3694,
+  "total_jobs_in_database": 3707,
   "failed_jobs": [
     {
       "url": "https://www.pngworkforce.com/jobs/view/assistant-chief-security-officer-acso-readvertise/25175",
@@ -681,34 +681,6 @@
       "failure_type": "unknown",
       "failed_at": "2026-10-08T02:41:07.232434",
       "last_attempted": "2026-10-08T02:41:07.232444"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/director-quality-assurance/28696",
-      "job_id": "28696",
-      "title": "Director, Quality Assurance",
-      "employer": "Western Pacific University",
-      "location": "Western",
-      "date_posted": "29 Sep 2026",
-      "industry": "",
-      "error": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))",
-      "retry_count": 1,
-      "failure_type": "unknown",
-      "failed_at": "2026-10-14T02:32:39.334666",
-      "last_attempted": "2026-10-14T02:32:39.334674"
-    },
-    {
-      "url": "https://www.pngworkforce.com/jobs/view/marketing-officer/28474",
-      "job_id": "28474",
-      "title": "Marketing Officer",
-      "employer": "",
-      "location": "",
-      "date_posted": "08 Oct 2026",
-      "industry": "",
-      "error": "HTTPSConnectionPool(host='www.pngworkforce.com', port=443): Read timed out. (read timeout=30)",
-      "retry_count": 1,
-      "failure_type": "unknown",
-      "failed_at": "2026-10-14T02:35:00.712155",
-      "last_attempted": "2026-10-14T02:35:00.712167"
     }
   ]
 }
