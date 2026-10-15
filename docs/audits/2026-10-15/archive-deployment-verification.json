@@ -1,0 +1,173 @@
+{
+  "checked_at": "2026-10-15T13:39:24.503471+00:00",
+  "run_id": "github-38741244563-1",
+  "run_url": "https://github.com/juddormsby/png-job-scrape/actions/runs/38741244563",
+  "implementation_commit": "0a65527bce0317053f165d0805f6907f583704e8",
+  "verified_checkout_commit": "1ee4b9db2705a56ae742aba1d8047676e807e3ec",
+  "local_unit_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "baseline_jobs": 3707,
+  "current_jobs": 3712,
+  "added_ids": [
+    "28899",
+    "28900",
+    "28902",
+    "28903",
+    "28905"
+  ],
+  "removed_ids": [],
+  "duplicate_ids": 0,
+  "first_seen_changed": [],
+  "unobserved_historical_records_unchanged": 3501,
+  "job_response_observations": 221,
+  "distinct_live_job_ids": 211,
+  "records_with_verified_source_reference": 211,
+  "response_categories": {
+    "listing_html": 23,
+    "job_html": 221
+  },
+  "network_errors": 0,
+  "extractor_failures": 0,
+  "consolidated_csv_json_ids_and_source_hashes_match": true,
+  "archive_verification": {
+    "manifests": 27,
+    "observations": 10224,
+    "verified_sources": 1442,
+    "uncompressed_bytes": 35096342
+  },
+  "self_contained_export": {
+    "run_id": "github-38741244563-1",
+    "exported_files": 246
+  },
+  "self_contained_export_verification": {
+    "manifests": 1,
+    "observations": 244,
+    "verified_sources": 244,
+    "uncompressed_bytes": 6581394
+  },
+  "historical_backfill_performed": false,
+  "github_workflow": {
+    "run_id": 38741244563,
+    "conclusion": "success",
+    "job_id": 116443201139,
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1
+      },
+      {
+        "name": "Checkout repository",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2
+      },
+      {
+        "name": "Set up Python",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3
+      },
+      {
+        "name": "Install dependencies",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4
+      },
+      {
+        "name": "Test source preservation",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5
+      },
+      {
+        "name": "Create output directories",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6
+      },
+      {
+        "name": "Run scraper",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7
+      },
+      {
+        "name": "Verify durable source archive",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8
+      },
+      {
+        "name": "Prepare self-contained current-run recovery copy",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 9
+      },
+      {
+        "name": "Upload results as artifact",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 10
+      },
+      {
+        "name": "Publish verified source archive and successful scrape results",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 11
+      },
+      {
+        "name": "Post Set up Python",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 21
+      },
+      {
+        "name": "Post Checkout repository",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 22
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 23
+      }
+    ]
+  },
+  "downloaded_workflow_artifact": {
+    "artifact_id": 11977625066,
+    "run_id": 38741244563,
+    "zip_sha256": "a30eb96391bbadff29063a8a93138d1ef6d0397349c1e266fe2bd4e35aca3926",
+    "zip_bytes": 11754879,
+    "github_digest_verified": true,
+    "all_zip_crcs_verified": true,
+    "self_contained_archive_verification": {
+      "manifests": 1,
+      "observations": 244,
+      "verified_sources": 244,
+      "uncompressed_bytes": 6581394
+    }
+  },
+  "historical_fresh_clone_restore": {
+    "implementation_commit": "0a65527bce0317053f165d0805f6907f583704e8",
+    "fresh_clone_path": "/tmp/png-archive-restore-20261015",
+    "verified_sources": 1198,
+    "manifests": 26,
+    "observations": 9980,
+    "uncompressed_bytes": 28514948,
+    "original_zips_present_in_clone": false
+  },
+  "published_archive_fresh_clone_restore": {
+    "commit": "1ee4b9db2705a56ae742aba1d8047676e807e3ec",
+    "manifests": 27,
+    "observations": 10224,
+    "verified_sources": 1442,
+    "uncompressed_bytes": 35096342
+  },
+  "remaining_known_run_reporting_issue": "Legacy summary reports 6 new job requests; distinct new IDs are 5 because URL aliases remain a separate discovery/reporting repair."
+}

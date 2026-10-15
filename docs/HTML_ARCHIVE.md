@@ -4,7 +4,7 @@ Implemented 15 October 2026 as steps 1–2 of the [improvement plan](SCRAPER_IMP
 
 ## Preserved historical evidence
 
-All **26 retained workflow artifacts from 20 September through 15 October** were downloaded before expiry. Each original ZIP passed its GitHub SHA-256 digest check and every ZIP member passed its CRC check. The ZIPs total **243,397,762 bytes** (232.12 MiB).
+All **26 workflow artifacts retained at the start of preservation, from 20 September through the morning of 15 October**, were downloaded before expiry. Each original ZIP passed its GitHub SHA-256 digest check and every ZIP member passed its CRC check. The ZIPs total **243,397,762 bytes** (232.12 MiB).
 
 - Exact ZIPs, including their original JSON snapshots: `preserved_artifacts/2026-10-15/zips/`, in this Dropbox working folder. These large ZIPs are ignored by Git. Their relative download receipts are in `preserved_artifacts/2026-10-15/receipts.json`. Dropbox cloud synchronization was not independently verified.
 - Permanent, Git-tracked artifact inventory: [`archive/preservation/artifacts.json`](../archive/preservation/artifacts.json). It records artifact/run IDs, source commits, expiry times, ZIP digests and member metadata.
@@ -89,6 +89,15 @@ python code/preserve_artifacts.py \
 
 ## Validation evidence
 
-The 15 preservation/import/integration tests passed locally. An isolated [live smoke test](audits/2026-10-15/archive-live-smoke.json) captured three active adverts, verified original-body recovery and offline re-extraction, confirmed repeat-source reuse, and verified a self-contained export. Production outputs were not modified by that smoke test. Deployment verification is recorded separately in the same audit folder after the full GitHub run.
+The 15 preservation/import/integration tests passed locally and on GitHub. An isolated [live smoke test](audits/2026-10-15/archive-live-smoke.json) captured three active adverts, verified original-body recovery and offline re-extraction, confirmed repeat-source reuse, and verified a self-contained export. The HVAC advert's source contains 12,137 description characters, including the tail beyond the extractor's existing 10,000-character limit. Production outputs were not modified by that smoke test. A fresh local clone restored and verified all 1,198 historical sources from Git alone.
+
+The [full deployment workflow](https://github.com/juddormsby/png-job-scrape/actions/runs/38741244563) completed successfully, including source verification, recovery artifact upload and automatic Git publication. Its [saved verification report](audits/2026-10-15/archive-deployment-verification.json) records:
+
+- 244 responses archived: 221 job requests covering **211 distinct live job IDs**, plus 23 listing requests. No network failures or extractor exceptions occurred in this run.
+- **3,712 jobs** in the resulting database, including **five new IDs**. No old IDs or first-seen dates were lost; all 3,501 unvisited historical records were unchanged. JSON and CSV IDs and source hashes agree.
+- Every refreshed job's portable source reference resolves and matches its SHA-256. All **1,442 historical and new source files** verify in both the working checkout and a fresh Git clone.
+- The downloaded recovery ZIP matches GitHub's digest, passes all member CRC checks, and independently restores its 244 referenced sources without the repository archive.
+
+The existing summary still counts new URL requests rather than distinct new IDs (six versus five in this run), and aliases cause extra detail requests. That reporting/discovery repair remains in Phase 2; final database IDs are unique. Historical 404 entries in the existing failure list are also distinct from errors in this live run. The successful automatic results commit was fast-forwarded into this Dropbox checkout.
 
 Known extraction defects remain documented in the [audit](SCRAPER_AUDIT_2026-10-15.md): title cuts, salary handling, description truncation and interface text are separate repairs. Archiving the full source now makes later correction possible when that source survives.
