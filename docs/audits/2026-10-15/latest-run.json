@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-15",
+  "run_id": 38670839013,
+  "job_id": 116213338294,
+  "url": "https://github.com/juddormsby/png-job-scrape/actions/runs/38670839013",
+  "home_page_unique_url_count": 206,
+  "home_page_count": 21,
+  "latest_page_url_count": 150,
+  "detail_requests": 215,
+  "distinct_job_ids": 206,
+  "duplicate_job_ids": [
+    {
+      "job_id": "28671",
+      "requests": 2
+    },
+    {
+      "job_id": "28704",
+      "requests": 2
+    },
+    {
+      "job_id": "28712",
+      "requests": 2
+    },
+    {
+      "job_id": "28732",
+      "requests": 2
+    },
+    {
+      "job_id": "28796",
+      "requests": 2
+    },
+    {
+      "job_id": "28813",
+      "requests": 2
+    },
+    {
+      "job_id": "28835",
+      "requests": 2
+    },
+    {
+      "job_id": "28869",
+      "requests": 2
+    },
+    {
+      "job_id": "28896",
+      "requests": 2
+    }
+  ],
+  "reported_new_jobs": 14,
+  "actual_new_distinct_job_ids": 13,
+  "reported_jobs_updated": 199,
+  "recovered_failed_jobs": 2,
+  "previous_database_jobs": 3694,
+  "current_database_jobs": 3707,
+  "remaining_historical_404s": 48,
+  "current_detail_fetch_failures_in_log": 0,
+  "selected_log_lines": [
+    "Homepage scraping complete: found 206 unique jobs across 21 pages",
+    "Total unique jobs after merge: 215",
+    "Jobs to scrape: 215",
+    "Jobs to skip (already scraped): 0",
+    "Results list length: 215",
+    "Final jobs map length: 3707",
+    "Existing jobs in map: 3694",
+    "Jobs preserved (not in results): 3501",
+    "New jobs scraped: 14",
+    "Jobs retried (prev failed): 2",
+    "Jobs skipped (already scraped): 0",
+    "Jobs updated: 199",
+    "Failed: 48",
+    "Total jobs in database: 3707"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "jobs": 3707,
+  "seen_today": 206,
+  "field_nonempty_counts": {
+    "date_posted": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "description": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "employer": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "employer_address": {
+      "all": 3614,
+      "seen_today": 196
+    },
+    "employer_external_website": {
+      "all": 3219,
+      "seen_today": 190
+    },
+    "employer_phone": {
+      "all": 3691,
+      "seen_today": 205
+    },
+    "employer_profile_url": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "employment_type": {
+      "all": 936,
+      "seen_today": 56
+    },
+    "first_seen": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "html_file": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "html_file_rel": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "industry": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "job_id": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "job_id_display": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "json_file": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "json_file_rel": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "last_seen": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "location": {
+      "all": 3706,
+      "seen_today": 206
+    },
+    "salary": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "scraped_at": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "title": {
+      "all": 3707,
+      "seen_today": 206
+    },
+    "url": {
+      "all": 3707,
+      "seen_today": 206
+    }
+  },
+  "description_lengths": {
+    "min": 725,
+    "median": 3674,
+    "at_10000": 72,
+    "under_200": 0,
+    "live_at_10000": 2
+  },
+  "first_seen_months": {
+    "2025-10": 150,
+    "2025-11": 251,
+    "2025-12": 183,
+    "2026-01": 355,
+    "2026-02": 409,
+    "2026-03": 330,
+    "2026-04": 319,
+    "2026-05": 296,
+    "2026-06": 274,
+    "2026-07": 384,
+    "2026-08": 338,
+    "2026-09": 265,
+    "2026-10": 153
+  },
+  "last_seen_months": {
+    "2025-11": 240,
+    "2025-12": 194,
+    "2026-01": 226,
+    "2026-02": 429,
+    "2026-03": 378,
+    "2026-04": 297,
+    "2026-05": 310,
+    "2026-06": 295,
+    "2026-07": 354,
+    "2026-08": 494,
+    "2026-09": 148,
+    "2026-10": 342
+  },
+  "snapshot_commit": "08612e154f5e977f7341d7ab11c6702052cb126c",
+  "last_updated": "2026-10-15T02:36:40.138692",
+  "salary_comma_count": 3526,
+  "salary_most_common": [
+    [
+      ",",
+      3526
+    ],
+    [
+      "8",
+      29
+    ],
+    [
+      "4",
+      22
+    ],
+    [
+      "2",
+      18
+    ],
+    [
+      "3",
+      12
+    ],
+    [
+      "6",
+      12
+    ],
+    [
+      "1",
+      10
+    ],
+    [
+      "16",
+      7
+    ],
+    [
+      "20",
+      2
+    ],
+    [
+      "5",
+      2
+    ],
+    [
+      "9",
+      2
+    ],
+    [
+      "20 k",
+      2
+    ],
+    [
+      "4787",
+      2
+    ],
+    [
+      "2026",
+      2
+    ],
+    [
+      "242204",
+      1
+    ]
+  ],
+  "description_contains_share_form": 3638,
+  "legacy_date_format_count": 150,
+  "first_seen_on_resume_2026_09_20": 139,
+  "last_seen_before_gap_2026_08_31": 175,
+  "local_individual_html_files": 189,
+  "local_individual_json_files": 189,
+  "failed_jobs_count": 48,
+  "failed_jobs_are_all_404": true
+}

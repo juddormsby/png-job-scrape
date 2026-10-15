@@ -2,6 +2,12 @@
 
 A Python scraper for extracting job listings from PNGworkforce.com.
 
+## Operational history and data quality
+
+See the [15 October 2026 scraper audit](docs/SCRAPER_AUDIT_2026-10-15.md) for verified workflow history, live HTML comparisons, extraction defects and recommended repairs. In particular, **1–19 September 2026 is an observation gap caused by a GitHub billing lock**; scraping resumed on 20 September. Current title and salary extraction errors, description truncation, and limited HTML retention should be considered before refreshing classifications or using the data analytically.
+
+The [detailed September gap estimate](docs/SEPTEMBER_2026_GAP_ESTIMATE.md) suggests **about 75 lost advert IDs**, with a **40–90 sensitivity range**; most of the affected cohort was recovered after resumption. The [improvement and HTML preservation plan](docs/SCRAPER_IMPROVEMENT_PLAN.md) explains why the existing dataset remains useful and sets out source archiving, focused repairs and retrospective salary recovery. Retained restart HTML artifacts begin expiring on **20 October 2026**.
+
 **If you just want to view the main .csv output from scraping see**:
 
 ```
