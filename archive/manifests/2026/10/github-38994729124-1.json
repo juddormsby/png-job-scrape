@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "run_id": "github-38994729124-1",
+  "source_commit": "49db12602465acf003b6eb5ddcf67d5ecee2ea99",
+  "started_at": "2026-10-17T02:23:42.859858+00:00",
+  "finished_at": "2026-10-17T02:35:31.011627+00:00",
+  "status": "completed",
+  "manifest": "manifests/2026/10/github-38994729124-1.jsonl",
+  "observations": 236,
+  "stored_versions": 80,
+  "reused_versions": 156,
+  "network_errors": 0,
+  "details": {
+    "returned_jobs": 3732
+  }
+}
