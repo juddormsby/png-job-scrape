@@ -1,0 +1,10 @@
+{
+  "source_sha256": "7b0b330f6d999c29de5ddf3d6ce57e46e138944b5c871bb9d2f5c4f6314d5285",
+  "records": 3712,
+  "html_records": 684,
+  "currency_candidates": 521,
+  "broad_candidates": 385,
+  "screen_negative": 2806,
+  "random_negative_sample": 150,
+  "seed": 20261016
+}

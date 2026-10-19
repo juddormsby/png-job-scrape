@@ -1,0 +1,53 @@
+{
+  "source_sha256": "7b0b330f6d999c29de5ddf3d6ce57e46e138944b5c871bb9d2f5c4f6314d5285",
+  "records": 3712,
+  "html_records": 684,
+  "currency_candidates": 521,
+  "broad_candidates": 385,
+  "screen_negative": 2806,
+  "random_negative_sample": 150,
+  "seed": 20261016,
+  "salary_definition": "Explicit monetary wage/salary amount or range for the advertised role. Grades, competitive/negotiable wording, project budgets, employer turnover, tax rates and unspecified commissions excluded.",
+  "unit": "Distinct advert IDs, not individual positions or unique recruitment episodes.",
+  "description_confirmed": 58,
+  "description_percent": 1.562,
+  "html_paired_description_confirmed": 14,
+  "html_only_additional_confirmed": 30,
+  "html_paired_either_confirmed": 44,
+  "html_paired_either_percent": 6.433,
+  "all_available_sources_confirmed": 88,
+  "all_available_sources_percent": 2.371,
+  "recent_cohort": {
+    "definition": "First seen September–October 2026, through database snapshot 15 October",
+    "records": 423,
+    "html_records": 423,
+    "description_confirmed": 7,
+    "either_confirmed": 11
+  },
+  "html_only_by_employer": {
+    "Media Metro (PNG) Ltd": 1,
+    "ChildFund PNG": 3,
+    "Glory Estate Limited": 26
+  },
+  "random_negative_check": {
+    "n": 150,
+    "additional_numeric_salary_found": 0,
+    "scope": "Human inspection of numeric and compensation-relevant passages, not a blind full-text gold-standard annotation."
+  },
+  "description_pay_grade_candidates": 102,
+  "limitations": [
+    "Descriptions screened comprehensively by multiple patterns; human review used evidence windows and grouped repeated templates, rather than reading all complete descriptions.",
+    "HTML availability is strongly selected by employer and capture date. Paired percentages are descriptive, not representative sample estimates.",
+    "One selected available HTML version per advert; a historical source is not guaranteed contemporaneous with latest JSON.",
+    "No model API calls, live website fetches, external application pages, attachment downloads, image OCR, or linked pay-scale lookups.",
+    "Salary amounts need not state currency/pay period consistently. Any-amount coverage is higher than coverage of fully normalized annual salaries."
+  ],
+  "html_subset_existing_salary_field": {
+    "records": 684,
+    "nonempty_fields": 684,
+    "comma_fields": 652,
+    "confirmed_usable_numeric_salary_fields": 0,
+    "confirmed_salary_adverts": 44,
+    "confirmed_salary_adverts_with_comma_field": 44
+  }
+}
