@@ -15,3 +15,7 @@ png-jobscraper.txt
 # Exact downloaded workflow ZIPs live in Dropbox, outside Git history.
 preserved_artifacts/
 archive_run/
+
+# Dated analysis bundles (including frozen inputs) are retained in Dropbox.
+analysis/20??-??-??*/
+analysis/legacy/

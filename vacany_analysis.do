@@ -1,58 +1,118 @@
-**** Okay let's grab key figures needed.
-* use the latest run of LLM (my subjectively best prompt + latest data - see end of script for robustness checks.).
-
-* set paths (note normally i have one folder RAW  - but in this case comparing dataset that 
-* were originally different parts of projects  - so two places :D.
-
+* Prepared AI refresh analysis. NOT RUN during preparation.
+* From repository root:
+* do vacany_analysis.do "/path/to/project" "analysis/2026-10-20_ai"
+* Optional third argument: full path to the 2022 SDES person file.
+version 13.1
 clear all
 set more off
+set linesize 120
+args project run_dir sdes_file
+if `"`project'"' == "" local project `"`c(pwd)'"'
+cd `"`project'"'
+if `"`run_dir'"' == "" local run_dir "analysis/2026-10-20_ai"
+if `"`sdes_file'"' == "" local sdes_file "../micro-data-work/RAW/Socio Demog Economic Survey 2022/Microdata/SPC_PNG_2022_SDES_Person_v01_PUF.dta"
+confirm file `"`sdes_file'"'
+confirm file "`run_dir'/LLM_processed_jobs.csv"
+import delimited "`run_dir'/LLM_processed_jobs.csv", clear varnames(1) stringcols(_all) bindquote(strict)
+isid job_id
+assert job_id != ""
+count if status != "success"
+if r(N) {
+    display as error "Pending/failed AI rows remain. Resume classification and reconvert before analysing the full sample."
+    exit 459
+}
+local total_n = _N
+global OUT "`run_dir'/analysis"
+capture mkdir "${OUT}"
+if _rc {
+    display as error "Analysis folder exists or cannot be created; refusing to overwrite. Use a new run label."
+    exit 693
+}
+log using "${OUT}/analysis.log", text
+copy "vacany_analysis.do" "${OUT}/vacany_analysis.do"
+display "Stata: " c(stata_version) "; successful advert IDs: `total_n'"
+display "Confidence scores are model self-assessments. Online advert flows and survey employment stocks are different populations."
 
-** just grab the full file and see how many vacancies exist.
+program define vacancy_export
+    syntax using/
+    graph save `"`using'.gph"'
+    capture graph export `"`using'.png"', width(2400)
+    local png_rc = _rc
+    capture graph export `"`using'.pdf"'
+    local pdf_rc = _rc
+    if `png_rc' | `pdf_rc' {
+        tempfile eps
+        graph export `"`eps'"', as(eps)
+        if `png_rc' {
+            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=png16m -r200 -sOutputFile="`using'.png" "`eps'"
+            confirm file `"`using'.png"'
+        }
+        if `pdf_rc' {
+            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=pdfwrite -sOutputFile="`using'.pdf" "`eps'"
+            confirm file `"`using'.pdf"'
+        }
+    }
+end
 
+* Simple tables for the new fields. Flags indicate explicit mentions, not age or eligibility.
+foreach v in experience_required_years experience_preferred_years graduate_opportunity apprenticeship_opportunity entry_level_opportunity skill_digital skill_technical_trade skill_communication skill_teamwork skill_leadership skill_organisation {
+    destring `v', replace
+}
+save "${OUT}/classified_adverts.dta"
+preserve
+contract education_level education_requirement, freq(adverts)
+gen double share = adverts/`total_n'
+export delimited using "${OUT}/education_counts.csv"
+restore
+tempfile requirements_table coverage
+tempname requirements_post coverage_post
+postfile `requirements_post' str32 field str24 measure long available double mean double minimum double maximum using `requirements_table'
+foreach v in experience_required_years experience_preferred_years graduate_opportunity apprenticeship_opportunity entry_level_opportunity skill_digital skill_technical_trade skill_communication skill_teamwork skill_leadership skill_organisation {
+    local measure "explicit mention share"
+    if strpos("`v'","experience_")==1 local measure "minimum years stated"
+    quietly summarize `v'
+    post `requirements_post' ("`v'") ("`measure'") (r(N)) (r(mean)) (r(min)) (r(max))
+}
+postclose `requirements_post'
+preserve
+use `requirements_table', clear
+export delimited using "${OUT}/requirements_summary.csv"
+restore
 
-
-* Vacnacy data - broad location
-global VACANCY_DATA "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/pngworkforce-scrape/"
-* SDES data - broad location
-global RAW "/Users/juddormsby/Library/CloudStorage/Dropbox/ADB/micro-data-work/RAW"
-* Analysis outfiles (store with vacancy data)
-global OUT  "${VACANCY_DATA}/analysis"
-
-** note file may require installing labmask/labutil for making charts pretty.
-* ssc install labutil
-
-import delimited "${VACANCY_DATA}/json_output/LLM_processed_jobs6.csv", clear
-
-** do the shares for isic and isco.
-
+* Reproduce original ISIC/ISCO comparison, retaining unclassified coverage separately.
+postfile `coverage_post' str4 classification long total long classified long unclassified double classified_share using `coverage'
 foreach v in isic isco {
-
     preserve
-		* construct clean 1-digit merge key
-		gen `v'_1d = substr(`v'_1digit, 1, 1)
-		replace `v'_1d = trim(`v'_1d)
-
-		drop if missing(`v'_1d)
-
-		* collapse to counts
-		collapse (count) n = job_id, by(`v'_1d)
-
-		* convert to shares
-		egen total_n = total(n)
-		gen vacancy_share = n / total_n
-
-		keep `v'_1d vacancy_share
-		rename `v'_1d `v'
-		
-		tempfile vacancies_`v'
-		save `vacancies_`v''
-		
-		
+    gen str1 `v'_1d = substr(trim(`v'_1digit),1,1)
+    local pattern "^[A-U]$"
+    if "`v'" == "isco" local pattern "^[0-9]$"
+    replace `v'_1d = "" if !regexm(`v'_1d,"`pattern'")
+    quietly count if `v'_1d != ""
+    local classified_here = r(N)
+    local classified_`v' = `classified_here'
+    post `coverage_post' ("`v'") (`total_n') (`classified_here') (`total_n'-`classified_here') (`classified_here'/`total_n')
+    if `classified_here'==0 {
+        display as error "No classified adverts for `v'; inspect the AI outputs."
+        exit 2000
+    }
+    drop if `v'_1d == ""
+    gen byte one = 1
+    collapse (sum) n=one, by(`v'_1d)
+    gen double vacancy_share = n/`classified_`v''
+    gen double vacancy_share_all = n/`total_n'
+    rename `v'_1d `v'
+    tempfile vacancies_`v'
+    save `vacancies_`v''
     restore
 }
+postclose `coverage_post'
+preserve
+use `coverage', clear
+export delimited using "${OUT}/classification_coverage.csv"
+restore
 
 * repeat for SDES. 
-use "${RAW}/Socio Demog Economic Survey 2022/Microdata/SPC_PNG_2022_SDES_Person_v01_PUF.dta", clear
+use `"`sdes_file'"', clear
 
 ** think the unclassified are not workign
 gen employed = inlist(1,c19_paidwork, c20_salingactivity, c21_businessactivity, c22_voluntaryhelp, c23_absentfrompaidjob)
@@ -99,6 +159,10 @@ foreach v in c25_act_code1 c24_occ_code1 {
 use `vacancies_isic' , clear
 merge 1:1 isic using `sdes_c25_act_code1'
 replace vacancy_share = 0 if vacancy_share == . & _merge == 2
+replace vacancy_share_all = 0 if _merge == 2
+replace n = 0 if _merge == 2
+
+replace c25_act_code1_label = isic+" - ISIC category absent from survey" if c25_act_code1_label == ""
 
 * create ordering variable
 gsort - vacancy_share
@@ -115,7 +179,11 @@ replace c25_act_code1_label = "U - Activities of extraterritorial organizations"
 replace c25_act_code1_label = substr(c25_act_code1_label,5,.)
 
 
-labmask ord, values(c25_act_code1_label)
+forvalues row = 1/`=_N' {
+    local text = c25_act_code1_label[`row']
+    label define industry_plot `row' `"`text'"', add
+}
+label values ord industry_plot
 
 twoway ///
  (bar vacancy_share ord, horizontal barwidth(0.8) ///
@@ -134,21 +202,24 @@ twoway ///
   xsize(13) ysize(10) ///
   plotregion(margin(l+1 r+3 t+2 b+2)) ///
   title("Industry") ///
-  graphregion(color(white) margin(l+1 r+1 t+1 b+1)) name(ind , replace)
+  graphregion(color(white) margin(l+1 r+1 t+1 b+1)) ///
+  note("Classified adverts: `classified_isic' / `total_n'. Shares conditional on classification.", span size(vsmall)) name(ind , replace)
  
  
  *export chart
- graph export "${OUT}/vacancy_v_sdes_industry.png", name(ind) replace width(2400)
+ graph display ind
+ vacancy_export using "${OUT}/vacancy_v_sdes_industry"
  
  * prep data for export
 
  rename c25_act_code1 labels_full
  rename ord label_short
  order isic labels_full label_short sdes_share , first
- drop _merge c25
+ drop _merge c25_act_code1_label
  
  *export data
- export excel using "${OUT}/vacancy_v_sdes.xlsx", sheet("industry") firstrow(variables) replace
+ export delimited using "${OUT}/vacancy_v_sdes_industry.csv"
+ export excel using "${OUT}/vacancy_v_sdes.xlsx", sheet("industry") firstrow(variables)
  
 
  ***** isco
@@ -159,8 +230,11 @@ drop isco
 rename isco_num isco
 
 merge 1:1 isco using `sdes_c24_occ_code1'
-assert _merge != 1
+* Keep categories absent from SDES and report them instead of failing silently.
+replace c24_occ_code1_label = string(isco)+" - ISCO category absent from survey" if c24_occ_code1_label == ""
 replace vacancy_share = 0 if vacancy_share == . & _merge == 2
+replace vacancy_share_all = 0 if _merge == 2
+replace n = 0 if _merge == 2
 
 * create ordering variable
 gsort - vacancy_share
@@ -168,7 +242,11 @@ gen ord = _n
 
 replace c24_occ_code1_label = substr(c24_occ_code1_label,5,.)
 
-labmask ord, values(c24_occ_code1_label)
+forvalues row = 1/`=_N' {
+    local text = c24_occ_code1_label[`row']
+    label define occupation_plot `row' `"`text'"', add
+}
+label values ord occupation_plot
 
 twoway ///
  (bar vacancy_share ord, horizontal barwidth(0.8) ///
@@ -187,141 +265,31 @@ twoway ///
   xsize(13) ysize(10) ///
   plotregion(margin(l+1 r+3 t+2 b+2)) ///
   title("Occupation") ///
-  graphregion(color(white) margin(l+1 r+1 t+1 b+1)) name(occ , replace)
+  graphregion(color(white) margin(l+1 r+1 t+1 b+1)) ///
+  note("Classified adverts: `classified_isco' / `total_n'. Shares conditional on classification.", span size(vsmall)) name(occ , replace)
   
 *export chart
-graph export "${OUT}/vacancy_v_sdes_occupation.png", name(occ) replace width(2400)
+graph display occ
+ vacancy_export using "${OUT}/vacancy_v_sdes_occupation"
  
 * prep data for export
 
 rename c24_occ_code1 labels_full
 rename ord label_short
 order isco labels_full label_short sdes_share , first
-drop _merge c24
+drop _merge c24_occ_code1_label
  
 *export data
+export delimited using "${OUT}/vacancy_v_sdes_occupation.csv"
 export excel using "${OUT}/vacancy_v_sdes.xlsx", sheet("occupation") firstrow(variables) sheetreplace
 
 graph combine ind occ , ///
 	title("Vacancy data are not representative of survey data") ///
 	name(comb, replace) 
 	
-graph export "${OUT}/vacancy_v_sdes_combined.png", name(comb) replace width(2400)
+graph display comb
+ vacancy_export using "${OUT}/vacancy_v_sdes_combined"
 
-
-********************************************************************************
-********************************************************************************
-
-*** check how consistent over runs
-* so each of these file suffixes represents a different run of the LLM classifier (sometimes with a different prompt as I refined it).
-* basically LLMs are stochastic so can get different results each time run.
-* This part of the script digs a bit of a dig into how consistent the results are 
-* in the end don't discuss this. 
-* Note also current pricing/prompt/model meant each run is about USD 2.5 to run (as there are of course 500+ jobs processed in each run). so that limited doing like 100 runs etc. 
-* Note that the first few runs processed a tiny bit less jobs as the last run is run a day later (17 Dec) with a few newly scraped jobs added).
-
-forvalues i = 0/6 {
-	import delimited "${VACANCY_DATA}/json_output/LLM_processed_jobs`i'.csv", clear
-	
-	capture confirm string variable job_id
-	if !_rc {
-		destring job_id, replace force
-		drop if job_id == .
-	}
-
-	rename * *`i'
-	rename job_id`i' job_id
-	
-	gen isco_simp`i' = real(substr(isco_1digit`i',1,1))
-	gen isic_simp`i' = substr(isic_1digit`i',1,1)
-	
-	tempfile temp`i'
-	save "`temp`i''"
-
-}
-
-
-clear
-use "`temp0'"
-forvalues i = 1/6 {
-	merge 1:1 job_id using "`temp`i''"
-	assert _merge == 3 |`i' == 6
-	keep if _merge == 3 // the new jobs let's just ignore for now
-	rename _merge merge`i'
-
-}
-
-drop merge*
-
-tab1 isic_simp*
-tab1 isco_simp* // all runs give broadly similar results (at least in terms of who is over/under-represented).
-* note that later runs are more consistent (same prompt), earlier runs had (presumaly worse) prompt.
-* nevertheless heartening to see same results.
-
-keep job_id isic_simp? isic_1digit_confidence0 isco_1digit_confidence0 isco_simp?
-order isic* , after(job_id)
-
-** just look at runs 3-6 (same prompt).
-egen isco_min = rowmin(isco_simp3-isco_simp6)
-egen isco_max = rowmax(isco_simp3-isco_simp6)
-gen isco_constant = isco_min == isco_max
-
-tab isco_constant // so sort of 79-85% are always classified the same (depending on whehter using same prompt or not)..
-
-egen isic_confidence_bin = cut(isic_1digit_confidence0) , group(5)
-egen isco_confidence_bin = cut(isco_1digit_confidence0) , group(5)
-
-bys isco_confidence_bin : su isco_constant // model more accurate when more confident.
-
-
-*** Okay results are robust enough to different runs. Won't spend extra time comibning runs etc.
-* the main picture wouldn't change and few percentage points here and there not relevant for the analysis we do.
-
-** sidequest
-* flag the obs that don't replicate
-* see how many values they each hvae 
-* show that the general pattern is like similar across runs? (probably it is especially if errors are random).
-* I guess i really do want unique values per ob ... (annoying) probably easiest is to sum the binary indicators using row sum :D).
-
-levelsof isco_simp0 , local(isco_simp_lvls)
-foreach val of local isco_simp_lvls {
-	di "`val'"
-	cap drop ind_`val'
-	egen ind_`val' = anycount(isco_simp?), values(`val')
-}
-tab1 ind?*
-
-egen max_ind = rowmax(ind_*)
-tab1 max_ind
-
-
-* Have a look at isco and isic for each run.
-* A future model could maybe chose most common classification and go with that. 
-* But then that would ideally have like 100 runs. 
-* also gains are clearly extremely marginal and not impacting the storyline.
-
-gen one = 1
-forvalues i = 0/6 {
-	foreach var in isco isic {
-		preserve
-			collapse (count) one , by(isco_simp`i')
-			rename isco_simp isco_code
-			rename one N_`i'
-			tempfile isco_`var'`i'
-			save "`isco_`var'`i''"
-		restore
-	}
-}
-
-preserve
-use "`isco_isco0'" , clear
-
-forvalues i = 1/6 {
-	merge 1:1 isco_code using "`isco_isco`i''"
-	drop _merge
-}
-
-** again see exxtremely similar numbers for runs 3-6 and fairly similar numbers (same qualitative story) for 0-3
-
-restore
-
+display "AI_REFRESH_ANALYSIS_COMPLETED_SUCCESSFULLY"
+log close
+* Historical seven-run robustness code is preserved in the legacy archive.
