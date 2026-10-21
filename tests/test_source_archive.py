@@ -206,6 +206,19 @@ class ScraperIntegrationTests(unittest.TestCase):
         self.assertEqual(row['source_archive_sha256'], job['source_archive_sha256'])
         self.assertEqual(row['html_file'], job['source_archive_file'])
 
+    def test_full_scrape_completes_using_archive_only(self):
+        self.scraper.delay = 0
+        with patch.object(self.scraper, 'scrape_homepage_jobs', return_value=[{'url': URL}]), \
+             patch.object(self.scraper, 'fetch_page', return_value=None), \
+             patch.object(self.scraper.session, 'get', return_value=response(page())), \
+             patch('builtins.print'):
+            jobs = self.scraper.scrape_all(update_existing=False)
+        self.assertEqual([job['job_id'] for job in jobs], ['12345'])
+        summary = json.loads((self.scraper.json_dir / 'scrape_summary.json').read_text())
+        self.assertEqual(summary['total_jobs_in_database'], 1)
+        self.assertEqual(verify_archive(self.scraper.archive.root)['verified_sources'], 1)
+        self.assertFalse((Path(self.temporary.name) / 'html_output').exists())
+
 
 class PreservationTests(unittest.TestCase):
     def setUp(self):

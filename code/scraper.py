@@ -1551,7 +1551,7 @@ class PNGworkforceScraper:
         print(f"Jobs updated: {updated_count}")
         print(f"Failed: {len(failed_jobs)}")
         print(f"Total jobs in database: {len(all_jobs_data)}")
-        print(f"HTML files saved to: {self.html_dir}")
+        print(f"HTML source archive: {self.archive.root}")
         print(f"JSON files saved to: {self.json_dir}")
         print(f"Consolidated files: {json_path}, {csv_path}")
         print(f"Summary saved to: {summary_path}")
