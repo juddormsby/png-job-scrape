@@ -1,14 +1,14 @@
 * Offline vacancy summary with project codebook helper. Stata 13.1 or later.
 * Run from repository root:
 * do code/vacancy_summary.do "/path/to/pngworkforce-scrape" "2026-10-19"
-* An optional third argument sets the cohort start, e.g. "02nov2025".
+* Third argument: cohort start, e.g. "02nov2025". Fourth: AI run directory; uses its frozen inputs and writes basic/ there.
 * Existing output directories are NEVER reused. Use a new label for a rerun.
 version 13.1
 clear all
 set more off
 set linesize 120
 set scheme s2color
-args project run_label cohort_start
+args project run_label cohort_start ai_run
 if `"`project'"' == "" local project `"`c(pwd)'"'
 if `"`run_label'"' == "" {
     local run_label = string(date("`c(current_date)'", "DMY"), "%tdCCYY-NN-DD")
@@ -18,12 +18,22 @@ if !regexm("`run_label'", "^[a-zA-Z0-9_-]+$") error 198
 local cohort = date("`cohort_start'", "DMY")
 if missing(`cohort') error 198
 cd `"`project'"'
-confirm file "json_output/all_jobs.csv"
-confirm file "json_output/all_jobs.json"
+global RAW "`c(pwd)'/json_output"
+local input_csv "${RAW}/all_jobs.csv"
+local input_json "${RAW}/all_jobs.json"
+local out "analysis/`run_label'"
+if `"`ai_run'"' != "" {
+    global RAW "`ai_run'"
+    local input_csv "${RAW}/input_all_jobs.csv"
+    local input_json "${RAW}/input_all_jobs.json"
+    local out "${RAW}/basic"
+}
+global OUT "`out'"
+confirm file "`input_csv'"
+confirm file "`input_json'"
 confirm file "code/vacancy_summary.do"
 confirm file "code/ado/codebook_export.ado"
 adopath ++ "`c(pwd)'/code/ado"
-local out "analysis/`run_label'"
 capture mkdir "analysis"
 capture mkdir "`out'"
 if _rc {
@@ -35,8 +45,8 @@ capture log close
 log using "`out'/analysis.log", text
 copy "code/vacancy_summary.do" "`out'/vacancy_summary.do"
 copy "code/ado/codebook_export.ado" "`out'/codebook_export.ado"
-copy "json_output/all_jobs.csv" "`out'/input_all_jobs.csv"
-copy "json_output/all_jobs.json" "`out'/input_all_jobs.json"
+copy "`input_csv'" "`out'/input_all_jobs.csv"
+copy "`input_json'" "`out'/input_all_jobs.json"
 display "Stata version: " c(stata_version)
 display "Run label: `run_label'; cohort start: " %td `cohort'
 display "Unit: advert IDs, not independently verified individual positions."
@@ -219,6 +229,22 @@ destring description_length retry_count, replace
 assert _N == `json_total'
 isid job_id
 merge 1:1 job_id using `descriptions', assert(match) nogen
+local non_jobs = 0
+if `"`ai_run'"' != "" {
+    ** Keep the same vacancy sample as the completed AI analysis.
+    preserve
+        import delimited "${RAW}/LLM_processed_jobs.csv", clear varnames(1) stringcols(_all) bindquote(strict)
+        assert status == "success"
+        keep job_id is_job_advert
+        destring is_job_advert, replace
+        tempfile job_status
+        save `job_status'
+    restore
+    merge 1:1 job_id using `job_status', assert(match) nogen
+    count if !is_job_advert
+    local non_jobs = r(N)
+    keep if is_job_advert
+}
 local n = _N
 foreach v in first last {
     gen double `v'_day = date(substr(`v'_seen,1,10), "YMD")
@@ -272,7 +298,9 @@ postfile `ck' str70 check double value using `checks'
 post `ck' ("csv_rows_including_failures") (`csv_rows')
 post `ck' ("failed_rows_excluded") (`failed_rows')
 post `ck' ("unknown_status_rows_excluded") (`unknown_status')
-post `ck' ("successful_unique_advert_ids") (`n')
+post `ck' ("successful_unique_advert_ids") (`json_total')
+post `ck' ("non_job_records_excluded") (`non_jobs')
+post `ck' ("retained_job_adverts") (`n')
 post `ck' ("snapshot_cutoff_stata_day") (`cutoff')
 post `ck' ("cohort_start_stata_day") (`cohort')
 foreach flag in invalid_dates posted_after_seen initial_stock incident live_at_cutoff crosses_gap gap_affected repeat_description closing_mentioned closing_review closing_before_posted {
@@ -457,6 +485,7 @@ file write notes "codebook.xlsx/CSV summarize all analysis-base variables; helpe
 file write notes "Missing means Stata missing, not invalid placeholders or unusable values (e.g. salary commas)." _n
 file write notes "Codebook also reports whitespace/punctuation placeholders and their combined missing percentage." _n
 file write notes "quality_note explains broken salary extraction, expected structural missingness and archive-reference limits." _n
+file write notes "Non-job records excluded using AI flag: `non_jobs'. Retained job adverts: `n'." _n
 file write notes "Adverts are not a verified count of positions. Repeated descriptions remain in counts." _n
 file write notes "Time counts use first discovery; startup stock, September gap and partial months flagged." _n
 file write notes "Employer grouping normalizes case/spacing only; full ranking and chart data are CSVs." _n

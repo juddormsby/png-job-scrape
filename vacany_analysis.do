@@ -1,6 +1,6 @@
 * AI refresh analysis. Existing output folders are never overwritten.
 * From repository root:
-* do vacany_analysis.do "/path/to/project" "analysis/2026-10-20_ai_final"
+* do vacany_analysis.do "/path/to/project" "analysis/2026-10-21_ai"
 * Optional third argument: full path to the 2022 SDES person file.
 * Fourth argument "charts" adds core PNG charts to an existing analysis folder.
 * Fifth argument overrides the matching basic-analysis folder.
@@ -12,9 +12,9 @@ args project run_dir sdes_file action basic_dir
 if `"`project'"' == "" local project `"`c(pwd)'"'
 cd `"`project'"'
 local project `"`c(pwd)'"'
-if `"`run_dir'"' == "" local run_dir "analysis/2026-10-20_ai_final"
+if `"`run_dir'"' == "" local run_dir "analysis/2026-10-21_ai"
 if inlist(`"`sdes_file'"', "", ".") local sdes_file "../micro-data-work/RAW/Socio Demog Economic Survey 2022/Microdata/SPC_PNG_2022_SDES_Person_v01_PUF.dta"
-if `"`basic_dir'"' == "" local basic_dir "analysis/2026-10-20_v3"
+if `"`basic_dir'"' == "" local basic_dir "`run_dir'/basic"
 if !inlist(`"`action'"', "", "charts") error 198
 if substr(`"`run_dir'"',1,1) != "/" local run_dir `"`project'/`run_dir'"'
 if substr(`"`sdes_file'"',1,1) != "/" local sdes_file `"`project'/`sdes_file'"'
@@ -28,6 +28,22 @@ count if status != "success"
 if r(N) {
     display as error "Pending/failed AI rows remain. Resume classification and reconvert before analysing the full sample."
     exit 459
+}
+local processed_n = _N
+local non_jobs = 0
+capture confirm variable is_job_advert
+if !_rc {
+    assert inlist(is_job_advert,"0","1")
+    count if is_job_advert == "0"
+    local non_jobs = r(N)
+    if `"`action'"' != "charts" {
+        preserve
+            keep if is_job_advert == "0"
+            keep job_id title employer classification_summary
+            export delimited using "`run_dir'/non_job_adverts.csv"
+        restore
+    }
+    keep if is_job_advert == "1"
 }
 local total_n = _N
 global OUT "`run_dir'/analysis"
@@ -45,7 +61,7 @@ else {
     log using "${OUT}/analysis.log", text
     copy "vacany_analysis.do" "${OUT}/vacany_analysis.do"
 }
-display "Stata: " c(stata_version) "; successful advert IDs: `total_n'"
+display "Stata: " c(stata_version) "; processed records: `processed_n'; non-jobs excluded: `non_jobs'; retained job adverts: `total_n'"
 display `"Output folder: ${OUT}"'
 display `"Survey input: `sdes_file'"'
 display "Confidence scores are model self-assessments. Online advert flows and survey employment stocks are different populations."
@@ -126,7 +142,7 @@ program define vacancy_core_charts
         label values education_group education_groups
         vacancy_distribution education_group, name("education_level") ///
             title("Education level stated in adverts") ///
-            note("All `n' adverts. Lowest acceptable level identified; includes preferred and alternative credentials.") ///
+            note("All `n' job adverts. Highest compulsory level; lowest acceptable route where credentials are alternatives.") ///
             subnote("These are advertised credentials, not applicants' educational attainment.")
 
         use `adverts', clear
@@ -232,6 +248,61 @@ program define vacancy_core_charts
         vacancy_plot percent, over(category) name("field_coverage") title("Coverage of the core extracted fields") ///
             note("All `n' adverts completed AI processing. These percentages describe information assigned or stated.") ///
             subnote("Missing information is kept separate from explicit zero or no qualification required.") sort
+    }
+
+    ******************************
+    * Advertised work locations
+    use `adverts', clear
+    capture confirm variable region_southern
+    if !_rc {
+        foreach region in southern highlands momase islands {
+            capture confirm numeric variable region_`region'
+            if _rc destring region_`region', replace
+        }
+        destring work_nationwide work_remote, replace
+        preserve
+            keep job_id title work_provinces work_regions work_outside_png work_nationwide work_remote work_location_evidence
+            export delimited using "${OUT}/vacancy_locations.csv"
+        restore
+
+        tempfile region_counts location_coverage
+        tempname rp lp
+        postfile `rp' str30 category long adverts double percent using `region_counts'
+        foreach region in southern highlands momase islands {
+            quietly count if region_`region' == 1
+            local count = r(N)
+            local caption = proper("`region'")
+            post `rp' ("`caption'") (`count') (100*`count'/`n')
+        }
+        postclose `rp'
+        preserve
+            use `region_counts', clear
+            export delimited using "${OUT}/region_counts.csv"
+            vacancy_plot percent, over(category) name("work_regions") title("Where are the jobs based?") ///
+                note("All `n' job adverts; multiple work regions allowed, counted once per region.") ///
+                subnote("Nationwide, overseas and unknown locations are not assigned to every PNG region.") sort
+        restore
+
+        postfile `lp' str45 category long adverts double percent using `location_coverage'
+        gen byte named_region = work_regions != ""
+        gen byte overseas_work = work_outside_png != ""
+        gen byte location_unknown = !named_region & !overseas_work & !work_nationwide & !work_remote
+        foreach field in named_region work_nationwide overseas_work work_remote location_unknown {
+            local caption "Named PNG work region"
+            if "`field'" == "work_nationwide" local caption "PNG-wide work"
+            if "`field'" == "overseas_work" local caption "Overseas work location"
+            if "`field'" == "work_remote" local caption "Remote / home-based work"
+            if "`field'" == "location_unknown" local caption "No resolved work location"
+            quietly count if `field'
+            local count = r(N)
+            post `lp' ("`caption'") (`count') (100*`count'/`n')
+        }
+        postclose `lp'
+        use `location_coverage', clear
+        export delimited using "${OUT}/location_coverage.csv"
+        vacancy_plot percent, over(category) name("location_coverage") title("What work-location information is available?") ///
+            note("All `n' job adverts; categories can overlap.") ///
+            subnote("Work sites only: excludes FIFO departure points, contact addresses and employer history.")
     }
 
     * Use the matching frozen basic analysis for source fields and existing PNGs.

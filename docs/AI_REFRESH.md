@@ -1,3 +1,34 @@
+# AI refresh — 21 October 2026
+
+The new run is `analysis/2026-10-21_ai/`, using the latest local 21 October snapshot (3,792 records), Luna low reasoning and prompt v3. Yesterday's run and manual checks are preserved. Basic Stata outputs live inside the new run's `basic/`; AI summaries and PNG-only charts live in `analysis/`.
+
+The editable prompt is `code/prompts/classification_2026-10-21_v3.md`. Python loads it on preparation, freezes the readable file plus `prompt.json` (text and exact schema), and checks hashes on resuming. Edit/version the source prompt and prepare a NEW run when changing instructions; an already prepared run keeps its frozen prompt. The preceding v2 text is separately preserved in `classification_2026-10-20_v2.md`, and older conversion remains supported.
+
+V3 corrects AND/OR credential handling, licence-versus-education distinctions, role-specific opportunity flags, skill coverage and ambiguous industry/occupation instructions. It adds `is_job_advert` to exclude equipment tenders/non-vacancies from analysis, while retaining their original AI records and a separate exclusions CSV. Genuine individual consultancy appointments remain eligible.
+
+`work_locations` supports multiple PNG provinces/regions and overseas places, plus nationwide/remote flags and exact evidence. Province-to-region mapping is local and fixed to the PNG NSO's four regions. Role text takes priority over broad website location lists; FIFO departure points, contact addresses and employer-history locations are excluded. Generic PNG is unresolved rather than nationwide. CSV retains list fields plus four region indicators; regional charts count each advert once per region and show shares of all retained job adverts, so overlapping shares need not sum to 100%. Nationwide/remote/overseas and unresolved coverage are shown separately. No province allocation is invented for nationwide jobs.
+
+Reproduction uses the existing scripts (all paths below are within the project):
+
+```bash
+venv/bin/python classify_jobs.py --run-dir analysis/NEW_DATE_ai --prepare
+venv/bin/python classify_jobs.py --run-dir analysis/NEW_DATE_ai --execute --workers 128
+venv/bin/python json_to_csv.py --run-dir analysis/NEW_DATE_ai
+```
+
+```stata
+do code/vacancy_summary.do "/path/to/project" "NEW_DATE" "02nov2025" "/path/to/project/analysis/NEW_DATE_ai"
+do vacany_analysis.do "/path/to/project" "analysis/NEW_DATE_ai"
+```
+
+The basic script's optional fourth argument uses that AI run's frozen raw CSV/JSON, filters the completed job-advert flag, and creates its `basic/` outputs. Without it, the original raw-data workflow remains available. The AI script's fifth argument can still override the matching basic folder. Existing results are refused rather than overwritten.
+
+The same 100 IDs from the manual review are used as a regression pilot, then reused in full classification. A brief pilot review records known fixes and remaining limitations. V3 does not implement a full official fine-code/label lookup validator; lower-level codes remain provisional. Offline tests cover frozen prompts, legacy conversion, multiple locations, evidence validation and non-job exclusion. The completed run README and execution report record exact totals and checks.
+
+Sources: [PNG NSO geography](https://www.nso.gov.pg/statistics/population/) and [OpenAI structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
+
+---
+
 # AI refresh — 20 October 2026
 
 The authorized refresh completed on the 20 October source snapshot: **3,780 successful advert IDs, no failed classifications**. The model is `gpt-6-luna`, with low reasoning effort. The 100-advert pilot and both full-sample Stata analyses completed. Start with `analysis/2026-10-20_ai_final/README.md` for results and file locations.

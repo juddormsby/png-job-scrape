@@ -29,6 +29,8 @@ def job(jid="1"):
 def result(j=None):
     j = j or job()
     value = {"industry_classification": {}, "occupation_classification": {}, "classification_summary": "Fixture classification.",
+             "is_job_advert": True,
+             "work_locations": {"png_provinces": [], "png_regions": [], "outside_png": [], "nationwide": False, "remote": False, "evidence": []},
              "requirements": {"education_level": "diploma", "education_requirement": "preferred", "education_quote": "Diploma preferred.",
                  "experience_required_years": 3, "experience_preferred_years": 5,
                  "experience_quotes": ["Three years required; five years preferred."],
@@ -59,11 +61,85 @@ class RefreshTests(unittest.TestCase):
         (self.root / "json_output/all_jobs.json").write_text(json.dumps({"last_updated": "fixture", "jobs": adverts}))
         for filename in ("classify_jobs.py", "json_to_csv.py", "vacany_analysis.do", "requirements.txt", "requirements-ai.txt"):
             (self.root / filename).write_text("fixture code\n")
+        for filename in (ai.PROMPT_FILE, "code/prompts/classification_2026-10-20_v2.md", "code/vacancy_summary.do", "code/ado/codebook_export.ado"):
+            dest = self.root / filename
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / filename, dest)
         self.run = self.root / "run"
         ai.prepare(self.root, self.run)
 
     def tearDown(self):
         self.tmp.cleanup()
+
+    def test_frozen_prompt_is_used_and_mutation_is_rejected(self):
+        metadata = json.loads((self.run / "manifest.json").read_text())
+        config = ai.run_config(self.run, metadata)
+        self.assertEqual(config["system_prompt"], (ROOT / ai.PROMPT_FILE).read_text())
+        with patch.object(ai, "prompt_config", side_effect=AssertionError("must use frozen prompt")):
+            self.assertEqual(ai.run_config(self.run, metadata), config)
+        (self.run / "prompt.json").write_text("{}")
+        with self.assertRaisesRegex(ValueError, "Frozen prompt"):
+            ai.run_config(self.run, metadata)
+
+    def test_multiple_work_locations_keep_region_memberships(self):
+        advert = job()
+        advert["input"]["description"] += " Based in Lae and Port Moresby; Australia is another work location."
+        value = result()
+        value["work_locations"].update(png_provinces=["Morobe", "National Capital District"], outside_png=["Australia"], evidence=["Based in Lae and Port Moresby", "Australia is another work location."])
+        ai.validate_result(value, advert)
+        row = converter.flatten(advert, {**stored(advert), **value})
+        self.assertEqual(row["region_momase"], 1)
+        self.assertEqual(row["region_southern"], 1)
+        self.assertEqual(row["region_islands"], 0)
+        self.assertEqual(row["work_outside_png"], "Australia")
+        self.assertEqual(len(ai.PROVINCE_REGIONS), 22)
+
+    def test_location_metadata_evidence_and_nationwide_not_expanded(self):
+        advert = job()
+        advert["input"]["location"] = "Nationwide, PNG"
+        value = result()
+        value["work_locations"].update(nationwide=True, evidence=["Nationwide, PNG"])
+        ai.validate_result(value, advert)
+        row = converter.flatten(advert, {**stored(advert), **value})
+        self.assertEqual(row["work_nationwide"], 1)
+        self.assertEqual(sum(row["region_" + r.lower()] for r in ai.REGIONS), 0)
+        value["work_locations"]["evidence"] = ["Invented overseas site"]
+        with self.assertRaisesRegex(ValueError, "Location evidence"):
+            ai.validate_result(value, advert)
+
+    def test_non_job_cannot_receive_an_occupation(self):
+        value = result()
+        value["is_job_advert"] = False
+        with self.assertRaisesRegex(ValueError, "Non-job advert"):
+            ai.validate_result(value, job())
+        for section in ("industry_classification", "occupation_classification"):
+            for key in value[section]:
+                if not key.endswith("confidence"):
+                    value[section][key] = None
+        req = value["requirements"]
+        req.update(education_level="not_stated", education_requirement="not_stated", education_quote=None,
+                   experience_required_years=None, experience_preferred_years=None, experience_quotes=[],
+                   graduate_opportunity=False, entry_route_quotes=[], skills_mentioned=[])
+        ai.validate_result(value, job())
+
+    def test_previous_v2_results_still_convert(self):
+        advert = job()
+        value = result()
+        value.pop("is_job_advert")
+        value.pop("work_locations")
+        ai.validate_result(value, advert, schema=ai.BASE_SCHEMA)
+        row = converter.flatten(advert, {**stored(advert), **value}, schema=ai.BASE_SCHEMA)
+        self.assertEqual(row["education_level"], "diploma")
+        self.assertNotIn("work_regions", row)
+
+    def test_evidence_allows_html_spacing_before_punctuation_only(self):
+        advert = job()
+        advert["input"]["description"] = advert["input"]["description"].replace("Excel skills.", "Excel skills\n.")
+        ai.validate_result(result(), advert)
+        value = result()
+        value["requirements"]["skills_mentioned"][0]["quote"] = "Excel skill."
+        with self.assertRaisesRegex(ValueError, "Evidence quote"):
+            ai.validate_result(value, advert)
 
     def test_schema_evidence_and_leading_zero_codes(self):
         ai.validate_result(result(), job())
@@ -116,6 +192,8 @@ class RefreshTests(unittest.TestCase):
     def test_2025_retry_preserves_messages_and_excludes_new_fields(self):
         valid = result()
         valid.pop("requirements")
+        valid.pop("is_job_advert")
+        valid.pop("work_locations")
         invalid = copy.deepcopy(valid)
         invalid["classification_summary"] = 7
         outputs = iter([invalid, valid])
@@ -134,7 +212,7 @@ class RefreshTests(unittest.TestCase):
 
     def test_2025_prepare_and_convert_keep_outputs_classification_only(self):
         folder = self.root / "code/prompts"
-        folder.mkdir(parents=True)
+        folder.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / "code/prompts/classification_2025.json", folder / "classification_2025.json")
         legacy = self.root / "legacy_run"
         metadata = ai.prepare(self.root, legacy, prompt_style="2025")
@@ -143,6 +221,8 @@ class RefreshTests(unittest.TestCase):
         for advert in jobs:
             saved = stored(advert)
             saved.pop("requirements")
+            saved.pop("is_job_advert")
+            saved.pop("work_locations")
             saved["prompt_version"] = metadata["prompt_version"]
             records.append(saved)
         ai.write_json(legacy / "LLM_processed_jobs.json", records)
@@ -219,10 +299,10 @@ class RefreshTests(unittest.TestCase):
         self.assertFalse((self.run / "analysis").exists())
 
     def test_default_is_nonmutating_no_api_dry_run(self):
-        before = {p.name: p.read_bytes() for p in self.run.iterdir()}
+        before = {str(p.relative_to(self.run)): p.read_bytes() for p in self.run.rglob("*") if p.is_file()}
         with patch.object(ai, "classify_job", side_effect=AssertionError("API must not be called")), contextlib.redirect_stdout(io.StringIO()):
             ai.main(["--run-dir", str(self.run)])
-        self.assertEqual(before, {p.name: p.read_bytes() for p in self.run.iterdir()})
+        self.assertEqual(before, {str(p.relative_to(self.run)): p.read_bytes() for p in self.run.rglob("*") if p.is_file()})
 
     def test_cached_errors_are_retried_successes_skipped_offline(self):
         jobs = json.loads((self.run / "prepared_jobs.json").read_text())

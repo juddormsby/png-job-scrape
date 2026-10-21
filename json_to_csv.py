@@ -4,21 +4,25 @@ import csv
 import json
 from pathlib import Path
 
-from classify_jobs import ROOT, SKILLS, digest, validate_result
+from classify_jobs import ROOT, SKILLS, REGIONS, PROVINCE_REGIONS, digest, validate_result, run_config
 
 CLASSIFICATION_COLUMNS = [f"{prefix}_{level}digit{suffix}" for prefix in ("isic", "isco")
                           for suffix in ("", "_confidence") for level in range(1, 5)]
 REQUIREMENT_COLUMNS = ["education_level", "education_requirement", "education_quote", "experience_required_years",
                        "experience_preferred_years", "experience_quotes", "graduate_opportunity", "apprenticeship_opportunity",
                        "entry_level_opportunity", "entry_route_quotes"]
-COLUMNS = ["job_id", "title", "employer", *CLASSIFICATION_COLUMNS, "classification_summary", *REQUIREMENT_COLUMNS,
+BASE_COLUMNS = ["job_id", "title", "employer", *CLASSIFICATION_COLUMNS, "classification_summary", *REQUIREMENT_COLUMNS,
            *[f"skill_{s}" for s in SKILLS], *[f"skill_{s}_quote" for s in SKILLS],
            "status", "error", "model", "prompt_version", "input_hash", "processed_at", "response_id", "input_tokens", "output_tokens", "reasoning_tokens"]
-LEGACY_COLUMNS = [c for c in COLUMNS if c not in REQUIREMENT_COLUMNS and not c.startswith("skill_")]
+LOCATION_COLUMNS = ["work_provinces", "work_regions", "work_outside_png", "work_nationwide", "work_remote", "work_location_evidence",
+                    *["region_" + r.lower() for r in REGIONS]]
+COLUMNS = [*BASE_COLUMNS, "is_job_advert", *LOCATION_COLUMNS]
+LEGACY_COLUMNS = [c for c in BASE_COLUMNS if c not in REQUIREMENT_COLUMNS and not c.startswith("skill_")]
 
 
-def flatten(job, result, prompt_style="requirements"):
-    columns = LEGACY_COLUMNS if prompt_style == "2025" else COLUMNS
+def flatten(job, result, prompt_style="requirements", schema=None):
+    current = schema is None or "is_job_advert" in schema["properties"]
+    columns = LEGACY_COLUMNS if prompt_style == "2025" else COLUMNS if current else BASE_COLUMNS
     row = dict.fromkeys(columns, "")
     row.update(job_id=job["job_id"], title=job["input"]["title"], employer=job["input"]["employer"],
                input_hash=job["input_hash"], status="pending")
@@ -31,7 +35,9 @@ def flatten(job, result, prompt_style="requirements"):
     keys = ["industry_classification", "occupation_classification", "classification_summary"]
     if prompt_style != "2025":
         keys.append("requirements")
-    validate_result({k: result[k] for k in keys}, job, prompt_style)
+    if current and prompt_style != "2025":
+        keys.extend(["is_job_advert", "work_locations"])
+    validate_result({k: result[k] for k in keys}, job, prompt_style, schema)
     for section in ("industry_classification", "occupation_classification"):
         row.update(result[section])
     row["classification_summary"] = result["classification_summary"]
@@ -44,6 +50,15 @@ def flatten(job, result, prompt_style="requirements"):
         for category in SKILLS:
             row[f"skill_{category}"] = int(category in skills)
             row[f"skill_{category}_quote"] = skills.get(category, "")
+    if current and prompt_style != "2025":
+        row["is_job_advert"] = int(result["is_job_advert"])
+        loc = result["work_locations"]
+        regions = sorted(set(loc["png_regions"]) | {PROVINCE_REGIONS[p] for p in loc["png_provinces"]})
+        row.update(work_provinces=" | ".join(loc["png_provinces"]), work_regions=" | ".join(regions),
+                   work_outside_png=" | ".join(loc["outside_png"]), work_nationwide=int(loc["nationwide"]),
+                   work_remote=int(loc["remote"]), work_location_evidence=" | ".join(loc["evidence"]))
+        for region in REGIONS:
+            row["region_" + region.lower()] = int(region in regions)
     usage = result.get("usage") or {}
     for key in ("input_tokens", "output_tokens"):
         row[key] = usage.get(key, "")
@@ -54,6 +69,7 @@ def flatten(job, result, prompt_style="requirements"):
 def convert(run_dir, pilot=False):
     metadata = json.loads((run_dir / "manifest.json").read_text())
     style = metadata.get("prompt_style", "requirements")
+    config = run_config(run_dir, metadata)
     body = (run_dir / "prepared_jobs.json").read_bytes()
     if digest(body) != metadata["prepared_jobs_sha256"]:
         raise ValueError("Frozen prepared input was changed")
@@ -74,9 +90,9 @@ def convert(run_dir, pilot=False):
     path = destination / "LLM_processed_jobs.csv"
     temp = path.with_suffix(".csv.tmp")
     with temp.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=LEGACY_COLUMNS if style == "2025" else COLUMNS)
+        writer = csv.DictWriter(stream, fieldnames=LEGACY_COLUMNS if style == "2025" else COLUMNS if "is_job_advert" in config["schema"]["properties"] else BASE_COLUMNS)
         writer.writeheader()
-        writer.writerows(flatten(job, records.get(job["job_id"]), style) for job in jobs)
+        writer.writerows(flatten(job, records.get(job["job_id"]), style, config["schema"]) for job in jobs)
     temp.replace(path)
     return path, len(jobs)
 
