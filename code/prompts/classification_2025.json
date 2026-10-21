@@ -1,0 +1,188 @@
+{
+  "prompt_version": "png-isic-isco-2025-original",
+  "source_script_sha256": "4207888451c8e62c459a546ba3432f439bffa7a7c20e94574f7442c472f76c33",
+  "system_prompt": "You are an expert in labor market classification systems. You classify job postings according to ISIC Rev.4 (economic activity) and ISCO-08 (occupation) standards with high accuracy.",
+  "user_template": "Analyze the following job posting (scraped from online) and classify it according to ISIC Rev.4 (Economic Activity) and ISCO-08 (Occupation) standards.\n\nJob Title: {title}\nEmployer: {employer}\nLocation: {location}\nIndustry (note this is as described informally in online posting - not official information): {industry}\nEmployer Website: {employer_external_url}\n\nJob Description:\n{description}\n\nPlease provide:\n1. ISIC Rev.4 classification at 1-digit (Section), 2-digit (Division), 3-digit (Group), and 4-digit (Class) levels\n2. ISCO-08 classification at 1-digit (Major Group), 2-digit (Sub-major Group), 3-digit (Minor Group), and 4-digit (Unit Group) levels\n3. Confidence scores (0.0 to 1.0) for each classification level\n\nIf a classification cannot be determined at a specific digit level, use null for that field but still provide a confidence score (which should be low if uncertain).\nUse standard ISIC Rev.4 and ISCO-08 code formats.\nNote that you should provide them in the digit description format: \nE.g. for ISIC 1 Digit.\nA - Agriculture, forestry and fishing\nB - Mining and quarrying\nC - Manufacturing\nD - Electricity, gas, steam and air conditioning supply\nE - Water supply; sewerage, waste management and remediation activities\nF - Construction\nG - Wholesale and retail trade; repair of motor vehicles and motorcycles\nH - Transportation and storage\nI - Accommodation and food service activities\nJ - Information and communication\nK - Financial and insurance activities\nL - Real estate activities\nM - Professional, scientific and technical activities\nN - Administrative and support service activities\nO - Public administration and defence; compulsory social security\nP - Education\nQ - Human health and social work activities\nR - Arts, entertainment and recreation\nS - Other service activities\nT - Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use\nU - Activities of extraterritorial organisations and bodies\n\nAnd for ISCO 1 digit:\n0 - Armed forces occupations\n1 - Managers\n2 - Professionals\n3 - Technicians and associate professionals\n4 - Clerical support workers\n5 - Service and sales workers\n6 - Skilled agricultural, forestry and fishery workers\n7 - Craft and related trades workers\n8 - Plant and machine operators and assemblers\n9 - Elementary occupations\n\n",
+  "schema_name": "JobClassification",
+  "schema": {
+    "$defs": {
+      "IndustryClassification": {
+        "description": "ISIC Rev.4 classification at different digit levels",
+        "properties": {
+          "isic_1digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isic 1Digit"
+          },
+          "isic_2digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isic 2Digit"
+          },
+          "isic_3digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isic 3Digit"
+          },
+          "isic_4digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isic 4Digit"
+          },
+          "isic_1digit_confidence": {
+            "title": "Isic 1Digit Confidence",
+            "type": "number"
+          },
+          "isic_2digit_confidence": {
+            "title": "Isic 2Digit Confidence",
+            "type": "number"
+          },
+          "isic_3digit_confidence": {
+            "title": "Isic 3Digit Confidence",
+            "type": "number"
+          },
+          "isic_4digit_confidence": {
+            "title": "Isic 4Digit Confidence",
+            "type": "number"
+          }
+        },
+        "required": [
+          "isic_1digit",
+          "isic_2digit",
+          "isic_3digit",
+          "isic_4digit",
+          "isic_1digit_confidence",
+          "isic_2digit_confidence",
+          "isic_3digit_confidence",
+          "isic_4digit_confidence"
+        ],
+        "title": "IndustryClassification",
+        "type": "object",
+        "additionalProperties": false
+      },
+      "OccupationClassification": {
+        "description": "ISCO-08 classification at different digit levels",
+        "properties": {
+          "isco_1digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isco 1Digit"
+          },
+          "isco_2digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isco 2Digit"
+          },
+          "isco_3digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isco 3Digit"
+          },
+          "isco_4digit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Isco 4Digit"
+          },
+          "isco_1digit_confidence": {
+            "title": "Isco 1Digit Confidence",
+            "type": "number"
+          },
+          "isco_2digit_confidence": {
+            "title": "Isco 2Digit Confidence",
+            "type": "number"
+          },
+          "isco_3digit_confidence": {
+            "title": "Isco 3Digit Confidence",
+            "type": "number"
+          },
+          "isco_4digit_confidence": {
+            "title": "Isco 4Digit Confidence",
+            "type": "number"
+          }
+        },
+        "required": [
+          "isco_1digit",
+          "isco_2digit",
+          "isco_3digit",
+          "isco_4digit",
+          "isco_1digit_confidence",
+          "isco_2digit_confidence",
+          "isco_3digit_confidence",
+          "isco_4digit_confidence"
+        ],
+        "title": "OccupationClassification",
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    "description": "Complete classification result for a job posting (without job_id, added separately)",
+    "properties": {
+      "industry_classification": {
+        "$ref": "#/$defs/IndustryClassification"
+      },
+      "occupation_classification": {
+        "$ref": "#/$defs/OccupationClassification"
+      },
+      "classification_summary": {
+        "title": "Classification Summary",
+        "type": "string"
+      }
+    },
+    "required": [
+      "industry_classification",
+      "occupation_classification",
+      "classification_summary"
+    ],
+    "title": "JobClassification",
+    "type": "object",
+    "additionalProperties": false
+  }
+}

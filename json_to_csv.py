@@ -14,10 +14,12 @@ REQUIREMENT_COLUMNS = ["education_level", "education_requirement", "education_qu
 COLUMNS = ["job_id", "title", "employer", *CLASSIFICATION_COLUMNS, "classification_summary", *REQUIREMENT_COLUMNS,
            *[f"skill_{s}" for s in SKILLS], *[f"skill_{s}_quote" for s in SKILLS],
            "status", "error", "model", "prompt_version", "input_hash", "processed_at", "response_id", "input_tokens", "output_tokens", "reasoning_tokens"]
+LEGACY_COLUMNS = [c for c in COLUMNS if c not in REQUIREMENT_COLUMNS and not c.startswith("skill_")]
 
 
-def flatten(job, result):
-    row = dict.fromkeys(COLUMNS, "")
+def flatten(job, result, prompt_style="requirements"):
+    columns = LEGACY_COLUMNS if prompt_style == "2025" else COLUMNS
+    row = dict.fromkeys(columns, "")
     row.update(job_id=job["job_id"], title=job["input"]["title"], employer=job["input"]["employer"],
                input_hash=job["input_hash"], status="pending")
     if not result:
@@ -26,18 +28,22 @@ def flatten(job, result):
         row[key] = result.get(key, "")
     if result.get("status") != "success":
         return row
-    validate_result({k: result[k] for k in ("industry_classification", "occupation_classification", "classification_summary", "requirements")}, job)
+    keys = ["industry_classification", "occupation_classification", "classification_summary"]
+    if prompt_style != "2025":
+        keys.append("requirements")
+    validate_result({k: result[k] for k in keys}, job, prompt_style)
     for section in ("industry_classification", "occupation_classification"):
         row.update(result[section])
     row["classification_summary"] = result["classification_summary"]
-    req = result["requirements"]
-    for key in REQUIREMENT_COLUMNS:
-        value = req[key]
-        row[key] = " | ".join(value) if isinstance(value, list) else int(value) if isinstance(value, bool) else value
-    skills = {item["category"]: item["quote"] for item in req["skills_mentioned"]}
-    for category in SKILLS:
-        row[f"skill_{category}"] = int(category in skills)
-        row[f"skill_{category}_quote"] = skills.get(category, "")
+    if prompt_style != "2025":
+        req = result["requirements"]
+        for key in REQUIREMENT_COLUMNS:
+            value = req[key]
+            row[key] = " | ".join(value) if isinstance(value, list) else int(value) if isinstance(value, bool) else value
+        skills = {item["category"]: item["quote"] for item in req["skills_mentioned"]}
+        for category in SKILLS:
+            row[f"skill_{category}"] = int(category in skills)
+            row[f"skill_{category}_quote"] = skills.get(category, "")
     usage = result.get("usage") or {}
     for key in ("input_tokens", "output_tokens"):
         row[key] = usage.get(key, "")
@@ -47,6 +53,7 @@ def flatten(job, result):
 
 def convert(run_dir, pilot=False):
     metadata = json.loads((run_dir / "manifest.json").read_text())
+    style = metadata.get("prompt_style", "requirements")
     body = (run_dir / "prepared_jobs.json").read_bytes()
     if digest(body) != metadata["prepared_jobs_sha256"]:
         raise ValueError("Frozen prepared input was changed")
@@ -67,9 +74,9 @@ def convert(run_dir, pilot=False):
     path = destination / "LLM_processed_jobs.csv"
     temp = path.with_suffix(".csv.tmp")
     with temp.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=COLUMNS)
+        writer = csv.DictWriter(stream, fieldnames=LEGACY_COLUMNS if style == "2025" else COLUMNS)
         writer.writeheader()
-        writer.writerows(flatten(job, records.get(job["job_id"])) for job in jobs)
+        writer.writerows(flatten(job, records.get(job["job_id"]), style) for job in jobs)
     temp.replace(path)
     return path, len(jobs)
 

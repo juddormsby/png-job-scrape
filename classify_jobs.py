@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 MODEL = "gpt-6-luna"
-PROMPT_VERSION = "png-isic-isco-requirements-v1"
+PROMPT_VERSION = "png-isic-isco-requirements-v2"
 SKILLS = ("digital", "technical_trade", "communication", "teamwork", "leadership", "organisation")
 EDUCATION = ("not_stated", "no_qualification_required", "secondary", "vocational", "diploma", "bachelor", "postgraduate", "other")
 
@@ -77,6 +77,11 @@ New fields, deliberately simple:
 - education_level: lowest explicitly acceptable credential, grouped into secondary, vocational (trade/certificate), diploma,
   bachelor, postgraduate, or other. 'not_stated' means no explicit level; 'no_qualification_required' requires explicit evidence.
   education_requirement distinguishes required, preferred, and alternative_accepted (e.g. degree OR equivalent experience).
+  When credentials are alternatives, choose the LOWEST acceptable level: 'high school or vocational certificate' -> secondary;
+  'diploma or degree' -> diploma; 'bachelor or master' -> bachelor. A high-school diploma is secondary, not diploma.
+  Alternative credentials alone still count as required if one is compulsory. Use alternative_accepted when experience or another
+  non-credential route can replace the credential; 'degree in accounting or finance' is not such an alternative route.
+  If a minimum is required and a higher credential is preferred, record the required minimum, not the preferred upgrade.
   Do not infer a degree from the occupation or infer no qualification from silence.
 - experience_required_years / experience_preferred_years: separate minimum years explicitly stated. A 3-5 year range gives 3.
   Explicit 'no experience required' gives required_years=0; silence or vague 'experienced' gives null.
@@ -97,6 +102,25 @@ Do not add salary, geography, nationality or task-exposure fields in this pass.
 
 def digest(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def prompt_config(style="requirements"):
+    if style == "2025":
+        return json.loads((ROOT / "code/prompts/classification_2025.json").read_text())
+    return {"prompt_version": PROMPT_VERSION, "system_prompt": SYSTEM_PROMPT,
+            "schema": SCHEMA, "schema_name": "job_classification"}
+
+
+def prompt_hash(config):
+    return digest((config["system_prompt"] + config.get("user_template", "")).encode())
+
+
+def request_messages(job, config):
+    content = json.dumps(job["input"], ensure_ascii=False)
+    if "user_template" in config:
+        values = {**job["input"], "employer_external_url": job["input"].get("employer_external_website", "")}
+        content = config["user_template"].format_map(values)
+    return [{"role": "system", "content": config["system_prompt"]}, {"role": "user", "content": content}]
 
 
 def now():
@@ -176,7 +200,8 @@ def prepare_job(job, root, sources):
     return {"job_id": str(job["job_id"]), "input_hash": fingerprint, "input": payload, "preparation": provenance}
 
 
-def prepare(root, run_dir, model=MODEL, reasoning="low"):
+def prepare(root, run_dir, model=MODEL, reasoning="low", prompt_style="requirements"):
+    config = prompt_config(prompt_style)
     if run_dir.exists():
         raise ValueError("Run folder already exists; choose a new dated label.")
     raw = (root / "json_output/all_jobs.json").read_bytes()
@@ -207,13 +232,17 @@ def prepare(root, run_dir, model=MODEL, reasoning="low"):
     write_json(run_dir / "prepared_jobs.json", prepared)
     write_json(run_dir / "pilot_ids.json", pilot)
     snapshots = {}
-    for name in ("classify_jobs.py", "json_to_csv.py", "vacany_analysis.do", "requirements.txt", "requirements-ai.txt"):
+    names = ["classify_jobs.py", "json_to_csv.py", "vacany_analysis.do", "requirements.txt", "requirements-ai.txt"]
+    if prompt_style == "2025":
+        names.append("code/prompts/classification_2025.json")
+    for name in names:
+        (run_dir / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(root / name, run_dir / name)
         snapshots[name] = digest((run_dir / name).read_bytes())
     metadata = {"preparation_status": "prepared_not_executed", "prepared_at": now(), "source_updated": data.get("last_updated"),
                 "source_sha256": digest(raw), "prepared_jobs_sha256": digest((run_dir / "prepared_jobs.json").read_bytes()),
-                "model": model, "reasoning": reasoning, "prompt_version": PROMPT_VERSION,
-                "prompt_sha256": digest(SYSTEM_PROMPT.encode()), "schema_sha256": digest(json.dumps(SCHEMA, sort_keys=True).encode()),
+                "model": model, "reasoning": reasoning, "prompt_style": prompt_style, "prompt_version": config["prompt_version"],
+                "prompt_sha256": prompt_hash(config), "schema_sha256": digest(json.dumps(config["schema"], sort_keys=True).encode()),
                 "advert_count": len(jobs), "pilot_count": len(pilot), "snapshots": snapshots,
                 "html_used": sum(bool(j["preparation"]["html_used"]) for j in prepared),
                 "html_body_mismatch": sum(bool(j["preparation"].get("html_body_mismatch")) for j in prepared),
@@ -247,7 +276,17 @@ def validate_schema(value, schema, path="result"):
         raise ValueError(f"{path}: invalid numeric range")
 
 
-def validate_result(result, job):
+def validate_result(result, job, prompt_style="requirements"):
+    if prompt_style == "2025":
+        # Preserve the old type contract, including nullable codes and an
+        # unrestricted summary. Do not add new classification instructions.
+        sections = {}
+        for prefix, section in (("isic", "industry_classification"), ("isco", "occupation_classification")):
+            fields = {f"{prefix}_{i}digit": nullable("string") for i in range(1, 5)}
+            fields.update({f"{prefix}_{i}digit_confidence": {"type": "number"} for i in range(1, 5)})
+            sections[section] = object_schema(fields)
+        validate_schema(result, object_schema({**sections, "classification_summary": {"type": "string"}}))
+        return
     validate_schema(result, SCHEMA)
     for prefix, section in (("isic", "industry_classification"), ("isco", "occupation_classification")):
         codes = []
@@ -266,11 +305,13 @@ def validate_result(result, job):
     if req["education_quote"]:
         quotes.append(req["education_quote"])
     evidence = squash(job["input"]["title"] + " " + job["input"]["description"]).casefold()
-    if any(squash(q).casefold() not in evidence for q in quotes):
-        raise ValueError("Evidence quote not found in supplied title/description")
-    if req["education_level"] != "not_stated" and not req["education_quote"]:
+    for quote in quotes:
+        if squash(quote).casefold() not in evidence:
+            raise ValueError(f"Evidence quote not found in supplied title/description: {quote!r}")
+    if (req["education_level"] != "not_stated" or req["education_requirement"] != "not_stated") and not req["education_quote"]:
         raise ValueError("Stated education needs evidence")
-    if (req["education_level"] == "not_stated") != (req["education_requirement"] == "not_stated"):
+    # An advert can require a qualification without naming its level.
+    if req["education_requirement"] == "not_stated" and req["education_level"] != "not_stated":
         raise ValueError("Education level/status disagree")
     if any(req[k] is not None for k in ("experience_required_years", "experience_preferred_years")) and not req["experience_quotes"]:
         raise ValueError("Stated experience needs evidence")
@@ -283,21 +324,45 @@ def validate_result(result, job):
 
 def classify_job(job, metadata, api_key, attempts=3):
     from openai import OpenAI  # Deliberately lazy: preparation/tests need no SDK or key.
-    stamp = {"job_id": job["job_id"], "input_hash": job["input_hash"], "model": metadata["model"], "prompt_version": PROMPT_VERSION}
+    style = metadata.get("prompt_style", "requirements")
+    config = prompt_config(style)
+    stamp = {"job_id": job["job_id"], "input_hash": job["input_hash"], "model": metadata["model"], "prompt_version": config["prompt_version"]}
+    messages = request_messages(job, config)
+    feedback = []
     with OpenAI(api_key=api_key, max_retries=0, timeout=120) as client:
         for attempt in range(attempts):
+            result = None
             try:
                 response = client.responses.create(model=metadata["model"], reasoning={"effort": metadata["reasoning"]},
-                    input=[{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": json.dumps(job["input"], ensure_ascii=False)}],
-                    text={"format": {"type": "json_schema", "name": "job_classification", "strict": True, "schema": SCHEMA}}, max_output_tokens=4000)
+                    input=messages + feedback,
+                    text={"format": {"type": "json_schema", "name": config["schema_name"], "strict": True, "schema": config["schema"]}}, max_output_tokens=4000)
                 if response.status != "completed":
                     raise ValueError(f"Response status: {response.status}")
                 result = json.loads(response.output_text)
-                validate_result(result, job)
+                # The analysis uses one mention flag per category. Keep the first
+                # quote and retain duplicate mentions separately for audit.
+                discarded = []
+                mentions = result.get("requirements", {}).get("skills_mentioned", [])
+                if style != "2025" and isinstance(mentions, list) and all(isinstance(s, dict) and "category" in s for s in mentions):
+                    seen = set()
+                    retained = []
+                    for mention in mentions:
+                        if mention["category"] in seen:
+                            discarded.append(mention)
+                        else:
+                            seen.add(mention["category"])
+                            retained.append(mention)
+                    result["requirements"]["skills_mentioned"] = retained
+                validate_result(result, job, style)
                 return {**stamp, **result, "status": "success", "processed_at": now(), "response_id": response.id,
+                        "discarded_duplicate_skill_mentions": discarded,
                         "usage": response.usage.model_dump() if response.usage else None}
             except Exception as exc:
                 error = f"{type(exc).__name__}: {exc}".replace(api_key, "[redacted]")
+                if isinstance(exc, ValueError) and style != "2025":
+                    feedback = [{"role": "user", "content": "Correct this rejected candidate and return the complete schema. "
+                        "Copy evidence exactly from the original source and keep code hierarchies consistent. "
+                        f"Validation error: {exc}\nRejected candidate: {json.dumps(result, ensure_ascii=False)}"}]
                 status_code = getattr(exc, "status_code", None)
                 if status_code is not None and status_code < 500 and status_code != 429:
                     break  # Bad credentials/parameters need correction, not backoff.
@@ -314,21 +379,25 @@ def main(argv=None):
     parser.add_argument("--pilot", action="store_true", help="Use the frozen 100-advert pilot in a separate subfolder")
     parser.add_argument("--model", default=MODEL, help="Model for a NEW prepared folder")
     parser.add_argument("--reasoning", default="low", choices=["none", "low", "medium", "high"])
+    parser.add_argument("--prompt-style", choices=["requirements", "2025"], default="requirements", help="2025 reproduces the archived prompt and classification-only output schema")
     parser.add_argument("--workers", default=8, type=int)
     args = parser.parse_args(argv)
     if args.prepare and args.execute:
         parser.error("--prepare and --execute are separate operations")
-    if not 1 <= args.workers <= 32:
-        parser.error("workers must be 1-32")
+    if not 1 <= args.workers <= 128:
+        parser.error("workers must be 1-128")
     run_dir = Path(args.run_dir)
     if not run_dir.is_absolute():
         run_dir = ROOT / run_dir
     if args.prepare:
-        print(json.dumps(prepare(ROOT, run_dir, args.model, args.reasoning), indent=2))
+        print(json.dumps(prepare(ROOT, run_dir, args.model, args.reasoning, args.prompt_style), indent=2))
         return
     metadata = json.loads((run_dir / "manifest.json").read_text())
-    expected = {"model": args.model, "reasoning": args.reasoning, "prompt_version": PROMPT_VERSION,
-                "prompt_sha256": digest(SYSTEM_PROMPT.encode()), "schema_sha256": digest(json.dumps(SCHEMA, sort_keys=True).encode())}
+    config = prompt_config(args.prompt_style)
+    if metadata.get("prompt_style", "requirements") != args.prompt_style:
+        raise ValueError("Prepared prompt style differs; select the matching --prompt-style")
+    expected = {"model": args.model, "reasoning": args.reasoning, "prompt_version": config["prompt_version"],
+                "prompt_sha256": prompt_hash(config), "schema_sha256": digest(json.dumps(config["schema"], sort_keys=True).encode())}
     if any(metadata.get(k) != v for k, v in expected.items()):
         raise ValueError("Prepared model/prompt/schema differs; prepare a fresh run instead of mixing versions")
     body = (run_dir / "prepared_jobs.json").read_bytes()
@@ -347,7 +416,7 @@ def main(argv=None):
     for job in jobs:
         if job["job_id"] in records:
             old = records[job["job_id"]]
-            if old.get("input_hash") != job["input_hash"] or old.get("model") != metadata["model"] or old.get("prompt_version") != PROMPT_VERSION:
+            if old.get("input_hash") != job["input_hash"] or old.get("model") != metadata["model"] or old.get("prompt_version") != config["prompt_version"]:
                 raise ValueError("Existing output belongs to different inputs/model/prompt")
     pending = [j for j in jobs if records.get(j["job_id"], {}).get("status") != "success"]
     print(f"{'EXECUTE' if args.execute else 'DRY RUN'}: {len(jobs)} adverts; {len(pending)} pending; model={metadata['model']}; output={output}")

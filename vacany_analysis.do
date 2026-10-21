@@ -1,17 +1,25 @@
-* Prepared AI refresh analysis. NOT RUN during preparation.
+* AI refresh analysis. Existing output folders are never overwritten.
 * From repository root:
-* do vacany_analysis.do "/path/to/project" "analysis/2026-10-20_ai"
+* do vacany_analysis.do "/path/to/project" "analysis/2026-10-20_ai_final"
 * Optional third argument: full path to the 2022 SDES person file.
+* Fourth argument "charts" adds core PNG charts to an existing analysis folder.
+* Fifth argument overrides the matching basic-analysis folder.
 version 13.1
 clear all
 set more off
 set linesize 120
-args project run_dir sdes_file
+args project run_dir sdes_file action basic_dir
 if `"`project'"' == "" local project `"`c(pwd)'"'
 cd `"`project'"'
-if `"`run_dir'"' == "" local run_dir "analysis/2026-10-20_ai"
-if `"`sdes_file'"' == "" local sdes_file "../micro-data-work/RAW/Socio Demog Economic Survey 2022/Microdata/SPC_PNG_2022_SDES_Person_v01_PUF.dta"
-confirm file `"`sdes_file'"'
+local project `"`c(pwd)'"'
+if `"`run_dir'"' == "" local run_dir "analysis/2026-10-20_ai_final"
+if inlist(`"`sdes_file'"', "", ".") local sdes_file "../micro-data-work/RAW/Socio Demog Economic Survey 2022/Microdata/SPC_PNG_2022_SDES_Person_v01_PUF.dta"
+if `"`basic_dir'"' == "" local basic_dir "analysis/2026-10-20_v3"
+if !inlist(`"`action'"', "", "charts") error 198
+if substr(`"`run_dir'"',1,1) != "/" local run_dir `"`project'/`run_dir'"'
+if substr(`"`sdes_file'"',1,1) != "/" local sdes_file `"`project'/`sdes_file'"'
+if substr(`"`basic_dir'"',1,1) != "/" local basic_dir `"`project'/`basic_dir'"'
+if `"`action'"' != "charts" confirm file `"`sdes_file'"'
 confirm file "`run_dir'/LLM_processed_jobs.csv"
 import delimited "`run_dir'/LLM_processed_jobs.csv", clear varnames(1) stringcols(_all) bindquote(strict)
 isid job_id
@@ -23,38 +31,269 @@ if r(N) {
 }
 local total_n = _N
 global OUT "`run_dir'/analysis"
-capture mkdir "${OUT}"
-if _rc {
-    display as error "Analysis folder exists or cannot be created; refusing to overwrite. Use a new run label."
-    exit 693
+if `"`action'"' == "charts" {
+    confirm file "${OUT}/classified_adverts.dta"
+    log using "${OUT}/charts.log", text
+    copy "vacany_analysis.do" "${OUT}/charts.do"
 }
-log using "${OUT}/analysis.log", text
-copy "vacany_analysis.do" "${OUT}/vacany_analysis.do"
+else {
+    capture mkdir "${OUT}"
+    if _rc {
+        display as error "Analysis folder exists or cannot be created; refusing to overwrite. Use a new run label."
+        exit 693
+    }
+    log using "${OUT}/analysis.log", text
+    copy "vacany_analysis.do" "${OUT}/vacany_analysis.do"
+}
 display "Stata: " c(stata_version) "; successful advert IDs: `total_n'"
+display `"Output folder: ${OUT}"'
+display `"Survey input: `sdes_file'"'
 display "Confidence scores are model self-assessments. Online advert flows and survey employment stocks are different populations."
 
 program define vacancy_export
     syntax using/
-    graph save `"`using'.gph"'
+    confirm new file `"`using'.png"'
     capture graph export `"`using'.png"', width(2400)
-    local png_rc = _rc
-    capture graph export `"`using'.pdf"'
-    local pdf_rc = _rc
-    if `png_rc' | `pdf_rc' {
+    if _rc {
+        * Old Mac console: EPS is temporary; PNG is the only saved chart.
         tempfile eps
         graph export `"`eps'"', as(eps)
-        if `png_rc' {
-            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=png16m -r200 -sOutputFile="`using'.png" "`eps'"
-            confirm file `"`using'.png"'
-        }
-        if `pdf_rc' {
-            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=pdfwrite -sOutputFile="`using'.pdf" "`eps'"
-            confirm file `"`using'.pdf"'
-        }
+        shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=png16m -r200 -sOutputFile="`using'.png" "`eps'"
+        confirm file `"`using'.png"'
     }
 end
 
+* Shared plotting helpers keep all summary charts in one do-file.
+program define vacancy_plot
+    syntax varname(numeric), OVER(varname) NAME(string) TITLE(string) NOTE(string) ///
+        [SUBNOTE(string) SORT MAX(real 0) STEP(real 0) FORMAT(string) DENOM(string)]
+    if "`format'" == "" local format "%4.1f"
+    if "`denom'" == "" local denom "Percent of all adverts"
+    if `max' <= 0 {
+        quietly summarize `varlist'
+        local max = max(10,ceil(r(max)/10)*10)
+    }
+    if `step' <= 0 local step = cond(`max'<=50,10,20)
+    local ordering ""
+    if "`sort'" != "" local ordering "sort(1) descending"
+    local upper = `max'*1.12
+    graph hbar (asis) `varlist', over(`over', `ordering' label(labsize(small))) ///
+        bar(1, color("0 72 136")) ///
+        blabel(bar, format(`format') position(outside) size(small) color(black)) ///
+        ylabel(0(`step')`max', labsize(small)) yscale(range(0 `upper')) ///
+        ytitle("`denom'", size(small)) title("`title'", size(medium)) ///
+        note("`note'" "`subnote'", size(vsmall)) legend(off) ///
+        graphregion(color(white)) plotregion(color(white)) xsize(12) ysize(6.5)
+    vacancy_export using "${OUT}/`name'"
+end
+
+program define vacancy_distribution
+    syntax varname, NAME(string) TITLE(string) NOTE(string) ///
+        [SUBNOTE(string) FORMAT(string) DENOM(string)]
+    local n = _N
+    contract `varlist', freq(adverts)
+    gen double percent = 100*adverts/`n'
+    vacancy_plot percent, over(`varlist') name("`name'") title("`title'") ///
+        note("`note'") subnote("`subnote'") format("`format'") denom("`denom'")
+end
+
+program define vacancy_core_charts
+    syntax, BASIC(string)
+    set scheme s2color
+    local n = _N
+    tempfile adverts source_fields required_years preferred_years availability routes skills
+    capture confirm variable education_level
+    local has_requirements = !_rc
+    if `has_requirements' {
+        foreach v in experience_required_years experience_preferred_years graduate_opportunity apprenticeship_opportunity entry_level_opportunity skill_digital skill_technical_trade skill_communication skill_teamwork skill_leadership skill_organisation {
+            capture confirm numeric variable `v'
+            if _rc destring `v', replace
+        }
+    }
+    save `adverts'
+
+    if `has_requirements' {
+        gen byte education_group = .
+        local row = 0
+        foreach value in no_qualification_required secondary vocational diploma bachelor postgraduate other not_stated {
+            replace education_group = `row' if education_level == "`value'"
+            local ++row
+        }
+        assert !missing(education_group)
+        label define education_groups 0 "No qualification required" 1 "Secondary / high school" ///
+            2 "Vocational / trade certificate" 3 "Diploma" 4 "Bachelor's degree" ///
+            5 "Postgraduate" 6 "Other qualification" 7 "Level not stated"
+        label values education_group education_groups
+        vacancy_distribution education_group, name("education_level") ///
+            title("Education level stated in adverts") ///
+            note("All `n' adverts. Lowest acceptable level identified; includes preferred and alternative credentials.") ///
+            subnote("These are advertised credentials, not applicants' educational attainment.")
+
+        use `adverts', clear
+        gen byte education_status = .
+        replace education_status = 0 if education_requirement == "required"
+        replace education_status = 1 if education_requirement == "preferred"
+        replace education_status = 2 if education_requirement == "alternative_accepted"
+        replace education_status = 3 if education_requirement == "not_stated"
+        replace education_status = 4 if education_level == "no_qualification_required"
+        assert !missing(education_status)
+        label define education_statuses 0 "Qualification required" 1 "Qualification preferred" ///
+            2 "Alternative route accepted" 3 "No education requirement stated" 4 "No qualification required"
+        label values education_status education_statuses
+        vacancy_distribution education_status, name("education_requirement") ///
+            title("How education requirements are stated") note("All `n' adverts. Unspecified requirements are not treated as waived.") ///
+            subnote("Alternative route: experience or another non-credential route can substitute for the qualification.")
+
+        * Compare required/preferred years only among adverts stating years.
+        foreach kind in required preferred {
+            use `adverts', clear
+            keep if !missing(experience_`kind'_years)
+            local n_`kind' = _N
+            gen byte years_group = 0 if experience_`kind'_years == 0
+            replace years_group = 1 if experience_`kind'_years > 0 & experience_`kind'_years < 1
+            replace years_group = 2 if inrange(experience_`kind'_years,1,2)
+            replace years_group = 3 if experience_`kind'_years > 2 & experience_`kind'_years <= 5
+            replace years_group = 4 if experience_`kind'_years > 5 & experience_`kind'_years <= 10
+            replace years_group = 5 if experience_`kind'_years > 10
+            assert !missing(years_group)
+            label define experience_groups 0 "Explicitly zero years" 1 "Less than 1 year" 2 "1-2 years" ///
+                3 "More than 2, up to 5 years" 4 "More than 5, up to 10 years" 5 "More than 10 years", replace
+            label values years_group experience_groups
+            contract years_group, freq(adverts)
+            gen double `kind' = 100*adverts/`n_`kind''
+            keep years_group `kind'
+            save ``kind'_years'
+        }
+        use `required_years', clear
+        merge 1:1 years_group using `preferred_years', nogen
+        replace required = 0 if missing(required)
+        replace preferred = 0 if missing(preferred)
+        graph hbar (asis) required preferred, over(years_group, label(labsize(small))) ///
+            bar(1, color("0 72 136")) bar(2, color("141 198 63")) ///
+            blabel(bar, format(%4.1f) position(outside) size(small)) ///
+            ylabel(0(20)100, labsize(small)) yscale(range(0 110)) ///
+            ytitle("Percent of adverts stating years", size(small)) title("Minimum experience years stated") ///
+            legend(order(1 "Required" 2 "Preferred") rows(1) pos(6) size(small)) ///
+            note("Bases differ: required years stated in `n_required' adverts; preferred years in `n_preferred'." ///
+                "Unstated years are excluded here, not treated as zero. See the field-coverage chart.", size(vsmall)) ///
+            graphregion(color(white)) plotregion(color(white)) xsize(12) ysize(6.5)
+        vacancy_export using "${OUT}/experience_years"
+
+        use `adverts', clear
+        tempname route_post
+        postfile `route_post' str50 category double percent using `routes'
+        foreach v in graduate_opportunity entry_level_opportunity apprenticeship_opportunity {
+            assert inlist(`v',0,1)
+            local caption "Graduate opportunity"
+            if "`v'" == "entry_level_opportunity" local caption "Entry-level opportunity"
+            if "`v'" == "apprenticeship_opportunity" local caption "Apprenticeship opportunity"
+            quietly summarize `v'
+            post `route_post' ("`caption'") (100*r(mean))
+        }
+        postclose `route_post'
+        use `routes', clear
+        vacancy_plot percent, over(category) name("entry_routes") title("Explicit entry-route opportunities") ///
+            note("All `n' adverts; categories can overlap.") ///
+            subnote("No explicit mention does not mean graduates or young people are ineligible.") sort max(2) step(.5)
+
+        use `adverts', clear
+        tempname skill_post
+        postfile `skill_post' str50 category double percent using `skills'
+        foreach v in digital technical_trade communication teamwork leadership organisation {
+            assert inlist(skill_`v',0,1)
+            local caption = proper("`v'")
+            if "`v'" == "technical_trade" local caption "Technical / trade"
+            quietly summarize skill_`v'
+            post `skill_post' ("`caption'") (100*r(mean))
+        }
+        postclose `skill_post'
+        use `skills', clear
+        vacancy_plot percent, over(category) name("skills") title("Skills explicitly mentioned in adverts") ///
+            note("All `n' adverts; an advert can mention several categories, so shares do not add to 100%.") ///
+            subnote("Broad mention categories, not proficiency or a detailed skills taxonomy.") sort
+
+        use `adverts', clear
+        tempname availability_post
+        postfile `availability_post' str50 category double percent using `availability'
+        quietly count if regexm(substr(trim(isic_1digit),1,1),"^[A-U]$")
+        post `availability_post' ("Industry assigned") (100*r(N)/`n')
+        quietly count if regexm(substr(trim(isco_1digit),1,1),"^[0-9]$")
+        post `availability_post' ("Occupation assigned") (100*r(N)/`n')
+        quietly count if education_level != "not_stated"
+        post `availability_post' ("Education level or explicit waiver stated") (100*r(N)/`n')
+        quietly count if education_requirement != "not_stated"
+        post `availability_post' ("Education requirement status stated") (100*r(N)/`n')
+        quietly count if !missing(experience_required_years)
+        post `availability_post' ("Required experience years stated") (100*r(N)/`n')
+        quietly count if !missing(experience_preferred_years)
+        post `availability_post' ("Preferred experience years stated") (100*r(N)/`n')
+        postclose `availability_post'
+        use `availability', clear
+        vacancy_plot percent, over(category) name("field_coverage") title("Coverage of the core extracted fields") ///
+            note("All `n' adverts completed AI processing. These percentages describe information assigned or stated.") ///
+            subnote("Missing information is kept separate from explicit zero or no qualification required.") sort
+    }
+
+    * Use the matching frozen basic analysis for source fields and existing PNGs.
+    use `adverts', clear
+    merge 1:1 job_id using "`basic'/analysis_base.dta", ///
+        keepusing(employment_type closing_day closing_mentioned closing_review application_window_days)
+    assert _merge == 3
+    assert _N == `n'
+    drop _merge
+    save `source_fields'
+    replace employment_type = "Not stated" if trim(employment_type) == ""
+    vacancy_distribution employment_type, name("employment_type") title("Employment type as recorded by the website") ///
+        note("All `n' adverts. Labels mix contract duration (Permanent/Contract) and hours (Full-Time/Part-Time).") ///
+        subnote("Categories are retained as supplied; a blank is not inferred to mean full-time or permanent.") format("%4.2f")
+
+    use `source_fields', clear
+    gen byte closing_group = 0 if !missing(closing_day)
+    replace closing_group = 1 if missing(closing_day) & (closing_mentioned | closing_review)
+    replace closing_group = 2 if missing(closing_group)
+    label define closing_groups 0 "Closing-date candidate extracted" 1 "Closing cue, date unresolved" 2 "No closing cue identified"
+    label values closing_group closing_groups
+    vacancy_distribution closing_group, name("closing_date_coverage") title("Closing-date information in descriptions") ///
+        note("All `n' adverts. Rules use explicit closing cues and full years; candidates are not manually verified.") ///
+        subnote("No detected cue is not proof that no closing date exists elsewhere in the source.")
+
+    use `source_fields', clear
+    keep if !missing(application_window_days)
+    assert application_window_days >= 0
+    local window_n = _N
+    gen byte window_group = 0 if application_window_days == 0
+    replace window_group = 1 if inrange(application_window_days,1,7)
+    replace window_group = 2 if inrange(application_window_days,8,14)
+    replace window_group = 3 if inrange(application_window_days,15,30)
+    replace window_group = 4 if application_window_days > 30
+    assert !missing(window_group)
+    label define window_groups 0 "Same day" 1 "1-7 days" 2 "8-14 days" 3 "15-30 days" 4 "More than 30 days"
+    label values window_group window_groups
+    vacancy_distribution window_group, name("application_window") title("Time from recorded posting to closing date") ///
+        note("Base: `window_n' adverts with a non-negative, rule-extracted window; missing/negative windows excluded.") ///
+        subnote("Uses the latest stored posted date, which can have been edited; not time to fill a vacancy.") ///
+        denom("Percent of adverts with an extracted window")
+
+    foreach name in monthly_adverts employer_counts duration {
+        confirm new file "${OUT}/`name'.png"
+        copy "`basic'/`name'.png" "${OUT}/`name'.png"
+    }
+    use `adverts', clear
+end
+
+if `"`action'"' == "charts" {
+    use "${OUT}/classified_adverts.dta", clear
+    vacancy_core_charts, basic(`"`basic_dir'"')
+    display "CORE_PNG_CHARTS_COMPLETED_SUCCESSFULLY"
+    log close
+    exit
+}
+
 * Simple tables for the new fields. Flags indicate explicit mentions, not age or eligibility.
+tempfile coverage
+tempname coverage_post
+capture confirm variable education_level
+if !_rc {
 foreach v in experience_required_years experience_preferred_years graduate_opportunity apprenticeship_opportunity entry_level_opportunity skill_digital skill_technical_trade skill_communication skill_teamwork skill_leadership skill_organisation {
     destring `v', replace
 }
@@ -64,8 +303,8 @@ contract education_level education_requirement, freq(adverts)
 gen double share = adverts/`total_n'
 export delimited using "${OUT}/education_counts.csv"
 restore
-tempfile requirements_table coverage
-tempname requirements_post coverage_post
+tempfile requirements_table
+tempname requirements_post
 postfile `requirements_post' str32 field str24 measure long available double mean double minimum double maximum using `requirements_table'
 foreach v in experience_required_years experience_preferred_years graduate_opportunity apprenticeship_opportunity entry_level_opportunity skill_digital skill_technical_trade skill_communication skill_teamwork skill_leadership skill_organisation {
     local measure "explicit mention share"
@@ -78,6 +317,14 @@ preserve
 use `requirements_table', clear
 export delimited using "${OUT}/requirements_summary.csv"
 restore
+}
+else {
+    * The original 2025 prompt did not request education/experience/skill fields.
+    save "${OUT}/classified_adverts.dta"
+    display "Classification-only input: no new requirement fields were requested."
+}
+
+vacancy_core_charts, basic(`"`basic_dir'"')
 
 * Reproduce original ISIC/ISCO comparison, retaining unclassified coverage separately.
 postfile `coverage_post' str4 classification long total long classified long unclassified double classified_share using `coverage'
@@ -283,9 +530,10 @@ drop _merge c24_occ_code1_label
 export delimited using "${OUT}/vacancy_v_sdes_occupation.csv"
 export excel using "${OUT}/vacancy_v_sdes.xlsx", sheet("occupation") firstrow(variables) sheetreplace
 
-graph combine ind occ , ///
-	title("Vacancy data are not representative of survey data") ///
-	name(comb, replace) 
+graph combine ind occ , cols(1) xsize(13) ysize(20) iscale(.45) ///
+    graphregion(color(white)) ///
+    title("Vacancy adverts and survey employment") ///
+    name(comb, replace)
 	
 graph display comb
  vacancy_export using "${OUT}/vacancy_v_sdes_combined"

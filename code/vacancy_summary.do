@@ -41,26 +41,17 @@ display "Stata version: " c(stata_version)
 display "Run label: `run_label'; cohort start: " %td `cohort'
 display "Unit: advert IDs, not independently verified individual positions."
 
-* Desktop Stata exports PNG/PDF directly. This older Mac console only exports
-* EPS; use already-installed Ghostscript locally in that case. Still one do-file.
+* Save PNG charts only. The old Mac console uses temporary EPS plus Ghostscript.
 program define vacancy_export
     syntax using/
-    graph save `"`using'.gph"'
+    confirm new file `"`using'.png"'
     capture graph export `"`using'.png"', width(2400)
-    local png_rc = _rc
-    capture graph export `"`using'.pdf"'
-    local pdf_rc = _rc
-    if `png_rc' | `pdf_rc' {
+    if _rc {
+        * Old Mac console: EPS is temporary; PNG is the only saved chart.
         tempfile eps
         graph export `"`eps'"', as(eps)
-        if `png_rc' {
-            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=png16m -r200 -sOutputFile="`using'.png" "`eps'"
-            confirm file `"`using'.png"'
-        }
-        if `pdf_rc' {
-            shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=pdfwrite -sOutputFile="`using'.pdf" "`eps'"
-            confirm file `"`using'.pdf"'
-        }
+        shell gs -q -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=png16m -r200 -sOutputFile="`using'.png" "`eps'"
+        confirm file `"`using'.png"'
     }
 end
 
@@ -396,15 +387,33 @@ forvalues scenario = 1/2 {
     stset followup_days, failure(approximate_exit == 1)
     assert _st == 1
     sts generate survival = s
-    if `scenario' == 1 {
-        sts graph, survival tmax(90) xlabel(0(15)90) title("Approximate listing survival", span) ///
-            xtitle("Inclusive observed days since first seen") ytitle("Estimated share remaining") ///
-            note("First 90 days shown; full curve and gap sensitivity saved as tables." "Last seen approximates exit; still-live adverts censored. Not time to filling a position.", span size(vsmall)) ///
-            graphregion(color(white) margin(l+3 r+3 t+4 b+2)) name(duration, replace)
-        vacancy_export using "`out'/duration"
-    }
     quietly summarize followup_days if survival <= .5, meanonly
     local median = r(min)
+    if `scenario' == 1 {
+        local median_marker ""
+        local duration_ticks "0(15)90"
+        if !missing(`median') & `median' <= 90 {
+            * Dotted guides identify the 50% threshold and its median day.
+            local median_marker `"addplot(scatteri .5 0 .5 `median', recast(line) lpattern(dot) lcolor("196 18 48") lwidth(medthin) || scatteri 0 `median' .5 `median', recast(line) lpattern(dot) lcolor("196 18 48") lwidth(medthin) || scatteri .5 `median' (2) "Median: `median' days", msymbol(O) msize(medium) mcolor("196 18 48") mlabcolor("196 18 48") mlabsize(small))"'
+            * Label the exact median without a neighbouring tick crowding it.
+            local duration_ticks "`median'"
+            forvalues tick = 0(15)90 {
+                if abs(`tick'-`median') > 3 local duration_ticks "`duration_ticks' `tick'"
+            }
+        }
+        local cohort_label : display %tdDD_Mon_CCYY `cohort'
+        local cutoff_label : display %tdDD_Mon_CCYY `cutoff'
+        local sample_label = trim(string(`ns', "%9.0fc"))
+        local censored_label = trim(string(`nc', "%9.0fc"))
+        sts graph, survival tmax(90) xlabel(`duration_ticks') title("How long do job adverts stay online?", span) ///
+            `median_marker' legend(off) ///
+            xtitle("Days since first seen") ytitle("Estimated share still online") ///
+            note("`sample_label' adverts first seen `cohort_label' to `cutoff_label'; excludes adverts present at collection start." ///
+                "Last seen approximates removal; `censored_label' still listed on `cutoff_label' are censored (followed only to that date)." ///
+                "Days include the first and last day seen. First 90 days shown; collection paused 1-19 Sep 2026.", span size(vsmall)) ///
+            plotregion(margin(zero)) graphregion(color(white) margin(l+3 r+3 t+4 b+2)) name(duration, replace)
+        vacancy_export using "`out'/duration"
+    }
     keep followup_days survival
     collapse (min) survival, by(followup_days)
     sort followup_days
@@ -461,7 +470,7 @@ file write notes "Extracted closing dates are rule candidates, not manually veri
 file write notes "Application window = closing minus latest stored posted date; negative windows flagged/excluded." _n
 file write notes "JSON reader expects current scraper formatting; matched-ID/count assertions protect schema drift." _n
 file write notes "No AI/API calls, survey comparisons, source repairs or changes to older results." _n
-file write notes "PNG/PDF exports use native Stata translators, or local Ghostscript for older console Stata." _n
+file write notes "PNG-only charts use native Stata export, or temporary EPS plus local Ghostscript." _n
 file close notes
 display "ANALYSIS_COMPLETED_SUCCESSFULLY: `out'"
 log close

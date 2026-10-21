@@ -6,10 +6,12 @@ import importlib.util
 import io
 import json
 import os
+import shutil
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +76,84 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(row["skill_teamwork"], 0)
         self.assertEqual(row["classification_summary"], "Fixture classification.")
 
+    def test_duplicate_model_mentions_keep_one_flag_and_audit_discarded_quote(self):
+        value = result()
+        mention = value["requirements"]["skills_mentioned"][0]
+        value["requirements"]["skills_mentioned"].append(copy.deepcopy(mention))
+        response = SimpleNamespace(status="completed", output_text=json.dumps(value), id="fixture", usage=None)
+        client = SimpleNamespace(responses=SimpleNamespace(create=lambda **kwargs: response))
+        sdk = SimpleNamespace(OpenAI=lambda **kwargs: contextlib.nullcontext(client))
+        with patch.dict(sys.modules, {"openai": sdk}):
+            saved = ai.classify_job(job(), {"model": ai.MODEL, "reasoning": "low"}, "fixture-key")
+        self.assertEqual(saved["status"], "success")
+        self.assertEqual(saved["requirements"]["skills_mentioned"], [mention])
+        self.assertEqual(saved["discarded_duplicate_skill_mentions"], [mention])
+
+    def test_retry_receives_the_specific_validation_failure(self):
+        invalid = result()
+        invalid["requirements"]["education_quote"] = "Invented qualification."
+        outputs = iter([invalid, result()])
+        requests = []
+        def respond(**kwargs):
+            requests.append(kwargs["input"])
+            return SimpleNamespace(status="completed", output_text=json.dumps(next(outputs)), id="fixture", usage=None)
+        client = SimpleNamespace(responses=SimpleNamespace(create=respond))
+        sdk = SimpleNamespace(OpenAI=lambda **kwargs: contextlib.nullcontext(client))
+        with patch.dict(sys.modules, {"openai": sdk}), patch.object(ai.time, "sleep"):
+            saved = ai.classify_job(job(), {"model": ai.MODEL, "reasoning": "low"}, "fixture-key")
+        self.assertEqual(saved["status"], "success")
+        self.assertEqual(len(requests), 2)
+        self.assertIn("Invented qualification.", requests[1][-1]["content"])
+
+    def test_2025_prompt_matches_recovered_archived_wording(self):
+        config = ai.prompt_config("2025")
+        self.assertEqual(ai.prompt_hash(config), "dc329b7225dc2c45b5fd486ac682868b8650bee5ac90483080ac4b855d115537")
+        self.assertEqual(set(config["schema"]["properties"]), {"industry_classification", "occupation_classification", "classification_summary"})
+        messages = ai.request_messages(job(), config)
+        self.assertIn("Job Title: Assistant\nEmployer: Example", messages[1]["content"])
+        self.assertIn("If a classification cannot be determined", messages[1]["content"])
+
+    def test_2025_retry_preserves_messages_and_excludes_new_fields(self):
+        valid = result()
+        valid.pop("requirements")
+        invalid = copy.deepcopy(valid)
+        invalid["classification_summary"] = 7
+        outputs = iter([invalid, valid])
+        requests = []
+        def respond(**kwargs):
+            requests.append(kwargs)
+            return SimpleNamespace(status="completed", output_text=json.dumps(next(outputs)), id="fixture", usage=None)
+        client = SimpleNamespace(responses=SimpleNamespace(create=respond))
+        sdk = SimpleNamespace(OpenAI=lambda **kwargs: contextlib.nullcontext(client))
+        with patch.dict(sys.modules, {"openai": sdk}), patch.object(ai.time, "sleep"):
+            saved = ai.classify_job(job(), {"model": ai.MODEL, "reasoning": "low", "prompt_style": "2025"}, "fixture-key")
+        self.assertEqual(saved["status"], "success")
+        self.assertNotIn("requirements", saved)
+        self.assertEqual(requests[0]["input"], requests[1]["input"])
+        self.assertEqual(requests[0]["text"]["format"]["schema"], ai.prompt_config("2025")["schema"])
+
+    def test_2025_prepare_and_convert_keep_outputs_classification_only(self):
+        folder = self.root / "code/prompts"
+        folder.mkdir(parents=True)
+        shutil.copyfile(ROOT / "code/prompts/classification_2025.json", folder / "classification_2025.json")
+        legacy = self.root / "legacy_run"
+        metadata = ai.prepare(self.root, legacy, prompt_style="2025")
+        jobs = json.loads((legacy / "prepared_jobs.json").read_text())
+        records = []
+        for advert in jobs:
+            saved = stored(advert)
+            saved.pop("requirements")
+            saved["prompt_version"] = metadata["prompt_version"]
+            records.append(saved)
+        ai.write_json(legacy / "LLM_processed_jobs.json", records)
+        output, count = converter.convert(legacy)
+        with output.open() as f:
+            rows = list(csv.DictReader(f))
+        self.assertEqual(count, 3)
+        self.assertNotIn("education_level", rows[0])
+        self.assertEqual(rows[0]["isco_2digit"], "01 - Fixture label")
+        self.assertTrue((legacy / "code/prompts/classification_2025.json").exists())
+
     def test_no_requirement_vs_not_stated(self):
         value = result()
         req = value["requirements"]
@@ -84,6 +164,16 @@ class RefreshTests(unittest.TestCase):
         req["education_level"] = "no_qualification_required"
         with self.assertRaises(ValueError):
             ai.validate_result(value, job())
+
+    def test_qualification_can_be_required_without_a_stated_level(self):
+        advert = job()
+        advert["input"]["description"] = advert["input"]["description"].replace("Diploma preferred.", "Relevant qualification required.")
+        value = result()
+        value["requirements"].update(education_level="not_stated", education_requirement="required", education_quote="Relevant qualification required.")
+        ai.validate_result(value, advert)
+        value["requirements"]["education_quote"] = None
+        with self.assertRaises(ValueError):
+            ai.validate_result(value, advert)
 
     def test_reject_unsupported_quotes_and_duplicate_skills(self):
         value = result()

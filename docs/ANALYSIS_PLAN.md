@@ -36,7 +36,7 @@ analysis/2026-10-19/
     README.txt                 # completion marker, dates and interpretation
 ```
 
-Each chart also has a PDF and editable Stata `.gph`. Desktop Stata uses its native graphics exporters. The installed older Mac console cannot export PNG/PDF directly, so the same do-file uses already-installed Ghostscript for local EPS conversion; EPS intermediates stay in temporary storage. No additional script is needed.
+Charts are now saved as PNG only. Desktop Stata uses native PNG export; the older Mac console uses already-installed Ghostscript with temporary EPS intermediates. No PDF or Stata graph files are generated. Historical outputs remain preserved; older PDF/GPH copies from the selected AI run are archived in its `legacy_graph_formats/` folder.
 
 Create the dated folder only if it does not exist. Stop if it already exists; for an intentional rerun use an explicit suffix such as `2026-10-19_v2`. No overwriting completed runs. Keep the original scripts, classifications, charts and workbook in place; no archive/move is needed because all new outputs have their own folder. The existing expanded plan remains recoverable in Git history.
 
