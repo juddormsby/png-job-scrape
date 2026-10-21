@@ -8,7 +8,7 @@ scraper:
   
 # Output settings
 output:
-  html_dir: "html_output"
+  archive_dir: "archive"
   json_dir: "json_output"
   
 # Job filtering

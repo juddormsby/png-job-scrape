@@ -246,6 +246,19 @@ def verify_source(root, relative_path, expected_hash):
     return body
 
 
+def find_job_source(root, job_id):
+    """Find a verified successful advert source, falling back to imported HTML."""
+    root = Path(root)
+    resource, job_id = resource_name("", job_id)
+    for category, status in (("job_html", "200"), ("legacy_html", "None")):
+        index = root / "index" / job_id[:3] / f"{resource}-{category}-{status}.json"
+        if index.exists():
+            source = json.loads(index.read_text())
+            verify_source(root, source["source_path"], source["source_sha256"])
+            return root / source["source_path"]
+    return None
+
+
 def verify_archive(root):
     root = Path(root)
     checked = {}

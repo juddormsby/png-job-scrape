@@ -25,7 +25,7 @@ import csv
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, unquote, parse_qs
 from datetime import datetime
-from source_archive import SourceArchive
+from source_archive import SourceArchive, find_job_source
 
 
 def format_date_dd_mm_yyyy(date_str):
@@ -98,9 +98,7 @@ class PNGworkforceScraper:
                     else Path(__file__).parent)
         base_dir.mkdir(parents=True, exist_ok=True)
         self.base_dir = base_dir
-        self.html_dir = base_dir / "html_output"
         self.json_dir = base_dir / "json_output"
-        self.html_dir.mkdir(exist_ok=True)
         self.json_dir.mkdir(exist_ok=True)
         self.refresh_existing = refresh_existing
         self.archive = SourceArchive(Path(archive_root) if archive_root is not None
@@ -551,22 +549,6 @@ class PNGworkforceScraper:
         match = re.search(r'/(\d+)/?$', url)
         return match.group(1) if match else None
     
-    def save_html(self, url, html_content):
-        """Save HTML content to file"""
-        job_id = self.extract_job_id_from_url(url)
-        if job_id:
-            filename = f"job_{job_id}.html"
-        else:
-            # Use a sanitized version of the URL
-            parsed = urlparse(url)
-            path_parts = [p for p in parsed.path.split('/') if p]
-            filename = f"job_{'_'.join(path_parts[-2:])}.html"
-        
-        filepath = self.html_dir / filename
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(html_content)
-        return filepath
-    
     def extract_structured_data(self, soup, url):
         """
         Extract structured data from a job detail page using proper HTML selectors
@@ -854,12 +836,6 @@ class PNGworkforceScraper:
         if not soup:
             return None, error
         
-        # Get raw HTML
-        html_content = str(soup)
-        
-        # Save HTML
-        html_path = self.save_html(job_url, html_content)
-        
         # Extract structured data from detail page
         try:
             structured_data = self.extract_structured_data(soup, job_url)
@@ -895,6 +871,12 @@ class PNGworkforceScraper:
         job_id = structured_data.get('job_id') or 'unknown'
         json_path = self.json_dir / f"job_{job_id}.json"
         current_time = datetime.now().isoformat()
+        capture = self._last_job_capture
+        source_path = self.archive.root / capture['source_path']
+        try:
+            source_reference = str(source_path.relative_to(self.base_dir))
+        except ValueError:
+            source_reference = str(source_path)
         
         # Build final ordered dict with file paths in correct position
         final_ordered_data = {
@@ -914,8 +896,8 @@ class PNGworkforceScraper:
             'salary': structured_data.get('salary'),
             'description': structured_data.get('description'),
             'url': structured_data.get('url'),
-            'html_file': str(html_path),
-            'html_file_rel': f"html_output/job_{job_id}.html",
+            'html_file': str(source_path),
+            'html_file_rel': source_reference,
             'json_file': str(json_path),
             'json_file_rel': f"json_output/job_{job_id}.json",
             'scraped_at': structured_data.get('scraped_at'),
@@ -924,12 +906,6 @@ class PNGworkforceScraper:
         
         # Remove None values but keep job_id and title even if None
         final_ordered_data = {k: v for k, v in final_ordered_data.items() if v is not None or k in ['job_id', 'title']}
-        capture = self._last_job_capture
-        source_path = self.archive.root / capture['source_path']
-        try:
-            source_reference = str(source_path.relative_to(self.base_dir))
-        except ValueError:
-            source_reference = str(source_path)
         final_ordered_data.update({
             'source_archive_file': source_reference,
             'source_archive_sha256': capture['source_sha256'],
@@ -957,7 +933,7 @@ class PNGworkforceScraper:
     def is_job_already_scraped(self, job_id):
         """
         Check if a job has already been successfully scraped.
-        Returns True if both HTML and JSON files exist and are valid.
+        Returns True if archived HTML and valid job JSON exist.
         
         Args:
             job_id: Job ID to check
@@ -971,11 +947,9 @@ class PNGworkforceScraper:
         if self.refresh_existing:
             return False
         
-        html_file = self.html_dir / f"job_{job_id}.html"
         json_file = self.json_dir / f"job_{job_id}.json"
         
-        # Both files must exist
-        if not (html_file.exists() and json_file.exists()):
+        if not json_file.exists() or find_job_source(self.archive.root, job_id) is None:
             return False
         
         # Check if JSON is valid and has required fields
@@ -1247,8 +1221,7 @@ class PNGworkforceScraper:
         
         if not jobs:
             print("No jobs found. The HTML structure might have changed.")
-            print("Saving the main page HTML for inspection...")
-            self.save_html(start_url, str(soup))
+            print(f"Main page HTML is retained in {self.archive.root} for inspection.")
             return
         
         # Filter jobs to scrape:

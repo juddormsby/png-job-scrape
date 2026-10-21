@@ -8,6 +8,7 @@ before these fields were added to the scraper.
 """
 
 import json
+import gzip
 import sys
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -16,6 +17,7 @@ import re
 # Add code directory to path to import scraper
 sys.path.insert(0, str(Path(__file__).parent))
 from scraper import PNGworkforceScraper, format_date_dd_mm_yyyy
+from source_archive import find_job_source
 
 def extract_employer_fields_from_html(soup, base_url):
     """
@@ -119,7 +121,6 @@ def backfill_employer_fields():
     script_dir = Path(__file__).parent
     project_root = script_dir.parent
     json_dir = project_root / 'json_output'
-    html_dir = project_root / 'html_output'
     all_jobs_path = json_dir / 'all_jobs.json'
     
     if not all_jobs_path.exists():
@@ -151,17 +152,19 @@ def backfill_employer_fields():
             job.get('employer_phone') or job.get('employer_address')):
             continue
         
-        html_file = html_dir / f"job_{job_id}.html"
+        html_file = (project_root / job['source_archive_file']
+                     if job.get('source_archive_file')
+                     else find_job_source(project_root / 'archive', job_id))
         json_file = json_dir / f"job_{job_id}.json"
         
-        if not html_file.exists():
+        if html_file is None or not html_file.exists():
             print(f"[{i}/{len(jobs)}] ⚠️  Job {job_id}: HTML file not found, skipping")
             missing_html_count += 1
             continue
         
         try:
             # Load and parse HTML
-            with open(html_file, 'r', encoding='utf-8') as f:
+            with gzip.open(html_file, 'rb') as f:
                 html_content = f.read()
             soup = BeautifulSoup(html_content, 'html.parser')
             

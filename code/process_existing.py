@@ -7,11 +7,11 @@ import json
 import csv
 from pathlib import Path
 from datetime import datetime
+from source_archive import find_job_source
 
 # Handle paths - if running from code/, go up one level
 base_dir = Path(__file__).parent.parent if Path(__file__).parent.name == 'code' else Path(__file__).parent
 json_dir = base_dir / "json_output"
-html_dir = base_dir / "html_output"
 
 # Load existing summary
 summary_path = json_dir / 'scrape_summary.json'
@@ -28,7 +28,9 @@ else:
                 job = json.load(f)
                 # Add relative paths
                 job_id = job.get('job_id', 'unknown')
-                job['html_file_rel'] = f"html_output/job_{job_id}.html"
+                source = find_job_source(base_dir / "archive", job_id)
+                job['html_file'] = str(source) if source else ''
+                job['html_file_rel'] = str(source.relative_to(base_dir)) if source else ''
                 job['json_file_rel'] = f"json_output/job_{job_id}.json"
                 jobs_data.append(job)
         except:

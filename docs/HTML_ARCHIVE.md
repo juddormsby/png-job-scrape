@@ -32,7 +32,7 @@ The content fingerprint is independent of extracted JSON. For the current recogn
 
 When only excluded volatile content changes, a prior source version is reused. **`observed_response_sha256` and `source_sha256` may then differ** and `raw_response_retained` is false: the manifest explicitly records that this observation's exact bytes were not retained. This is a first/changed-evidence archive, not byte-for-byte retention of every daily response.
 
-HTTP errors and unrecognized job pages have separate version pointers. A 404 or a blocked page cannot replace the last valid advert source. A connection failure records an error with no invented response body or HTTP status. Existing live adverts are refreshed even when local convenience HTML/JSON files already exist, so edits can be observed.
+HTTP errors and unrecognized job pages have separate version pointers. A 404 or a blocked page cannot replace the last valid advert source. A connection failure records an error with no invented response body or HTTP status. Existing live adverts are refreshed even when archived HTML and local JSON files already exist, so edits can be observed.
 
 Newly fetched successful records in both consolidated JSON and CSV carry `source_archive_file`, `source_archive_sha256` and `source_archive_run_id`. The file path is relative to the repository root. Older records gain these references when normally revisited; the artifact importer does not rewrite the historical database.
 

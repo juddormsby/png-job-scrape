@@ -211,8 +211,10 @@ def main():
 
     # Measured archive size, with deterministic gzip compression, excludes assets.
     sizes=[];compressed=[]
-    for p in (ROOT/"html_output").glob("job_*.html"):
-        raw=p.read_bytes();sizes.append(len(raw));compressed.append(len(gzip.compress(raw,mtime=0)))
+    legacy_files = git("ls-tree", "-r", "--name-only", AS_OF, "--", "html_output").decode().splitlines()
+    legacy_files = [p for p in legacy_files if p.endswith('.html')]
+    for p in legacy_files:
+        raw=git("show", f"{AS_OF}:{p}");sizes.append(len(raw));compressed.append(len(gzip.compress(raw,mtime=0)))
     lifetime_unique_pages = len(current_ids)
     mean_raw,mean_gz=statistics.mean(sizes),statistics.mean(compressed)
     archive={"sample_pages":len(sizes),"mean_html_bytes":mean_raw,"mean_gzip_bytes":mean_gz,"all_3707_pages_raw_mib":lifetime_unique_pages*mean_raw/2**20,"all_3707_pages_gzip_mib":lifetime_unique_pages*mean_gz/2**20,"daily_206_pages_raw_mib":206*mean_raw/2**20,"daily_206_pages_gzip_mib":206*mean_gz/2**20,"annual_daily_206_pages_raw_gib":365*206*mean_raw/2**30,"annual_daily_206_pages_gzip_gib":365*206*mean_gz/2**30,"note":"189 older local pages; illustrative sizing, not measured current storage. Full daily raw pages include changing application tokens, so exact-byte hashes alone may not deduplicate them."}
@@ -223,7 +225,7 @@ def main():
         hi=min(lo+39,upper);ids=set(range(lo,hi+1))
         id_bins.append({"from":lo,"to":hi,"slots":len(ids),"captured":len(ids&current_ids),"not_captured":len(ids-current_ids)})
     recent_observed=set().union(*(set(v["observed_ids"]) for day,v in daily.items() if day>="2026-09-20"))
-    legacy_ids={int(p.stem.split("_")[1]) for p in (ROOT/"html_output").glob("job_*.html")}
+    legacy_ids={int(Path(p).stem.split("_")[1]) for p in legacy_files}
     archive.update({"recent_observed_ids_potentially_in_retained_artifacts":len(recent_observed),"recent_plus_legacy_source_ids":len(recent_observed|legacy_ids),"artifact_caveat":"Potential recoverable source coverage inferred from successful runs and workflow upload paths; artifacts not downloaded or individually verified."})
 
     result={

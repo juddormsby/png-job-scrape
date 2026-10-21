@@ -44,7 +44,7 @@ jobs:
       
       - name: Create output directories
         run: |
-          mkdir -p html_output json_output
+          mkdir -p json_output
       
       - name: Run scraper
         id: scrape
@@ -71,7 +71,6 @@ jobs:
           name: scrape-results
           path: |
             json_output/
-            html_output/
             archive_run/
           retention-days: 30
       

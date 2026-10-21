@@ -31,7 +31,7 @@ If you want to understand the rest ... read on!
   - Full job description
   - Employment type, salary (when available)
   - Various logging files (date first and last seen by scraper).
-- **HTML Archival**: Saves immutable compressed source versions and observation manifests in `archive/`, plus convenience HTML files in `html_output/`
+- **HTML Archival**: Saves immutable compressed source versions and observation manifests in `archive/`
 - **Consolidated Output**: Creates `all_jobs.json` and `all_jobs.csv` with all jobs in one file
 - **Incremental Updates**: Updates existing database instead of recreating each time
 - **Failed Job Tracking**: Tracks and documents jobs that fail to scrape (404s, etc.)
@@ -42,10 +42,7 @@ If you want to understand the rest ... read on!
 ```
 pngworkforce-scrape/
 ├── archive/              # Git-tracked source versions, manifests and inventory
-├── html_output/          # Individual job HTML files
-│   ├── job_25045.html
-│   ├── job_25046.html
-│   └── ...
+│   └── html/YYYY/MM/job_ID/<source-sha256>.html.gz
 ├── json_output/          # Structured data JSON files
 │   ├── job_25045.json    # Individual job data
 │   ├── job_25046.json
@@ -80,8 +77,8 @@ Each job JSON file contains:
 - `description`: Full job description text (up to 10,000 chars)
 
 **File References:**
-- `html_file`: Absolute path to saved HTML file
-- `html_file_rel`: Relative path to HTML file (for easy access)
+- `html_file`: Absolute path to archived compressed HTML
+- `html_file_rel`: Repository-relative path to archived compressed HTML (read with `gzip.open`)
 - `json_file`: Absolute path to JSON file
 - `json_file_rel`: Relative path to JSON file
 - `source_archive_file`: Repository-relative path to immutable compressed source (newly fetched records)

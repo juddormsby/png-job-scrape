@@ -12,7 +12,7 @@ from unittest.mock import patch
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "code"))
-from source_archive import SourceArchive, export_run, verify_archive, verify_source
+from source_archive import SourceArchive, export_run, find_job_source, verify_archive, verify_source
 from preserve_artifacts import preserve
 from scraper import PNGworkforceScraper
 
@@ -120,6 +120,19 @@ class ArchiveTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unsafe'):
             SourceArchive(self.root, run_id='../../escape')
 
+    def test_source_lookup_uses_legacy_then_prefers_successful_response(self):
+        self.assertIsNone(find_job_source(self.root, '12345'))
+        archive = self.archive()
+        legacy = archive.capture(page(title='Legacy title'), URL, status_code=None,
+                                 source_form='legacy_beautifulsoup_serialization')
+        self.assertEqual(find_job_source(self.root, '12345'), self.root / legacy['source_path'])
+        good = archive.capture(page(), URL)
+        archive.capture(b'Expired advert', URL, status_code=404)
+        self.assertEqual(find_job_source(self.root, '12345'), self.root / good['source_path'])
+        (self.root / good['source_path']).write_bytes(gzip.compress(b'corrupt'))
+        with self.assertRaisesRegex(ValueError, 'hash mismatch'):
+            find_job_source(self.root, '12345')
+
     def test_export_is_self_contained_for_reused_source_from_prior_run(self):
         first = self.archive()
         first.capture(page(), URL)
@@ -167,9 +180,13 @@ class ScraperIntegrationTests(unittest.TestCase):
         self.assertEqual(self.scraper.archive.counts['network_errors'], 1)
         self.assertEqual(verify_archive(self.scraper.archive.root)['verified_sources'], 0)
 
-    def test_cached_legacy_files_do_not_stop_live_refresh(self):
-        (self.scraper.html_dir / 'job_12345.html').write_bytes(page())
+    def test_archived_source_does_not_stop_live_refresh(self):
+        self.scraper.archive.capture(page(), URL)
         (self.scraper.json_dir / 'job_12345.json').write_text(json.dumps({'title':'Cached'}))
+        self.assertFalse(self.scraper.is_job_already_scraped('12345'))
+        self.scraper.refresh_existing = False
+        self.assertTrue(self.scraper.is_job_already_scraped('12345'))
+        (self.scraper.json_dir / 'job_12345.json').unlink()
         self.assertFalse(self.scraper.is_job_already_scraped('12345'))
 
     def test_new_job_has_durable_source_reference(self):
@@ -177,6 +194,9 @@ class ScraperIntegrationTests(unittest.TestCase):
             job, error = self.scraper.scrape_job_detail(URL)
         self.assertIsNone(error)
         archived = Path(self.temporary.name) / job['source_archive_file']
+        self.assertFalse((Path(self.temporary.name) / 'html_output').exists())
+        self.assertEqual(job['html_file'], str(archived))
+        self.assertEqual(job['html_file_rel'], job['source_archive_file'])
         self.assertEqual(gzip.decompress(archived.read_bytes()), page())
         self.assertEqual(hashlib.sha256(page()).hexdigest(), job['source_archive_sha256'])
         self.scraper.save_consolidated_files([job], [])
@@ -184,6 +204,7 @@ class ScraperIntegrationTests(unittest.TestCase):
             row = next(csv.DictReader(stream))
         self.assertEqual(row['source_archive_file'], job['source_archive_file'])
         self.assertEqual(row['source_archive_sha256'], job['source_archive_sha256'])
+        self.assertEqual(row['html_file'], job['source_archive_file'])
 
 
 class PreservationTests(unittest.TestCase):
