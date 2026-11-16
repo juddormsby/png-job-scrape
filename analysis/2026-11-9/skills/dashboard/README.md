@@ -176,6 +176,10 @@ Functions in every deploy context. Redeploy after changing them. Neither value
 belongs in Git, the static publish folder or client JavaScript. The ordinary
 Python server remains a local-only preview and does not execute Edge Functions.
 
+On Netlify's free plan, mark both values as secrets and use its required Builds,
+Functions and Runtime scopes; choosing Functions alone requires an upgrade.
+Post-processing is excluded, and local-development values remain unset.
+
 Run the authentication checks with:
 
 ```sh
