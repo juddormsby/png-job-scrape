@@ -23,7 +23,7 @@ def main():
     for name in ASSETS:
         shutil.copy2(HERE / name, OUT / name)
     (OUT / "data/details").mkdir(parents=True)
-    for name in ["dashboard.json", "provinces.json", "provenance.json"]:
+    for name in ["dashboard.json", "provinces.json"]:
         shutil.copy2(HERE / "data" / name, OUT / "data" / name)
     for bucket in {job["detail"] for job in jobs}:
         shutil.copy2(HERE / f"data/details/{bucket}.json", OUT / f"data/details/{bucket}.json")

@@ -138,7 +138,7 @@ partial first-seen months; the scraper pause on 1–19 September 2026 affects co
 
 ## Files
 
-- `index.html`, `styles.css`, `app.mjs`: local interface and ADB-inspired design.
+- `index.html`, `styles.css`, `app.mjs`: local interface and design.
 - `stats.mjs`: shared, testable counting rules.
 - `build_data.py`: deterministic preparation from the saved project files.
 - `serve.py`: standard-library local server.
@@ -158,8 +158,7 @@ first. The browser check uses an isolated, temporary headless session.
 
 The design takes its colours and editorial treatment from the project mood board
 and `analysis/2026-11-9/overview of data2.pptx`: navy `#002569`, blue `#007DB7`, cyan
-`#00B6C9`, orange `#E9532B`, lime `#8DC63F`, and Arial. It is a research dashboard,
-not an official ADB publication template.
+`#00B6C9`, orange `#E9532B`, lime `#8DC63F`, and Arial. It is a research dashboard.
 
 ## Password gate
 
@@ -185,3 +184,5 @@ Run the authentication checks with:
 ```sh
 node --test tests/password-gate.test.mjs
 ```
+
+The hosted package excludes `data/provenance.json`; source hashes remain in local preparation records only.
