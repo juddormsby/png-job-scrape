@@ -1,0 +1,16 @@
+[build]
+  command = "python3 build_site.py"
+  publish = "public"
+  # Scraper updates elsewhere in this repository do not change this frozen dashboard.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- ."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"

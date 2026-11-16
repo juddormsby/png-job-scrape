@@ -1,0 +1,6 @@
+.netlify/
+public/
+classification_refresh/
+qa/
+__pycache__/
+.DS_Store

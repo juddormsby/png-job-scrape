@@ -1,0 +1,230 @@
+{
+  "built": "2026-11-10T22:02:34.978265+00:00",
+  "snapshot": "2026-11-09",
+  "records": 3964,
+  "adverts": 3955,
+  "selections": 38447,
+  "first": "2025-10-31",
+  "last": "2026-11-09",
+  "audit": {
+    "matched": 3954,
+    "unrecovered_capped": 49,
+    "with_province": 3904,
+    "with_industry": 3208,
+    "with_occupation": 3902,
+    "empty_skills": 59,
+    "advert_status_disagrees": 1,
+    "non_job_notices": 9
+  },
+  "model": "gpt-6-luna",
+  "esco": "v1.2.1",
+  "colours": {
+    "S1.0": [],
+    "S1.1": [
+      "FFFF00"
+    ],
+    "S1.2": [
+      "00FFFF"
+    ],
+    "S1.3": [
+      "00FF00"
+    ],
+    "S1.4": [
+      "FFFF00"
+    ],
+    "S1.5": [],
+    "S1.6": [],
+    "S1.7": [],
+    "S1.8": [
+      "FFFF00"
+    ],
+    "S1.9": [
+      "FFFF00"
+    ],
+    "S1.11": [
+      "00FFFF"
+    ],
+    "S1.12": [],
+    "S1.13": [
+      "FFFF00"
+    ],
+    "S1.14": [],
+    "S1.15": [
+      "FFFF00"
+    ],
+    "S2.0": [],
+    "S2.1": [
+      "FFFF00"
+    ],
+    "S2.2": [
+      "FFFF00"
+    ],
+    "S2.3": [
+      "00FFFF"
+    ],
+    "S2.4": [
+      "00FFFF"
+    ],
+    "S2.5": [],
+    "S2.6": [],
+    "S2.7": [
+      "FFFF00"
+    ],
+    "S2.8": [
+      "FFFF00"
+    ],
+    "S2.9": [],
+    "S3.0": [],
+    "S3.1": [],
+    "S3.2": [
+      "FF0000"
+    ],
+    "S3.3": [],
+    "S3.4": [
+      "FF0000"
+    ],
+    "S3.5": [
+      "FF0000"
+    ],
+    "S3.6": [
+      "FF0000"
+    ],
+    "S4.0": [],
+    "S4.1": [
+      "00FFFF"
+    ],
+    "S4.2": [
+      "FFFF00"
+    ],
+    "S4.3": [
+      "FFFF00"
+    ],
+    "S4.4": [
+      "FFFF00"
+    ],
+    "S4.5": [
+      "FFFF00"
+    ],
+    "S4.6": [
+      "00FFFF"
+    ],
+    "S4.7": [],
+    "S4.8": [
+      "FFFF00"
+    ],
+    "S4.9": [
+      "00FFFF"
+    ],
+    "S5.0": [
+      "red"
+    ],
+    "S5.1": [
+      "red"
+    ],
+    "S5.2": [
+      "red"
+    ],
+    "S5.5": [
+      "red"
+    ],
+    "S5.6": [
+      "red"
+    ],
+    "S5.7": [
+      "red"
+    ],
+    "S6.0": [
+      "FF0000"
+    ],
+    "S6.1": [],
+    "S6.2": [],
+    "S6.3": [],
+    "S6.4": [],
+    "S6.5": [
+      "FF0000"
+    ],
+    "S6.6": [
+      "red"
+    ],
+    "S6.7": [
+      "red"
+    ],
+    "S6.9": [],
+    "S6.11": [
+      "FF0000"
+    ],
+    "S6.12": [],
+    "S6.13": [],
+    "S7.0": [
+      "FF0000"
+    ],
+    "S7.1": [],
+    "S7.2": [],
+    "S7.3": [],
+    "S8.0": [
+      "FF0000"
+    ],
+    "S8.1": [],
+    "S8.2": [
+      "FF0000"
+    ],
+    "S8.3": [
+      "red"
+    ],
+    "S8.4": [
+      "red"
+    ],
+    "S8.5": [
+      "red"
+    ],
+    "S8.6": [
+      "FF00FF"
+    ],
+    "S8.7": [
+      "red"
+    ],
+    "S8.8": [
+      "FF00FF"
+    ],
+    "S8.9": []
+  },
+  "classification_refresh": {
+    "reused_unchanged": 3775,
+    "new_adverts": 172,
+    "changed_adverts": 17,
+    "successful": 3964,
+    "pending_or_failed": 0,
+    "model": "gpt-6-luna",
+    "prompt_version": "png-isic-isco-requirements-locations-v3"
+  },
+  "sources": [
+    {
+      "path": "analysis/2026-11-9/skills/runs/v1/results.json",
+      "sha256": "d8d8fb7745af38ed2dfdf8a1c0d4df43c43ad4b79fcb2ee8577ad9cc214a165e"
+    },
+    {
+      "path": "analysis/2026-11-9/skills/runs/v1/prepared_jobs.json",
+      "sha256": "89f5c84dd3ea6201b767264c392ce60f7a5942cd0be1b0c769bb2c7f51820026"
+    },
+    {
+      "path": "analysis/2026-11-9/skills/runs/v1/input_all_jobs.json",
+      "sha256": "5a659ac276e2e93207f3dc3bbd7b0276cace5f54d268089769d2e64d8a0a000d"
+    },
+    {
+      "path": "analysis/2026-11-9/skills/runs/v1/codebook.json",
+      "sha256": "fb5063595426df9ef0eaad96b1a881744cfd77e7d23d49b972242b71fcfb1791"
+    },
+    {
+      "path": "analysis/2026-11-9/skills/dashboard/classification_refresh/LLM_processed_jobs.json",
+      "sha256": "75ebf2e5f89b388f57a364c063a8136b5318464ba3d1ed04d3f3cd4d96ed9267"
+    },
+    {
+      "path": "esco skills.docx",
+      "sha256": "2b761fb8958a478aa98295b313d05a0e80ef4a14a78cb3654486e17bd4e42520"
+    },
+    {
+      "path": "analysis/2026-11-9/analysis/png_adm1_nso_ocha.geojson",
+      "sha256": "7bb7436d542334c24b35bab56df737369196fd4b5d50defedc9dc25346c04622"
+    }
+  ]
+}

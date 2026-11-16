@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills in PNG job adverts</title>
+  <meta name="description" content="Explore skills in 3,955 Papua New Guinea job adverts, with industry, occupation, and provincial comparisons.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23002569'/%3E%3Cpath d='M9 29V19h5v10m6 0V11h5v18m6 0V6h4v23' stroke='%2300b6c9' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css?v=20261110-3">
+</head>
+<body>
+  <a href="#explore" class="skip">Skip to the data</a>
+  <header class="masthead">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>PNG <b>LABOUR MARKET RESEARCH</b></span></a>
+    <nav aria-label="Sections"><a href="#explore">Skills</a><a href="#compare">Sectors & occupations</a><a href="#geography">Map</a><a href="#adverts">Adverts</a><a href="#methods">About the data</a></nav>
+    <span class="edition">NOVEMBER 2026</span>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow light">PAPUA NEW GUINEA / ONLINE RECRUITMENT</p><h1>Skills in<br>PNG job adverts<span>.</span></h1><p class="hero-deck">What employers ask for, across industries,<br class="desktop"> occupations and provinces.</p><a href="#explore" class="hero-link">Explore the skills <span aria-hidden="true">↓</span></a><p class="hero-source">PNGworkforce.com · First seen October 2025–November 2026</p></div>
+      <div class="hero-data"><div class="hero-number"><strong id="hero-count">3,955</strong><span>job adverts</span></div><div id="hero-bars" class="hero-bars" aria-label="Share of adverts with each skill family"></div><p class="hero-note">Share with at least one skill in each family.<br>Families overlap. Explicit and strongly implied skills.</p></div>
+    </section>
+    <section class="workspace" id="explore">
+      <div class="section-shell">
+        <div class="section-heading"><div><p class="eyebrow">01 / THE SKILL PROFILE</p><h2>What do employers ask for?</h2></div><p class="section-aside">Each section has its own skill controls. Sample filters here apply throughout.</p></div>
+        <div class="cohort-panel">
+          <div class="cohort-top"><div><strong id="cohort-count">Loading data…</strong><span id="cohort-label"></span></div><button id="reset" class="text-button">Reset filters <span aria-hidden="true">↺</span></button></div>
+          <div class="filter-grid">
+            <label>Industry<select id="industry"><option value="">All industries</option></select></label>
+            <label>Occupation<select id="occupation"><option value="">All occupations</option></select></label>
+            <label>Province<select id="province"><option value="">All provinces</option></select></label>
+            <label>Employer<select id="employer"><option value="">All employers</option></select></label>
+          </div>
+          <details class="more-filters"><summary>Date, education & entry opportunities <span id="extra-active"></span></summary><div class="filter-grid secondary"><label>First seen, from<input type="month" id="from"></label><label>First seen, through<input type="month" id="to"></label><label>Education requirement<select id="education"><option value="">All education levels</option></select></label><label class="check-label"><input id="entry" type="checkbox">Entry, graduate or apprenticeship opportunity</label></div></details>
+          <p class="filter-foot" id="filter-note">Filters apply to all sections below. Percentages use the selected adverts, including adverts with no assigned skill.</p>
+        </div>
+        <div class="view-controls">
+          <div><span class="control-label" id="level-label">HIERARCHY</span><div class="segmented" role="group" aria-labelledby="level-label"><button data-level="category" aria-pressed="true">74 categories</button><button data-level="family" aria-pressed="false">8 families</button></div></div>
+          <label>Skill selection<select id="subset"><option value="all">All 74 categories</option><option value="shortlist">Research shortlist · 47</option><option value="original">Original study · 24</option></select></label>
+          <label>Evidence<select id="evidence"><option value="all">Explicit + strongly implied</option><option value="explicit">Explicit only</option></select></label>
+          <label>Skill family<select id="family"><option value="">All families</option></select></label>
+        </div>
+        <p class="view-note" id="view-note"></p>
+        <div class="rank-layout">
+          <div class="ranking"><div class="chart-heading"><h3 id="ranking-title">Share of adverts with each skill</h3><button class="text-button" id="export-skills">Download CSV <span aria-hidden="true">↓</span></button></div><div class="chart-key"><span><i class="swatch blue"></i>Explicit evidence</span><span id="implied-key"><i class="swatch cyan"></i>Strongly implied only</span><span class="muted">0–100% of selected adverts</span></div><label class="search-label"><span class="sr-only">Search skill names or codes</span><input id="skill-search" type="search" placeholder="Search a skill or ESCO code…"></label><div id="ranking" aria-live="polite"></div><button id="show-all" class="outline-button">Show all categories</button></div>
+          <aside class="skill-detail" aria-label="Selected skill"><div id="skill-detail"></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell compare-section" id="compare">
+      <div class="section-heading"><div><p class="eyebrow">02 / INDUSTRIES & OCCUPATIONS</p><h2>Where the skills differ</h2></div></div>
+      <div class="local-controls" data-panel="compare"></div>
+      <div class="comparison-controls"><div class="segmented" role="group" aria-label="Compare by"><button data-compare="occupation" aria-pressed="true">Occupation</button><button data-compare="industry" aria-pressed="false">Industry</button></div><label>Classification level<select id="compare-level"><option value="1">1 · Major groups</option><option value="2">2 · Subgroups</option><option value="3">3 · Detailed groups</option><option value="4">4 · Unit groups</option></select></label><label>Minimum adverts<select id="compare-min"><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="1">1 · include small groups</option></select></label><label>Display<select id="compare-display"><option value="profile">Selected skill</option><option value="matrix">Skill-family matrix</option></select></label></div>
+      <p class="chart-note" id="compare-note"></p><div id="comparison"></div><p class="chart-note">Shares describe adverts in each group. Small groups can produce unstable percentages. “Above average” is a descriptive comparison, not a significance test.</p>
+    </section>
+
+    <section class="map-section" id="geography"><div class="section-shell">
+      <div class="section-heading"><div><p class="eyebrow">03 / THE GEOGRAPHY OF RECRUITMENT</p><h2>Across Papua New Guinea</h2></div><div class="segmented" role="group" aria-label="Geography display"><button data-geo-display="bar" aria-pressed="true">Bar chart</button><button data-geo-display="map" aria-pressed="false">Map</button></div></div>
+      <div class="local-controls" data-panel="geo"></div>
+      <div class="geography-controls"><label>Geography<select id="geo-level"><option value="region">Four major regions</option><option value="province">22 provinces</option></select></label><div class="segmented" role="group" aria-label="Geography measure"><button data-map="skill" aria-pressed="true">Skill prevalence</button><button data-map="count" aria-pressed="false">Advert count</button></div></div>
+      <p class="map-subtitle" id="map-subtitle"></p>
+      <div id="geo-bars"></div>
+      <div class="map-layout" id="map-layout" hidden><div class="map-wrap"><svg id="map" viewBox="0 0 920 590" role="group" aria-label="Interactive map of Papua New Guinea provinces"></svg><div id="map-legend"></div><p class="map-hint">Select a province for its profile. The province filter below applies only to this section.</p></div><aside class="province-detail" id="province-detail"></aside></div>
+      <div class="map-accounting" id="map-accounting"></div>
+      <details class="province-table"><summary>View all 22 provinces as a table</summary><div id="province-table"></div></details>
+      <p class="source-note">Boundaries: PNG National Statistical Office / UN OCHA, via <a href="https://unosat-geodrr.cern.ch/data/rest/services/Hosted/PNG_Risk_Atlas/FeatureServer/9" target="_blank" rel="noopener">UNOSAT PNG Risk Atlas</a>, downloaded 22 October 2026. Boundaries and names imply no judgment on legal status or endorsement by ADB.</p>
+    </div></section>
+
+    <section class="section-shell" id="patterns"><div class="section-heading"><div><p class="eyebrow">04 / SKILLS IN COMBINATION</p><h2>What comes with the skill?</h2></div><p class="section-aside" id="pair-focus"></p></div><div class="local-controls" data-panel="pairs"></div><div class="patterns-layout"><div><div class="chart-heading"><h3>Most common companion skills</h3><label class="compact-label">Order<select id="pair-order"><option value="share">Share of matching adverts</option><option value="lift">Relative frequency</option></select></label></div><p class="chart-note" id="pair-note"></p><div id="pairs"></div></div><aside class="explanation"><p class="eyebrow">READING THE COMBINATIONS</p><h3>One advert,<br>several capabilities</h3><p>The percentage shows how often a second skill appears among adverts with the skill in focus.</p><p>Relative frequency divides that percentage by the second skill’s share across all selected adverts. A value of 2× means it appears twice as often.</p><p>Both measures describe co-occurrence. They do not establish a wage premium or a causal relationship.</p><p class="small">Only pairs seen together in at least 10 adverts appear here.</p></aside></div></section>
+
+    <section class="time-section" id="time"><div class="section-shell"><div class="section-heading"><div><p class="eyebrow">05 / THROUGH THE YEAR</p><h2>A view over time</h2></div><div class="segmented" role="group" aria-label="Time measure"><button data-time="count" aria-pressed="true">Adverts first seen</button><button data-time="skill" aria-pressed="false">Skill prevalence</button></div></div><div class="local-controls" data-panel="time"></div><p id="time-note" class="chart-note"></p><div id="timeline"></div><p class="chart-note">Month is when the scraper first saw an advert. October 2025 and November 2026 are partial months. A scraper pause from 1–19 September 2026 reduces coverage. Counts are observed recruitment activity, not a seasonally adjusted demand series.</p></div></section>
+
+    <section class="section-shell" id="adverts"><div class="section-heading"><div><p class="eyebrow">06 / BEHIND THE NUMBERS</p><h2>Read the adverts</h2></div><button id="export-adverts" class="outline-button">Download this selection <span aria-hidden="true">↓</span></button></div><p class="section-intro">Open an advert to read the source text and the evidence for every assigned skill.</p><div class="local-controls" data-panel="adverts"></div><div class="browser-controls"><label class="search-label"><span class="sr-only">Search adverts by title, employer or job ID</span><input id="advert-search" type="search" placeholder="Search title, employer or job ID…"></label><label>Show<select id="advert-scope"><option value="all">All selected adverts</option><option value="focus">Adverts with the skill in focus</option><option value="empty">No skills under current settings</option><option value="capped">Source text may be truncated</option><option value="unmatched">Classification unavailable</option></select></label><label>Order<select id="advert-sort"><option value="newest">Newest first seen</option><option value="oldest">Oldest first seen</option><option value="skills">Most assigned skills</option></select></label></div><div class="table-meta"><span id="advert-count" aria-live="polite"></span><span>Click a row to inspect its evidence</span></div><div class="table-scroll"><table class="advert-table"><thead><tr><th>Job advert</th><th>Employer</th><th>First seen</th><th>Skills shown</th><th></th></tr></thead><tbody id="advert-rows"></tbody></table></div><div class="pagination"><button id="prev-page" class="outline-button">← Previous</button><span id="page-label"></span><button id="next-page" class="outline-button">Next →</button></div></section>
+
+    <section class="methods-section" id="methods"><div class="section-shell"><p class="eyebrow">ABOUT THE DATA</p><h2>What these numbers can tell us</h2><div class="methods-grid"><div><h3>Adverts, skills and denominators</h3><p>The unit is a unique advert ID on PNGworkforce.com. An advert may recruit for several positions. Reposts with different IDs remain separate. These counts do not measure the number of workers employers intend to hire.</p><p>The skills run processed 3,964 records and classified nine as non-job notices. All charts start with the remaining 3,955 adverts, including 59 with no assigned skill. Filters then define the denominator.</p><p>A category counts at most once per advert. A family counts any of its included categories once per advert. Percentages can sum to more than 100% because an advert can contain several skills.</p><h3>Two levels of ESCO</h3><p>The dashboard covers the 74 second-level S1–S8 categories in the supplied codebook, grouped into eight families. It does not cover every concept in ESCO’s wider knowledge, language and transversal branches.</p><p>A code ending in .0 is a general category within its family, not the family total. Family totals combine all included child categories and remove overlaps.</p></div><div><h3>Evidence and research selections</h3><p>The model, gpt-6-luna, selected skills required or strongly implied by the text. “Explicit only” retains assignments marked explicit by the model. This is a sensitivity check, not an independent verification of accuracy.</p><p>Research shortlist contains the 47 coloured categories in the first S1–S8 list in the supplied Word document, combining all colours. Original study contains the 24 categories from the emailed Indeed prompt. Neither changes which adverts enter the denominator.</p><p>Each selection has a source quote. Structural and quote checks passed, but the pilot review found some over-inference, including assigning hands-on activities to supervisors. The browser lets you review these decisions directly.</p><h3>Coverage matters</h3><p id="method-join"></p><p>Geography uses named work provinces and regions from the classification pipeline. PNG-wide adverts are not assigned to every province. Multi-province adverts count once in each named province. Missing locations are kept in the sample.</p><p id="method-capped"></p><p>Online recruitment represents the employers and roles using this website. It is not a representative sample of PNG employment, and differences in advert detail can affect the skills identified.</p></div></div><div class="provenance-line"><span>Skills run v1 · ESCO v1.2.1 · Snapshot 9 November 2026</span><a href="data/provenance.json" download>Data provenance & file hashes ↓</a></div></div></section>
+  </main>
+  <footer><span>PNG labour market research</span><span>Local research dashboard · ADB-inspired palette</span><a href="#top">Back to top ↑</a></footer>
+  <dialog id="advert-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow" id="dialog-id"></span><button id="close-dialog" class="icon-button" aria-label="Close advert">×</button></div><div id="dialog-content"></div></dialog>
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div><div id="toast" role="status" class="toast" hidden></div>
+  <div id="loading" class="loading"><span>PNG</span><p>Loading the skills data…</p></div>
+  <script type="module" src="app.mjs?v=20261110-3"></script>
+</body></html>
