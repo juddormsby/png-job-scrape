@@ -1,5 +1,5 @@
 import {selectedSkills, visibleGroups, hasGroup, filterJobs, rankGroups, compareGroups,
-  provinceStats, regionStats, companions, monthly, csv, skillSet} from './stats.mjs?v=20261116-1';
+  provinceStats, regionStats, companions, monthly, csv, skillSet} from './stats.mjs?v=20261116-2';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -434,6 +434,7 @@ function reset() {
 }
 
 function events() {
+  $('#sign-out').hidden=location.protocol!=='https:';
   $$('a[href^="#"]').forEach(link=>link.addEventListener('click',event=>{
     const hash=link.getAttribute('href');
     if(!document.getElementById(hash.slice(1)))return;

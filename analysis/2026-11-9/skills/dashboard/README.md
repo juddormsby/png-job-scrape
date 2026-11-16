@@ -17,7 +17,8 @@ The repository is `juddormsby/png-job-scrape`, production branch `main`.
 Set the Netlify **base directory** to
 `analysis/2026-11-9/skills/dashboard`. Its `netlify.toml` runs
 `python3 build_site.py` and publishes `public`, relative to that base directory.
-No environment variables or API keys are needed for hosting.
+The Edge Function requires `DASHBOARD_PASSWORD` and `DASHBOARD_SESSION_SECRET`
+in Netlify environment settings, with Functions scope. No model API key is used.
 
 The build copies only the four browser assets and prepared display JSON. Local
 classification caches, source-preparation scripts, tests and QA files are excluded
@@ -159,3 +160,24 @@ The design takes its colours and editorial treatment from the project mood board
 and `analysis/2026-11-9/overview of data2.pptx`: navy `#002569`, blue `#007DB7`, cyan
 `#00B6C9`, orange `#E9532B`, lime `#8DC63F`, and Arial. It is a research dashboard,
 not an official ADB publication template.
+
+## Password gate
+
+`netlify/edge-functions/password-gate.js` protects every path before static files
+are served. Visitors enter a shared password, with no username. Successful login
+sets a signed, Secure, HttpOnly, SameSite cookie for eight hours. Direct JSON and
+asset requests also need that cookie. Responses disable browser and CDN caching.
+The footer includes Sign out on HTTPS. Changing the password invalidates sessions
+after the new deployment. Missing configuration fails closed.
+
+Set `DASHBOARD_PASSWORD` and a random, independent `DASHBOARD_SESSION_SECRET` of at
+least 32 characters in Netlify's environment settings. Both must be available to
+Functions in every deploy context. Redeploy after changing them. Neither value
+belongs in Git, the static publish folder or client JavaScript. The ordinary
+Python server remains a local-only preview and does not execute Edge Functions.
+
+Run the authentication checks with:
+
+```sh
+node --test tests/password-gate.test.mjs
+```
