@@ -1,5 +1,5 @@
 import {selectedSkills, visibleGroups, hasGroup, filterJobs, rankGroups, compareGroups,
-  provinceStats, regionStats, companions, monthly, csv, skillSet} from './stats.mjs?v=20261110-3';
+  provinceStats, regionStats, companions, monthly, csv, skillSet} from './stats.mjs?v=20261116-1';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -55,6 +55,11 @@ function saveLocation() {
   for(const [key,value] of Object.entries(panels)) params.set(key,JSON.stringify(value));
   params.set('geoDisplay',state.geoDisplay);params.set('geoLevel',state.geoLevel);params.set('geoMeasure',state.map);
   history.replaceState(null, '', `${location.pathname}?${params}${location.hash}`);
+}
+
+function scrollToSection(hash = location.hash) {
+  const section = document.getElementById(hash.slice(1));
+  if (section) section.scrollIntoView({behavior:'instant', block:'start'});
 }
 
 function setupFilters() {
@@ -207,7 +212,7 @@ function renderDetail() {
   const family = data.families.find(f => f.code === g.code.split('.')[0]);
   const children = selectedSkills(data,state.view).filter(s => s.family === g.code);
   $('#skill-detail').innerHTML = `<p class="eyebrow">IN FOCUS / ${g.code}</p><h3>${escape(title(g.label))}</h3><p>${escape(family?.short || '')}${state.view.level === 'category' ? ' · '+g.code : ' · family'}</p><strong class="big-share">${cohort.length ? pct(g.share) : '—'}</strong><p>${num(g.count)} of ${num(cohort.length)} selected adverts</p><div class="detail-metrics"><div><strong>${num(g.explicit)}</strong><span>Explicit evidence</span></div><div><strong>${num(g.impliedOnly)}</strong><span>Strongly implied only</span></div></div>${g.description ? `<details open><summary>What this category covers</summary><p>${escape(g.description)}</p></details>` : `<details><summary>${children.length} included categories</summary>${children.map(c=>`<button class="child-link" data-child="${c.code}">${c.code} · ${escape(title(c.label))}</button>`).join('')}</details>`}${g.code.endsWith('.0') ? '<p class="small">This general category is a child of '+family.code+'. Switch to families to see the combined total.</p>' : ''}<button class="outline-button" id="view-evidence">Read matching adverts ↗</button><p class="small">${state.view.level === 'family' ? 'At least one included child skill counts as a match. An explicit child takes precedence in the colour split.' : 'One advert can include several categories. Each percentage has the same advert denominator.'}</p>`;
-  $('#view-evidence').addEventListener('click', () => { panels.adverts={focus:state.focus,subset:state.view.subset,evidence:state.view.evidence,filters:{}};renderPanelControls('adverts'); state.advertScope = 'focus'; state.page = 0; $('#advert-scope').value = 'focus'; renderAdverts(); $('#adverts').scrollIntoView({behavior:'smooth'}); });
+  $('#view-evidence').addEventListener('click', () => { panels.adverts={focus:state.focus,subset:state.view.subset,evidence:state.view.evidence,filters:{}};renderPanelControls('adverts'); state.advertScope = 'focus'; state.page = 0; $('#advert-scope').value = 'focus'; renderAdverts(); scrollToSection('#adverts'); });
   $$('[data-child]').forEach(el=>el.addEventListener('click',()=>{state.view.level='category';state.focus=el.dataset.child;render();}));
 }
 
@@ -429,6 +434,14 @@ function reset() {
 }
 
 function events() {
+  $$('a[href^="#"]').forEach(link=>link.addEventListener('click',event=>{
+    const hash=link.getAttribute('href');
+    if(!document.getElementById(hash.slice(1)))return;
+    event.preventDefault();
+    if(location.hash!==hash)history.pushState(null,'',hash);
+    scrollToSection(hash);
+  }));
+  window.addEventListener('hashchange',()=>scrollToSection());
   $('#reset').addEventListener('click',reset);
   $$('[data-level]').forEach(el=>el.addEventListener('click',()=>{state.view.level=el.dataset.level;state.allRanks=false;state.search='';$('#skill-search').value='';if(state.view.level==='family')state.focus=state.focus.split('.')[0];render();}));
   $('#skill-search').addEventListener('input',e=>{state.search=e.target.value;renderRanks();});
@@ -465,6 +478,9 @@ try {
   if(responses.some(r=>!r.ok))throw new Error('The local data files are missing. Run build_data.py in the dashboard folder.');
   [data,geo]=await Promise.all(responses.map(r=>r.json()));
   setupFilters();setupPanels();renderIntro();events();render();$('#loading').hidden=true;
+  // Charts and filters add height after the browser's initial fragment scroll.
+  // Align the requested section only once the populated layout is visible.
+  requestAnimationFrame(()=>scrollToSection());
   // Test hooks expose computed research state only; no API credentials or model calls.
   window.dashboard={get state(){return state;},get cohort(){return cohort;},get ranks(){return ranks;},get data(){return data;},get panels(){return panels;},sectionContext};
 } catch(error) {
