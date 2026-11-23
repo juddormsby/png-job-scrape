@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "resource": "job_29073",
+  "category": "http_error",
+  "fingerprint_version": "advert-dom-v1",
+  "fingerprint_sha256": "81deeb54f659b7721e3fc695eade45da6e646d50f18c7dbeb7d00964215a716e",
+  "source_path": "html/2026/11/job_29073/864a57a4a4b54193840cd468ce61240b6947d2b7d84d9b45b32bfd5815123f13.html.gz",
+  "source_sha256": "864a57a4a4b54193840cd468ce61240b6947d2b7d84d9b45b32bfd5815123f13"
+}
